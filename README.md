@@ -16,8 +16,7 @@ Basically I wanted to refresh my CSS / SASS skills by creating a dark mode for q
 Long term I intend to attempt mobile layouts, but those may never make it here. For the short term I've made the login page more mobile device friendly (not tiny). If this gets noticed by the qBittorent master branch, and fallback support for IE (just light) is desired, I may add that as well eventually.
 
 # Preview
-![Preview Image]
-(https://github.com/raylanser/DarkLight-qBittorent-WebUI/blob/master/preview.png)
+![Preview Image](https://github.com/raylanser/DarkLight-qBittorent-WebUI/blob/master/preview.png)
 
 # Installation
 Instructions for using my Alternate WebUI:
