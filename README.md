@@ -17,13 +17,13 @@ Long term I intend to attempt mobile layouts, but those may never make it here. 
 
 # Preview
 ![Preview Image]
-(https://github.com/raylanser/DarkLight-qBittorent-WebUI/blob/master/preview.png?raw=true)
+(https://github.com/raylanser/DarkLight-qBittorent-WebUI/blob/master/preview.png)
 
 # Installation
-Instructions for using this Alternate WebUI:
+Instructions for using my Alternate WebUI:
 * Start with the instructions on alternate UI usage from the [qBittorent Master](https://github.com/qbittorrent/qBittorrent/wiki/Developing-alternate-WebUIs-(WIP)) (Download the files and place them in the inidcated locations)
-	* You can ignore the step adding the icons to the public folder.
+	* You can ignore the step adding the icons to the public folder. (A lot of unused files)
 * Download the DarkLight UI files
-	* **DarkLight Public folder:** The entire public folder can be replaced with my alternate version.
+	* **DarkLight Public folder:** The entire DarkLight public folder can replace the qBittorrent Master version.
 	* **DarkLight Private folder:** Here I've only included the files I've modified. Move, and overwrite as necessary, the new DarkLight files to their matching locations in from [qBittorent Master](https://github.com/qbittorrent/qBittorrent/wiki/Developing-alternate-WebUIs-(WIP)) files.
 * Follow the [Instructions](https://github.com/qbittorrent/qBittorrent/wiki/Alternate-WebUI-usage) in the qBittorrent master for activating the new webUI.
