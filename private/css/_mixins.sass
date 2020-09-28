@@ -1,0 +1,24 @@
+/* Sass Document */ 
+
+
+=themeLight($listname, $prefix)
+	\:root
+		@each $property, $value in $listname
+				#{$prefix}#{$property}: #{$value}
+	body.light-theme
+		&, & > *, & + *
+			@each $property, $value in $listname
+				#{$prefix}#{$property}: #{$value}
+
+=themeDark($listname, $prefix)
+	@media (prefers-color-scheme: dark)
+		body
+			&, & > *, & + *
+				@each $property, $value in $listname
+					#{$prefix}#{$property}: #{$value}
+	body.dark-theme
+		&, & > *, & + *
+			@each $property, $value in $listname
+				#{$prefix}#{$property}: #{$value}
+
+

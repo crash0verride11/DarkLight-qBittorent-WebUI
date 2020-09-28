@@ -1,0 +1,775 @@
+/* Reset */
+
+/*ul,ol,dl,li,dt,dd,h1,h2,h3,h4,h5,h6,pre,form,body,html,p,blockquote,fieldset,input,object,iframe  margin: 0 padding: 0 */
+
+a img, :link img, :visited img 
+	border: none
+
+/*table  border-collapse: collapse border-spacing: 0 */
+
+\:focus 
+	outline: none
+
+\:root
+	color-scheme: light dark
+
+.light-theme
+	color-scheme: light
+
+@media (prefers-color-scheme: dark)
+	color-scheme: dark
+
+.dark-theme
+	color-scheme: dark
+
+/*Quickly Generate Different theme icons paths and Classes with SASS*/
+
+@import mixins
+
+$styleLight: (mocha-frame: #000, char-spacing: 0em, font-color: #000, font-tint: #555, font-wgt: 400, text-hover: #ee6600, style-border-lte: #3a3a3a, icon-complete: #675348, transfer-bar: #050066)
+
+$styleDark: (mocha-frame: #555, char-spacing: .01em, font-color: #fff, font-tint: #ddd, font-wgt: 500, text-hover: #d1c52a, style-border-lte: #888, transfer-bar: #94BBD8)
+
++themeLight($styleLight, "--")
++themeDark($styleDark, "--")
+
+
+@import icons
+
+@mixin divIcon($size)
+	position: relative
+	background-size: $size
+	background-position: center
+	background-repeat: no-repeat
+	display: inline-block
+	
+
+/* Structure */
+
+body 
+	margin: 0
+	text-align: left
+	font-family: Arial, Helvetica, sans-serif
+	font-size: 12px
+	font-weight: var(--font-wgt)
+	line-height: 18px
+	letter-spacing: var(--char-spacing)
+	color: var(--font-tint)
+
+
+.aside 
+	width: 300px
+
+	
+.invisible 
+	display: none
+
+
+/* Typography */
+
+h2, h3, h4 
+	margin: 0
+	padding: 0 0 5px 0
+	font-size: 12px
+	font-weight: bold
+	color: #333
+
+
+h2 
+	font-size: 14px
+	color: var(--font-dtint)
+	font-weight: bold
+
+
+#mochaPage h3 
+	display: block
+	font-size: 12px
+	padding: 6px 0 6px 0
+	margin: 0 0 8px 0
+	border-bottom: 1px solid #bbb
+
+
+#error_div 
+	color: #f00
+	font-weight: bold
+
+
+h4 
+	font-size: 11px
+
+
+a 
+	color: var(--text-hover)
+	text-decoration: none
+	cursor: pointer
+	&:hover 
+		text-decoration: none
+
+
+p 
+	margin: 0
+	padding: 0 0 9px 0
+
+
+/* List Elements */
+
+ul 
+	list-style: outside
+	margin: 0 0 9px 16px
+
+
+dt 
+	font-weight: bold
+
+
+dd 
+	padding: 0 0 9px 0
+
+
+/* Code */
+
+pre 
+	background-color: var(--bg-color)
+	color: #006600
+	display: block
+	font-family: 'Courier New', Courier, monospace
+	font-size: 11px
+	max-height: 250px
+	overflow: auto
+	margin: 0 0 10px 0
+	padding: 10px
+	border: 1px solid #d1d7dc
+
+
+/* Dividers */
+
+hr 
+	background-color: #ddd
+	color: #ccc
+	height: 1px
+	border: 0px
+
+
+.vcenter 
+	vertical-align: middle
+
+
+#urls 
+	width: 90%
+	height: 100%
+
+
+#trackersUrls 
+	width: 90%
+	height: 100%
+
+
+#Filters ul 
+	list-style-type: none
+	li 
+		margin-left: -16px
+		
+
+	img 
+		padding: 2px 4px
+		vertical-align: middle
+		width: 16px
+		height: 16px
+
+
+.selectedFilter 
+	background-color: var(--row-select)
+	color: var(--selected-text)
+	a 
+		color: var(--selected-text)
+
+
+#properties 
+	background-color: #e5e5e5
+
+
+a.propButton 
+	border: 1px solid rgb(85, 81, 91)
+	/*border-radius: 3px*/
+	padding: 2px
+	margin-left: 3px
+	margin-right: 3px
+	img 
+		margin-bottom: -4px
+
+
+.scrollableMenu 
+	overflow-y: auto
+	overflow-x: hidden
+
+
+/* context menu specific */
+
+.contextMenu 
+	border: 1px solid #999
+	padding: 0
+	background: var(--row-alt)
+	list-style-type: none
+	display: none
+	li 
+		margin: 0
+		padding: 0
+		a 
+			display: block
+			padding: 5px 20px 5px 5px
+			font-size: 12px
+			text-decoration: none
+			font-family: tahoma, arial, sans-serif
+			color: var(--font-color)
+			white-space: nowrap
+			&:hover 
+				background-color: var(--bg-color)
+			&.disabled 
+				color: #ccc
+				font-style: italic
+				&:hover 
+					background-color: #eee
+		ul 
+			padding: 0
+			border: 1px solid #999
+			padding: 0
+			background: var(--bg-color)
+			list-style-type: none
+			position: absolute
+			left: -999em
+			z-index: 8000
+			margin: -29px 0 0 100%
+			width: 164px
+
+			li a 
+				position: relative
+		img 
+			width: 16px
+			height: 16px
+			margin-bottom: -4px
+			-ms-interpolation-mode: bicubic
+		input[type=checkbox] 
+			position: relative
+			top: 0px
+
+	li ul 
+
+	li a.arrow-right, li a:hover.arrow-right 
+		background-image: url(../images/arrow-right.gif)
+		background-repeat: no-repeat
+		background-position: right center
+
+	li, li li, li li li
+		&:hover ul, &.ieHover ul,
+			left: auto
+
+.contextMenu .separator 
+	border-top: 1px solid #999
+
+/* Sliders */
+
+.slider 
+	clear: both
+	position: relative
+	font-size: 12px
+	font-weight: bold
+	width: 400px
+	margin-bottom: 15px
+
+
+.sliderWrapper 
+	position: relative
+	font-size: 1px
+	line-height: 1px
+	height: 9px
+	width: 422px
+
+
+.sliderarea 
+	position: absolute
+	top: 0
+	left: 0
+	height: 7px
+	width: 420px
+	font-size: 1px
+	line-height: 1px
+	background: #f2f2f2 url(../images/slider-area.gif) repeat-x
+	border: 1px solid #a3a3a3
+	border-bottom: 1px solid #ccc
+	border-left: 1px solid #ccc
+	margin: 0
+	padding: 0
+	overflow: hidden
+
+
+.sliderknob 
+	position: absolute
+	top: 0
+	left: 0
+	height: 9px
+	width: 19px
+	font-size: 1px
+	line-height: 1px
+	background: url(../images/knob.gif) no-repeat
+	cursor: pointer
+	overflow: hidden
+	z-index: 2
+
+
+.update 
+	padding-bottom: 5px
+
+
+.mochaToolButton 
+	margin-right: 10px
+
+
+/* Mocha Customization */
+
+#mochaToolbar 
+	/*margin-top: 5px oldvalues*/
+	margin-top: 4px
+	position: relative
+	height: 30px
+	overflow-y: hidden
+	.divider
+		filter: var(--invert-image)
+		background-image: url(../images/toolbox-divider.gif)
+		background-repeat: no-repeat
+		background-position: left center
+		height: 10px
+		padding-left: 14px
+		padding-top: 14px	
+		div, img
+			filter: var(--invert-image)
+
+/* border-left: 2.5px solid var(--style-border-lte)
+		height: 10px
+		padding-left: 14px
+		padding-top: 10px*/
+
+
+.MyMenuIcon 
+	margin-left: -18px
+	margin-bottom: -3px
+	padding-right: 5px
+
+
+#mainWindowTabs 
+	float: right
+	margin: 4px 5px 0 0
+
+
+#torrentsFilterToolbar 
+	float: right
+	margin-right: 30px
+
+
+#torrentsFilterInput 
+	width: 160px
+	padding-left: 2em
+	background-image: var(--searchIcon)
+	background-repeat: no-repeat
+	background-size: 1.5em
+	background-position: left
+
+
+#torrentFilesFilterToolbar 
+	float: right
+	margin-right: 30px
+
+
+#torrentFilesFilterInput 
+	width: 160px
+	padding-left: 2em
+	background-image: var(--searchIcon)
+	background-repeat: no-repeat
+	background-size: 1.5em
+	background-position: left
+
+
+/* Tri-state checkbox */
+
+label
+	&.tristate 
+		background: url(../images/3-state-checkbox.gif) 0 0 no-repeat
+		display: block
+		float: left
+		height: 13px
+		margin: .15em 8px 5px 0px
+		overflow: hidden
+		text-indent: -999em
+		width: 13px
+	&.checked 
+		background-position: 0 -13px
+	&.partial 
+		background-position: 0 -26px
+
+
+fieldset
+	&.settings 
+		border: solid 1px var(--mocha-frame)
+		border-radius: 8px
+		-webkit-border-radius: 8px
+		-moz-border-radius: 8px
+		padding: 4px 4px 4px 10px
+		legend 
+			margin-left: 8px
+			padding: 4px
+			font-weight: bold
+		label 
+			padding: 2px
+			color: var(--font-color-tint)
+		& + div.formRow 
+			margin-top: 10px
+
+
+div.formRow 
+	clear: left
+	display: block
+
+.filterWrapper
+	margin-bottom: 4px
+
+.filterTitle 
+	background: var(--bg-color-tint)
+	font-weight: bold
+	text-transform: uppercase
+	padding: 0px 0px 4px 5px
+	display: block
+	overflow: hidden
+	white-space: nowrap
+	text-overflow: ellipsis
+	&:nth-of-type(1)
+		padding-top: 5px
+
+	div 
+		width: 16px
+		height: 16px
+		margin-bottom: -4px
+		padding: 0px 5px
+		position: relative
+		top: 0px
+		left: 2px
+		cursor: pointer
+		margin-top: 0px
+		background-image: var(--goDownIcon)
+		background-size: contain
+		background-repeat: no-repeat
+		display: inline-block
+		&.rotate 
+			transform: rotate(270deg)
+			top: -6px
+			left: 0px
+
+
+ul.filterList 
+	margin: 0 0 0 16px
+	padding-left: 0
+	a 
+		height: 22px
+		display: block
+		overflow: hidden
+		white-space: nowrap
+		text-overflow: ellipsis
+		color: inherit
+		vertical-align: middle
+	li:hover 
+		background-color: var(--row-hover)
+		a 
+			color: var(--selected-text)
+
+
+td.generalLabel 
+	white-space: nowrap
+	text-align: right
+	width: 1px
+	vertical-align: top
+
+
+#torrentFilesTableDiv 
+	line-height: 20px
+
+
+#torrentTrackersTableDiv,
+#webseedsTable 
+	line-height: 25px
+
+
+.filesTableCollapseIcon 
+	width: 16px
+	height: 16px
+	position: relative
+	top: 2px
+	cursor: pointer
+	margin-bottom: -3px
+	margin-top: 0px
+	padding-right: 4px
+	background-image: var(--goDownIcon)
+	background-size: contain
+	display: inline-block
+
+
+.filesTableCollapseIcon.rotate 
+	transform: rotate(270deg)
+	margin-bottom: -1px
+	margin-top: -2px
+	top: 4px
+
+
+.unselectable 
+	-webkit-touch-callout: none
+	-webkit-user-select: none
+	-khtml-user-select: none
+	-moz-user-select: none
+	-ms-user-select: none
+	user-select: none
+
+
+#prop_general 
+	padding: 2px
+
+
+#watched_folders_tab 
+	border-collapse: collapse
+
+
+#watched_folders_tab td, #watched_folders_tab th 
+	padding: 2px 4px
+	border: 1px solid black
+
+
+.select-watched-folder-editable 
+	position: relative
+	background-color: var(--bg-color)
+	border: solid grey 1px
+	width: 160px
+	height: 20px
+	select 
+		position: absolute
+		top: 0px
+		bottom: 0px
+		left: 0px
+		border: none
+		width: 160px
+		margin: 0
+	input 
+		position: absolute
+		top: 0px
+		left: 0px
+		width: 140px
+		padding: 1px
+		border: none
+	.ctxt_icon
+		background-origin: content-box
+		padding-left: 170px
+		cursor:pointer
+	select:focus, .select-editable input:focus 
+		outline: none
+
+
+/*
+ * Workaround to prevent the transfer list from
+ * disappearing when zooming in the browser.
+ */
+#filtersColumn_handle 
+	margin-left: -1px
+
+
+#error_div 
+	float: left
+	font-size: 14px
+
+
+.combo_priority 
+	font-size: 1em
+
+
+td.statusBarSeparator 
+	width: 22px
+	background-image: url('../images/toolbox-divider.gif')
+	background-repeat: no-repeat
+	background-position: center 1px
+	background-size: 2px 18px
+
+
+/* Statistics window */
+.statisticsValue 
+	text-align: right
+
+
+/* Search tab */
+
+#SearchPanel, #SearchPanel_wrapper, #SearchPanel_pad 
+	height: inherit
+
+
+#searchResults 
+	padding: 0 20px
+	height: 100%
+
+
+#searchResultsTableContainer 
+	height: calc(100% - 140px)
+	-moz-height: calc(100% - 140px)
+	-webkit-height: calc(100% - 140px)
+	overflow: auto
+
+
+#searchResultsTableDiv 
+	height: calc(100% - 26px) !important
+	-moz-height: calc(100% - 26px) !important
+	-webkit-height: calc(100% - 26px) !important
+
+
+#searchResults .dynamicTabTable 
+	width: 100%
+
+
+#searchResults .numSearchResults 
+	font-style: italic
+
+
+.red 
+	color: red
+
+
+.green 
+	color: green
+
+
+.searchPluginsTableRow 
+	cursor: pointer
+
+
+#torrentFilesTableDiv .dynamicTable tr.nonAlt 
+	background-color: var(--bg-color)
+	&.selected 
+		background-color: var(--row-select)
+		color: var(--selected-text)
+	&:hover 
+		background-color: var(--row-hover)
+		color: var(--selected-text)
+
+/*Main Menu Icons and Ovverides*/
+#desktopNavbar div
+	height: 16px
+	width: 16px
+	margin: 0px 5px -3px -18px
+	top: 1px
+	@include divIcon(contain)
+
+/*ToolBar Icons*/
+
+#mochaToolbar a > div
+	width: 24px
+	height: 24px
+	margin-right: 10px
+	@include divIcon(contain)	
+
+/*Filter List Icon Divs Sizing and Styles
+#statusFilterList
+	a > div
+		padding: 0px 4px
+		margin-bottom: -1px
+		top: 3px
+		width: 16px
+		height: 16px
+		@include divIcon(12px)
+
+/*Folder Icon Divs Sizing and Styles
+#tagFilterList, #categoryFilterList, #trackerFilterList
+	div
+		padding: 0px 4px
+		top: 1px
+		margin: 2px 0px
+		width: 16px
+		height: 16px
+		@include divIcon(contain)
+	
+/*Context Menu Icons*/
+.ctxt_icon
+	margin-top: -2px
+	top: 4px
+	height: 16px
+	width: 16px
+	@include divIcon(14px)
+
+#contextTagList
+	input[type=checkbox]
+		position: relative
+		top: 0px
+
+.spinnerIcon
+	background-image: url(images/spinner.gif)
+
+/*Footer */
+#desktopFooter .ctxt_icon
+	top: 2px
+	background-size: contain
+
+#alternativeSpeedLimits.ctxt_icon
+	width: 24px
+
+.speedLabel
+	div
+		top: 3px
+		margin-bottom: -2px
+		margin-right: 6px
+
+.gen_icon, .gen_icon24
+	margin-top: -2px
+	top: 4px
+	@include divIcon(contain)
+	
+.gen_icon
+	height: 16px
+	width: 16px
+.gen_icon24
+	height: 24px
+	width: 24px
+
+/*Transfer Bar overrides*/
+div
+	.progressbar_wrapper
+		border-color: var(--font-color) !important
+
+/* % of download completed*/
+.progressbar_dark
+	background: var(--transfer-bar) !important
+	color: var(--selected-text) !important
+
+/* % of download uncompleted*/
+.progressbar_light
+	background: var(--bg-color) !important
+	color: var(--font-color) !important
+
+/* Pref Pane Overrides */
+#speedTab > div
+	margin-top: -2px
+	top: 4px
+	height: 12px
+	width: 25px
+	@include divIcon(14px)
+	
+/*Dark Mode Toggle Button */
+$darkicon: (themeButton: "url(../icons/dark/theme_dark.svg)")
+$lighticon: (themeButton: "url(../icons/dark/theme_light.svg)")
++themeLight($darkicon, "--")
++themeDark($lighticon, "--")
+.themeButton
+	background-image: var(--themeButton)
+	@include divIcon(20px)
+
+#btn-toggle
+	overflow: visible
+	outline: 0
+	z-index: 2
+	position: relative
+	top: 0px
+	cursor: pointer
+	display: inline-block
+	
+
+#desktopFooterWrapper table
+	margin-top: -4px

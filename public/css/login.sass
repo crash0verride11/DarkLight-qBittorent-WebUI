@@ -1,0 +1,83 @@
+/* Sass Document */
+
+\:root
+	--bg-color: #fff
+	--text-color: #000
+	--themeButton: url(../icons/theme_dark.svg)
+
+/* switch to dark mode color */
+
+@media (prefers-color-scheme: dark)
+	body, body > *, body + *
+		color-scheme: dark
+		--bg-color: #121212
+		--text-color: #fff
+		--themeButton: url(../icons/theme_light.svg)
+
+body.dark-theme 
+	&, & > *, & + *
+		color-scheme: dark
+		--bg-color: #121212
+		--text-color: #fff
+		--themeButton: url(../icons/theme_light.svg)
+
+body.light-theme 
+	&, & > *, & + *
+		color-scheme: light 
+		--bg-color: #fff !important
+		--text-color: #000 !important
+		--themeButton: url(../icons/theme_dark.svg)
+
+#btn-toggle
+	outline: 0
+	position: absolute
+	z-index: 2
+	top: 18px
+	right: 18px
+	width: 32px
+	height: 32px
+	background-image: var(--themeButton)
+	background-position: center
+	background-size: contain
+	background-repeat: no-repeat
+	border-radius: 50%
+	cursor: pointer
+
+body
+	margin: 0px
+	text-align: left
+	font-family: Arial, Helvetica, sans-serif
+	font-size: 12px
+	line-height: 18px
+body > *
+	color: var(--text-color)
+	background: var(--bg-color)
+
+.col 
+	display: inline-block
+	vertical-align: middle
+
+.row 
+	margin-bottom: 5px
+
+
+#main
+	height: calc(100vh - 60px)
+	margin-left: auto
+	margin-right: auto
+	text-align: center
+	padding-top: 5em
+
+#formplace
+	text-align: left
+	padding: 10px
+
+#error_msg 
+	color: #f00
+
+
+#login 
+	float: right
+
+#logo img
+	height: 11em

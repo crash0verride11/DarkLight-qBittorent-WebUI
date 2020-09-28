@@ -1,0 +1,75 @@
+/*
+
+	Tabs.css for Mocha UI
+
+	Theme: Default
+
+	Copyright:
+		Copyright (c) 2007-2009 Greg Houston, <http://greghoustondesign.com/>.
+
+	License:
+		MIT-style license.
+
+	Required by:
+		Tabs.js
+	
+	Modified for Dark Mode by:
+	Raymond Lanser
+
+	*/
+
+/* Toolbar Tabs */
+
+@import mixins
+
+$tabsLight: (invert-image: 'invert(0%)', tab-image: 'url(../images/tabs.png)')
+
++themeLight($tabsLight, "--")
+
+$tabsDark: (invert-image: 'invert(100%)', tab-image: 'url(../images/tabs_dark.png)')
+
++themeDark($tabsDark, "--")
+
+
+
+.toolbarTabs
+	padding: 0 5px 2px 2px
+	background: var(--tab-image) repeat-x
+	background-position: left -70px
+	overflow: visible
+
+
+.tab-menu
+	padding-top: 1px
+	list-style: none
+	margin: 0
+	padding: 0
+	line-height: 16px
+	font-size: 11px
+
+
+.tab-menu li
+	float: left
+	margin: 0 0 5px 0
+	cursor: pointer
+	background: var(--tab-image) repeat-x
+	background-position: left -35px
+
+	&.selected
+		background: var(--tab-image) repeat-x
+		background-position: left 0
+		a
+			color: var(--font-tint)
+			font-weight: bold
+			background: var(--tab-image) repeat-x
+			background-position: right 0
+
+	a
+		display: block
+		margin-left: 8px
+		padding: 6px 15px 5px 9px
+		text-align: center
+		font-weight: normal
+		color: var(--font-tint)
+		background: var(--tab-image) repeat-x
+		background-position: right -35px

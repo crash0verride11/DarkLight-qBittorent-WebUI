@@ -1,0 +1,112 @@
+/**************************************************************
+	
+	Dynamic Table
+	v 0.4
+
+	**************************************************************/
+@import core
+	
+@mixin divIcon($size)
+	position: relative
+	background-size: $size
+	background-position: center
+	background-repeat: no-repeat
+	display: inline-block
+
+#transferList 
+	tr:hover
+		cursor: pointer
+	img.stateIcon
+		height: 1.3em
+		vertical-align: middle
+		margin-bottom: -1px
+	.dynamicTable td
+		padding: 0 2px
+	
+
+tr.dynamicTableHeader
+	cursor: pointer
+
+
+.dynamicTable
+	table-layout: fixed
+	width: 1%
+	padding: 0
+	border-spacing: 0
+	th, td
+		text-overflow: ellipsis
+		overflow: hidden
+		white-space: nowrap
+	th
+		background-color: var(--bg-color-tint)
+		padding: 4px 4px 4px 8px
+		white-space: nowrap
+		border-right-color: var(--style-border-lte)
+		border-right-style: solid
+		border-right-width: 1px
+		box-sizing: border-box
+		-moz-box-sizing: border-box
+		-webkit-box-sizing: border-box
+		&.sorted
+			padding-right: 5px
+			background-image: var(--goUpIcon)
+			background-origin: content-box
+			background-position: right
+			background-repeat: no-repeat
+			background-size: 15px
+			&.reverse
+				background-image: var(--goDownIcon)
+	td
+		padding: 0px 6px
+		white-space: nowrap
+		img.flags
+			height: 1.25em
+			vertical-align: middle
+	thead tr
+		background-color: var(--row-alt)
+	tbody tr
+		background-color: var(--bg-color)
+		&:nth-child(even), &.alt
+			background-color: var(--row-alt)
+		&.selected
+			background-color: var(--row-select)
+			color: var(--selected-text)
+		&:hover
+			background-color: var(--row-hover)
+			color: var(--selected-text)
+		td:nth-of-type(2)
+			div
+				padding: 2px 6px
+				width: auto
+				height: 16px
+				background-size: 14px
+				background-position: center
+				background-repeat: no-repeat
+	
+/*Dynamic Table Icons */	
+
+
+
+.folder_icon
+	height: 16px
+	width: 16px !important
+	background-image: var(--folder-icon)
+	position: relative
+	top: 2px
+	display: inline-block
+
+.dynamicTableFixedHeaderDiv
+	overflow: hidden
+
+
+.dynamicTableDiv
+	overflow: auto
+	thead th
+		line-height: 0px !important
+		height: 0px !important
+		padding-top: 0px !important
+		padding-bottom: 0px !important
+
+#searchPluginsTableDiv
+	tbody tr td
+		color: var(--font-color)
