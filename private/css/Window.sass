@@ -23,13 +23,9 @@
 	---------------------------------------------------------------- */
 @import mixins
 
-$windowLight: (title-gradient: 'url(../images/spacer.gif?from=fafafa&to=e5e5e5)', mocha-border-clr: #d9d9d9, mocha-border-lte: #dadada, mocha-button: #fefefe)
+$windowTheme: (title-gradient 'url(../images/spacer.gif?from=fafafa&to=e5e5e5)' 'url(../images/spacer.gif?from=555555&to=121212)', mocha-border-clr #d9d9d9 #333333, mocha-border-lte #dadada #3a3a3a, mocha-button #fefefe #ccc)
 
-+themeLight($windowLight, "--")
-
-$windowDark: (title-gradient: 'url(../images/spacer.gif?from=555555&to=121212)', mocha-border-clr: #333333, mocha-border-lte: #3a3a3a, mocha-button: #ccc)
-
-+themeDark($windowDark, "--")
++themeGenerate($windowTheme, "--")
 
 
 

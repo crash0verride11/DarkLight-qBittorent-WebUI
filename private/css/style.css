@@ -51,6 +51,7 @@ body.light-theme, body.light-theme > *, body.light-theme + * {
     --font-wgt: 500;
     --text-hover: #d1c52a;
     --style-border-lte: #888;
+    --icon-complete: #675348;
     --transfer-bar: #94BBD8; } }
 body.dark-theme, body.dark-theme > *, body.dark-theme + * {
   --mocha-frame: #555;
@@ -60,6 +61,7 @@ body.dark-theme, body.dark-theme > *, body.dark-theme + * {
   --font-wgt: 500;
   --text-hover: #d1c52a;
   --style-border-lte: #888;
+  --icon-complete: #675348;
   --transfer-bar: #94BBD8; }
 
 /* Sass Document */
@@ -1223,7 +1225,6 @@ body.dark-theme, body.dark-theme > *, body.dark-theme + * {
   z-index: 2;
   position: relative;
   top: 0px;
-  border-radius: 50%;
   cursor: pointer;
   display: inline-block; }
 

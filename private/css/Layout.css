@@ -22,8 +22,8 @@
 :root {
   --bg-color: #fff;
   --bg-color-tint: #f2f2f2;
-  --bg-color-menu: #eee;
   --bg-color-opp: #222;
+  --bg-menu: #eee;
   --font-color: #000;
   --font-tint: #555;
   --font-dtint: #555;
@@ -38,8 +38,8 @@
 body.light-theme, body.light-theme > *, body.light-theme + * {
   --bg-color: #fff;
   --bg-color-tint: #f2f2f2;
-  --bg-color-menu: #eee;
   --bg-color-opp: #222;
+  --bg-menu: #eee;
   --font-color: #000;
   --font-tint: #555;
   --font-dtint: #555;

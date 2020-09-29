@@ -1,5 +1,21 @@
 /* Sass Document */ 
-
+=themeGenerate($listname, $prefix)
+	\:root
+		@each $property, $valueL, $valueD in $listname
+			#{$prefix}#{$property}: #{$valueL}
+	body.light-theme
+		&, & > *, & + *
+			@each $property, $valueL, $valueD in $listname
+				#{$prefix}#{$property}: #{$valueL}
+	@media (prefers-color-scheme: dark)
+		body
+			&, & > *, & + *
+				@each $property, $valueL, $valueD in $listname
+					#{$prefix}#{$property}: #{$valueD}
+	body.dark-theme
+		&, & > *, & + *
+			@each $property, $valueL, $valueD in $listname
+				#{$prefix}#{$property}: #{$valueD}
 
 =themeLight($listname, $prefix)
 	\:root
@@ -22,3 +38,9 @@
 				#{$prefix}#{$property}: #{$value}
 
 
+=divIcon($size)
+	position: relative
+	background-size: $size
+	background-position: center
+	background-repeat: no-repeat
+	display: inline-block

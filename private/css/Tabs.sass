@@ -22,13 +22,9 @@
 
 @import mixins
 
-$tabsLight: (invert-image: 'invert(0%)', tab-image: 'url(../images/tabs.png)')
+$tabsTheme: (invert-image 'invert(0%)' 'invert(100%)', tab-image 'url(../images/tabs.png)' 'url(../images/tabs_dark.png)')
 
-+themeLight($tabsLight, "--")
-
-$tabsDark: (invert-image: 'invert(100%)', tab-image: 'url(../images/tabs_dark.png)')
-
-+themeDark($tabsDark, "--")
++themeGenerate($tabsTheme, "--")
 
 
 

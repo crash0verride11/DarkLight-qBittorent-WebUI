@@ -26,13 +26,9 @@
 	---------------------------------------------------------------- */
 @import mixins
 
-$layoutLight: (bg-color: #fff, bg-color-tint: #f2f2f2, bg-color-menu: #eee, bg-color-opp: #222, font-color: #000, font-tint: #555, font-dtint: #555, selected-text: #fff, row-alt: #eee, row-select: #354158, row-hover: #ee6600, divder-border: #ebebeb, border-col: #909090, navbar-bg: 'url(../images/bg-dropdown.gif)')
+$layoutTheme: (bg-color #fff #121212, bg-color-tint #f2f2f2 #202020, bg-color-opp #222 #eee, bg-menu #eee #444, font-color #000 #fff, font-tint #555 #ddd, font-dtint #555 #bbb, selected-text #fff #000, row-alt #eee #2a2a2a, row-select #354158 #94BBD8, row-hover #ee6600 #d1c52a, divder-border #ebebeb #363636, border-col #909090 #6f6f6f, navbar-bg 'url(../images/bg-dropdown.gif)' 'url(../images/bg-dropdown_dark.gif)')
 
-+themeLight($layoutLight, "--")
-
-$layoutDark: (bg-color: #121212, bg-color-tint: #202020, bg-color-opp: #eee, bg-menu: #444, font-color: #fff, font-tint: #ddd, font-dtint: #bbb, selected-text: #000, row-alt: #2a2a2a, row-select: #94BBD8, row-hover: #d1c52a, divder-border: #363636, border-col: #6f6f6f, navbar-bg: 'url(../images/bg-dropdown_dark.gif)')
-
-+themeDark($layoutDark, "--")
++themeGenerate($layoutTheme, "--")
 
 
 html, body

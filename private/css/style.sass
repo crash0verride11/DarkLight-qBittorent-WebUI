@@ -26,22 +26,11 @@ a img, :link img, :visited img
 
 @import mixins
 
-$styleLight: (mocha-frame: #000, char-spacing: 0em, font-color: #000, font-tint: #555, font-wgt: 400, text-hover: #ee6600, style-border-lte: #3a3a3a, icon-complete: #675348, transfer-bar: #050066)
+$styleTheme: (mocha-frame #000 #555, char-spacing 0em .01em, font-color #000 #fff, font-tint #555 #ddd, font-wgt 400 500, text-hover #ee6600 #d1c52a, style-border-lte #3a3a3a #888, icon-complete #675348 #675348, transfer-bar #050066 #94BBD8)
 
-$styleDark: (mocha-frame: #555, char-spacing: .01em, font-color: #fff, font-tint: #ddd, font-wgt: 500, text-hover: #d1c52a, style-border-lte: #888, transfer-bar: #94BBD8)
-
-+themeLight($styleLight, "--")
-+themeDark($styleDark, "--")
-
++themeGenerate($styleTheme, "--")
 
 @import icons
-
-@mixin divIcon($size)
-	position: relative
-	background-size: $size
-	background-position: center
-	background-repeat: no-repeat
-	display: inline-block
 	
 
 /* Structure */
