@@ -1367,3 +1367,78 @@ button {
   border-radius: 4px; }
   button:hover {
     background-color: var(--bg-color-tint); }
+
+/* Scrollbars */
+:root {
+  --thumbBG: #999;
+  --scrollbarBG: #F5F5F5; }
+
+body.light-theme, body.light-theme > *, body.light-theme + * {
+  --thumbBG: #999;
+  --scrollbarBG: #F5F5F5; }
+
+@media (prefers-color-scheme: dark) {
+  body, body > *, body + * {
+    --thumbBG: #666666;
+    --scrollbarBG: #222222; } }
+body.dark-theme, body.dark-theme > *, body.dark-theme + * {
+  --thumbBG: #666666;
+  --scrollbarBG: #222222; }
+
+body {
+  scrollbar-width: 10px;
+  scrollbar-color: var(--thumbBG) var(--scrollbarBG); }
+
+::-webkit-scrollbar-track, ::-webkit-scrollbar-corner {
+  border-radius: 0px;
+  background-color: var(--scrollbarBG); }
+
+::-webkit-scrollbar {
+  background-color: var(--scrollbarBG);
+  width: 10px; }
+  ::-webkit-scrollbar:horizontal {
+    height: 9px; }
+
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: var(--thumbBG);
+  opacity: 1; }
+  ::-webkit-scrollbar-thumb:window-inactive {
+    opacity: 0.6; }
+
+/* CHeckboxes */
+:root {
+  --checkBg: #BBB;
+  --checkBgActive: #375273;
+  --check-arr: url(../icons/dark/checkbox.svg); }
+
+body.light-theme, body.light-theme > *, body.light-theme + * {
+  --checkBg: #BBB;
+  --checkBgActive: #375273;
+  --check-arr: url(../icons/dark/checkbox.svg); }
+
+@media (prefers-color-scheme: dark) {
+  body, body > *, body + * {
+    --checkBg: #555;
+    --checkBgActive: #2485CE;
+    --check-arr: url(../icons/dark/checkbox.svg); } }
+body.dark-theme, body.dark-theme > *, body.dark-theme + * {
+  --checkBg: #555;
+  --checkBgActive: #2485CE;
+  --check-arr: url(../icons/dark/checkbox.svg); }
+
+input[type=checkbox] {
+  border-radius: 3px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  position: relative;
+  top: 2px;
+  width: 12px;
+  height: 12px;
+  background-color: var(--checkBg); }
+  #preferencesPage input[type=checkbox] {
+    top: 4px; }
+
+input[type=checkbox]:checked {
+  background: var(--checkBgActive) var(--check-arr) 52% center/66.6% no-repeat; }
