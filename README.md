@@ -4,7 +4,7 @@ A version of Dark/Light mode for the standard WeubUI using custom CSS Properties
 Basically I wanted to refresh my CSS / SASS skills by creating a dark mode for qBittorrent. The only other version of the standard UI I've seen is not toggle-albe. I've managed to keep changes primarily to the CSS files, though minor changes have been made to a few of the JS, and a few of the htmls as well. The changes outside of the CSS files primarily involve swapping img tags for divs with backgrounds so they can be changed dynamically without scripting.
 
 # Notes
-**Fields/buttons/scrollbars:** Change automatically in Safari because it respsects the "color-scheme" property. This is my primary browser, but in the next few weeks I'll add some CSS for these as well to support other browsers.
+**Scrollbars:** change automatically in Safari because it respsects the "color-scheme" property. I've coded some of the other items that don't change with this propert, but haven't gotten to scrollbars. 
 
 **Search Tab:** Is broken in the current version of the qBittorent-Master, so can't be sure on all the theming there. I also don't use RSS, but I did some testing there.
 
