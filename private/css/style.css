@@ -20,6 +20,10 @@ a img, :link img, :visited img {
 
 /*Quickly Generate Different theme icons paths and Classes with SASS */
 /* Sass Document */
+/* Main mixin for generating theme variables from lists */
+/* Four @each statements, instead of one earlier in the nesting creeates a more succinct final css. */
+/* Early version of the mixin for seperate dark and light lists. May still prove useful. */
+/* Div Background Properties Mixin */
 :root {
   --mocha-frame: #000;
   --char-spacing: 0em;
@@ -64,7 +68,73 @@ body.dark-theme, body.dark-theme > *, body.dark-theme + * {
   --icon-complete: #675348;
   --transfer-bar: #94BBD8; }
 
+:root {
+  --bg-color: #fff;
+  --bg-color-tint: #f2f2f2;
+  --bg-color-opp: #222;
+  --bg-menu: #eee;
+  --font-color: #000;
+  --font-tint: #555;
+  --font-dtint: #555;
+  --selected-text: #fff;
+  --row-alt: #eee;
+  --row-select: #354158;
+  --row-hover: #ee6600;
+  --divder-border: #ebebeb;
+  --border-col: #909090;
+  --navbar-bg: url(../images/bg-dropdown.gif); }
+
+body.light-theme, body.light-theme > *, body.light-theme + * {
+  --bg-color: #fff;
+  --bg-color-tint: #f2f2f2;
+  --bg-color-opp: #222;
+  --bg-menu: #eee;
+  --font-color: #000;
+  --font-tint: #555;
+  --font-dtint: #555;
+  --selected-text: #fff;
+  --row-alt: #eee;
+  --row-select: #354158;
+  --row-hover: #ee6600;
+  --divder-border: #ebebeb;
+  --border-col: #909090;
+  --navbar-bg: url(../images/bg-dropdown.gif); }
+
+@media (prefers-color-scheme: dark) {
+  body, body > *, body + * {
+    --bg-color: #121212;
+    --bg-color-tint: #202020;
+    --bg-color-opp: #eee;
+    --bg-menu: #444;
+    --font-color: #fff;
+    --font-tint: #ddd;
+    --font-dtint: #bbb;
+    --selected-text: #000;
+    --row-alt: #2a2a2a;
+    --row-select: #94BBD8;
+    --row-hover: #d1c52a;
+    --divder-border: #363636;
+    --border-col: #6f6f6f;
+    --navbar-bg: url(../images/bg-dropdown_dark.gif); } }
+body.dark-theme, body.dark-theme > *, body.dark-theme + * {
+  --bg-color: #121212;
+  --bg-color-tint: #202020;
+  --bg-color-opp: #eee;
+  --bg-menu: #444;
+  --font-color: #fff;
+  --font-tint: #ddd;
+  --font-dtint: #bbb;
+  --selected-text: #000;
+  --row-alt: #2a2a2a;
+  --row-select: #94BBD8;
+  --row-hover: #d1c52a;
+  --divder-border: #363636;
+  --border-col: #6f6f6f;
+  --navbar-bg: url(../images/bg-dropdown_dark.gif); }
+
 /* Sass Document */
+/* The icons were swapped in batched so there are three lists are necessary to accomodate inconsistent icon property and class naming.
+ * Eventually I'll clean up. */
 div {
   --goDownIcon: url(../icons/go-down.svg);
   --downButtonIcon: url(../icons/insert-link.svg);
@@ -1074,6 +1144,9 @@ td.statusBarSeparator {
     background-color: var(--row-hover);
     color: var(--selected-text); }
 
+/* Beginning of Majority of Overrides and New CSS
+ * Some changes have been made to the original CSS. 
+ * Mostly var replacements for hard values */
 /*Main Menu Icons and Ovverides */
 #desktopNavbar div {
   height: 16px;
@@ -1143,6 +1216,9 @@ td.statusBarSeparator {
   background-image: url(images/spinner.gif); }
 
 /*Footer */
+#desktopFooterWrapper table {
+  margin-top: -4px; }
+
 #desktopFooter .ctxt_icon {
   top: 2px;
   background-size: contain; }
@@ -1155,6 +1231,7 @@ td.statusBarSeparator {
   margin-bottom: -2px;
   margin-right: 6px; }
 
+/* Icon sizing */
 .gen_icon, .gen_icon24 {
   margin-top: -2px;
   top: 4px;
@@ -1198,7 +1275,7 @@ div .progressbar_wrapper {
   background-repeat: no-repeat;
   display: inline-block; }
 
-/*Dark Mode Toggle Button */
+/* Dark Mode Toggle Button */
 :root {
   --themeButton: url(../icons/dark/theme_dark.svg); }
 
@@ -1228,5 +1305,65 @@ body.dark-theme, body.dark-theme > *, body.dark-theme + * {
   cursor: pointer;
   display: inline-block; }
 
-#desktopFooterWrapper table {
-  margin-top: -4px; }
+/* Input field and scrollbars */
+:root {
+  --button-bg: #fff;
+  --brdr-top: #B5B5B5;
+  --brdr-bottom: #B5B5B5;
+  --select-arr: url(../icons/dark/arrow_light.svg); }
+
+body.light-theme, body.light-theme > *, body.light-theme + * {
+  --button-bg: #fff;
+  --brdr-top: #B5B5B5;
+  --brdr-bottom: #B5B5B5;
+  --select-arr: url(../icons/dark/arrow_light.svg); }
+
+@media (prefers-color-scheme: dark) {
+  body, body > *, body + * {
+    --button-bg: #555;
+    --brdr-top: #3A3A3A;
+    --brdr-bottom: #5A5A5A;
+    --select-arr: url(../icons/dark/arrow_dark.svg); } }
+body.dark-theme, body.dark-theme > *, body.dark-theme + * {
+  --button-bg: #555;
+  --brdr-top: #3A3A3A;
+  --brdr-bottom: #5A5A5A;
+  --select-arr: url(../icons/dark/arrow_dark.svg); }
+
+select {
+  color: var(--font-color);
+  border: 1px solid var(--border-col);
+  border-radius: 4px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  box-sizing: border-box;
+  padding: 3px 22px 3px 8px;
+  vertical-align: middle;
+  background: var(--bg-color-tint) var(--select-arr) right/auto 87.5% no-repeat; }
+  select:hover {
+    background-color: var(--bg-menu); }
+
+textarea, input[type=text], #mail_password_text {
+  background-color: var(--bg-color-tint);
+  border: 1px solid var(--brdr-top);
+  color: var(--font-color); }
+
+#torrentFilesFilterInput, #torrentsFilterInput {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-color: var(--bg-color);
+  border-top-color: var(--brdr-top);
+  border-left-color: var(--brdr-top);
+  border-right-color: var(--brdr-bottom);
+  border-bottom-color: var(--brdr-bottom);
+  border-image: none 100% 1 0 stretch; }
+
+button {
+  background-color: var(--button-bg);
+  border: 1px solid var(--border-col);
+  color: var(--font-color);
+  border-radius: 4px; }
+  button:hover {
+    background-color: var(--bg-color-tint); }

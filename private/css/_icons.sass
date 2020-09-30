@@ -1,4 +1,8 @@
 /* Sass Document */ 
+
+/* The icons were swapped in batched so there are three lists are necessary to accomodate inconsistent icon property and class naming.
+	Eventually I'll clean up. */
+
 $icons: (goDown: "go-down.svg", downButton: "insert-link.svg", uploadButton: "list-add.svg", listRemove: "list-remove.svg", resumeButton: "media-playback-start.svg", pauseButton: "media-playback-pause.svg", prefButton: "configure.svg", editClear: "edit-clear.svg", docEdit: "document-edit-verify.svg", editRename: "edit-rename.svg", goBottom: "go-bottom.svg", goTop: "go-top.svg", goUp: "go-up.svg", magnet: "kt-magnet.svg", maxDown: "kt-set-max-download-speed.svg", maxUp: "kt-set-max-upload-speed.svg", forceStart: "media-seek-forward.svg", viewCat: "view-categories.svg", editCopy: "edit-copy.svg", editDelete: "edit-delete.svg", helpAbout: "help-about.svg", helpContent: "help-contents.svg", logOut: "system-log-out.svg", viewStats: "view-statistics.svg", wallet: "wallet-open.svg", search: "edit-find.svg", collapse: "collapse.svg", slowOff: "slow_off.svg", slow: "slow.svg", connected: "connected.svg", disconnected: "disconnected.svg", firewalled: "firewalled.svg", seeding: "seeding.svg", groupDelete: "user-group-delete.svg", netServer: "network-server.svg", world: "application-x-mswinurl.svg", warning: "dialog-warning.svg", unavailable: "unavailable.svg", inbox: "mail-folder-inbox.svg", folderNew: "folder-new.svg", mailRead: "mail-mark-read.svg", viewRefresh: "view-refresh.svg", download: "download.svg", checked: "completed.svg")
 
 $buttons: (downButton: "insert-link.svg", uploadButton: "list-add.svg", resumeButton: "media-playback-start.svg", pauseButton: "media-playback-pause.svg", prefButton: "configure.svg")
@@ -6,7 +10,7 @@ $buttons: (downButton: "insert-link.svg", uploadButton: "list-add.svg", resumeBu
 
 $dytable: (downloading: "downloading.svg", stalledDL: "stalledDL.svg", stalledUP: "stalledUP.svg", uploading: "uploading.svg", paused: "paused.svg", completed: "completed.svg", queued: "queued.svg", checking: "checking.svg", error: "error.svg", resumed: "resumed.svg", filterall: "filterall.svg", filteractive: "filteractive.svg", filterinactive: "filterinactive.svg", filterstalled: "filterstalled.svg", folder: "inode-directory.svg")
 
-=themeGenerate($listname, $suffix)
+=themeIconify($listname, $suffix)
 	div
 		@each $icon, $link in $listname
 				--#{$icon}#{$suffix}: url(../icons/#{$link})
@@ -26,9 +30,9 @@ $dytable: (downloading: "downloading.svg", stalledDL: "stalledDL.svg", stalledUP
 		.#{$icon}#{$suffix}
 			background-image: var(--#{$icon}#{$suffix})
 
-+themeGenerate($icons, Icon)
-+themeGenerate($buttons, "") 
-+themeGenerate($dytable,-icon)
++themeIconify($icons, Icon)
++themeIconify($buttons, "") 
++themeIconify($dytable,-icon)
 	
 #downloadButton div, .insertLink
 	background-image: var(--downButton)

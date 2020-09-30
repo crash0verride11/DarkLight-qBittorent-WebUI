@@ -30,6 +30,10 @@ $styleTheme: (mocha-frame #000 #555, char-spacing 0em .01em, font-color #000 #ff
 
 +themeGenerate($styleTheme, "--")
 
+$layoutTheme: (bg-color #fff #121212, bg-color-tint #f2f2f2 #202020, bg-color-opp #222 #eee, bg-menu #eee #444, font-color #000 #fff, font-tint #555 #ddd, font-dtint #555 #bbb, selected-text #fff #000, row-alt #eee #2a2a2a, row-select #354158 #94BBD8, row-hover #ee6600 #d1c52a, divder-border #ebebeb #363636, border-col #909090 #6f6f6f, navbar-bg 'url(../images/bg-dropdown.gif)' 'url(../images/bg-dropdown_dark.gif)')
+
++themeGenerate($layoutTheme, "--")
+
 @import icons
 	
 
@@ -640,6 +644,12 @@ td.statusBarSeparator
 		background-color: var(--row-hover)
 		color: var(--selected-text)
 
+
+/* Beginning of Majority of Overrides and New CSS 
+	Some changes have been made to the original CSS. 
+	Mostly var replacements for hard values*/
+
+
 /*Main Menu Icons and Ovverides*/
 #desktopNavbar div
 	height: 16px
@@ -649,7 +659,6 @@ td.statusBarSeparator
 	@include divIcon(contain)
 
 /*ToolBar Icons*/
-
 #mochaToolbar a > div
 	width: 24px
 	height: 24px
@@ -693,6 +702,9 @@ td.statusBarSeparator
 	background-image: url(images/spinner.gif)
 
 /*Footer */
+#desktopFooterWrapper table
+	margin-top: -4px
+
 #desktopFooter .ctxt_icon
 	top: 2px
 	background-size: contain
@@ -705,6 +717,9 @@ td.statusBarSeparator
 		top: 3px
 		margin-bottom: -2px
 		margin-right: 6px
+
+
+/* Icon sizing */
 
 .gen_icon, .gen_icon24
 	margin-top: -2px
@@ -741,11 +756,10 @@ div
 	width: 25px
 	@include divIcon(14px)
 	
-/*Dark Mode Toggle Button */
-$darkicon: (themeButton: "url(../icons/dark/theme_dark.svg)")
-$lighticon: (themeButton: "url(../icons/dark/theme_light.svg)")
-+themeLight($darkicon, "--")
-+themeDark($lighticon, "--")
+/* Dark Mode Toggle Button */
+$themeIcon: (themeButton "url(../icons/dark/theme_dark.svg)" "url(../icons/dark/theme_light.svg)",)
++themeGenerate($themeIcon, "--")
+
 .themeButton
 	background-image: var(--themeButton)
 	@include divIcon(20px)
@@ -758,7 +772,48 @@ $lighticon: (themeButton: "url(../icons/dark/theme_light.svg)")
 	top: 0px
 	cursor: pointer
 	display: inline-block
+
+/* Input field and scrollbars */
+
+$fieldThemes: (button-bg #fff #555, brdr-top #B5B5B5 #3A3A3A, brdr-bottom #B5B5B5 #5A5A5A, select-arr "url(../icons/dark/arrow_light.svg)" "url(../icons/dark/arrow_dark.svg)")
++themeGenerate($fieldThemes, "--")
+
+select
+	color: var(--font-color)
+	border: 1px solid var(--border-col)
+	border-radius: 4px
+	-webkit-appearance: none
+	-moz-appearance: none
+	appearance: none
+	box-sizing: border-box
+	padding: 3px 22px 3px 8px
+	vertical-align: middle
+	background: var(--bg-color-tint) var(--select-arr) right / auto 87.5%  no-repeat 
+	&:hover
+		background-color: var(--bg-menu)
+
+textarea, input[type=text], #mail_password_text
+	background-color: var(--bg-color-tint)
+	border: 1px solid var(--brdr-top)
+	color: var(--font-color)
 	
 
-#desktopFooterWrapper table
-	margin-top: -4px
+#torrentFilesFilterInput, #torrentsFilterInput
+	appearance: none
+	-webkit-appearance: none
+	-moz-appearance: none
+	background-color: var(--bg-color)
+	border-top-color: var(--brdr-top)
+	border-left-color: var(--brdr-top)
+	border-right-color: var(--brdr-bottom)
+	border-bottom-color: var(--brdr-bottom)
+	border-image: none 100% 1 0 stretch
+
+button
+	background-color: var(--button-bg)
+	border: 1px solid var(--border-col)
+	color: var(--font-color)
+	border-radius: 4px
+	&:hover
+		background-color: var(--bg-color-tint)
+			

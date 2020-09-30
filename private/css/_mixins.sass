@@ -1,4 +1,7 @@
 /* Sass Document */ 
+
+/* Main mixin for generating theme variables from lists */
+/* Four @each statements, instead of one earlier in the nesting creeates a more succinct final css. */
 =themeGenerate($listname, $prefix)
 	\:root
 		@each $property, $valueL, $valueD in $listname
@@ -17,6 +20,7 @@
 			@each $property, $valueL, $valueD in $listname
 				#{$prefix}#{$property}: #{$valueD}
 
+/* Early version of the mixin for seperate dark and light lists. May still prove useful. */
 =themeLight($listname, $prefix)
 	\:root
 		@each $property, $value in $listname
@@ -37,7 +41,7 @@
 			@each $property, $value in $listname
 				#{$prefix}#{$property}: #{$value}
 
-
+/* Div Background Properties Mixin */
 =divIcon($size)
 	position: relative
 	background-size: $size
