@@ -16,24 +16,34 @@ licenses:
 ...
 */
 
-/* Added OnLoad event here, as one of the two files shared across all html*/
-window.onload = (event) => {
-  // Select the theme preference from localStorage
-const currentTheme = localStorage.getItem("theme");
-// If the current theme in localStorage is "dark"...
-if (currentTheme == "dark") {
-  // ...then use the .dark-theme class
-	if (window.matchMedia('(prefers-color-scheme: dark)').matches == false) {
-		document.body.classList.toggle("dark-theme");
-	}
-}
-if (currentTheme == "light") {
-  // ...then use the .dark-theme class
-	if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-		document.body.classList.toggle("light-theme");}
-	}	
 
+window.onload = (event) => {
+// Select the theme preference from localStorage and time stored
+const currentTheme = localStorage.getItem("theme");
+const prevDate = new Date(localStorage.getItem("themeDate"));	
+let curDate = new Date();
+// If themeForget is true the theme value will be ignored after a set number of hours
+let themeForget = true;
+// How many hours before the theme value is ignored
+var themeClock = 6;
+// Difference between time of last set theme preference value and current time.
+var dateDif = parseInt((curDate-prevDate)/(3600*1000));
+// If the current theme in localStorage is "dark"...
+if ((dateDif <= themeClock) || themeForget == false){
+	if (currentTheme == "dark") {
+		// ...then use the .dark-theme class
+		if (window.matchMedia('(prefers-color-scheme: dark)').matches == false) {
+			document.body.classList.toggle("dark-theme");
+		}
+	}
+	if (currentTheme == "light") {
+		// ...then use the .dark-theme class
+		if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+			document.body.classList.toggle("light-theme");}
+		}	
+}
 };
+
 
 (function(){this.MooTools={version:"1.4.5",build:"ab8ea8824dc3b24b6666867a2c4ed58ebb762cf0"};var e=this.typeOf=function(i){if(i==null){return"null";}if(i.$family!=null){return i.$family();
 }if(i.nodeName){if(i.nodeType==1){return"element";}if(i.nodeType==3){return(/\S/).test(i.nodeValue)?"textnode":"whitespace";}}else{if(typeof i.length=="number"){if(i.callee){return"arguments";
