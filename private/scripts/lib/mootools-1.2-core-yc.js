@@ -25,7 +25,7 @@ let curDate = new Date();
 // If themeForget is true the theme value will be ignored after a set number of hours
 let themeForget = true;
 // How many hours before the theme value is ignored
-var themeClock = 6;
+var themeClock = 3;
 // Difference between time of last set theme preference value and current time.
 var dateDif = parseInt((curDate-prevDate)/(3600*1000));
 // If the current theme in localStorage is "dark"...
