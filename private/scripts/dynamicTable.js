@@ -317,9 +317,9 @@ window.qBittorrent.DynamicTable = (function() {
                 id: menuId,
                 class: 'contextMenu scrollableMenu'
             });
-
+			/*CHANGE AREA */
             const createLi = function(columnName, text) {
-                const html = '<a href="#' + columnName + '" ><img src="icons/checked.svg"/>' + window.qBittorrent.Misc.escapeHtml(text) + '</a>';
+                const html = '<a href="#' + columnName + '" ><div class="ctxt_icon checkedIcon" style="margin-right:4px;"></div>' + window.qBittorrent.Misc.escapeHtml(text) + '</a>';
                 return new Element('li', {
                     html: html
                 });
@@ -903,8 +903,6 @@ window.qBittorrent.DynamicTable = (function() {
                 }
 
 				/*CHANGE AREA*/
-				
-                const img_path = 'icons/' + state + '.svg';
 				const img_class = state + '-icon';
 
                 if (td.getChildren('div').length > 0) {
@@ -2093,15 +2091,15 @@ window.qBittorrent.DynamicTable = (function() {
                         td = this.tableBody.rows[i].children[0];
                         break;
                     }
-                }
+                } /*Change AREA*/
                 if (td.getChildren('div').length > 0) {
                     const img = td.getChildren('div')[0];
                     if (img.src.indexOf(img_path) < 0) {
                         img.set('class', img_path);
                         img.set('title', status);
                     }
-                }
-                else { /*Change NEEDED*/
+                } /*Change AREA*/
+                else {
                     td.adopt(new Element('div', {
                         'class': img_path,
                         'height': '22px',
