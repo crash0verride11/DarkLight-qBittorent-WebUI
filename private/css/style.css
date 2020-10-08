@@ -1386,28 +1386,30 @@ body.dark-theme, body.dark-theme > *, body.dark-theme + * {
   --scrollbarBG: #222222; }
 
 body {
-  scrollbar-width: 10px;
+  scrollbar-width: 15px;
   scrollbar-color: var(--thumbBG) var(--scrollbarBG); }
 
 ::-webkit-scrollbar-track, ::-webkit-scrollbar-corner {
   border-radius: 0px;
+  padding: 8px;
   background-color: var(--scrollbarBG); }
 
 ::-webkit-scrollbar {
   background-color: var(--scrollbarBG);
-  width: 10px; }
+  width: 15px; }
   ::-webkit-scrollbar:horizontal {
-    height: 9px; }
+    height: 14px; }
 
 ::-webkit-scrollbar-thumb {
   border-radius: 10px;
-  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  border: 3.5px solid var(--scrollbarBG);
+  /* -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3) */
   background-color: var(--thumbBG);
   opacity: 1; }
   ::-webkit-scrollbar-thumb:window-inactive {
     opacity: 0.6; }
 
-/* CHeckboxes */
+/* Checkboxes */
 :root {
   --checkBg: #BBB;
   --checkBgActive: #375273;
