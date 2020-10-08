@@ -1,5 +1,5 @@
 # qBittorent-WebUI-DarkLight
-A version of Dark/Light mode for the standard WeubUI using custom CSS Properties as variables. This should support the same browsers as the standard WebUI, excluding IE, as long as the version is new enough to support vars and custom CSS properties (indicated in the table at the bottom). The theme is toggle-able and preferences for the dark or light theme are stored in local storage and remembered. The theme is currently set to ignore a set theme preference after three hours. This can be disabled or the length of time extended by changing values in "mootools-1.2-core-yc.js" (the only script file that was already linked in all the htmls) I'll add clearer instructions on changing this eventually.
+A version of Dark/Light mode for the standard WebUI using custom CSS Properties as variables. This should support the same browsers as the standard WebUI, excluding IE, as long as the version is new enough to support vars and custom CSS properties (indicated in the table at the bottom). The theme is toggle-able and preferences for the dark or light theme are stored in local storage and remembered. The theme is currently set to ignore a set theme preference after three hours. This can be disabled or the length of time extended by changing values in "mootools-1.2-core-yc.js" (the only script file that was already linked in all the htmls) I'll add clearer instructions on changing this eventually.
 
 Basically I wanted to refresh my CSS / SASS skills by creating a dark mode for qBittorrent. The only other version of the standard UI I've seen is not toggle-albe. I also primarily see versions that change colors but leave all the icons as is (not ideal for dark mode). I've managed to keep changes primarily to the CSS files, though minor changes have been made to a few of the JS, and a few of the htmls as well. The changes outside of the CSS files primarily involve swapping img tags for divs with backgrounds so they can be changed dynamically without scripting.
 
@@ -25,7 +25,7 @@ Instructions for using my Alternate WebUI:
 	* You can ignore the step adding the icons to the public folder. (A lot of unused files)
 * Download the DarkLight UI files
 	* **DarkLight Public folder:** The entire DarkLight public folder can replace the qBittorrent Master version.
-	* **DarkLight Private folder:** Here I've only included the files I've modified. Move, and overwrite as necessary, the new DarkLight files to their matching [qBittorent Master](https://github.com/qbittorrent/qBittorrent/wiki/Developing-alternate-WebUIs-(WIP)) file locations.
+	* **DarkLight Private folder:** Here I've only included the files I've modified. Move, and overwrite as necessary, the new DarkLight files to their matching [qBittorent Master](https://github.com/qbittorrent/qBittorrent/wiki/Developing-alternate-WebUIs-(WIP)) file locations. Just be sure the dark folder is inside the icons folder (private/icons/dark/iconfiles.svg)
 * Follow the [Instructions](https://github.com/qbittorrent/qBittorrent/wiki/Alternate-WebUI-usage) in the qBittorrent master for activating the new webUI.
 
 # Compatibility
