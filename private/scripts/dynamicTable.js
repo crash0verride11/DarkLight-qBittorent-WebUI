@@ -1764,7 +1764,7 @@ window.qBittorrent.DynamicTable = (function() {
                 }
                 else {
                     const treeImg = new Element('img', {
-                        src: '../images/L.gif',
+                        src: 'images/L.gif',
                         styles: {
                             'margin-bottom': -2
                         }
@@ -2060,9 +2060,9 @@ window.qBittorrent.DynamicTable = (function() {
             }
             row['data'] = {};
             tds[0].style.overflow = 'visible';
-            let indentaion = row.full_data.indentaion;
-            tds[0].style.paddingLeft = (indentaion * 32 + 4) + 'px';
-            tds[1].style.paddingLeft = (indentaion * 32 + 4) + 'px';
+            let indentation = row.full_data.indentation;
+            tds[0].style.paddingLeft = (indentation * 32 + 4) + 'px';
+            tds[1].style.paddingLeft = (indentation * 32 + 4) + 'px';
         },
         updateIcons: function() {
             // state_icon
