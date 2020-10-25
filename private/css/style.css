@@ -1184,10 +1184,22 @@ td.statusBarSeparator {
   display: inline-block; }
 
 /*Folder Icon Divs Sizing and Styles */
-#tagFilterList div, #categoryFilterList div, #trackerFilterList div {
+#tagFilterList div, #categoryFilterList div {
   padding: 0px 4px;
   top: 1px;
   margin: 2px 0px;
+  width: 16px;
+  height: 16px;
+  position: relative;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: inline-block; }
+
+#trackerFilterList div {
+  padding: 0px 4px;
+  top: 4px;
+  margin: 0px;
   width: 16px;
   height: 16px;
   position: relative;
