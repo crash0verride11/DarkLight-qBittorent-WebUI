@@ -10,11 +10,13 @@ Basically I wanted to refresh my CSS / SASS skills by creating a dark mode for q
 
 **Colors/Design:** I'll probably fork this eventually with custom icons throughout and a redsigned style, but I'll be leaving this in-tact as relatively close version of the original UI.
 
-**Scrollbars:** Use CSS styling, which has only really been supported in the last few years. Compatibility may vary, but works in current versions of Safari, Chrome, and Firefox. I doubt I'll ever implement a javascript method. 
+**Scrollbars:** Use CSS styling, which has only really been supported in the last few years. Compatibility may vary, but works in current versions of Safari, Chrome, and Firefox. I doubt I'll ever implement a javascript method.
 
 **Near future:** I won't be making many changes, just stream-lineing the SASS with some more mixins. I might implement some javascript to replace some icons in the "views" html files, so there are even fewer files to keep on parity with the master (particularly the preference file).
 
 Long term I intend to attempt mobile layouts, but those may never make it here. For the short term I've made the login page more mobile device friendly (not tiny). If this webUI gets noticed by the qBittorent master branch, and fallback support for IE (just light) is desired, I may add that as well eventually. I may also work on changing the icons to a diferent tag and try some methods to stylesheet the fills.
+
+**Older Versions of qBittorrent:** It's been reported that the master alternate UI / my revised version has issues with qBittorrent version 4.1.5. This probably applies to versions before the 4.2 API changes. Under investigation.
 
 # Preview
 ![Preview Image](https://github.com/raylanser/DarkLight-qBittorent-WebUI/blob/master/preview.png)
