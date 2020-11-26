@@ -4,6 +4,8 @@ A version of Dark/Light mode for the standard WebUI using custom CSS Properties.
 Basically I wanted to refresh my CSS / SASS skills by creating a dark mode for qBittorrent. The only other version of the standard UI I've seen is not toggle-albe. I also primarily see versions that change colors but leave all the icons as is (not ideal for dark mode). I've managed to keep changes primarily to the CSS files, though minor changes have been made to a few of the JS, and a few of the htmls as well. The changes outside of the CSS files primarily involve swapping img tags for divs with backgrounds so they can be changed dynamically without scripting.
 
 # Notes
+**Older Versions of qBittorrent:** It's been reported that my revised version has issues with qBittorrent version 4.1.5 (and confirmed in initial testing). This probably applies to versions before the 4.2 API changes, but those not up to date with the master may have unexpected issues. Possible fixes may come in the future as I simplify how this works / updating.
+
 **Search/RSS Tabs:** I also don't use either of these tabs, but I did some testing for themeing. If you see something that clearly is not as it should be, let me know in the issues.
 
 **Icons:** I've compiled UI icons that I've re-colored for dark mode into an "_IC.ai" for quick recoloring.
@@ -15,8 +17,6 @@ Basically I wanted to refresh my CSS / SASS skills by creating a dark mode for q
 **Near future:** I won't be making many changes, just stream-lineing the SASS with some more mixins. I might implement some javascript to replace some icons in the "views" html files, so there are even fewer files to keep on parity with the master (particularly the preference file).
 
 Long term I intend to attempt mobile layouts, but those may never make it here. For the short term I've made the login page more mobile device friendly (not tiny). If this webUI gets noticed by the qBittorent master branch, and fallback support for IE (just light) is desired, I may add that as well eventually. I may also work on changing the icons to a diferent tag and try some methods to stylesheet the fills.
-
-**Older Versions of qBittorrent:** It's been reported that the master alternate UI / my revised version has issues with qBittorrent version 4.1.5. This probably applies to versions before the 4.2 API changes. Under investigation.
 
 # Preview
 ![Preview Image](https://github.com/raylanser/DarkLight-qBittorent-WebUI/blob/master/preview.png)
