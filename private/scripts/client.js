@@ -1224,6 +1224,10 @@ new Keyboard({
         'delete': function(event) {
             deleteFN();
             event.preventDefault();
+        },
+        'shift+delete': (event) => {
+            deleteFN(true);
+            event.preventDefault();
         }
     }
 }).activate();
