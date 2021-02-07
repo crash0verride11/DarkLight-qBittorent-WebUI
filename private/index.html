@@ -152,6 +152,36 @@
 				<a class="divider"></a>
 				<a id="btn-toggle" onClick="themeSwap()"><div class="themeButton" style="background-size: 20px;"></div></a>
 				<a id="preferencesButton" class="divider"><div title="QBT_TR(Options)QBT_TR[CONTEXT=OptionsDialog]"></div></a>
+                <script>
+                    document.getElementById("preferencesLink").addEventListener("click", iconFix);
+                    document.getElementById("preferencesButton").addEventListener("click", iconFix);
+                    function iconFix() {
+                         setTimeout(function() {
+                            var imgTags = document.getElementsByTagName("img");
+                            if (imgTags.length > 0) {
+                                var base_url = window.location.origin;
+                                var addList_url = base_url + '/icons/list-add.svg';
+                                var slowOff_url = base_url + '/icons/slow_off.svg';
+                                var slow_url = base_url + '/icons/slow.svg';
+                             };
+                            for (i = 0; i < imgTags.length; i++) {
+                                switch (imgTags[i].src) {
+                                    case addList_url:
+                                        imgTags[i].outerHTML = '<div class="ctxt_icon listAdd" onclick="qBittorrent.Preferences.addWatchFolder();"></div>';
+                                        i--;
+                                        break;
+                                    case slowOff_url:
+                                        imgTags[i].outerHTML = '<div class="slowOffIcon" style="height: 12px; width: 25px"></div>';
+                                        i--;
+                                        break;
+                                    case slow_url:
+                                        imgTags[i].outerHTML = '<div class="slowIcon" style="height: 12px; width: 25px"></div>';
+                                        i--;
+                                }
+                            };
+                        }, 100);
+                    };
+                    </script>
                 <div id="mainWindowTabs" class="toolbarTabs">
                     <ul id="mainWindowTabsList" class="tab-menu">
                         <li id="transfersTabLink" class="selected"><a class="tab">QBT_TR(Transfers)QBT_TR[CONTEXT=MainWindow]</a></li>
