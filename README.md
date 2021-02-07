@@ -14,7 +14,7 @@ Basically I wanted to refresh my CSS / SASS skills by creating a dark mode for q
 
 **Scrollbars:** Use CSS styling, which has only really been supported in the last few years. Compatibility may vary, but works in current versions of Safari, Chrome, and Firefox. I doubt I'll ever implement a javascript method.
 
-**Near future:** I won't be making many changes, just stream-lineing the SASS with some more mixins. I might implement some javascript to replace some icons in the "views" html files, so there are even fewer files to keep on parity with the master (particularly the preference file).
+**Near future:** I won't be making many changes, just stream-lineing the SASS with some more mixins. I may continue to replace some icons in the "views" html files, so there are even fewer files to keep on parity with the master (as I've done for the preference window).
 
 Long term I intend to attempt mobile layouts, but those may never make it here. For the short term I've made the login page more mobile device friendly (not tiny). If this webUI gets noticed by the qBittorent master branch, and fallback support for IE (just light) is desired, I may add that as well eventually. I may also work on changing the icons to a diferent tag and try some methods to stylesheet the fills.
 
