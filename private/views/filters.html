@@ -14,6 +14,7 @@
         <li id="stalled_filter"><a href="#" onclick="setFilter('stalled');return false;"><div class="filterstalled-icon"></div>QBT_TR(Stalled (0))QBT_TR[CONTEXT=StatusFilterWidget]</a></li>
         <li id="stalled_uploading_filter"><a href="#" onclick="setFilter('stalled_uploading');return false;"><div class="stalledUP-icon"></div>QBT_TR(Stalled Uploading (0))QBT_TR[CONTEXT=StatusFilterWidget]</a></li>
         <li id="stalled_downloading_filter"><a href="#" onclick="setFilter('stalled_downloading');return false;"><div class="stalledDL-icon"></div>QBT_TR(Stalled Downloading (0))QBT_TR[CONTEXT=StatusFilterWidget]</a></li>
+        <li id="checking_filter"><a href="#" onclick="setFilter('checking'); return false;"><img src="icons/checking.svg" alt="Checking" />QBT_TR(Checking (0))QBT_TR[CONTEXT=StatusFilterWidget]</a></li>
         <li id="errored_filter"><a href="#" onclick="setFilter('errored');return false;"><div class="error-icon"></div>QBT_TR(Errored (0))QBT_TR[CONTEXT=StatusFilterWidget]</a></li>
     </ul>
 </div>
@@ -159,4 +160,6 @@
 
         return exports();
     })();
+    
+    Object.freeze(window.qBittorrent.Filters);
 </script>
