@@ -14,9 +14,9 @@ Basically I wanted to refresh my CSS / SASS skills by creating a dark mode for q
 
 **Scrollbars:** Use CSS styling, which has only really been supported in the last few years. Compatibility may vary, but works in current versions of Safari, Chrome, and Firefox. I doubt I'll ever implement a javascript method.
 
-**Near future:** I won't be making many changes, just stream-lineing the SASS with some more mixins. I may continue to replace some icons in the "views" html files, so there are even fewer files to keep on parity with the master (as I've done for the preference window).
+**Near future:** I won't be making many changes, just stream-lineing the SASS with some more mixins. I may switch to replacing some icons in the "views" html files via JS, so there are even fewer files to keep on parity with the master (as I've done for the preference window).
 
-Long term I intend to attempt mobile layouts, but those may never make it here. For the short term I've made the login page more mobile device friendly (not tiny). If this webUI gets noticed by the qBittorent master branch, and fallback support for IE (just light) is desired, I may add that as well eventually. I may also work on changing the icons to a diferent tag and try some methods to stylesheet the fills.
+Long term I intend to attempt mobile layouts, but those may never make it here. For the short term I've made the login page more mobile device friendly (not tiny). If this webUI gets noticed by the qBittorent master branch, and fallback support for IE (just light) is desired, I may add that as well eventually. I may also work on changing the icons to a different tag and try some methods to stylesheet the fills.
 
 # Preview
 ![Preview Image](https://github.com/raylanser/DarkLight-qBittorent-WebUI/blob/master/preview.png)
@@ -29,6 +29,12 @@ Instructions for using my Alternate WebUI:
 	* **DarkLight Public folder:** The entire DarkLight public folder can replace the qBittorrent Master version.
 	* **DarkLight Private folder:** Here I've only included the files I've modified. Move, and overwrite as necessary, the new DarkLight files to their matching [qBittorent Master](https://github.com/qbittorrent/qBittorrent/wiki/Developing-alternate-WebUIs-(WIP)) file locations. Just be sure the dark folder is inside the icons folder (private/icons/dark/iconfiles.svg)
 * Follow the [Instructions](https://github.com/qbittorrent/qBittorrent/wiki/Alternate-WebUI-usage) in the qBittorrent master for activating the new webUI.
+
+# Post-Installation
+* Issues with parts of the UI not showing as dark may be a result of existing cached website data. To clear your cache on different browsers try (some methods clear all website data):
+	* Firefox: https://support.mozilla.org/en-US/kb/how-clear-firefox-cache
+	* Chrome: https://support.google.com/accounts/answer/32050?hl
+	* Safari: https://www.macrumors.com/how-to/clear-safari-cache/
 
 # Compatibility
 This should be the primary indicator of compatibility.
