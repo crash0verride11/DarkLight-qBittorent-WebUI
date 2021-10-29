@@ -31,7 +31,7 @@ Instructions for using my Alternate WebUI:
 * Follow the [Instructions](https://github.com/qbittorrent/qBittorrent/wiki/Alternate-WebUI-usage) in the qBittorrent master for activating the new webUI.
 
 # Post-Installation
-* Issues with parts of the UI not showing as dark may be a result of existing cached website data. To clear your cache on different browsers try (some methods clear all website data):
+* Issues with parts of the UI not showing as dark may be a result of existing cached website data. To clear your cache on different browsers try the following: (some methods clear all website data)
 	* Firefox: https://support.mozilla.org/en-US/kb/how-clear-firefox-cache
 	* Chrome: https://support.google.com/accounts/answer/32050?hl
 	* Safari: https://www.macrumors.com/how-to/clear-safari-cache/
