@@ -2,12 +2,12 @@
 
 /*ul,ol,dl,li,dt,dd,h1,h2,h3,h4,h5,h6,pre,form,body,html,p,blockquote,fieldset,input,object,iframe  margin: 0 padding: 0 */
 
-a img, :link img, :visited img 
+a img, :link img, :visited img
 	border: none
 
 /*table  border-collapse: collapse border-spacing: 0 */
 
-\:focus 
+\:focus
 	outline: none
 
 \:root
@@ -35,11 +35,11 @@ $layoutTheme: (bg-color #fff #121212, bg-color-tint #f2f2f2 #202020, bg-color-op
 +themeGenerate($layoutTheme, "--")
 
 @import icons
-	
+
 
 /* Structure */
 
-body 
+body
 	margin: 0
 	text-align: left
 	font-family: Arial, Helvetica, sans-serif
@@ -50,17 +50,17 @@ body
 	color: var(--font-tint)
 
 
-.aside 
+.aside
 	width: 300px
 
-	
-.invisible 
+
+.invisible
 	display: none
 
 
 /* Typography */
 
-h2, h3, h4 
+h2, h3, h4
 	margin: 0
 	padding: 0 0 5px 0
 	font-size: 12px
@@ -68,13 +68,13 @@ h2, h3, h4
 	color: #333
 
 
-h2 
+h2
 	font-size: 14px
 	color: var(--font-dtint)
 	font-weight: bold
 
 
-#mochaPage h3 
+#mochaPage h3
 	display: block
 	font-size: 12px
 	padding: 6px 0 6px 0
@@ -82,46 +82,46 @@ h2
 	border-bottom: 1px solid #bbb
 
 
-#error_div 
+#error_div
 	color: #f00
 	font-weight: bold
 
 
-h4 
+h4
 	font-size: 11px
 
 
-a 
+a
 	color: var(--text-hover)
 	text-decoration: none
 	cursor: pointer
-	&:hover 
+	&:hover
 		text-decoration: none
 
 
-p 
+p
 	margin: 0
 	padding: 0 0 9px 0
 
 
 /* List Elements */
 
-ul 
+ul
 	list-style: outside
 	margin: 0 0 9px 16px
 
 
-dt 
+dt
 	font-weight: bold
 
 
-dd 
+dd
 	padding: 0 0 9px 0
 
 
 /* Code */
 
-pre 
+pre
 	background-color: var(--bg-color)
 	color: #006600
 	display: block
@@ -136,78 +136,78 @@ pre
 
 /* Dividers */
 
-hr 
+hr
 	background-color: #ddd
 	color: #ccc
 	height: 1px
 	border: 0px
 
 
-.vcenter 
+.vcenter
 	vertical-align: middle
 
 
-#urls 
+#urls
 	width: 90%
 	height: 100%
 
 
-#trackersUrls 
+#trackersUrls
 	width: 90%
 	height: 100%
 
 
-#Filters ul 
+#Filters ul
 	list-style-type: none
-	li 
+	li
 		margin-left: -16px
-		
 
-	img 
+
+	img
 		padding: 2px 4px
 		vertical-align: middle
 		width: 16px
 		height: 16px
 
 
-.selectedFilter 
+.selectedFilter
 	background-color: var(--row-select)
 	color: var(--selected-text)
-	a 
+	a
 		color: var(--selected-text)
 
 
-#properties 
+#properties
 	background-color: #e5e5e5
 
 
-a.propButton 
+a.propButton
 	border: 1px solid rgb(85, 81, 91)
 	/*border-radius: 3px*/
 	padding: 2px
 	margin-left: 3px
 	margin-right: 3px
-	img 
+	img
 		margin-bottom: -4px
 
 
-.scrollableMenu 
+.scrollableMenu
 	overflow-y: auto
 	overflow-x: hidden
 
 
 /* context menu specific */
 
-.contextMenu 
+.contextMenu
 	border: 1px solid #999
 	padding: 0
 	background: var(--row-alt)
 	list-style-type: none
 	display: none
-	li 
+	li
 		margin: 0
 		padding: 0
-		a 
+		a
 			display: block
 			padding: 5px 20px 5px 5px
 			font-size: 12px
@@ -215,14 +215,14 @@ a.propButton
 			font-family: tahoma, arial, sans-serif
 			color: var(--font-color)
 			white-space: nowrap
-			&:hover 
+			&:hover
 				background-color: var(--bg-color)
-			&.disabled 
+			&.disabled
 				color: #ccc
 				font-style: italic
-				&:hover 
+				&:hover
 					background-color: #eee
-		ul 
+		ul
 			padding: 0
 			border: 1px solid #999
 			padding: 0
@@ -234,20 +234,20 @@ a.propButton
 			margin: -29px 0 0 100%
 			width: 164px
 
-			li a 
+			li a
 				position: relative
-		img 
+		img
 			width: 16px
 			height: 16px
 			margin-bottom: -4px
 			-ms-interpolation-mode: bicubic
-		input[type=checkbox] 
+		input[type=checkbox]
 			position: relative
 			top: 0px
 
-	li ul 
+	li ul
 
-	li a.arrow-right, li a:hover.arrow-right 
+	li a.arrow-right, li a:hover.arrow-right
 		background-image: url(../images/arrow-right.gif)
 		background-repeat: no-repeat
 		background-position: right center
@@ -256,12 +256,12 @@ a.propButton
 		&:hover ul, &.ieHover ul,
 			left: auto
 
-.contextMenu .separator 
+.contextMenu .separator
 	border-top: 1px solid #999
 
 /* Sliders */
 
-.slider 
+.slider
 	clear: both
 	position: relative
 	font-size: 12px
@@ -270,7 +270,7 @@ a.propButton
 	margin-bottom: 15px
 
 
-.sliderWrapper 
+.sliderWrapper
 	position: relative
 	font-size: 1px
 	line-height: 1px
@@ -278,7 +278,7 @@ a.propButton
 	width: 422px
 
 
-.sliderarea 
+.sliderarea
 	position: absolute
 	top: 0
 	left: 0
@@ -295,7 +295,7 @@ a.propButton
 	overflow: hidden
 
 
-.sliderknob 
+.sliderknob
 	position: absolute
 	top: 0
 	left: 0
@@ -309,17 +309,17 @@ a.propButton
 	z-index: 2
 
 
-.update 
+.update
 	padding-bottom: 5px
 
 
-.mochaToolButton 
+.mochaToolButton
 	margin-right: 10px
 
 
 /* Mocha Customization */
 
-#mochaToolbar 
+#mochaToolbar
 	/*margin-top: 5px oldvalues*/
 	margin-top: 4px
 	position: relative
@@ -332,7 +332,7 @@ a.propButton
 		background-position: left center
 		height: 10px
 		padding-left: 14px
-		padding-top: 14px	
+		padding-top: 14px
 		div, img
 			filter: var(--invert-image)
 
@@ -342,23 +342,23 @@ a.propButton
 		padding-top: 10px*/
 
 
-.MyMenuIcon 
+.MyMenuIcon
 	margin-left: -18px
 	margin-bottom: -3px
 	padding-right: 5px
 
 
-#mainWindowTabs 
+#mainWindowTabs
 	float: right
 	margin: 4px 5px 0 0
 
 
-#torrentsFilterToolbar 
+#torrentsFilterToolbar
 	float: right
 	margin-right: 30px
 
 
-#torrentsFilterInput 
+#torrentsFilterInput
 	width: 160px
 	padding-left: 2em
 	background-image: var(--searchIcon)
@@ -367,12 +367,12 @@ a.propButton
 	background-position: left
 
 
-#torrentFilesFilterToolbar 
+#torrentFilesFilterToolbar
 	float: right
 	margin-right: 30px
 
 
-#torrentFilesFilterInput 
+#torrentFilesFilterInput
 	width: 160px
 	padding-left: 2em
 	background-image: var(--searchIcon)
@@ -384,7 +384,7 @@ a.propButton
 /* Tri-state checkbox */
 
 label
-	&.tristate 
+	&.tristate
 		background: url(../images/3-state-checkbox.gif) 0 0 no-repeat
 		display: block
 		float: left
@@ -393,38 +393,38 @@ label
 		overflow: hidden
 		text-indent: -999em
 		width: 13px
-	&.checked 
+	&.checked
 		background-position: 0 -13px
-	&.partial 
+	&.partial
 		background-position: 0 -26px
 
 
 fieldset
-	&.settings 
+	&.settings
 		border: solid 1px var(--mocha-frame)
 		border-radius: 8px
 		-webkit-border-radius: 8px
 		-moz-border-radius: 8px
 		padding: 4px 4px 4px 10px
-		legend 
+		legend
 			margin-left: 8px
 			padding: 4px
 			font-weight: bold
-		label 
+		label
 			padding: 2px
 			color: var(--font-color-tint)
-		& + div.formRow 
+		& + div.formRow
 			margin-top: 10px
 
 
-div.formRow 
+div.formRow
 	clear: left
 	display: block
 
 .filterWrapper
 	margin-bottom: 4px
 
-.filterTitle 
+.filterTitle
 	background: var(--bg-color-tint)
 	font-weight: bold
 	text-transform: uppercase
@@ -436,7 +436,7 @@ div.formRow
 	&:nth-of-type(1)
 		padding-top: 5px
 
-	div 
+	div
 		width: 16px
 		height: 16px
 		margin-bottom: -4px
@@ -450,16 +450,16 @@ div.formRow
 		background-size: contain
 		background-repeat: no-repeat
 		display: inline-block
-		&.rotate 
+		&.rotate
 			transform: rotate(270deg)
 			top: -6px
 			left: 0px
 
 
-ul.filterList 
+ul.filterList
 	margin: 0 0 0 16px
 	padding-left: 0
-	a 
+	a
 		height: 22px
 		display: block
 		overflow: hidden
@@ -467,29 +467,29 @@ ul.filterList
 		text-overflow: ellipsis
 		color: inherit
 		vertical-align: middle
-	li:hover 
+	li:hover
 		background-color: var(--row-hover)
-		a 
+		a
 			color: var(--selected-text)
 
 
-td.generalLabel 
+td.generalLabel
 	white-space: nowrap
 	text-align: right
 	width: 1px
 	vertical-align: top
 
 
-#torrentFilesTableDiv 
+#torrentFilesTableDiv
 	line-height: 20px
 
 
 #torrentTrackersTableDiv,
-#webseedsTable 
+#webseedsTable
 	line-height: 25px
 
 
-.filesTableCollapseIcon 
+.filesTableCollapseIcon
 	width: 16px
 	height: 16px
 	position: relative
@@ -503,14 +503,14 @@ td.generalLabel
 	display: inline-block
 
 
-.filesTableCollapseIcon.rotate 
+.filesTableCollapseIcon.rotate
 	transform: rotate(270deg)
 	margin-bottom: -1px
 	margin-top: -2px
 	top: 4px
 
 
-.unselectable 
+.unselectable
 	-webkit-touch-callout: none
 	-webkit-user-select: none
 	-khtml-user-select: none
@@ -519,26 +519,26 @@ td.generalLabel
 	user-select: none
 
 
-#prop_general 
+#prop_general
 	padding: 2px
 
 
-#watched_folders_tab 
+#watched_folders_tab
 	border-collapse: collapse
 
 
-#watched_folders_tab td, #watched_folders_tab th 
+#watched_folders_tab td, #watched_folders_tab th
 	padding: 2px 4px
 	border: 1px solid black
 
 
-.select-watched-folder-editable 
+.select-watched-folder-editable
 	position: relative
 	background-color: var(--bg-color)
 	border: solid grey 1px
 	width: 160px
 	height: 20px
-	select 
+	select
 		position: absolute
 		top: 0px
 		bottom: 0px
@@ -546,7 +546,7 @@ td.generalLabel
 		border: none
 		width: 160px
 		margin: 0
-	input 
+	input
 		position: absolute
 		top: 0px
 		left: 0px
@@ -557,7 +557,7 @@ td.generalLabel
 		background-origin: content-box
 		padding-left: 170px
 		cursor:pointer
-	select:focus, .select-editable input:focus 
+	select:focus, .select-editable input:focus
 		outline: none
 
 
@@ -565,20 +565,20 @@ td.generalLabel
  * Workaround to prevent the transfer list from
  * disappearing when zooming in the browser.
  */
-#filtersColumn_handle 
+#filtersColumn_handle
 	margin-left: -1px
 
 
-#error_div 
+#error_div
 	float: left
 	font-size: 14px
 
 
-.combo_priority 
+.combo_priority
 	font-size: 1em
 
 
-td.statusBarSeparator 
+td.statusBarSeparator
 	width: 22px
 	background-image: url('../images/toolbox-divider.gif')
 	background-repeat: no-repeat
@@ -587,66 +587,66 @@ td.statusBarSeparator
 
 
 /* Statistics window */
-.statisticsValue 
+.statisticsValue
 	text-align: right
 
 
 /* Search tab */
 
-#SearchPanel, #SearchPanel_wrapper, #SearchPanel_pad 
+#SearchPanel, #SearchPanel_wrapper, #SearchPanel_pad
 	height: inherit
 
 
-#searchResults 
+#searchResults
 	padding: 0 20px
 	height: 100%
 
 
-#searchResultsTableContainer 
+#searchResultsTableContainer
 	height: calc(100% - 140px)
 	-moz-height: calc(100% - 140px)
 	-webkit-height: calc(100% - 140px)
 	overflow: auto
 
 
-#searchResultsTableDiv 
+#searchResultsTableDiv
 	height: calc(100% - 26px) !important
 	-moz-height: calc(100% - 26px) !important
 	-webkit-height: calc(100% - 26px) !important
 
 
-#searchResults .dynamicTabTable 
+#searchResults .dynamicTabTable
 	width: 100%
 
 
-#searchResults .numSearchResults 
+#searchResults .numSearchResults
 	font-style: italic
 
 
-.red 
+.red
 	color: red
 
 
-.green 
+.green
 	color: green
 
 
-.searchPluginsTableRow 
+.searchPluginsTableRow
 	cursor: pointer
 
 
-#torrentFilesTableDiv .dynamicTable tr.nonAlt 
+#torrentFilesTableDiv .dynamicTable tr.nonAlt
 	background-color: var(--bg-color)
-	&.selected 
+	&.selected
 		background-color: var(--row-select)
 		color: var(--selected-text)
-	&:hover 
+	&:hover
 		background-color: var(--row-hover)
 		color: var(--selected-text)
 
 
-/* Beginning of Majority of Overrides and New CSS 
-	Some changes have been made to the original CSS. 
+/* Beginning of Majority of Overrides and New CSS
+	Some changes have been made to the original CSS.
 	Mostly var replacements for hard values*/
 
 
@@ -663,7 +663,7 @@ td.statusBarSeparator
 	width: 24px
 	height: 24px
 	margin-right: 10px
-	@include divIcon(contain)	
+	@include divIcon(contain)
 
 /*Filter List Icon Divs Sizing and Styles
 #statusFilterList
@@ -684,7 +684,7 @@ td.statusBarSeparator
 		width: 16px
 		height: 16px
 		@include divIcon(contain)
-    
+
 #trackerFilterList
 	div
 		padding: 0px 4px
@@ -693,7 +693,24 @@ td.statusBarSeparator
 		width: 16px
 		height: 16px
 		@include divIcon(contain)
-	
+
+/*RSS Feed Stuff*/
+.unreadArticle
+	color: var(--text-hover) !important
+
+#rssTorrentDetailsName
+	color: var(--selected-text) !important
+	background-color: var(--row-select) !important
+	padding-left: 4px
+
+#rssTorrentDetailsDate
+	color: var(--font-color) !important
+	background-color: var(--row-alt) !important
+
+#rssDetailsView
+	div, p, iframe
+		padding-left: 4px !important
+
 /*Context Menu Icons*/
 .ctxt_icon
 	margin-top: -2px
@@ -734,7 +751,7 @@ td.statusBarSeparator
 	margin-top: -2px
 	top: 4px
 	@include divIcon(contain)
-	
+
 .gen_icon
 	height: 16px
 	width: 16px
@@ -764,7 +781,7 @@ div
 	height: 12px
 	width: 25px
 	@include divIcon(14px)
-	
+
 /* Dark Mode Toggle Button */
 $themeIcon: (themeButton "url(../icons/dark/theme_dark.svg)" "url(../icons/dark/theme_light.svg)",)
 +themeGenerate($themeIcon, "--")
@@ -797,7 +814,7 @@ select
 	box-sizing: border-box
 	padding: 3px 22px 3px 8px
 	vertical-align: middle
-	background: var(--bg-color-tint) var(--select-arr) right / auto 87.5%  no-repeat 
+	background: var(--bg-color-tint) var(--select-arr) right / auto 87.5%  no-repeat
 	&:hover
 		background-color: var(--bg-menu)
 
@@ -805,7 +822,7 @@ textarea, input[type=text], #mail_password_text
 	background-color: var(--bg-color-tint)
 	border: 1px solid var(--brdr-top)
 	color: var(--font-color)
-	
+
 
 #torrentFilesFilterInput, #torrentsFilterInput
 	appearance: none
@@ -825,18 +842,18 @@ button
 	border-radius: 4px
 	&:hover
 		background-color: var(--bg-color-tint)
-			
+
 
 /* Scrollbars */
 
 $scrollTheme: (thumbBG #999 #666666, scrollbarBG #F5F5F5 #222222)
 +themeGenerate($scrollTheme, "--")
 
-body 
+body
 	scrollbar-width: 15px
 	scrollbar-color: var(--thumbBG) var(--scrollbarBG)
 
-::-webkit-scrollbar-track, ::-webkit-scrollbar-corner 
+::-webkit-scrollbar-track, ::-webkit-scrollbar-corner
 	border-radius: 0px
 	padding: 8px
 	background-color: var(--scrollbarBG)
@@ -856,7 +873,7 @@ body
 	opacity: 1
 	&:window-inactive
 		opacity: .6
-	
+
 /* Checkboxes */
 $checkTheme: (checkBg #BBB #555, checkBgActive #375273 #2485CE, check-arr "url(../icons/dark/checkbox.svg)" "url(../icons/dark/checkbox.svg)")
 +themeGenerate($checkTheme, "--")
@@ -875,6 +892,4 @@ input[type=checkbox]
 	&:before, &:checked:before
 
 input[type=checkbox]:checked
-	background: var(--checkBgActive) var(--check-arr) 52% center / 66.6% no-repeat 
-		
-	
+	background: var(--checkBgActive) var(--check-arr) 52% center / 66.6% no-repeat
