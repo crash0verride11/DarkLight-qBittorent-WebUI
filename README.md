@@ -1,22 +1,30 @@
 # qBittorent-WebUI-DarkLight
-A version of Dark/Light mode for the standard WebUI using custom CSS Properties. This should support the same browsers as the standard WebUI, excluding IE, as long as the version is new enough to support vars and custom CSS properties (indicated in the table at the bottom). The theme respects OS default, but is also toggle-able. Preferences for the dark or light theme toggle are stored in local storage and remembered. The alternate webUI is set to ignore the toggled theme after three hours and use the OS preference instead. This can be disabled or the length of time extended by changing values in "/private/scripts/mootools-1.2-core-yc.js" (the only script file that was already linked in all the htmls) I'll add clearer instructions on changing this eventually.
+A version of Dark/Light mode for the standard WebUI using custom CSS Properties. This should support the same browsers as the standard WebUI, excluding IE, as long as the version is new enough to support vars and custom CSS properties (indicated in the table at the bottom). The theme respects OS default, but is also toggle-able. Preferences for the dark or light theme toggle are stored in local storage and remembered. The alternate webUI is set to ignore the toggled theme after three hours and use the OS preference instead. This can be disabled or the length of time extended by changing values in "/private/scripts/mootools-1.6-core-yc.js" (the only script file that was already linked in all the htmls) I'll add clearer instructions on changing this eventually.
 
-Basically I wanted to refresh my CSS / SASS skills by creating a dark mode for qBittorrent. The only other version of the standard UI I've seen is not toggle-albe. I also primarily see versions that change colors but leave all the icons as is (not ideal for dark mode). I've managed to keep changes primarily to the CSS files, though minor changes have been made to a few of the JS, and a few of the htmls as well. The changes outside of the CSS files primarily involve swapping img tags for divs with backgrounds so they can be changed dynamically without scripting.
+Basically I wanted to refresh my CSS / SASS skills by creating a dark mode for qBittorrent. The only other version of the standard UI I've seen is not toggle-albe. I also primarily see versions that change colors but leave all the icons as is (not ideal for dark mode). I've managed to keep changes primarily to the CSS files, though minor changes have been made to a few of the JSs and the index. 
 
 # Notes
-**Older Versions of qBittorrent:** It's been reported that my revised version has issues with qBittorrent version 4.1.5 (and confirmed in initial testing). This probably applies to versions before the 4.2 API changes, but those not up to date with the master may have unexpected issues. Possible fixes may come in the future as I simplify how this works / updating.
+**Updates Dec 2021 / Firefox Compatability** I've recently made a large update to the method for image replacement, that will have reduced compatibility for image toggling, but has greatly reduced the amount of code altered outside the CSS files. The plus side, the images will fall back to the normal icons. Modern browsers (aside from firefox) should support the image replacement, but no guarantees for older OSs / browsers. I previously replaced every single image tag to make image toggling work, now I've replaced none. Firefox prioritizes the static src image over the dynamic image defined in CSS. I may attempt some fixes for firefox, but otherwise see the "Wide Compatibility (Div)" branch (that I will not be actively maintaining).
+
+**Older Versions of qBittorrent:** With recent rebuild of project, this may work more older qbit versions, but I am priritizing latest recenet releases and make no guarantees for older versions.
 
 **Search/RSS Tabs:** I also don't use either of these tabs, but I did some testing for themeing. If you see something that clearly is not as it should be, let me know in the issues.
 
 **Icons:** I've compiled UI icons that I've re-colored for dark mode into an "_IC.ai" for quick recoloring.
 
-**Colors/Design:** I'll probably fork this eventually with custom icons throughout and a redsigned style, but I'll be leaving this in-tact as relatively close version of the original UI.
+**Colors/Design:** I'll probably fork this eventually with custom icons throughout and a redsigned style. Recently re-worked the icons a tad, but I'll be leaving "Wide Compatibility (Div)" as the closest version to the original UI.
 
 **Scrollbars:** Use CSS styling, which has only really been supported in the last few years. Compatibility may vary, but works in current versions of Safari, Chrome, and Firefox. I doubt I'll ever implement a javascript method.
 
+<<<<<<< Updated upstream
 **Near future:** I won't be making many changes, just stream-lineing the SASS with some more mixins. I may switch to replacing some icons in the "views" html files via JS, so there are even fewer files to keep on parity with the master (as I've done for the preference window).
 
 Long term I intend to attempt mobile layouts, but those may never make it here. For the short term I've made the login page more mobile device friendly (not tiny). If this webUI gets noticed by the qBittorent master branch, and fallback support for IE (just light) is desired, I may add that as well eventually. I may also work on changing the icons to a different tag and try some methods to stylesheet the fills.
+=======
+**Near future:** I won't be making many changes, just stream-lineing the SASS with some more mixins.
+
+**Long term** I may attempt mobile layouts, but those could never make it here. For the short term I've made the login page more mobile device friendly (not tiny). 
+>>>>>>> Stashed changes
 
 # Preview
 ![Preview Image](https://github.com/raylanser/DarkLight-qBittorent-WebUI/blob/master/preview.png)
@@ -24,18 +32,18 @@ Long term I intend to attempt mobile layouts, but those may never make it here. 
 # Installation
 Instructions for using my Alternate WebUI:
 * Start with the instructions on alternate UI usage from the [qBittorent Master](https://github.com/qbittorrent/qBittorrent/wiki/Developing-alternate-WebUIs-(WIP)) (Download the files and place them in the inidcated locations)
-	* You can ignore the step adding the icons to the public folder. (A lot of unused files)
+	* You can ignore the qBittorent Master public folder
 * Download the DarkLight UI files
 	* **DarkLight Public folder:** The entire DarkLight public folder can replace the qBittorrent Master version.
-	* **DarkLight Private folder:** Here I've only included the files I've modified. Move, and overwrite as necessary, the new DarkLight files to their matching [qBittorent Master](https://github.com/qbittorrent/qBittorrent/wiki/Developing-alternate-WebUIs-(WIP)) file locations. Just be sure the dark folder is inside the icons folder (private/icons/dark/iconfiles.svg)
+	* **DarkLight Private folder:** Here I've only included the files I've modified. Move, and overwrite as necessary, the new DarkLight files to their matching [qBittorent Master](https://github.com/qbittorrent/qBittorrent/wiki/Developing-alternate-WebUIs-(WIP)) file locations. Just be sure the dark folder is inside the icons folder (private/icons/dark/iconfiles.svg for an example path)
 * Follow the [Instructions](https://github.com/qbittorrent/qBittorrent/wiki/Alternate-WebUI-usage) in the qBittorrent master for activating the new webUI.
 
 # Post-Installation
-* Issues with parts of the UI not showing as dark may be a result of existing cached website data. To clear your cache on different browsers try the following: (some methods clear all website data)
+* Issues with parts of the UI not showing as dark may be a result of existing cached website data. To clear your cache on different browsers try (some methods clear all website data):
 	* Firefox: https://support.mozilla.org/en-US/kb/how-clear-firefox-cache
 	* Chrome: https://support.google.com/accounts/answer/32050?hl
 	* Safari: https://www.macrumors.com/how-to/clear-safari-cache/
 
 # Compatibility
-This should be the primary indicator of compatibility.
+This should be the primary indicator of compatibility (aside from imag files).
 ![Preview image](https://github.com/raylanser/DarkLight-qBittorent-WebUI/blob/master/compatibility.png)
