@@ -324,9 +324,9 @@ window.qBittorrent.DynamicTable = (function() {
                 id: menuId,
                 class: 'contextMenu scrollableMenu'
             });
-			/*CHANGE AREA */
+            
             const createLi = function(columnName, text) {
-                const html = '<a href="#' + columnName + '" ><div class="ctxt_icon checkedIcon" style="margin-right:4px;"></div>' + window.qBittorrent.Misc.escapeHtml(text) + '</a>';
+                const html = '<a href="#' + columnName + '" ><img src="icons/checked.svg"/>' + window.qBittorrent.Misc.escapeHtml(text) + '</a>';
                 return new Element('li', {
                     html: html
                 });
@@ -757,6 +757,7 @@ window.qBittorrent.DynamicTable = (function() {
                                 return false;
                         }
                     });
+
                     this.setupTr(tr);
 
                     for (let k = 0; k < this.columns.length; ++k) {
@@ -967,22 +968,25 @@ window.qBittorrent.DynamicTable = (function() {
                         break; // do nothing
                 }
 
-				/*CHANGE AREA*/
-				const img_class = state + '-icon';
+                const img_path = 'icons/' + state + '.svg';
+				const img_class = state + '-icon stateIcon'; /*CHANGE AREA*/
 
-                if (td.getChildren('div').length > 0) {
-                    const img = td.getChildren('div')[0]; 
-                    img.set('title', state);
-					img.set('class', img_class);
+                if (td.getChildren('img').length > 0) {
+                    const img = td.getChildren('img')[0]; 
+                    if (img.src.indexOf(img_path) < 0) {
+                        img.set('src', img_path);
+                        img.set('title', state);
+					    img.set('class', img_class);
+                    }
                 }
-				
                 else {
-                    td.adopt(new Element('div', {
+                    td.adopt(new Element('img', {
+                        'src': img_path,
                         'class': img_class,
                         'title': state
                     }));
                 }
-            }; /* End Change Area*/
+            };
 
             // status
             this.columns['status'].updateTd = function(td, row) {
@@ -1353,12 +1357,12 @@ window.qBittorrent.DynamicTable = (function() {
             if (isNumber) {
                 switch (tagHashInt) {
                     case TAGS_ALL:
-                        break;  // do nothing
+                        break; // do nothing
 
                     case TAGS_UNTAGGED:
                         if (row['full_data'].tags.length !== 0)
                             return false;
-                        break;  // do nothing
+                        break; // do nothing
 
                     default: {
                         let rowTags = row['full_data'].tags.split(', ');
@@ -1381,9 +1385,9 @@ window.qBittorrent.DynamicTable = (function() {
                         return false;
                     break;
                 default: {
-                    const tracker = trackerList.get(trackerHashInt)
+                    const tracker = trackerList.get(trackerHashInt);
                     if (tracker && !tracker.torrents.includes(row['full_data'].rowId))
-                        return false
+                        return false;
                     break;
                 }
             }
@@ -1865,8 +1869,9 @@ window.qBittorrent.DynamicTable = (function() {
                         // just update file name
                         $(fileNameId).set('text', value);
                     }
-                    else { /*CHANGE AREA*/
-                        const collapseIcon = new Element('div', {
+                    else {
+                        const collapseIcon = new Element('img', {
+                            src: 'icons/go-down.svg',
                             styles: {
                                 'margin-left': (node.depth * 20)
                             },
@@ -1879,10 +1884,10 @@ window.qBittorrent.DynamicTable = (function() {
                             text: value,
                             id: fileNameId
                         });  
-						/*CHANGE AREA*/
-                        const dirImg = new Element('div', {
-							class: 'folder_icon',
+                        const dirImg = new Element('img', {
+                            src: 'icons/inode-directory.svg',
                             styles: {
+                                'width': 15,
                                 'padding-right': 5,
                                 'margin-bottom': -3
                             },
@@ -2159,21 +2164,27 @@ window.qBittorrent.DynamicTable = (function() {
             // state_icon
             this.rows.each(row => {
                 let img_path;
-                switch (row.full_data.status) {  /*Change NEEDED*/
+                let img_class; /*Change Area*/
+                switch (row.full_data.status) {  
                     case 'default':
-                        img_path = 'gen_icon24 worldIcon stateIcon';
+                        img_path = 'icons/application-rss+xml.svg';
+                        img_class = 'gen_icon24 worldIcon stateIcon'; 
                         break;
                     case 'hasError':
-                        img_path = 'gen_icon24 unavailableIcon stateIcon';
+                        img_path = 'icons/unavailable.svg';
+                        img_class = 'gen_icon24 unavailableIcon stateIcon';
                         break;
                     case 'isLoading':
-                        img_path = 'gen_icon24 spinnerIcon stateIcon';
+                        img_path = 'images/spinner.gif';
+                        img_class = 'gen_icon24 spinnerIcon stateIcon';
                         break;
                     case 'unread':
-                        img_path = 'gen_icon24 inboxIcon stateIcon';
+                        img_path = 'icons/mail-folder-inbox.svg';
+                        img_class = 'gen_icon24 inboxIcon stateIcon';
                         break;
                     case 'isFolder':
-                        img_path = 'gen_icon24 folder_icon stateIcon';
+                        img_path = 'icons/folder-documents.svg';
+                        img_class = 'gen_icon24 folder_icon stateIcon';
                         break;
                 }
                 let td;
@@ -2182,17 +2193,19 @@ window.qBittorrent.DynamicTable = (function() {
                         td = this.tableBody.rows[i].children[0];
                         break;
                     }
-                } /*Change AREA*/
-                if (td.getChildren('div').length > 0) {
-                    const img = td.getChildren('div')[0];
+                } 
+                if (td.getChildren('img').length > 0) {
+                    const img = td.getChildren('img')[0];
                     if (img.src.indexOf(img_path) < 0) {
-                        img.set('class', img_path);
+                        img.set('src', img_path);
+                        img.set('class', img_class); /*Change Area*/
                         img.set('title', status);
                     }
-                } /*Change AREA*/
+                } 
                 else {
-                    td.adopt(new Element('div', {
-                        'class': img_path,
+                    td.adopt(new Element('img', { 
+                        'src': img_path,
+                        'class': img_class, /*Change Area*/
                         'height': '22px',
                         'width': '22px'
                     }));
@@ -2577,7 +2590,6 @@ window.qBittorrent.DynamicTable = (function() {
             row['data'] = {};
         }
     });
-    
 
     return exports();
 })();

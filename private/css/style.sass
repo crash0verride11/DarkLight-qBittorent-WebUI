@@ -196,6 +196,15 @@ a.propButton
 	overflow-x: hidden
 
 
+#topPrioButton img
+	content: var(--goTopIcon)
+#increasePrioButton img
+	content: var(--goUpIcon)
+#decreasePrioButton img
+	content: var(--goDownIcon)
+#bottomPrioButton img
+	content: var(--goBottomIcon)
+
 /* context menu specific */
 
 .contextMenu
@@ -238,12 +247,167 @@ a.propButton
 				position: relative
 		img
 			width: 16px
+			max-width: 16px
 			height: 16px
 			margin-bottom: -4px
 			-ms-interpolation-mode: bicubic
+
 		input[type=checkbox]
 			position: relative
 			top: 0px
+
+
+#torrentsTableMenu > li
+	&:nth-of-type(1) a img
+		content: var(--resumeButton)
+	&:nth-of-type(2) a img
+		content: var(--pauseButton)
+	&:nth-of-type(3) a img
+		content: var(--forceStartIcon)
+	&:nth-of-type(4) a img
+		content: var(--listRemoveIcon)
+	&:nth-of-type(5) a
+		&:nth-of-type(1) img
+			content: var(--folder-icon)
+		&:nth-of-type(2) img
+			content: var(--editRenameIcon)
+	&:nth-of-type(6) > a, &:nth-of-type(7) > a
+		&:nth-of-type(1) img
+			content: var(--viewCatIcon)
+	&:nth-of-type(8) > a img
+		content: var(--checkedIcon)
+	&:nth-of-type(9) a img
+		content: var(--maxDownIcon)
+	&:nth-of-type(10), &:nth-of-type(11)
+		a img
+			content: var(--maxUpIcon)
+	&:nth-of-type(12), &:nth-of-type(13), &:nth-of-type(14) 
+		a img
+			content: var(--checkedIcon)
+	&:nth-of-type(15), &:nth-of-type(16) 
+		a img
+			content: var(--docEditIcon)
+	&:nth-of-type(17)
+		ul li
+			&:nth-of-type(1) a img
+				 content: var(--goTopIcon)
+			&:nth-of-type(2) a img
+				 content: var(--goUpIcon)
+			&:nth-of-type(3) a img
+				 content: var(--goDownIcon)
+			&:nth-of-type(4) a img
+				 content: var(--goBottomIcon)
+	&:nth-of-type(18)
+		a:nth-of-type(1) img
+			content: var(--editCopyIcon)
+		ul li
+			&:nth-of-type(1), &:nth-of-type(2), &:nth-of-type(3), &:nth-of-type(5) 
+				> a img
+					content: var(--editCopyIcon)
+			&:nth-of-type(4) a img
+				content: var(--magnetIcon)
+	
+#contextCategoryList li a img
+	content: var(--folder-icon)
+#contextTagList li
+	&:nth-of-type(1) a img
+		content: var(--uploadButton)
+	&:nth-of-type(2) a img
+		content: var(--editClearIcon)
+
+#categoriesFilterMenu li
+	&:nth-of-type(1) a img
+		content: var(--uploadButton)
+	&:nth-of-type(2) a img
+		content: var(--editRenameIcon)
+	&:nth-of-type(3) a img, &:nth-of-type(4) a img
+		content: var(--listRemoveIcon)
+	&:nth-of-type(5) a img
+		content: var(--resumeButton)
+	&:nth-of-type(6) a img
+		content: var(--pauseButton)
+	&:nth-of-type(7) a img
+		content: var(--listRemoveIcon)
+
+#tagsFilterMenu li
+	&:nth-of-type(1) a img
+		content: var(--uploadButton)
+	&:nth-of-type(2) a img, &:nth-of-type(3) a img
+		content: var(--listRemoveIcon)
+	&:nth-of-type(4) a img
+		content: var(--resumeButton)
+	&:nth-of-type(5) a img
+		content: var(--pauseButton)
+	&:nth-of-type(6) a img
+		content: var(--editDeleteIcon)
+
+#trackersFilterMenu li
+	&:nth-of-type(1) a img
+		content: var(--resumeButton)
+	&:nth-of-type(2) a img
+		content: var(--pauseButton)
+	&:nth-of-type(3) a img
+		content: var(--editDeleteIcon)
+
+#torrentTrackersMenu li
+	&:nth-of-type(1) a img
+		content: var(--uploadButton)
+	&:nth-of-type(2) a img
+		content: var(--uploadButton)
+	&:nth-of-type(3) a img
+		content: var(--uploadButton)
+	&:nth-of-type(4) a img
+		content: var(--editCopyIcon)
+
+#torrentPeersMenu li
+	&:nth-of-type(1) a img
+		content: var(--uploadButton)
+	&:nth-of-type(2) a img
+		content: var(--editCopyIcon)
+	&:nth-of-type(3) a img
+		content: var(--groupDeleteIcon)
+		
+#torrentFilesMenu li:nth-of-type(1) a img
+	content: var(--editRenameIcon)
+
+#rssFeedMenu li
+	&:nth-of-type(1) a img
+		content: var(--viewRefreshIcon)
+	&:nth-of-type(2) a img
+		content: var(--mailReadIcon)
+	&:nth-of-type(3) a img
+		content: var(--editRenameIcon)
+	&:nth-of-type(4) a img
+		content: var(--editDeleteIcon)
+	&:nth-of-type(5) a img
+		content: var(--uploadButton)
+	&:nth-of-type(6) a img
+		content: var(--folderNewIcon)
+	&:nth-of-type(7) a img
+		content: var(--viewRefreshIcon)
+	&:nth-of-type(8) a img
+		content: var(--editCopyIcon)
+
+#rssDownloaderRuleMenu li
+	&:nth-of-type(1) a img
+		content: var(--uploadButton)
+	&:nth-of-type(2) a img
+		content: var(--listRemoveIcon)
+	&:nth-of-type(3) a img
+		content: var(--editRenameIcon)
+	&:nth-of-type(4) a img
+		content: var(--editDeleteIcon)
+
+#rssArticleMenu li
+	&:nth-of-type(1) a img
+		content: var(--downloadIcon)
+	&:nth-of-type(2) a img
+		content: var(--worldIcon)
+
+#torrentsTableDiv_headerMenu, #torrentTrackersTableDiv_headerMenu, #torrentPeersTableDiv_headerMenu, #torrentsTableDiv_headerMenu, #torrentFilesTableDiv_headerMenu
+	img
+		margin-right: 4px
+		content: var(--checkedIcon)
 
 	li ul
 
@@ -435,11 +599,21 @@ div.formRow
 	text-overflow: ellipsis
 	&:nth-of-type(1)
 		padding-top: 5px
-
+	img
+		content: var(--goDownIcon)
+		max-width: 16px
+		margin-bottom: -4px
+		margin-right: 10px
+		position: relative
+		top: 0px
+		left: 2px
+		display: inline-block
+		&.rotate
+			transform: rotate(270deg)
 	div
 		width: 16px
 		height: 16px
-		margin-bottom: -4px
+		
 		padding: 0px 5px
 		position: relative
 		top: 0px
@@ -455,6 +629,51 @@ div.formRow
 			top: -6px
 			left: 0px
 
+/*statusFilterList
+#all_filter a img
+	content: var(--filterall-icon)
+#downloading_filter a img
+	content: var(--downloading-icon)
+#seeding_filter a img
+	content: var(--uploading-icon)
+#completed_filter a img
+	content: var(--completed-icon)
+#resumed_filter a img
+	content: var(--resumed-icon)
+#paused_filter a img
+	content: var(--paused-icon)
+#active_filter a img
+	content: var(--filteractive-icon)
+#inactive_filter a img
+	content: var(--filterinactive-icon)
+#stalled_filter a img
+	content: var(--filterstalled-icon)
+#stalled_uploading_filter a img
+	content: var(--stalledUP-icon)
+#stalled_downloading_filter a img
+	content: var(--stalledDL-icon)
+#checking_filter a img
+	content: var(--checking-icon)
+#errored_filter a img
+	content: var(--error-icon)
+/* RSS Downloader View
+.imageButton
+	background-color: var(--bg-color-tint) !important
+	&:hover 
+        background-color: var(--bg-menu) !important
+	&:active 
+        background-color: var(--bg-menu) !important
+#newRuleButton
+	background-image: var(--uploadButton) !important
+#deleteRuleButton
+	background-image: var(--listRemoveIcon) !important
+
+/* Search View
+#searchPattern
+	background-image: var(--searchIcon) !important
+	background-position: 4px 4px !important
+#searchResultsGranularFiltersWarning
+	content: var(--warningIcon)
 
 ul.filterList
 	margin: 0 0 0 16px
@@ -466,11 +685,31 @@ ul.filterList
 		white-space: nowrap
 		text-overflow: ellipsis
 		color: inherit
-		vertical-align: middle
+		/* vertical-align: middle
 	li:hover
 		background-color: var(--row-hover)
 		a
 			color: var(--selected-text)
+
+#categoryFilterList, #tagFilterList
+	li a
+		img
+			height: 16px
+			width: 16px !important
+			content: var(--folder-icon)
+			background-repeat: no-repeat
+
+#trackerFilterList
+	li a
+		padding-top: 2px
+		height: 20px
+		img
+			height: 15px
+			width: 15px !important
+			margin-bottom: 0px
+			max-width: 15px
+			content: var(--netServerIcon)
+			background-repeat: no-repeat
 
 
 td.generalLabel
@@ -525,7 +764,19 @@ td.generalLabel
 
 #watched_folders_tab
 	border-collapse: collapse
+	tbody tr td
+		&:nth-of-type(2) img
+			width: 18px !important
+			max-width: 18px 
+			content: var(--uploadButton)
 
+#SpeedTab .settings
+	&:nth-of-type(1) table tbody tr td
+		&:nth-of-type(1) img
+			content: var(--slowOffIcon)
+	&:nth-of-type(2) table tbody tr td
+		&:nth-of-type(1) img
+			content: var(--slowIcon)
 
 #watched_folders_tab td, #watched_folders_tab th
 	padding: 2px 4px
@@ -658,6 +909,46 @@ td.statusBarSeparator
 	top: 1px
 	@include divIcon(contain)
 
+#uploadLink img 
+	content: var(--uploadButton)
+#downloadLink img
+	content: var(--downButton)
+#logoutLink img
+	content: var(--logOutIcon)
+#shutdownLink img
+	content: var(--editDeleteIcon)
+#resumeAllLink img, #resumeLink img
+	content: var(--resumeButton)
+#pauseAllLink img, #pauseLink img
+	content: var(--pauseButton)
+#deleteLink img
+	content: var(--editDeleteIcon)
+#topPrioLink img
+	content: var(--goTopIcon)
+#increasePrioLink img
+	content: var(--goUpIcon)
+#decreasePrioLink img
+	content: var(--goDownIcon)
+#bottomPrioLink img
+	content: var(--goBottomIcon)
+#recheckLink img
+	content: var(--docEditIcon)
+#showTopToolbarLink, #showStatusBarLink, #speedInBrowserTitleBarLink, #showSearchEngineLink, #showRssReaderLink
+	img
+		content: var(--checkedIcon)
+#StatisticsLink img
+	content: var(--viewStatsIcon)
+#preferencesLink img
+	content: var(--prefButton)
+#registerMagnetHandlerLink img
+	content: var(--magnetIcon)
+#docsLink img
+	content: var(--helpContentIcon)
+#bugLink img
+	content: var(--walletIcon)
+#aboutLink img
+	content: var(--helpAboutIcon)
+
 /*ToolBar Icons*/
 #mochaToolbar a > div
 	width: 24px
@@ -734,6 +1025,35 @@ td.statusBarSeparator
 #desktopFooter .ctxt_icon
 	top: 2px
 	background-size: contain
+
+#desktopFooter img
+	height: 16px
+	width: 16px
+	max-width: 16px
+/*
+#desktopFooter table tbody tr 
+	td:nth-of-type(5) img
+		content: var(--firewalledIcon)
+	td:nth-of-type(7) img
+		content: var(--slowOffIcon)
+		position: relative
+		top: 2px
+		width: 24px  !important
+		max-width: 24px  !important
+	td:nth-of-type(9) img
+		content: var(--downloading-icon)
+	td:nth-of-type(11) img
+		content: var(--seedingIcon)
+.connectedIcon
+	content: var(--connectedIcon) !important
+.firewalledIcon
+	content: var(--firewalledIcon) !important
+.disconnectedIcon
+	content: var(--disconnectedIcon) !important
+.slowOffIcon
+	content: var(--slowOffIcon) !important
+.slowIcon
+	content: var(--slowIcon) !important
 
 #alternativeSpeedLimits.ctxt_icon
 	width: 24px

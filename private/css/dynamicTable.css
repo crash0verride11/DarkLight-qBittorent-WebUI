@@ -1,134 +1,169 @@
 /**************************************************************
- *
- * Dynamic Table
- * v 0.4
- *
- ************************************************************* */
-/* Core.css for Mocha UI
- *
- * Theme: Default
- *
- * Copyright:
- * 	Copyright (c) 2007-2009 Greg Houston, <http://greghoustondesign.com/>.
- *
- * License:
- * 	MIT-style license.
- *
- * Notes:
- * 	CSS rules in this file:
- *
- * 	1. Rules required by all MochaUI components or are shared by more than one.
- * 	2. Theme specific adjustments to plugin styles.
- * 	3. Miscellaneous rules that have no better place to go. */
-/* Required By All
- * ---------------------------------------------------------------------- */
-/* Clears */
-.clear {
-  clear: both;
-  height: 0; }
 
-* html .clear {
-  font-size: 1px;
-  line-height: 1px;
-  overflow: hidden;
-  visibility: hidden; }
+	Dynamic Table
+	v 0.4
 
-/* Miscellaneous
- * ---------------------------------------------------------------------- */
-#themeControl {
-  margin-top: 2px; }
-
-/* Theme Specific Adjustments to Default Plugin Styles
- * ---------------------------------------------------------------------- */
-/* Folder Tree */
-.tree li a {
-  color: #3f3f3f !important; }
+	**************************************************************/
+@import url(/Volumes/Docker/config/qBittorrent/www/private/css/core.css);
+#transferList {
+  padding-left: 2px;
+}
 
 #transferList tr:hover {
-  cursor: pointer; }
+  cursor: pointer;
+}
+
 #transferList img.stateIcon {
   height: 1.3em;
+  max-width: 16px;
   vertical-align: middle;
-  margin-bottom: -1px; }
+  margin-bottom: -1px;
+  margin-top: -2px;
+}
+
 #transferList .dynamicTable td {
-  padding: 0 2px; }
+  padding: 0px 4px;
+}
+
+#transferList .dynamicTable td:nth-of-type(1) {
+  text-align: center;
+}
 
 tr.dynamicTableHeader {
-  cursor: pointer; }
+  cursor: pointer;
+}
 
 .dynamicTable {
   table-layout: fixed;
   width: 1%;
   padding: 0;
-  border-spacing: 0; }
-  .dynamicTable th, .dynamicTable td {
-    text-overflow: ellipsis;
-    overflow: hidden;
-    white-space: nowrap; }
-  .dynamicTable th {
-    background-color: var(--bg-color-tint);
-    padding: 4px 4px 4px 8px;
-    white-space: nowrap;
-    border-right-color: var(--style-border-lte);
-    border-right-style: solid;
-    border-right-width: 1px;
-    box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box; }
-    .dynamicTable th.sorted {
-      padding-right: 5px;
-      background-image: var(--goUpIcon);
-      background-origin: content-box;
-      background-position: right;
-      background-repeat: no-repeat;
-      background-size: 15px; }
-      .dynamicTable th.sorted.reverse {
-        background-image: var(--goDownIcon); }
-  .dynamicTable td {
-    padding: 0px 6px;
-    white-space: nowrap; }
-    .dynamicTable td img.flags {
-      height: 1.25em;
-      vertical-align: middle; }
-  .dynamicTable thead tr {
-    background-color: var(--row-alt); }
-  .dynamicTable tbody tr {
-    background-color: var(--bg-color); }
-    .dynamicTable tbody tr:nth-child(even), .dynamicTable tbody tr.alt {
-      background-color: var(--row-alt); }
-    .dynamicTable tbody tr.selected {
-      background-color: var(--row-select);
-      color: var(--selected-text); }
-    .dynamicTable tbody tr:hover {
-      background-color: var(--row-hover);
-      color: var(--selected-text); }
-    .dynamicTable tbody tr td:nth-of-type(2) div {
-      padding: 2px 6px;
-      width: auto;
-      height: 16px;
-      background-size: 14px;
-      background-position: center;
-      background-repeat: no-repeat; }
+  border-spacing: 0;
+}
+
+.dynamicTable th, .dynamicTable td {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.dynamicTable th {
+  background-color: var(--bg-color-tint);
+  padding: 4px 4px 4px 8px;
+  white-space: nowrap;
+  border-right-color: var(--style-border-lte);
+  border-right-style: solid;
+  border-right-width: 1px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+.dynamicTable th.sorted {
+  padding-right: 5px;
+  background-image: var(--goUpIcon);
+  background-origin: content-box;
+  background-position: right;
+  background-repeat: no-repeat;
+  background-size: 15px;
+}
+
+.dynamicTable th.sorted.reverse {
+  background-image: var(--goDownIcon);
+}
+
+.dynamicTable td {
+  padding: 0px 6px;
+  white-space: nowrap;
+}
+
+.dynamicTable td img.flags {
+  height: 1.25em;
+  vertical-align: middle;
+}
+
+.dynamicTable thead tr {
+  background-color: var(--row-alt);
+}
+
+.dynamicTable tbody tr {
+  background-color: var(--bg-color);
+}
+
+.dynamicTable tbody tr:nth-child(even), .dynamicTable tbody tr.alt {
+  background-color: var(--row-alt);
+}
+
+.dynamicTable tbody tr.selected {
+  background-color: var(--row-select);
+  color: var(--selected-text);
+}
+
+.dynamicTable tbody tr:hover {
+  background-color: var(--row-hover);
+  color: var(--selected-text);
+}
+
+.dynamicTable tbody tr td:nth-of-type(2) div {
+  padding: 2px 6px;
+  width: auto;
+  height: 16px;
+  background-size: 14px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
 
 /*Dynamic Table Icons */
+#torrentFilesTableDiv table tbody tr td:nth-of-type(2) img:nth-of-type(1) {
+  height: 16px;
+  width: 16px !important;
+  padding-right: 0px !important;
+  position: relative;
+  top: 0px;
+  margin-right: 0px;
+  content: var(--goDownIcon);
+}
+
+#torrentFilesTableDiv table tbody tr td:nth-of-type(2) img:nth-of-type(1).rotate {
+  top: 2px;
+}
+
+#torrentFilesTableDiv table tbody tr td:nth-of-type(2) img:nth-of-type(2) {
+  height: 16px;
+  width: 16px !important;
+  padding-right: 0px !important;
+  margin-left: 2px;
+  margin-right: 5px;
+  content: var(--folder-icon);
+}
+
+/* */
 .folder_icon {
   height: 16px;
   width: 16px !important;
   background-image: var(--folder-icon);
-  position: relative;
-  top: 2px;
-  display: inline-block; }
+  content: var(--folder-icon);
+  background-repeat: no-repeat;
+  /*
+		position: relative
+		top: 2px
+		display: inline-block */
+}
 
 .dynamicTableFixedHeaderDiv {
-  overflow: hidden; }
+  overflow: hidden;
+}
 
 .dynamicTableDiv {
-  overflow: auto; }
-  .dynamicTableDiv thead th {
-    line-height: 0px !important;
-    height: 0px !important;
-    padding-top: 0px !important;
-    padding-bottom: 0px !important; }
+  overflow: auto;
+}
+
+.dynamicTableDiv thead th {
+  line-height: 0px !important;
+  height: 0px !important;
+  padding-top: 0px !important;
+  padding-bottom: 0px !important;
+}
 
 #searchPluginsTableDiv tbody tr td {
-  color: var(--font-color); }
+  color: var(--font-color);
+}

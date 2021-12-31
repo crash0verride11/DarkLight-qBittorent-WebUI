@@ -14,14 +14,20 @@
 	display: inline-block
 
 #transferList 
+	padding-left: 2px
 	tr:hover
 		cursor: pointer
 	img.stateIcon
 		height: 1.3em
+		max-width: 16px
 		vertical-align: middle
 		margin-bottom: -1px
+		margin-top: -2px
 	.dynamicTable td
-		padding: 0 2px
+		padding: 0px 4px
+		&:nth-of-type(1)
+			text-align: center
+		&:nth-of-type(2)
 	
 
 tr.dynamicTableHeader
@@ -85,15 +91,37 @@ tr.dynamicTableHeader
 	
 /*Dynamic Table Icons */	
 
-
-
+#torrentFilesTableDiv table tbody tr 
+	td:nth-of-type(2)
+		img:nth-of-type(1)
+			height: 16px
+			width: 16px !important
+			padding-right: 0px !important
+			position: relative
+			top: 0px
+			margin-right: 0px
+			content: var(--goDownIcon)
+			&.rotate
+				top: 2px
+		img:nth-of-type(2)
+			height: 16px
+			width: 16px !important
+			padding-right: 0px !important
+			margin-left: 2px
+			margin-right: 5px
+			content: var(--folder-icon)
+					
+/*
 .folder_icon
 	height: 16px
 	width: 16px !important
 	background-image: var(--folder-icon)
-	position: relative
-	top: 2px
-	display: inline-block
+	content: var(--folder-icon)
+	background-repeat: no-repeat
+	/* 
+		position: relative
+		top: 2px
+		display: inline-block
 
 .dynamicTableFixedHeaderDiv
 	overflow: hidden

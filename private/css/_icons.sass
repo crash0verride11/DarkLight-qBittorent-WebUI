@@ -11,38 +11,54 @@ $buttons: (downButton: "insert-link.svg", uploadButton: "list-add.svg", resumeBu
 $dytable: (downloading: "downloading.svg", stalledDL: "stalledDL.svg", stalledUP: "stalledUP.svg", uploading: "uploading.svg", paused: "paused.svg", completed: "completed.svg", queued: "queued.svg", checking: "checking.svg", error: "error.svg", resumed: "resumed.svg", filterall: "filterall.svg", filteractive: "filteractive.svg", filterinactive: "filterinactive.svg", filterstalled: "filterstalled.svg", folder: "inode-directory.svg")
 
 =themeIconify($listname, $suffix)
-	div
+	div, img
 		@each $icon, $link in $listname
 				--#{$icon}#{$suffix}: url(../icons/#{$link})
 	.light-theme
-		div
+		div, img
 			@each $icon, $link in $listname
 				--#{$icon}#{$suffix}: url(../icons/#{$link}) !important
 	@media (prefers-color-scheme: dark)
-		div
+		div, img
 			@each $icon, $link in $listname
 				--#{$icon}#{$suffix}: url(../icons/dark/#{$link})
 	.dark-theme
-		div
+		div, img
 			@each $icon, $link in $listname
 				--#{$icon}#{$suffix}: url(../icons/dark/#{$link})
 	@each $icon, $link in $listname
 		.#{$icon}#{$suffix}
-			background-image: var(--#{$icon}#{$suffix})
+			content: var(--#{$icon}#{$suffix})
 
 +themeIconify($icons, Icon)
 +themeIconify($buttons, "") 
 +themeIconify($dytable,-icon)
 	
 #downloadButton div, .insertLink
-	background-image: var(--downButton)
+	content: var(--downButton)
 #uploadButton div, .listAdd
-	background-image: var(--uploadButton)
+	content: var(--uploadButton)
 #deleteButton div, .deleteIcon, .listRemoveIcon
-	background-image: var(--listRemoveIcon)
+	content: var(--listRemoveIcon)
 #resumeButton div, .mediaStart
-	background-image: var(--resumeButton)
+	content: var(--resumeButton)
 #pauseButton div, .mediaPause
-	background-image: var(--pauseButton)
+	content: var(--pauseButton)
 #preferencesButton div, .configureIcon
-	background-image: var(--prefButton)
+	content: var(--prefButton)
+
+#downloadButton img
+	content: var(--downButton) 
+#uploadButton img, .listAdd
+	content: var(--uploadButton)
+#deleteButton img, .deleteIcon, .listRemoveIcon
+	content: var(--listRemoveIcon)
+#resumeButton img, .mediaStart
+	content: var(--resumeButton)
+#pauseButton img, .mediaPause
+	content: var(--pauseButton)
+#preferencesButton img, .configureIcon
+	content: var(--prefButton)
+
+#mochaToolbar img
+	max-width: 24px

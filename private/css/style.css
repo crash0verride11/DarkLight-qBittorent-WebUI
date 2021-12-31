@@ -154,7 +154,7 @@ body.dark-theme, body.dark-theme > *, body.dark-theme + * {
 /* Sass Document */
 /* The icons were swapped in batched so there are three lists are necessary to accomodate inconsistent icon property and class naming.
 	Eventually I'll clean up. */
-div {
+div, img {
   --goDownIcon: url(../icons/go-down.svg);
   --downButtonIcon: url(../icons/insert-link.svg);
   --uploadButtonIcon: url(../icons/list-add.svg);
@@ -201,7 +201,7 @@ div {
   --checkedIcon: url(../icons/completed.svg);
 }
 
-.light-theme div {
+.light-theme div, .light-theme img {
   --goDownIcon: url(../icons/go-down.svg) !important;
   --downButtonIcon: url(../icons/insert-link.svg) !important;
   --uploadButtonIcon: url(../icons/list-add.svg) !important;
@@ -249,7 +249,7 @@ div {
 }
 
 @media (prefers-color-scheme: dark) {
-  div {
+  div, img {
     --goDownIcon: url(../icons/dark/go-down.svg);
     --downButtonIcon: url(../icons/dark/insert-link.svg);
     --uploadButtonIcon: url(../icons/dark/list-add.svg);
@@ -297,7 +297,7 @@ div {
   }
 }
 
-.dark-theme div {
+.dark-theme div, .dark-theme img {
   --goDownIcon: url(../icons/dark/go-down.svg);
   --downButtonIcon: url(../icons/dark/insert-link.svg);
   --uploadButtonIcon: url(../icons/dark/list-add.svg);
@@ -345,182 +345,182 @@ div {
 }
 
 .goDownIcon {
-  background-image: var(--goDownIcon);
+  content: var(--goDownIcon);
 }
 
 .downButtonIcon {
-  background-image: var(--downButtonIcon);
+  content: var(--downButtonIcon);
 }
 
 .uploadButtonIcon {
-  background-image: var(--uploadButtonIcon);
+  content: var(--uploadButtonIcon);
 }
 
 .listRemoveIcon {
-  background-image: var(--listRemoveIcon);
+  content: var(--listRemoveIcon);
 }
 
 .resumeButtonIcon {
-  background-image: var(--resumeButtonIcon);
+  content: var(--resumeButtonIcon);
 }
 
 .pauseButtonIcon {
-  background-image: var(--pauseButtonIcon);
+  content: var(--pauseButtonIcon);
 }
 
 .prefButtonIcon {
-  background-image: var(--prefButtonIcon);
+  content: var(--prefButtonIcon);
 }
 
 .editClearIcon {
-  background-image: var(--editClearIcon);
+  content: var(--editClearIcon);
 }
 
 .docEditIcon {
-  background-image: var(--docEditIcon);
+  content: var(--docEditIcon);
 }
 
 .editRenameIcon {
-  background-image: var(--editRenameIcon);
+  content: var(--editRenameIcon);
 }
 
 .goBottomIcon {
-  background-image: var(--goBottomIcon);
+  content: var(--goBottomIcon);
 }
 
 .goTopIcon {
-  background-image: var(--goTopIcon);
+  content: var(--goTopIcon);
 }
 
 .goUpIcon {
-  background-image: var(--goUpIcon);
+  content: var(--goUpIcon);
 }
 
 .magnetIcon {
-  background-image: var(--magnetIcon);
+  content: var(--magnetIcon);
 }
 
 .maxDownIcon {
-  background-image: var(--maxDownIcon);
+  content: var(--maxDownIcon);
 }
 
 .maxUpIcon {
-  background-image: var(--maxUpIcon);
+  content: var(--maxUpIcon);
 }
 
 .forceStartIcon {
-  background-image: var(--forceStartIcon);
+  content: var(--forceStartIcon);
 }
 
 .viewCatIcon {
-  background-image: var(--viewCatIcon);
+  content: var(--viewCatIcon);
 }
 
 .editCopyIcon {
-  background-image: var(--editCopyIcon);
+  content: var(--editCopyIcon);
 }
 
 .editDeleteIcon {
-  background-image: var(--editDeleteIcon);
+  content: var(--editDeleteIcon);
 }
 
 .helpAboutIcon {
-  background-image: var(--helpAboutIcon);
+  content: var(--helpAboutIcon);
 }
 
 .helpContentIcon {
-  background-image: var(--helpContentIcon);
+  content: var(--helpContentIcon);
 }
 
 .logOutIcon {
-  background-image: var(--logOutIcon);
+  content: var(--logOutIcon);
 }
 
 .viewStatsIcon {
-  background-image: var(--viewStatsIcon);
+  content: var(--viewStatsIcon);
 }
 
 .walletIcon {
-  background-image: var(--walletIcon);
+  content: var(--walletIcon);
 }
 
 .searchIcon {
-  background-image: var(--searchIcon);
+  content: var(--searchIcon);
 }
 
 .collapseIcon {
-  background-image: var(--collapseIcon);
+  content: var(--collapseIcon);
 }
 
 .slowOffIcon {
-  background-image: var(--slowOffIcon);
+  content: var(--slowOffIcon);
 }
 
 .slowIcon {
-  background-image: var(--slowIcon);
+  content: var(--slowIcon);
 }
 
 .connectedIcon {
-  background-image: var(--connectedIcon);
+  content: var(--connectedIcon);
 }
 
 .disconnectedIcon {
-  background-image: var(--disconnectedIcon);
+  content: var(--disconnectedIcon);
 }
 
 .firewalledIcon {
-  background-image: var(--firewalledIcon);
+  content: var(--firewalledIcon);
 }
 
 .seedingIcon {
-  background-image: var(--seedingIcon);
+  content: var(--seedingIcon);
 }
 
 .groupDeleteIcon {
-  background-image: var(--groupDeleteIcon);
+  content: var(--groupDeleteIcon);
 }
 
 .netServerIcon {
-  background-image: var(--netServerIcon);
+  content: var(--netServerIcon);
 }
 
 .worldIcon {
-  background-image: var(--worldIcon);
+  content: var(--worldIcon);
 }
 
 .warningIcon {
-  background-image: var(--warningIcon);
+  content: var(--warningIcon);
 }
 
 .unavailableIcon {
-  background-image: var(--unavailableIcon);
+  content: var(--unavailableIcon);
 }
 
 .inboxIcon {
-  background-image: var(--inboxIcon);
+  content: var(--inboxIcon);
 }
 
 .folderNewIcon {
-  background-image: var(--folderNewIcon);
+  content: var(--folderNewIcon);
 }
 
 .mailReadIcon {
-  background-image: var(--mailReadIcon);
+  content: var(--mailReadIcon);
 }
 
 .viewRefreshIcon {
-  background-image: var(--viewRefreshIcon);
+  content: var(--viewRefreshIcon);
 }
 
 .downloadIcon {
-  background-image: var(--downloadIcon);
+  content: var(--downloadIcon);
 }
 
 .checkedIcon {
-  background-image: var(--checkedIcon);
+  content: var(--checkedIcon);
 }
 
-div {
+div, img {
   --downButton: url(../icons/insert-link.svg);
   --uploadButton: url(../icons/list-add.svg);
   --resumeButton: url(../icons/media-playback-start.svg);
@@ -528,7 +528,7 @@ div {
   --prefButton: url(../icons/configure.svg);
 }
 
-.light-theme div {
+.light-theme div, .light-theme img {
   --downButton: url(../icons/insert-link.svg) !important;
   --uploadButton: url(../icons/list-add.svg) !important;
   --resumeButton: url(../icons/media-playback-start.svg) !important;
@@ -537,7 +537,7 @@ div {
 }
 
 @media (prefers-color-scheme: dark) {
-  div {
+  div, img {
     --downButton: url(../icons/dark/insert-link.svg);
     --uploadButton: url(../icons/dark/list-add.svg);
     --resumeButton: url(../icons/dark/media-playback-start.svg);
@@ -546,7 +546,7 @@ div {
   }
 }
 
-.dark-theme div {
+.dark-theme div, .dark-theme img {
   --downButton: url(../icons/dark/insert-link.svg);
   --uploadButton: url(../icons/dark/list-add.svg);
   --resumeButton: url(../icons/dark/media-playback-start.svg);
@@ -555,26 +555,26 @@ div {
 }
 
 .downButton {
-  background-image: var(--downButton);
+  content: var(--downButton);
 }
 
 .uploadButton {
-  background-image: var(--uploadButton);
+  content: var(--uploadButton);
 }
 
 .resumeButton {
-  background-image: var(--resumeButton);
+  content: var(--resumeButton);
 }
 
 .pauseButton {
-  background-image: var(--pauseButton);
+  content: var(--pauseButton);
 }
 
 .prefButton {
-  background-image: var(--prefButton);
+  content: var(--prefButton);
 }
 
-div {
+div, img {
   --downloading-icon: url(../icons/downloading.svg);
   --stalledDL-icon: url(../icons/stalledDL.svg);
   --stalledUP-icon: url(../icons/stalledUP.svg);
@@ -592,7 +592,7 @@ div {
   --folder-icon: url(../icons/inode-directory.svg);
 }
 
-.light-theme div {
+.light-theme div, .light-theme img {
   --downloading-icon: url(../icons/downloading.svg) !important;
   --stalledDL-icon: url(../icons/stalledDL.svg) !important;
   --stalledUP-icon: url(../icons/stalledUP.svg) !important;
@@ -611,7 +611,7 @@ div {
 }
 
 @media (prefers-color-scheme: dark) {
-  div {
+  div, img {
     --downloading-icon: url(../icons/dark/downloading.svg);
     --stalledDL-icon: url(../icons/dark/stalledDL.svg);
     --stalledUP-icon: url(../icons/dark/stalledUP.svg);
@@ -630,7 +630,7 @@ div {
   }
 }
 
-.dark-theme div {
+.dark-theme div, .dark-theme img {
   --downloading-icon: url(../icons/dark/downloading.svg);
   --stalledDL-icon: url(../icons/dark/stalledDL.svg);
   --stalledUP-icon: url(../icons/dark/stalledUP.svg);
@@ -649,87 +649,115 @@ div {
 }
 
 .downloading-icon {
-  background-image: var(--downloading-icon);
+  content: var(--downloading-icon);
 }
 
 .stalledDL-icon {
-  background-image: var(--stalledDL-icon);
+  content: var(--stalledDL-icon);
 }
 
 .stalledUP-icon {
-  background-image: var(--stalledUP-icon);
+  content: var(--stalledUP-icon);
 }
 
 .uploading-icon {
-  background-image: var(--uploading-icon);
+  content: var(--uploading-icon);
 }
 
 .paused-icon {
-  background-image: var(--paused-icon);
+  content: var(--paused-icon);
 }
 
 .completed-icon {
-  background-image: var(--completed-icon);
+  content: var(--completed-icon);
 }
 
 .queued-icon {
-  background-image: var(--queued-icon);
+  content: var(--queued-icon);
 }
 
 .checking-icon {
-  background-image: var(--checking-icon);
+  content: var(--checking-icon);
 }
 
 .error-icon {
-  background-image: var(--error-icon);
+  content: var(--error-icon);
 }
 
 .resumed-icon {
-  background-image: var(--resumed-icon);
+  content: var(--resumed-icon);
 }
 
 .filterall-icon {
-  background-image: var(--filterall-icon);
+  content: var(--filterall-icon);
 }
 
 .filteractive-icon {
-  background-image: var(--filteractive-icon);
+  content: var(--filteractive-icon);
 }
 
 .filterinactive-icon {
-  background-image: var(--filterinactive-icon);
+  content: var(--filterinactive-icon);
 }
 
 .filterstalled-icon {
-  background-image: var(--filterstalled-icon);
+  content: var(--filterstalled-icon);
 }
 
 .folder-icon {
-  background-image: var(--folder-icon);
+  content: var(--folder-icon);
 }
 
 #downloadButton div, .insertLink {
-  background-image: var(--downButton);
+  content: var(--downButton);
 }
 
 #uploadButton div, .listAdd {
-  background-image: var(--uploadButton);
+  content: var(--uploadButton);
 }
 
 #deleteButton div, .deleteIcon, .listRemoveIcon {
-  background-image: var(--listRemoveIcon);
+  content: var(--listRemoveIcon);
 }
 
 #resumeButton div, .mediaStart {
-  background-image: var(--resumeButton);
+  content: var(--resumeButton);
 }
 
 #pauseButton div, .mediaPause {
-  background-image: var(--pauseButton);
+  content: var(--pauseButton);
 }
 
 #preferencesButton div, .configureIcon {
-  background-image: var(--prefButton);
+  content: var(--prefButton);
+}
+
+#downloadButton img {
+  content: var(--downButton);
+}
+
+#uploadButton img, .listAdd {
+  content: var(--uploadButton);
+}
+
+#deleteButton img, .deleteIcon, .listRemoveIcon {
+  content: var(--listRemoveIcon);
+}
+
+#resumeButton img, .mediaStart {
+  content: var(--resumeButton);
+}
+
+#pauseButton img, .mediaPause {
+  content: var(--pauseButton);
+}
+
+#preferencesButton img, .configureIcon {
+  content: var(--prefButton);
+}
+
+#mochaToolbar img {
+  max-width: 24px;
 }
 
 /* Structure */
@@ -894,6 +922,22 @@ a.propButton img {
   overflow-x: hidden;
 }
 
+#topPrioButton img {
+  content: var(--goTopIcon);
+}
+
+#increasePrioButton img {
+  content: var(--goUpIcon);
+}
+
+#decreasePrioButton img {
+  content: var(--goDownIcon);
+}
+
+#bottomPrioButton img {
+  content: var(--goBottomIcon);
+}
+
 /* context menu specific */
 .contextMenu {
   border: 1px solid #999;
@@ -950,6 +994,7 @@ a.propButton img {
 
 .contextMenu li img {
   width: 16px;
+  max-width: 16px;
   height: 16px;
   margin-bottom: -4px;
   -ms-interpolation-mode: bicubic;
@@ -960,13 +1005,250 @@ a.propButton img {
   top: 0px;
 }
 
-.contextMenu li a.arrow-right, .contextMenu li a:hover.arrow-right {
+#torrentsTableMenu > li:nth-of-type(1) a img {
+  content: var(--resumeButton);
+}
+
+#torrentsTableMenu > li:nth-of-type(2) a img {
+  content: var(--pauseButton);
+}
+
+#torrentsTableMenu > li:nth-of-type(3) a img {
+  content: var(--forceStartIcon);
+}
+
+#torrentsTableMenu > li:nth-of-type(4) a img {
+  content: var(--listRemoveIcon);
+}
+
+#torrentsTableMenu > li:nth-of-type(5) a:nth-of-type(1) img {
+  content: var(--folder-icon);
+}
+
+#torrentsTableMenu > li:nth-of-type(5) a:nth-of-type(2) img {
+  content: var(--editRenameIcon);
+}
+
+#torrentsTableMenu > li:nth-of-type(6) > a:nth-of-type(1) img, #torrentsTableMenu > li:nth-of-type(7) > a:nth-of-type(1) img {
+  content: var(--viewCatIcon);
+}
+
+#torrentsTableMenu > li:nth-of-type(8) > a img {
+  content: var(--checkedIcon);
+}
+
+#torrentsTableMenu > li:nth-of-type(9) a img {
+  content: var(--maxDownIcon);
+}
+
+#torrentsTableMenu > li:nth-of-type(10) a img, #torrentsTableMenu > li:nth-of-type(11) a img {
+  content: var(--maxUpIcon);
+}
+
+#torrentsTableMenu > li:nth-of-type(12) a img, #torrentsTableMenu > li:nth-of-type(13) a img, #torrentsTableMenu > li:nth-of-type(14) a img {
+  content: var(--checkedIcon);
+}
+
+#torrentsTableMenu > li:nth-of-type(15) a img, #torrentsTableMenu > li:nth-of-type(16) a img {
+  content: var(--docEditIcon);
+}
+
+#torrentsTableMenu > li:nth-of-type(17) ul li:nth-of-type(1) a img {
+  content: var(--goTopIcon);
+}
+
+#torrentsTableMenu > li:nth-of-type(17) ul li:nth-of-type(2) a img {
+  content: var(--goUpIcon);
+}
+
+#torrentsTableMenu > li:nth-of-type(17) ul li:nth-of-type(3) a img {
+  content: var(--goDownIcon);
+}
+
+#torrentsTableMenu > li:nth-of-type(17) ul li:nth-of-type(4) a img {
+  content: var(--goBottomIcon);
+}
+
+#torrentsTableMenu > li:nth-of-type(18) a:nth-of-type(1) img {
+  content: var(--editCopyIcon);
+}
+
+#torrentsTableMenu > li:nth-of-type(18) ul li:nth-of-type(1) > a img, #torrentsTableMenu > li:nth-of-type(18) ul li:nth-of-type(2) > a img, #torrentsTableMenu > li:nth-of-type(18) ul li:nth-of-type(3) > a img, #torrentsTableMenu > li:nth-of-type(18) ul li:nth-of-type(5) > a img {
+  content: var(--editCopyIcon);
+}
+
+#torrentsTableMenu > li:nth-of-type(18) ul li:nth-of-type(4) a img {
+  content: var(--magnetIcon);
+}
+
+#contextCategoryList li a img {
+  content: var(--folder-icon);
+}
+
+#contextTagList li:nth-of-type(1) a img {
+  content: var(--uploadButton);
+}
+
+#contextTagList li:nth-of-type(2) a img {
+  content: var(--editClearIcon);
+}
+
+#categoriesFilterMenu li:nth-of-type(1) a img {
+  content: var(--uploadButton);
+}
+
+#categoriesFilterMenu li:nth-of-type(2) a img {
+  content: var(--editRenameIcon);
+}
+
+#categoriesFilterMenu li:nth-of-type(3) a img, #categoriesFilterMenu li:nth-of-type(4) a img {
+  content: var(--listRemoveIcon);
+}
+
+#categoriesFilterMenu li:nth-of-type(5) a img {
+  content: var(--resumeButton);
+}
+
+#categoriesFilterMenu li:nth-of-type(6) a img {
+  content: var(--pauseButton);
+}
+
+#categoriesFilterMenu li:nth-of-type(7) a img {
+  content: var(--listRemoveIcon);
+}
+
+#tagsFilterMenu li:nth-of-type(1) a img {
+  content: var(--uploadButton);
+}
+
+#tagsFilterMenu li:nth-of-type(2) a img, #tagsFilterMenu li:nth-of-type(3) a img {
+  content: var(--listRemoveIcon);
+}
+
+#tagsFilterMenu li:nth-of-type(4) a img {
+  content: var(--resumeButton);
+}
+
+#tagsFilterMenu li:nth-of-type(5) a img {
+  content: var(--pauseButton);
+}
+
+#tagsFilterMenu li:nth-of-type(6) a img {
+  content: var(--editDeleteIcon);
+}
+
+#trackersFilterMenu li:nth-of-type(1) a img {
+  content: var(--resumeButton);
+}
+
+#trackersFilterMenu li:nth-of-type(2) a img {
+  content: var(--pauseButton);
+}
+
+#trackersFilterMenu li:nth-of-type(3) a img {
+  content: var(--editDeleteIcon);
+}
+
+#torrentTrackersMenu li:nth-of-type(1) a img {
+  content: var(--uploadButton);
+}
+
+#torrentTrackersMenu li:nth-of-type(2) a img {
+  content: var(--uploadButton);
+}
+
+#torrentTrackersMenu li:nth-of-type(3) a img {
+  content: var(--uploadButton);
+}
+
+#torrentTrackersMenu li:nth-of-type(4) a img {
+  content: var(--editCopyIcon);
+}
+
+#torrentPeersMenu li:nth-of-type(1) a img {
+  content: var(--uploadButton);
+}
+
+#torrentPeersMenu li:nth-of-type(2) a img {
+  content: var(--editCopyIcon);
+}
+
+#torrentPeersMenu li:nth-of-type(3) a img {
+  content: var(--groupDeleteIcon);
+}
+
+#torrentFilesMenu li:nth-of-type(1) a img {
+  content: var(--editRenameIcon);
+}
+
+#rssFeedMenu li:nth-of-type(1) a img {
+  content: var(--viewRefreshIcon);
+}
+
+#rssFeedMenu li:nth-of-type(2) a img {
+  content: var(--mailReadIcon);
+}
+
+#rssFeedMenu li:nth-of-type(3) a img {
+  content: var(--editRenameIcon);
+}
+
+#rssFeedMenu li:nth-of-type(4) a img {
+  content: var(--editDeleteIcon);
+}
+
+#rssFeedMenu li:nth-of-type(5) a img {
+  content: var(--uploadButton);
+}
+
+#rssFeedMenu li:nth-of-type(6) a img {
+  content: var(--folderNewIcon);
+}
+
+#rssFeedMenu li:nth-of-type(7) a img {
+  content: var(--viewRefreshIcon);
+}
+
+#rssFeedMenu li:nth-of-type(8) a img {
+  content: var(--editCopyIcon);
+}
+
+#rssDownloaderRuleMenu li:nth-of-type(1) a img {
+  content: var(--uploadButton);
+}
+
+#rssDownloaderRuleMenu li:nth-of-type(2) a img {
+  content: var(--listRemoveIcon);
+}
+
+#rssDownloaderRuleMenu li:nth-of-type(3) a img {
+  content: var(--editRenameIcon);
+}
+
+#rssDownloaderRuleMenu li:nth-of-type(4) a img {
+  content: var(--editDeleteIcon);
+}
+
+#rssArticleMenu li:nth-of-type(1) a img {
+  content: var(--downloadIcon);
+}
+
+#rssArticleMenu li:nth-of-type(2) a img {
+  content: var(--worldIcon);
+}
+
+#torrentsTableDiv_headerMenu img, #torrentTrackersTableDiv_headerMenu img, #torrentPeersTableDiv_headerMenu img, #torrentsTableDiv_headerMenu img, #torrentFilesTableDiv_headerMenu img {
+  margin-right: 4px;
+  content: var(--checkedIcon);
+}
+
+#torrentsTableDiv_headerMenu li a.arrow-right, #torrentsTableDiv_headerMenu li a:hover.arrow-right, #torrentTrackersTableDiv_headerMenu li a.arrow-right, #torrentTrackersTableDiv_headerMenu li a:hover.arrow-right, #torrentPeersTableDiv_headerMenu li a.arrow-right, #torrentPeersTableDiv_headerMenu li a:hover.arrow-right, #torrentsTableDiv_headerMenu li a.arrow-right, #torrentsTableDiv_headerMenu li a:hover.arrow-right, #torrentFilesTableDiv_headerMenu li a.arrow-right, #torrentFilesTableDiv_headerMenu li a:hover.arrow-right {
   background-image: url(../images/arrow-right.gif);
   background-repeat: no-repeat;
   background-position: right center;
 }
 
-.contextMenu li:hover ul, .contextMenu li.ieHover ul, .contextMenu li li:hover ul, .contextMenu li li.ieHover ul, .contextMenu li li li:hover ul, .contextMenu li li li.ieHover ul {
+#torrentsTableDiv_headerMenu li:hover ul, #torrentsTableDiv_headerMenu li.ieHover ul, #torrentsTableDiv_headerMenu li li:hover ul, #torrentsTableDiv_headerMenu li li.ieHover ul, #torrentsTableDiv_headerMenu li li li:hover ul, #torrentsTableDiv_headerMenu li li li.ieHover ul, #torrentTrackersTableDiv_headerMenu li:hover ul, #torrentTrackersTableDiv_headerMenu li.ieHover ul, #torrentTrackersTableDiv_headerMenu li li:hover ul, #torrentTrackersTableDiv_headerMenu li li.ieHover ul, #torrentTrackersTableDiv_headerMenu li li li:hover ul, #torrentTrackersTableDiv_headerMenu li li li.ieHover ul, #torrentPeersTableDiv_headerMenu li:hover ul, #torrentPeersTableDiv_headerMenu li.ieHover ul, #torrentPeersTableDiv_headerMenu li li:hover ul, #torrentPeersTableDiv_headerMenu li li.ieHover ul, #torrentPeersTableDiv_headerMenu li li li:hover ul, #torrentPeersTableDiv_headerMenu li li li.ieHover ul, #torrentsTableDiv_headerMenu li:hover ul, #torrentsTableDiv_headerMenu li.ieHover ul, #torrentsTableDiv_headerMenu li li:hover ul, #torrentsTableDiv_headerMenu li li.ieHover ul, #torrentsTableDiv_headerMenu li li li:hover ul, #torrentsTableDiv_headerMenu li li li.ieHover ul, #torrentFilesTableDiv_headerMenu li:hover ul, #torrentFilesTableDiv_headerMenu li.ieHover ul, #torrentFilesTableDiv_headerMenu li li:hover ul, #torrentFilesTableDiv_headerMenu li li.ieHover ul, #torrentFilesTableDiv_headerMenu li li li:hover ul, #torrentFilesTableDiv_headerMenu li li li.ieHover ul {
   left: auto;
 }
 
@@ -1166,10 +1448,25 @@ div.formRow {
   padding-top: 5px;
 }
 
+.filterTitle img {
+  content: var(--goDownIcon);
+  max-width: 16px;
+  margin-bottom: -4px;
+  margin-right: 10px;
+  position: relative;
+  top: 0px;
+  left: 2px;
+  display: inline-block;
+}
+
+.filterTitle img.rotate {
+  -webkit-transform: rotate(270deg);
+          transform: rotate(270deg);
+}
+
 .filterTitle div {
   width: 16px;
   height: 16px;
-  margin-bottom: -4px;
   padding: 0px 5px;
   position: relative;
   top: 0px;
@@ -1189,6 +1486,90 @@ div.formRow {
   left: 0px;
 }
 
+/*statusFilterList */
+#all_filter a img {
+  content: var(--filterall-icon);
+}
+
+#downloading_filter a img {
+  content: var(--downloading-icon);
+}
+
+#seeding_filter a img {
+  content: var(--uploading-icon);
+}
+
+#completed_filter a img {
+  content: var(--completed-icon);
+}
+
+#resumed_filter a img {
+  content: var(--resumed-icon);
+}
+
+#paused_filter a img {
+  content: var(--paused-icon);
+}
+
+#active_filter a img {
+  content: var(--filteractive-icon);
+}
+
+#inactive_filter a img {
+  content: var(--filterinactive-icon);
+}
+
+#stalled_filter a img {
+  content: var(--filterstalled-icon);
+}
+
+#stalled_uploading_filter a img {
+  content: var(--stalledUP-icon);
+}
+
+#stalled_downloading_filter a img {
+  content: var(--stalledDL-icon);
+}
+
+#checking_filter a img {
+  content: var(--checking-icon);
+}
+
+#errored_filter a img {
+  content: var(--error-icon);
+}
+
+/* RSS Downloader View */
+.imageButton {
+  background-color: var(--bg-color-tint) !important;
+}
+
+.imageButton:hover {
+  background-color: var(--bg-menu) !important;
+}
+
+.imageButton:active {
+  background-color: var(--bg-menu) !important;
+}
+
+#newRuleButton {
+  background-image: var(--uploadButton) !important;
+}
+
+#deleteRuleButton {
+  background-image: var(--listRemoveIcon) !important;
+}
+
+/* Search View */
+#searchPattern {
+  background-image: var(--searchIcon) !important;
+  background-position: 4px 4px !important;
+}
+
+#searchResultsGranularFiltersWarning {
+  content: var(--warningIcon);
+}
+
 ul.filterList {
   margin: 0 0 0 16px;
   padding-left: 0;
@@ -1201,7 +1582,7 @@ ul.filterList a {
   white-space: nowrap;
   text-overflow: ellipsis;
   color: inherit;
-  vertical-align: middle;
+  /* vertical-align: middle */
 }
 
 ul.filterList li:hover {
@@ -1210,6 +1591,27 @@ ul.filterList li:hover {
 
 ul.filterList li:hover a {
   color: var(--selected-text);
+}
+
+#categoryFilterList li a img, #tagFilterList li a img {
+  height: 16px;
+  width: 16px !important;
+  content: var(--folder-icon);
+  background-repeat: no-repeat;
+}
+
+#trackerFilterList li a {
+  padding-top: 2px;
+  height: 20px;
+}
+
+#trackerFilterList li a img {
+  height: 15px;
+  width: 15px !important;
+  margin-bottom: 0px;
+  max-width: 15px;
+  content: var(--netServerIcon);
+  background-repeat: no-repeat;
 }
 
 td.generalLabel {
@@ -1264,6 +1666,20 @@ td.generalLabel {
 
 #watched_folders_tab {
   border-collapse: collapse;
+}
+
+#watched_folders_tab tbody tr td:nth-of-type(2) img {
+  width: 18px !important;
+  max-width: 18px;
+  content: var(--uploadButton);
+}
+
+#SpeedTab .settings:nth-of-type(1) table tbody tr td:nth-of-type(1) img {
+  content: var(--slowOffIcon);
+}
+
+#SpeedTab .settings:nth-of-type(2) table tbody tr td:nth-of-type(1) img {
+  content: var(--slowIcon);
 }
 
 #watched_folders_tab td, #watched_folders_tab th {
@@ -1410,6 +1826,82 @@ td.statusBarSeparator {
   display: inline-block;
 }
 
+#uploadLink img {
+  content: var(--uploadButton);
+}
+
+#downloadLink img {
+  content: var(--downButton);
+}
+
+#logoutLink img {
+  content: var(--logOutIcon);
+}
+
+#shutdownLink img {
+  content: var(--editDeleteIcon);
+}
+
+#resumeAllLink img, #resumeLink img {
+  content: var(--resumeButton);
+}
+
+#pauseAllLink img, #pauseLink img {
+  content: var(--pauseButton);
+}
+
+#deleteLink img {
+  content: var(--editDeleteIcon);
+}
+
+#topPrioLink img {
+  content: var(--goTopIcon);
+}
+
+#increasePrioLink img {
+  content: var(--goUpIcon);
+}
+
+#decreasePrioLink img {
+  content: var(--goDownIcon);
+}
+
+#bottomPrioLink img {
+  content: var(--goBottomIcon);
+}
+
+#recheckLink img {
+  content: var(--docEditIcon);
+}
+
+#showTopToolbarLink img, #showStatusBarLink img, #speedInBrowserTitleBarLink img, #showSearchEngineLink img, #showRssReaderLink img {
+  content: var(--checkedIcon);
+}
+
+#StatisticsLink img {
+  content: var(--viewStatsIcon);
+}
+
+#preferencesLink img {
+  content: var(--prefButton);
+}
+
+#registerMagnetHandlerLink img {
+  content: var(--magnetIcon);
+}
+
+#docsLink img {
+  content: var(--helpContentIcon);
+}
+
+#bugLink img {
+  content: var(--walletIcon);
+}
+
+#aboutLink img {
+  content: var(--helpAboutIcon);
+}
+
 /*ToolBar Icons*/
 #mochaToolbar a > div {
   width: 24px;
@@ -1513,6 +2005,53 @@ td.statusBarSeparator {
 #desktopFooter .ctxt_icon {
   top: 2px;
   background-size: contain;
+}
+
+#desktopFooter img {
+  height: 16px;
+  width: 16px;
+  max-width: 16px;
+}
+
+/* */
+#desktopFooter table tbody tr td:nth-of-type(5) img {
+  content: var(--firewalledIcon);
+}
+
+#desktopFooter table tbody tr td:nth-of-type(7) img {
+  content: var(--slowOffIcon);
+  position: relative;
+  top: 2px;
+  width: 24px  !important;
+  max-width: 24px  !important;
+}
+
+#desktopFooter table tbody tr td:nth-of-type(9) img {
+  content: var(--downloading-icon);
+}
+
+#desktopFooter table tbody tr td:nth-of-type(11) img {
+  content: var(--seedingIcon);
+}
+
+.connectedIcon {
+  content: var(--connectedIcon) !important;
+}
+
+.firewalledIcon {
+  content: var(--firewalledIcon) !important;
+}
+
+.disconnectedIcon {
+  content: var(--disconnectedIcon) !important;
+}
+
+.slowOffIcon {
+  content: var(--slowOffIcon) !important;
+}
+
+.slowIcon {
+  content: var(--slowIcon) !important;
 }
 
 #alternativeSpeedLimits.ctxt_icon {

@@ -241,7 +241,7 @@ window.addEvent('load', function() {
         LocalPreferences.set('filter_' + filter + "_collapsed", !$(element).hasClass("invisible"));
         $(element).toggleClass("invisible")
         const parent = $(element).getParent(".filterWrapper");
-        const toggleIcon = $(parent).getChildren(".filterTitle div"); /*CHANGE AREA*/
+        const toggleIcon = $(parent).getChildren(".filterTitle img");
         if (toggleIcon)
             toggleIcon[0].toggleClass("rotate");
     };
@@ -394,10 +394,10 @@ window.addEvent('load', function() {
         if (!categoryList)
             return;
         categoryList.empty();
-		/*CHANGE AREA*/
+
         const create_link = function(hash, text, count) {
             const html = '<a href="#" onclick="setCategoryFilter(' + hash + ');return false;">'
-                + '<div class="folder_icon" style="width: 15px; padding-right: 5px; margin-bottom: -3px; display: inline-block;"></div>'
+                + '<img src="icons/inode-directory.svg"/>'
                 + window.qBittorrent.Misc.escapeHtml(text) + ' (' + count + ')' + '</a>';
             const el = new Element('li', {
                 id: hash,
@@ -451,10 +451,10 @@ window.addEvent('load', function() {
 
         while (tagFilterList.firstChild !== null)
             tagFilterList.removeChild(tagFilterList.firstChild);
-		/*CHANGE AREA*/
+
         const createLink = function(hash, text, count) {
             const html = '<a href="#" onclick="setTagFilter(' + hash + ');return false;">'
-                + '<div class="folder_icon" style="width: 15px; padding-right: 5px; margin-bottom: -3px; display: inline-block;"></div>'
+                + '<img src="icons/inode-directory.svg"/>'
                 + window.qBittorrent.Misc.escapeHtml(text) + ' (' + count + ')' + '</a>';
             const el = new Element('li', {
                 id: hash,
@@ -467,7 +467,7 @@ window.addEvent('load', function() {
         const torrentsCount = torrentsTable.getRowIds().length;
         let untagged = 0;
         for (const key in torrentsTable.rows) {
-            if (Object.prototype.hasOwnProperty(key) && torrentsTable.rows[key]['full_data'].tags.length === 0)
+            if (Object.prototype.hasOwnProperty.call(torrentsTable.rows, key) && (torrentsTable.rows[key]['full_data'].tags.length === 0))
                 untagged += 1;
         }
         tagFilterList.appendChild(createLink(TAGS_ALL, 'QBT_TR(All)QBT_TR[CONTEXT=TagFilterModel]', torrentsCount));
@@ -508,7 +508,7 @@ window.addEvent('load', function() {
 
         const createLink = function(hash, text, count) {
             const html = '<a href="#" onclick="setTrackerFilter(' + hash + ');return false;">'
-                + '<div class="gen_icon netServerIcon"></div>'  /*Change Area*/
+                + '<img src="icons/network-server.svg"/>'
                 + window.qBittorrent.Misc.escapeHtml(text.replace("%1", count)) + '</a>';
             const el = new Element('li', {
                 id: hash,
@@ -522,7 +522,7 @@ window.addEvent('load', function() {
         trackerFilterList.appendChild(createLink(TRACKERS_ALL, 'QBT_TR(All (%1))QBT_TR[CONTEXT=TrackerFiltersList]', torrentsCount));
         let trackerlessTorrentsCount = 0;
         for (const key in torrentsTable.rows) {
-            if (Object.prototype.hasOwnProperty(key) && (torrentsTable.rows[key]['full_data'].trackers_count === 0))
+            if (Object.prototype.hasOwnProperty.call(torrentsTable.rows, key) && (torrentsTable.rows[key]['full_data'].trackers_count === 0))
                 trackerlessTorrentsCount += 1;
         }
         trackerFilterList.appendChild(createLink(TRACKERS_TRACKERLESS, 'QBT_TR(Trackerless (%1))QBT_TR[CONTEXT=TrackerFiltersList]', trackerlessTorrentsCount));
@@ -704,7 +704,7 @@ window.addEvent('load', function() {
     };
 
     const syncData = function(delay) {
-        if (!syncRequestInProgress){
+        if (!syncRequestInProgress) {
             clearTimeout(syncMainDataTimer);
             syncMainDataTimer = syncMainData.delay(delay);
         }
@@ -746,15 +746,21 @@ window.addEvent('load', function() {
             $('TotalQueuedSize').set('html', window.qBittorrent.Misc.friendlyUnit(serverState.total_queued_size, false));
         }
 
-        switch (serverState.connection_status) { /*Change Area*/
+        switch (serverState.connection_status) { 
         case 'connected':
-            $('connectionStatus').class = 'ctxt_icon connectedIcon';
+            $('connectionStatus').set('class', 'connectedIcon');/*Change Area*/
+            $('connectionStatus').src = 'icons/connected.svg';
+            $('connectionStatus').alt = 'QBT_TR(Connection status: Connected)QBT_TR[CONTEXT=MainWindow]';
             break;
         case 'firewalled':
-            $('connectionStatus').class = 'ctxt_icon firewalledIcon';
+            $('connectionStatus').set('class', 'firewalledIcon');
+            $('connectionStatus').src = 'icons/firewalled.svg';
+            $('connectionStatus').alt = 'QBT_TR(Connection status: Firewalled)QBT_TR[CONTEXT=MainWindow]';
             break;
         default:
-            $('connectionStatus').class = 'ctxt_icon disconnectedIcon';
+            $('connectionStatus').src = 'icons/disconnected.svg';
+            $('connectionStatus').alt = 'QBT_TR(Connection status: Disconnected)QBT_TR[CONTEXT=MainWindow]';
+            $('connectionStatus').set('class', 'disconnectedIcon');
             break;
         }
 
@@ -788,16 +794,16 @@ window.addEvent('load', function() {
         serverSyncMainDataInterval = Math.max(serverState.refresh_interval, 500);
     };
 
-    const updateAltSpeedIcon = function(enabled) { /*Change NEEDED*/
+    const updateAltSpeedIcon = function(enabled) { 
         if (enabled) {
-			$('alternativeSpeedLimits').removeClass('slowOffIcon')
-			$('alternativeSpeedLimits').addClass('slowIcon')
-            $('alternativeSpeedLimits').title = 'QBT_TR(Alternative speed limits: On)QBT_TR[CONTEXT=MainWindow]';
+			$('alternativeSpeedLimits').addClass('slowIcon') /*Change NEEDED*/
+            $('alternativeSpeedLimits').src = 'icons/slow.svg';
+            $('alternativeSpeedLimits').alt = 'QBT_TR(Alternative speed limits: On)QBT_TR[CONTEXT=MainWindow]';
         }
         else {
 			$('alternativeSpeedLimits').removeClass('slowIcon')
-			$('alternativeSpeedLimits').addClass('slowOffIcon')
-            $('alternativeSpeedLimits').title = 'QBT_TR(Alternative speed limits: Off)QBT_TR[CONTEXT=MainWindow]';
+            $('alternativeSpeedLimits').src = 'icons/slow_off.svg';
+            $('alternativeSpeedLimits').alt = 'QBT_TR(Alternative speed limits: Off)QBT_TR[CONTEXT=MainWindow]';
         }
     };
 
