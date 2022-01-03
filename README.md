@@ -40,6 +40,6 @@ Instructions for using my Alternate WebUI:
 
 # Compatibility
 This should be the primary indicator of general compatibility (aside from image files).
-![Preview image](https://github.com/raylanser/DarkLight-qBittorent-WebUI/blob/master/compatibility.png)
+![Preview image](https://github.com/crash0verride11/DarkLight-qBittorent-WebUI/blob/master/compatibility.png)
 This should be the primary indicator of image toggle compatibility (excluding firefox, which technically works, but not the same way as other browsers)
-![Preview image](https://github.com/raylanser/DarkLight-qBittorent-WebUI/blob/master/compatibility2.png)
+![Preview image](https://github.com/crash0verride11/DarkLight-qBittorent-WebUI/blob/master/compatability2.png
