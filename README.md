@@ -1,22 +1,22 @@
 # qBittorent-WebUI-DarkLight
-A version of Dark/Light mode for the standard WebUI using custom CSS Properties. This should support the same browsers as the standard WebUI, excluding IE, as long as the version is new enough to support vars and custom CSS properties (indicated in the table at the bottom). The theme respects OS default, but is also toggle-able. Preferences for the dark or light theme toggle are stored in local storage and remembered. The alternate webUI is set to ignore the toggled theme after three hours and use the OS preference instead. This can be disabled or the length of time extended by changing values in "/private/scripts/mootools-1.6-core-yc.js" (the only script file that was already linked in all the htmls) I'll add clearer instructions on changing this eventually.
+A version of Dark/Light mode for the standard WebUI using custom CSS Properties. This should support the same browsers as the standard WebUI, excluding IE, as long as the version is new enough to support vars and custom CSS properties (indicated in the table at the bottom). The theme respects OS default, but is also toggle-able. Preferences for the dark or light theme toggle are stored in local storage and remembered. The alternate webUI is set to ignore the toggled theme after three hours and use the OS preference instead. This can be disabled or the length of time extended by changing values in "/private/scripts/MooTools-Core-1.6.0-compat-compressed.js" (the only script file that was already linked in all the htmls) I'll add clearer instructions on changing this eventually.
 
 Basically I wanted to refresh my CSS / SASS skills by creating a dark mode for qBittorrent. The only other version of the standard UI I've seen is not toggle-albe. I also primarily see versions that change colors but leave all the icons as is (not ideal for dark mode). I've managed to keep changes primarily to the CSS files, though minor changes have been made to a few of the JSs and the index. 
 
 # Notes
-**Updates Dec 2021 / Firefox Compatability** I've recently made a large update to the method for image replacement, that will have reduced compatibility for image toggling, but has greatly reduced the amount of code altered outside the CSS files. The plus side, the images will fall back to the normal icons. Modern browsers (aside from firefox) should support the image replacement, but no guarantees for older OSs / browsers. I previously replaced every single image tag to make image toggling work, now I've replaced none. Firefox prioritizes the static src image over the dynamic image defined in CSS. I may attempt some fixes for firefox, but otherwise see the "Wide Compatibility (Div)" branch (that I will not be actively maintaining).
+**Updates Dec 2021 / Firefox Compatability** I've recently made a large update to the method for image replacement, that will have reduced compatibility for image toggling, but has greatly reduced the amount of code altered outside the CSS files. The plus side, the images will fall back to the normal icons. Modern browsers (test working correctly in safari, chrome, edge, and opera, issues in firefox) should support the image replacement, but no guarantees for older OSs / browsers. I previously replaced every single image tag to make image toggling work, now I replaced zero. Firefox prioritizes the static src image defined in the HTML over the dynamic image defined in CSS. I may attempt some fixes for firefox, but otherwise see the "Wide Compatibility (Div)" branch that I will not be actively maintaining.
 
-**Older Versions of qBittorrent:** With recent rebuild of project, this may work more older qbit versions, but I am priritizing latest recenet releases and make no guarantees for older versions.
+**Older Versions of qBittorrent:** I am priritizing latest releases of qBittorent. With the recent rebuild of project, this may work with more older qbit versions in the future, but will definitely break with every mootools update. See the legacy branch for an older version of this project and maybe you'll get lucky. 
 
-**Search/RSS Tabs:** I also don't use either of these tabs, but I did some testing for themeing. If you see something that clearly is not as it should be, let me know in the issues.
+**Search/RSS Tabs:** I don't use either of these tabs, but I did some testing for themeing. If you see something that clearly is not as it should be, let me know in the issues.
 
-**Icons:** I've compiled UI icons that I've re-colored for dark mode into an "_IC.ai" for quick recoloring.
+**Icons:** I've compiled UI icons that I've re-colored for dark mode into an "_IC.ai" for quick recoloring to those who have a compatible editor.
 
-**Colors/Design:** I'll probably fork this eventually with custom icons throughout and a redsigned style. Recently re-worked the icons a tad, but I'll be leaving "Wide Compatibility (Div)" as the closest version to the original UI.
+**Colors/Design:** I'll probably fork this eventually with custom icons throughout and a redsigned style. Recently did another icon re-color, but will likely slowly iterate away from the origninal qBittorrent icons over time. I'll be leaving "Wide Compatibility (Div)" icons as the closest version to the original UI.
 
 **Scrollbars:** Use CSS styling, which has only really been supported in the last few years. Compatibility may vary, but works in current versions of Safari, Chrome, and Firefox. I doubt I'll ever implement a javascript method.
 
-**Near future:** I won't be making many changes, just stream-lineing the SASS with some more mixins.
+**Near future:** I won't be making many changes, just stream-lining the SASS with some more mixins.
 
 **Long term:** I may attempt mobile layouts, but those could never make it here. For the short term I've made the login page more mobile device friendly (not tiny). 
 
@@ -39,5 +39,7 @@ Instructions for using my Alternate WebUI:
 	* Safari: https://www.macrumors.com/how-to/clear-safari-cache/
 
 # Compatibility
-This should be the primary indicator of compatibility (aside from imag files).
+This should be the primary indicator of general compatibility (aside from image files).
 ![Preview image](https://github.com/raylanser/DarkLight-qBittorent-WebUI/blob/master/compatibility.png)
+This should be the primary indicator of image toggle compatibility (excluding firefox, which technically works, but not the same way as other browsers)
+![Preview image](https://github.com/raylanser/DarkLight-qBittorent-WebUI/blob/master/compatibility2.png)
