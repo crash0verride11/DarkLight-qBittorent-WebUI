@@ -974,18 +974,27 @@ window.qBittorrent.DynamicTable = (function() {
                 if (td.getChildren('img').length > 0) {
                     const img = td.getChildren('img')[0]; 
                     if (img.src.indexOf(img_path) < 0) {
-                        img.set('src', img_path);
+                        if(navigator.saysWho  != 'Firefox' || checkFirefox() != true) {img.set('src', img_path);}
                         img.set('title', state);
 					    img.set('class', img_class);
                     }
                 }
                 else {
-                    td.adopt(new Element('img', {
-                        'src': img_path,
-                        'class': img_class,
-                        'title': state
-                    }));
-                }
+                    if (navigator.saysWho  != 'Firefox' || checkFirefox() != true) {
+                        td.adopt(new Element('img', {
+                            'src': img_path,
+                            'class': img_class,
+                            'title': state,
+                            'alt': 'status: ' + state
+                        }));
+                    } else {
+                        td.adopt(new Element('img', {
+                            'class': img_class,
+                            'title': state,
+                            'alt': 'status: ' + state 
+                        }));
+                    }
+                } 
             };
 
             // status
@@ -2197,18 +2206,28 @@ window.qBittorrent.DynamicTable = (function() {
                 if (td.getChildren('img').length > 0) {
                     const img = td.getChildren('img')[0];
                     if (img.src.indexOf(img_path) < 0) {
-                        img.set('src', img_path);
+                        if (navigator.saysWho  != 'Firefox' || checkFirefox() != true) {img.set('src', img_path);};
                         img.set('class', img_class); /*Change Area*/
                         img.set('title', status);
                     }
                 } 
                 else {
+                    if (navigator.saysWho  != 'Firefox' || checkFirefox() != true) {
                     td.adopt(new Element('img', { 
                         'src': img_path,
                         'class': img_class, /*Change Area*/
                         'height': '22px',
-                        'width': '22px'
+                        'width': '22px',
+                        'alt': 'status: ' + state
                     }));
+                    } else {
+                        td.adopt(new Element('img', { 
+                            'class': img_class, 
+                            'height': '22px',
+                            'width': '22px',
+                            'alt': 'status: ' + state
+                        }));
+                    }
                 }
             });
         },

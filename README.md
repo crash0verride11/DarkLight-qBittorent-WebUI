@@ -4,7 +4,7 @@ A version of Dark/Light mode for the standard WebUI using custom CSS Properties.
 Basically I wanted to refresh my CSS / SASS skills by creating a dark mode for qBittorrent. The only other version of the standard UI I've seen is not toggle-albe. I also primarily see versions that change colors but leave all the icons as is (not ideal for dark mode). I've managed to keep changes primarily to the CSS files, though minor changes have been made to a few of the JSs and the index. 
 
 # Notes
-**Updates Dec 2021 / Firefox Compatability** I've recently made a large update to the method for image replacement, that will have reduced compatibility for image toggling, but has greatly reduced the amount of code altered outside the CSS files. The plus side, the images will fall back to the normal icons. Modern browsers (test working correctly in safari, chrome, edge, and opera, issues in firefox) should support the image replacement, but no guarantees for older OSs / browsers. I previously replaced every single image tag to make image toggling work, now I replaced zero. Firefox prioritizes the static src image defined in the HTML over the dynamic image defined in CSS. I may attempt some fixes for firefox, but otherwise see the "Wide Compatibility (Div)" branch that I will not be actively maintaining.
+**Updates Dec 2021 / Firefox Compatability** I've recently made a large update to the method for image replacement, that will have reduced compatibility for image toggling, but has greatly reduced the amount of code altered outside the CSS files. The plus side, the images will fall back to the normal icons. Modern browsers should support the image replacement (I've tested working correctly in safari, chrome, edge, and opera, issues in firefox), but no guarantees for older OSs / browsers. I previously replaced every single image tag to make image toggling work, now I replaced zero. Firefox prioritizes the static src image defined in the HTML over the dynamic image defined in CSS. I've attempted some fixes for firefox, but I haven't tested extensively and if you use a plugin the masks your browser type, the fixes will fail.
 
 **Older Versions of qBittorrent:** I am priritizing latest releases of qBittorent. With the recent rebuild of project, this may work with more older qbit versions in the future, but will definitely break with every mootools update. See the legacy branch for an older version of this project and maybe you'll get lucky. 
 
@@ -12,11 +12,11 @@ Basically I wanted to refresh my CSS / SASS skills by creating a dark mode for q
 
 **Icons:** I've compiled UI icons that I've re-colored for dark mode into an "_IC.ai" for quick recoloring to those who have a compatible editor.
 
-**Colors/Design:** I'll probably fork this eventually with custom icons throughout and a redsigned style. Recently did another icon re-color, but will likely slowly iterate away from the origninal qBittorrent icons over time. I'll be leaving "Wide Compatibility (Div)" icons as the closest version to the original UI.
+**Colors/Design:** I may branch this eventually with custom icons throughout and a redsigned style. Recently did another icon re-color, but will likely slowly iterate away from the origninal qBittorrent icons over time. I'll be leaving "Wide Compatibility (Div)" and "Legacy" branch icons as the closest version to the original UI.
 
 **Scrollbars:** Use CSS styling, which has only really been supported in the last few years. Compatibility may vary, but works in current versions of Safari, Chrome, and Firefox. I doubt I'll ever implement a javascript method.
 
-**Near future:** I won't be making many changes, just stream-lining the SASS with some more mixins.
+**Near future:** I won't be making many changes, just stream-lining the SASS with some more mixins. 
 
 **Long term:** I may attempt mobile layouts, but those could never make it here. For the short term I've made the login page more mobile device friendly (not tiny). 
 
@@ -34,7 +34,7 @@ Instructions for using my Alternate WebUI:
 
 # Post-Installation
 * Issues with parts of the UI not showing as dark may be a result of existing cached website data. To clear your cache on different browsers try (some methods clear all website data):
-	* Firefox: https://support.mozilla.org/en-US/kb/how-clear-firefox-cache
+	* Firefox: https://support.mozilla.org/en-US/kb/how-clear-firefox-cache (Shift+opt clicking the page refresh button also works for me)
 	* Chrome: https://support.google.com/accounts/answer/32050?hl
 	* Safari: https://www.macrumors.com/how-to/clear-safari-cache/
 

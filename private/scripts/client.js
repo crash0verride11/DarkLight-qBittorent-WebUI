@@ -748,19 +748,20 @@ window.addEvent('load', function() {
 
         switch (serverState.connection_status) { 
         case 'connected':
+            alert();
             $('connectionStatus').set('class', 'connectedIcon');/*Change Area*/
-            $('connectionStatus').src = 'icons/connected.svg';
+            if (navigator.saysWho  != 'Firefox' || checkFirefox() != true) {$('connectionStatus').src = 'icons/connected.svg';}
             $('connectionStatus').alt = 'QBT_TR(Connection status: Connected)QBT_TR[CONTEXT=MainWindow]';
             break;
         case 'firewalled':
             $('connectionStatus').set('class', 'firewalledIcon');
-            $('connectionStatus').src = 'icons/firewalled.svg';
+            if (navigator.saysWho  != 'Firefox' || checkFirefox() != true) {$('connectionStatus').src = 'icons/firewalled.svg';}
             $('connectionStatus').alt = 'QBT_TR(Connection status: Firewalled)QBT_TR[CONTEXT=MainWindow]';
             break;
         default:
-            $('connectionStatus').src = 'icons/disconnected.svg';
-            $('connectionStatus').alt = 'QBT_TR(Connection status: Disconnected)QBT_TR[CONTEXT=MainWindow]';
             $('connectionStatus').set('class', 'disconnectedIcon');
+            if (navigator.saysWho  != 'Firefox' || checkFirefox() != true) {$('connectionStatus').src = 'icons/disconnected.svg';}
+            $('connectionStatus').alt = 'QBT_TR(Connection status: Disconnected)QBT_TR[CONTEXT=MainWindow]';
             break;
         }
 
@@ -796,13 +797,13 @@ window.addEvent('load', function() {
 
     const updateAltSpeedIcon = function(enabled) { 
         if (enabled) {
-			$('alternativeSpeedLimits').addClass('slowIcon') /*Change NEEDED*/
-            $('alternativeSpeedLimits').src = 'icons/slow.svg';
+			$('alternativeSpeedLimits').addClass('slowIcon') /*Change Area*/
+            if (navigator.saysWho  != 'Firefox' || checkFirefox() != true) {$('alternativeSpeedLimits').src = 'icons/slow.svg';}
             $('alternativeSpeedLimits').alt = 'QBT_TR(Alternative speed limits: On)QBT_TR[CONTEXT=MainWindow]';
         }
         else {
 			$('alternativeSpeedLimits').removeClass('slowIcon')
-            $('alternativeSpeedLimits').src = 'icons/slow_off.svg';
+            if (navigator.saysWho  != 'Firefox' || checkFirefox() != true) {$('alternativeSpeedLimits').src = 'icons/slow_off.svg';}
             $('alternativeSpeedLimits').alt = 'QBT_TR(Alternative speed limits: Off)QBT_TR[CONTEXT=MainWindow]';
         }
     };
