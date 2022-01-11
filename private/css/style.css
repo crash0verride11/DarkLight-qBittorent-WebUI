@@ -1,5 +1,4 @@
 /* Reset */
-/*ul,ol,dl,li,dt,dd,h1,h2,h3,h4,h5,h6,pre,form,body,html,p,blockquote,fieldset,input,object,iframe  margin: 0 padding: 0 */
 a img, :link img, :visited img {
   border: none;
 }
@@ -1662,6 +1661,21 @@ td.generalLabel {
 
 #prop_general {
   padding: 2px;
+}
+
+#progress {
+  border: 1px solid #999;
+  padding: 0;
+  position: relative;
+  width: 100%;
+}
+
+#progress canvas {
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
 }
 
 #watched_folders_tab {
