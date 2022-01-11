@@ -748,7 +748,6 @@ window.addEvent('load', function() {
 
         switch (serverState.connection_status) { 
         case 'connected':
-            alert();
             $('connectionStatus').set('class', 'connectedIcon');/*Change Area*/
             if (navigator.saysWho  != 'Firefox' || checkFirefox() != true) {$('connectionStatus').src = 'icons/connected.svg';}
             $('connectionStatus').alt = 'QBT_TR(Connection status: Connected)QBT_TR[CONTEXT=MainWindow]';
