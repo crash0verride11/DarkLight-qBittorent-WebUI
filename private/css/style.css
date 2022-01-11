@@ -1004,6 +1004,22 @@ a.propButton img {
   top: 0px;
 }
 
+.contextMenu li a.arrow-right, .contextMenu li a:hover.arrow-right {
+  background-image: url("../images/arrow-right.gif");
+  background-position: right center;
+  background-repeat: no-repeat;
+}
+
+.contextMenu li:hover ul,
+.contextMenu li.ieHover ul,
+.contextMenu li li.ieHover ul,
+.contextMenu li li li.ieHover ul,
+.contextMenu li li:hover ul,
+.contextMenu li li li:hover ul {
+  /* lists nested under hovered list items */
+  left: auto;
+}
+
 #torrentsTableMenu > li:nth-of-type(1) a img {
   content: var(--resumeButton);
 }
@@ -1082,6 +1098,14 @@ a.propButton img {
 
 #contextCategoryList li a img {
   content: var(--folder-icon);
+}
+
+#contextCategoryList li:nth-of-type(1) a img {
+  content: var(--uploadButton);
+}
+
+#contextCategoryList li:nth-of-type(2) a img {
+  content: var(--editClearIcon);
 }
 
 #contextTagList li:nth-of-type(1) a img {
