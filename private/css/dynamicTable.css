@@ -72,7 +72,7 @@ tr.dynamicTableHeader {
   left: 10px;
   border-width: 5px;
   border-style: solid;
-  border-color: transparent transparent transparent white;
+  border-color: transparent transparent transparent var(--font-tint);
   -webkit-transform: rotate(90deg);
           transform: rotate(90deg);
 }
