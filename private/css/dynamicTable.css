@@ -46,7 +46,7 @@ tr.dynamicTableHeader {
   white-space: nowrap;
 }
 
-.dynamicTable th {
+.dynamicTable tr th {
   background-color: var(--bg-color-tint);
   padding: 4px 4px 4px 8px;
   white-space: nowrap;
@@ -58,17 +58,29 @@ tr.dynamicTableHeader {
   -webkit-box-sizing: border-box;
 }
 
-.dynamicTable th.sorted {
+.dynamicTable tr th.sorted {
   padding-right: 5px;
-  background-image: var(--goUpIcon);
-  background-origin: content-box;
-  background-position: right;
-  background-repeat: no-repeat;
-  background-size: 15px;
 }
 
-.dynamicTable th.sorted.reverse {
-  background-image: var(--goDownIcon);
+.dynamicTable tr th.sorted::after {
+  display: inline-block;
+  content: '';
+  width: 0px;
+  height: 0px;
+  position: relative;
+  top: 3px;
+  left: 10px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent transparent white;
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+}
+
+.dynamicTable tr th.sorted.reverse::after {
+  -webkit-transform: rotate(270deg);
+          transform: rotate(270deg);
+  top: -2px;
 }
 
 .dynamicTable td {

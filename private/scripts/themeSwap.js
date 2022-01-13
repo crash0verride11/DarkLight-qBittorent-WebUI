@@ -1,6 +1,5 @@
-let curDate2 = new Date();
-// If themeForget is true the theme value will be ignored after a set number of hours
-// Listen for a click on the button 
+let curDate = new Date();
+
 function themeSwap() {
 // If the OS preferes dark-mode...
 if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
@@ -16,9 +15,9 @@ if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
         theme = "light";
     }
     // Then save the choice in localStorage
-    curDate2 = new Date();
+    curDate = new Date();
     localStorage.setItem("theme", theme);
-    localStorage.setItem("themeDate", curDate2);
+    localStorage.setItem("themeDate", curDate);
 } else {
     // Remove unnecessary class if OS switches prefered theme while page is already loaded.
     if (document.body.classList.contains("light-theme")) {document.body.classList.toggle("light-theme");}
@@ -32,7 +31,12 @@ if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
         theme = "dark";
     }
     // Then save the choice in localStorage
-    curDate2 = new Date();
+    curDate = new Date();
     localStorage.setItem("theme", theme);}
-    localStorage.setItem("themeDate", curDate2);
+    localStorage.setItem("themeDate", curDate);
 }
+
+
+
+
+

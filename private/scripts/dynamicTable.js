@@ -2218,14 +2218,14 @@ window.qBittorrent.DynamicTable = (function() {
                         'class': img_class, /*Change Area*/
                         'height': '22px',
                         'width': '22px',
-                        'alt': 'status: ' + state
+                        'alt': 'status: ' + status
                     }));
                     } else {
                         td.adopt(new Element('img', { 
                             'class': img_class, 
                             'height': '22px',
                             'width': '22px',
-                            'alt': 'status: ' + state
+                            'alt': 'status: ' + status
                         }));
                     }
                 }

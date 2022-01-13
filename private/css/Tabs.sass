@@ -22,18 +22,33 @@
 
 @import mixins
 
-$tabsTheme: (invert-image 'invert(0%)' 'invert(100%)', tab-image 'url(../images/tabs.png)' 'url(../images/tabs_dark.png)')
+$tabsTheme: (invert-image 'invert(0%)' 'invert(100%)', tab-image 'url(../images/tabs.png)' 'url(../images/tabs_dark.png)', tab-border '#e5e5e5' 'rgba(80,80,80,1)', tab-grade 'linear-gradient(0deg, rgba(229,229,229,1) 0%, rgba(250,250,250,1) 100%)' 'linear-gradient(0deg, rgba(80,80,80,1) 0%, rgba(112,112,112,1) 100%)', tab-grade2 'linear-gradient(0deg, rgba(187,187,187,1) 0%, rgba(229,229,229,1) 25%, rgba(240,240,240,1) 100%)' 'linear-gradient(0deg, rgba(50,50,50,1) 0%, rgba(60,60,60,1) 25%, rgba(90,90,90,1) 100%)')
 
 +themeGenerate($tabsTheme, "--")
 
 
+#preferencesPage_toolbarWrapper, #propertiesPanel_header, #aboutpage_toolbarWrapper
+	border-bottom: solid var(--tab-border) 3px
+	.toolbarTabs
 
-.toolbarTabs
-	padding: 0 5px 2px 2px
-	background: var(--tab-image) repeat-x
-	background-position: left -70px
-	overflow: visible
+		box-shadow:  inset 0px -8px 8px -8px rgba(0,0,0,0.5)
 
+#preferencesPage_toolbarWrapper, #aboutpage_toolbarWrapper
+	height: 30px !important
+	background-color:  var(--bg-color-tint)
+	.toolbarTabs
+		padding: 5px 0px
+	
+#propertiesPanel_header
+	height: 26px	
+
+.tab-menu li:nth-of-type(1) a
+	margin-left: 5px
+				
+#propertiesPanel
+	border-top: 1px solid var(--border-col)
+#prop_general
+	padding-top: 5px
 
 .tab-menu
 	padding-top: 1px
@@ -43,29 +58,26 @@ $tabsTheme: (invert-image 'invert(0%)' 'invert(100%)', tab-image 'url(../images/
 	line-height: 16px
 	font-size: 11px
 
+.panel-headerContent 
+	border-bottom: solid #e5e5e5 5px
 
 .tab-menu li
 	float: left
-	margin: 0 0 5px 0
+	margin: 0px 3px -5px 3px
 	cursor: pointer
-	background: var(--tab-image) repeat-x
-	background-position: left -35px
-
 	&.selected
-		background: var(--tab-image) repeat-x
-		background-position: left 0
 		a
 			color: var(--font-tint)
 			font-weight: bold
-			background: var(--tab-image) repeat-x
-			background-position: right 0
-
+			background: rgb(229,229,229)
+			background: var(--tab-grade)
 	a
 		display: block
-		margin-left: 8px
-		padding: 6px 15px 5px 9px
+		padding: 5px 15px 3px 15px
 		text-align: center
 		font-weight: normal
 		color: var(--font-tint)
-		background: var(--tab-image) repeat-x
-		background-position: right -35px
+		background: rgb(187,187,187)
+		background: var(--tab-grade2)
+		box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.6)
+		border-radius: 8px 8px 0px 0px

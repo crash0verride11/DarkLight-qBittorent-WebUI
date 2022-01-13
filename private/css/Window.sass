@@ -23,16 +23,30 @@
 	---------------------------------------------------------------- */
 @import mixins
 
-$windowTheme: (title-gradient 'url(../images/spacer.gif?from=fafafa&to=e5e5e5)' 'url(../images/spacer.gif?from=555555&to=121212)', mocha-border-clr #d9d9d9 #333333, mocha-border-lte #dadada #3a3a3a, mocha-button #fefefe #ccc)
+$windowTheme: (title-gradient 'var(--bg-menu)' 'var(--bg-menu)', mocha-border-clr #d9d9d9 #333333, mocha-border-lte #dadada #3a3a3a, mocha-button #fefefe #ccc)
 
 +themeGenerate($windowTheme, "--")
 
+#preferencesPage_titleBar
+	background-color: var(--bg-menu)
+	border-radius: 6px 6px 0px 0px !important
+
+.mochaOverlay
+	border-radius: 6px
+	height: calc(100% - 10px) !important
+	background-color: var(--bg-menu)
+
+#mochaToolbar img
+	position: relative
+	max-width: 24px
+	top: 1px
 
 
 .mocha 
 	display: none
 	overflow: hidden
 	background-color: var(--bg-color-tint)
+	
 
 
 .mocha.isFocused 
@@ -53,7 +67,8 @@ $windowTheme: (title-gradient 'url(../images/spacer.gif?from=fafafa&to=e5e5e5)' 
 .mochaTitlebar 
 	width: 100%
 	overflow: hidden
-	background: var(--title-gradient)
+	/* background: var(--title-gradient)
+	
 	h3 
 		font-size: 12px
 		line-height: 15px
@@ -179,10 +194,12 @@ div.mochaToolbarWrapper.bottom
 
 
 .mochaMaximizeButton 
-	z-index: 100 /*SASS Doesn't like blanks*/
+	z-index: 100 
+	/* SASS Doesn't like blanks* /
 	
 .mochaCloseButton 
-	z-index: 100 /*SASS Doesn't like blanks*/
+	z-index: 100 
+	/*SASS Doesn't like blanks */
 
 .mochaSpinner 
 	display: none
@@ -256,8 +273,9 @@ div.mochaToolbarWrapper.bottom
 
 
 /* The replaced class is used internally when converting CSS values to Canvas. These classes should not be removed. */
+/* .mochaTitlebar.replaced,
 
-.mocha.replaced, .mochaTitlebar.replaced, .mochaMinimizeButton.replaced,
+.mocha.replaced,  .mochaMinimizeButton.replaced,
 .mochaMaximizeButton.replaced, .mochaCloseButton.replaced 
 	background-color: transparent !important
 

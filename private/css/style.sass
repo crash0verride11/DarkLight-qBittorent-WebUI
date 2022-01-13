@@ -28,7 +28,7 @@ $styleTheme: (mocha-frame #000 #555, char-spacing 0em .01em, font-color #000 #ff
 
 +themeGenerate($styleTheme, "--")
 
-$layoutTheme: (bg-color #fff #121212, bg-color-tint #f2f2f2 #202020, bg-color-opp #222 #eee, bg-menu #eee #444, font-color #000 #fff, font-tint #555 #ddd, font-dtint #555 #bbb, selected-text #fff #000, row-alt #eee #2a2a2a, row-select #354158 #94BBD8, row-hover #ee6600 #d1c52a, divder-border #ebebeb #363636, border-col #909090 #6f6f6f, navbar-bg 'url(../images/bg-dropdown.gif)' 'url(../images/bg-dropdown_dark.gif)')
+$layoutTheme: (bg-color #fff #121212, bg-color-tint #f2f2f2 #202020, bg-color-opp #222 #eee, bg-menu #eee #444, font-color #000 #fff, font-tint #555 #ddd, font-dtint #555 #bbb, selected-text #fff #000, row-alt #eee #2a2a2a, row-select #354158 #94BBD8, row-hover #ee6600 #d1c52a, divder-border #ebebeb #363636, border-col #909090 #6f6f6f)
 
 +themeGenerate($layoutTheme, "--")
 
@@ -255,9 +255,20 @@ a.propButton
 			top: 0px
 
 .contextMenu li a.arrow-right, .contextMenu li a:hover.arrow-right
-    background-image: url("../images/arrow-right.gif")
-    background-position: right center
-    background-repeat: no-repeat
+	&::after
+		display: inline-block
+		content: ''
+		width: 0px
+		height: 0px
+		position: absolute
+		margin-top: 3px
+		right: 5px
+		border-width: 5px
+		border-style: solid
+		border-color: transparent transparent transparent var(--font-color)
+.scrollableMenu li a.arrow-right
+	&::after
+		
 
 .contextMenu li:hover ul,
 .contextMenu li.ieHover ul,
@@ -318,7 +329,7 @@ a.propButton
 					content: var(--editCopyIcon)
 			&:nth-of-type(4) a img
 				content: var(--magnetIcon)
-	
+
 #contextCategoryList li
 	a img
 		content: var(--folder-icon)
@@ -387,6 +398,14 @@ a.propButton
 #torrentFilesMenu li:nth-of-type(1) a img
 	content: var(--editRenameIcon)
 
+#searchResultsTableMenu li
+	&:nth-of-type(1) a img
+		content: var(--downloadIcon)
+	&:nth-of-type(2) a img
+		content: var(--worldIcon)
+	&:nth-of-type(3) a img
+		content: var(--editCopyIcon)
+
 #rssFeedMenu li
 	&:nth-of-type(1) a img
 		content: var(--viewRefreshIcon)
@@ -429,9 +448,17 @@ a.propButton
 	li ul
 
 	li a.arrow-right, li a:hover.arrow-right
-		background-image: url(../images/arrow-right.gif)
-		background-repeat: no-repeat
-		background-position: right center
+		&::after
+			display: inline-block
+			content: ''
+			width: 0px
+			height: 0px
+			position: absolute
+			margin-top: 3px
+			right: 15px
+			border-width: 5px
+			border-style: solid
+			border-color: transparent transparent transparent var(--font-color)
 
 	li, li li, li li li
 		&:hover ul, &.ieHover ul,
@@ -501,10 +528,10 @@ a.propButton
 /* Mocha Customization */
 
 #mochaToolbar
-	/*margin-top: 5px oldvalues*/
-	margin-top: 4px
+	box-shadow: inset 0px -5px 5px -5px rgba(20, 20, 20, 0.5)
+	border-bottom: solid var(--tab-border) 3px
+	padding-top: 3px 
 	position: relative
-	height: 30px
 	overflow-y: hidden
 	.divider
 		filter: var(--invert-image)
@@ -517,12 +544,6 @@ a.propButton
 		div, img
 			filter: var(--invert-image)
 
-/* border-left: 2.5px solid var(--style-border-lte)
-		height: 10px
-		padding-left: 14px
-		padding-top: 10px*/
-
-
 .MyMenuIcon
 	margin-left: -18px
 	margin-bottom: -3px
@@ -531,36 +552,21 @@ a.propButton
 
 #mainWindowTabs
 	float: right
-	margin: 4px 5px 0 0
+	margin: 6px 5px 0 0
 
+/*Search Bars*/
+#torrentsFilterToolbar, #torrentFilesFilterToolbar
+	float: right
+	margin-right: 30px
 
 #torrentsFilterToolbar
-	float: right
-	margin-right: 30px
+	margin-top: 3px
 
-
-#torrentsFilterInput
+#torrentsFilterInput, #torrentFilesFilterInput
 	width: 160px
 	padding-left: 2em
-	background-image: var(--searchIcon)
-	background-repeat: no-repeat
+	background: var(--searchIcon) no-repeat left
 	background-size: 1.5em
-	background-position: left
-
-
-#torrentFilesFilterToolbar
-	float: right
-	margin-right: 30px
-
-
-#torrentFilesFilterInput
-	width: 160px
-	padding-left: 2em
-	background-image: var(--searchIcon)
-	background-repeat: no-repeat
-	background-size: 1.5em
-	background-position: left
-
 
 /* Tri-state checkbox */
 
@@ -593,7 +599,7 @@ fieldset
 			font-weight: bold
 		label
 			padding: 2px
-			color: var(--font-color-tint)
+			color: var(--font-tint)
 		& + div.formRow
 			margin-top: 10px
 
@@ -625,26 +631,9 @@ div.formRow
 		top: 0px
 		left: 2px
 		display: inline-block
-		&.rotate
-			transform: rotate(270deg)
-	div
-		width: 16px
-		height: 16px
-		
-		padding: 0px 5px
-		position: relative
-		top: 0px
-		left: 2px
 		cursor: pointer
-		margin-top: 0px
-		background-image: var(--goDownIcon)
-		background-size: contain
-		background-repeat: no-repeat
-		display: inline-block
 		&.rotate
 			transform: rotate(270deg)
-			top: -6px
-			left: 0px
 
 /*statusFilterList
 #all_filter a img
@@ -800,13 +789,7 @@ td.generalLabel
 			max-width: 18px 
 			content: var(--uploadButton)
 
-#SpeedTab .settings
-	&:nth-of-type(1) table tbody tr td
-		&:nth-of-type(1) img
-			content: var(--slowOffIcon)
-	&:nth-of-type(2) table tbody tr td
-		&:nth-of-type(1) img
-			content: var(--slowIcon)
+
 
 #watched_folders_tab td, #watched_folders_tab th
 	padding: 2px 4px
@@ -877,11 +860,13 @@ td.statusBarSeparator
 #SearchPanel, #SearchPanel_wrapper, #SearchPanel_pad
 	height: inherit
 
-
 #searchResults
 	padding: 0 20px
 	height: 100%
-
+	.dynamicTabTable
+		width: 100%
+	.numSearchResults
+		font-style: italic
 
 #searchResultsTableContainer
 	height: calc(100% - 140px)
@@ -889,28 +874,16 @@ td.statusBarSeparator
 	-webkit-height: calc(100% - 140px)
 	overflow: auto
 
-
 #searchResultsTableDiv
 	height: calc(100% - 26px) !important
 	-moz-height: calc(100% - 26px) !important
 	-webkit-height: calc(100% - 26px) !important
-
-
-#searchResults .dynamicTabTable
-	width: 100%
-
-
-#searchResults .numSearchResults
-	font-style: italic
-
-
+	
 .red
 	color: red
 
-
 .green
 	color: green
-
 
 .searchPluginsTableRow
 	cursor: pointer
@@ -979,12 +952,6 @@ td.statusBarSeparator
 #aboutLink img
 	content: var(--helpAboutIcon)
 
-/*ToolBar Icons*/
-#mochaToolbar a > div
-	width: 24px
-	height: 24px
-	margin-right: 10px
-	@include divIcon(contain)
 
 /*Filter List Icon Divs Sizing and Styles
 #statusFilterList
@@ -1124,26 +1091,35 @@ div
 	background: var(--bg-color) !important
 	color: var(--font-color) !important
 
-/* Pref Pane Overrides */
-#speedTab > div
-	margin-top: -2px
-	top: 4px
-	height: 12px
-	width: 25px
-	@include divIcon(14px)
+/* Pref Pane Overrides
+	#speedTab > div
+		margin-top: -2px
+		top: 4px
+		height: 12px
+		width: 25px
+
+#SpeedTab .settings
+	&:nth-of-type(1) table tbody tr td
+		&:nth-of-type(1) img
+			content: var(--slowOffIcon)
+	&:nth-of-type(2) table tbody tr td
+		&:nth-of-type(1) img
+			content: var(--slowIcon)
 
 /* Dark Mode Toggle Button */
 $themeIcon: (themeButton "url(../icons/dark/theme_dark.svg)" "url(../icons/dark/theme_light.svg)",)
 +themeGenerate($themeIcon, "--")
 
 .themeButton
-	background-image: var(--themeButton)
-	@include divIcon(20px)
+	content: var(--themeButton)
+	width: 20px
+	max-width: 20px
+	margin-right: 8px
+	top: -1px !important
 
 #btn-toggle
 	overflow: visible
 	outline: 0
-	z-index: 2
 	position: relative
 	top: 0px
 	cursor: pointer

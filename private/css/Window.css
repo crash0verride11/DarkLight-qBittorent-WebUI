@@ -1,78 +1,112 @@
 /*
- * Window.css for Mocha UI
- *
- * Theme: Default
- *
- * Copyright:
- * 	Copyright (c) 2007-2009 Greg Houston, <http://greghoustondesign.com/>.
- *
- * License:
- * 	MIT-style license.
- *
- * Required by:
- * 	Window.js and Modal.css
- *
- * Modified for Dark Mode by:
- * Raymond Lanser
- *
- */
+
+	Window.css for Mocha UI
+
+	Theme: Default
+
+	Copyright:
+		Copyright (c) 2007-2009 Greg Houston, <http://greghoustondesign.com/>.
+
+	License:
+		MIT-style license.
+
+	Required by:
+		Window.js and Modal.css
+
+	Modified for Dark Mode by:
+	Raymond Lanser
+
+	*/
 /* Windows
- * ---------------------------------------------------------------- */
+	---------------------------------------------------------------- */
 /* Sass Document */
+/* Main mixin for generating theme variables from lists */
+/* Four @each statements, instead of one earlier in the nesting creeates a more succinct final css. */
+/* Early version of the mixin for seperate dark and light lists. May still prove useful. */
+/* Div Background Properties Mixin */
 :root {
-  --title-gradient: url(../images/spacer.gif?from=fafafa&to=e5e5e5);
+  --title-gradient: var(--bg-menu);
   --mocha-border-clr: #d9d9d9;
   --mocha-border-lte: #dadada;
-  --mocha-button: #fefefe; }
+  --mocha-button: #fefefe;
+}
 
 body.light-theme, body.light-theme > *, body.light-theme + * {
-  --title-gradient: url(../images/spacer.gif?from=fafafa&to=e5e5e5);
+  --title-gradient: var(--bg-menu);
   --mocha-border-clr: #d9d9d9;
   --mocha-border-lte: #dadada;
-  --mocha-button: #fefefe; }
+  --mocha-button: #fefefe;
+}
 
 @media (prefers-color-scheme: dark) {
   body, body > *, body + * {
-    --title-gradient: url(../images/spacer.gif?from=555555&to=121212);
+    --title-gradient: var(--bg-menu);
     --mocha-border-clr: #333333;
     --mocha-border-lte: #3a3a3a;
-    --mocha-button: #ccc; } }
+    --mocha-button: #ccc;
+  }
+}
+
 body.dark-theme, body.dark-theme > *, body.dark-theme + * {
-  --title-gradient: url(../images/spacer.gif?from=555555&to=121212);
+  --title-gradient: var(--bg-menu);
   --mocha-border-clr: #333333;
   --mocha-border-lte: #3a3a3a;
-  --mocha-button: #ccc; }
+  --mocha-button: #ccc;
+}
+
+#preferencesPage_titleBar {
+  background-color: var(--bg-menu);
+  border-radius: 6px 6px 0px 0px !important;
+}
+
+.mochaOverlay {
+  border-radius: 6px;
+  height: calc(100% - 10px) !important;
+  background-color: var(--bg-menu);
+}
+
+#mochaToolbar img {
+  position: relative;
+  max-width: 24px;
+  top: 1px;
+}
 
 .mocha {
   display: none;
   overflow: hidden;
-  background-color: var(--bg-color-tint); }
+  background-color: var(--bg-color-tint);
+}
 
 .mochaOverlay {
   position: absolute;
   top: 0;
-  left: 0; }
+  left: 0;
+}
 
 /*We get a little creative here in order to define a gradient in the CSS using a query
- * string appended to a background image.
- *
- * "from" is the top color of the gradient. "to" is the bottom color of the gradient.
- *
- * Both must be hex values without the leading # sign. */
+	string appended to a background image.
+
+	"from" is the top color of the gradient. "to" is the bottom color of the gradient.
+
+	Both must be hex values without the leading # sign.*/
 .mochaTitlebar {
   width: 100%;
   overflow: hidden;
-  background: var(--title-gradient); }
-  .mochaTitlebar h3 {
-    font-size: 12px;
-    line-height: 15px;
-    font-weight: bold;
-    margin: 0;
-    padding: 5px 10px 4px 12px;
-    color: var(--font-color); }
+  /* background: var(--title-gradient) */
+}
+
+.mochaTitlebar h3 {
+  font-size: 12px;
+  line-height: 15px;
+  font-weight: bold;
+  margin: 0;
+  padding: 5px 10px 4px 12px;
+  color: var(--font-color);
+}
 
 .mocha.isFocused .mochaTitlebar h3 {
-  color: var(--font-color); }
+  color: var(--font-color);
+}
 
 .mochaToolbarWrapper {
   width: 100%;
@@ -80,27 +114,33 @@ body.dark-theme, body.dark-theme > *, body.dark-theme + * {
   height: 29px;
   background: var(--bg-color);
   overflow: hidden;
-  border-top: 1px solid var(--mocha-border-clr); }
+  border-top: 1px solid var(--mocha-border-clr);
+}
 
 div.mochaToolbarWrapper.bottom {
   border: 0;
-  border-bottom: 1px solid var(--mocha-border-clr); }
+  border-bottom: 1px solid var(--mocha-border-clr);
+}
 
 .mochaToolbar {
   width: 100%;
-  border-top: 1px solid var(--mocha-border-clr); }
+  border-top: 1px solid var(--mocha-border-clr);
+}
 
 .mochaContentBorder {
   border-top: 1px solid var(--mocha-border-lte);
-  border-bottom: 1px solid var(--mocha-border-lte); }
+  border-bottom: 1px solid var(--mocha-border-lte);
+}
 
 .mochaContentWrapper {
   font-size: 12px;
   overflow: auto;
-  background: var(--bg-color); }
+  background: var(--bg-color);
+}
 
 .mochaContent {
-  padding: 10px 12px; }
+  padding: 10px 12px;
+}
 
 .mocha .handle {
   position: absolute;
@@ -110,20 +150,23 @@ div.mochaToolbarWrapper.bottom {
   z-index: 2;
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
-  opacity: 0;
-  -moz-opacity: 0;
+  opacity: .0;
+  -moz-opacity: .0;
   overflow: hidden;
-  font-size: 1px; }
+  font-size: 1px;
+}
 
 .mocha .corner {
   width: 10px;
   height: 10px;
-  background: #f00; }
+  background: #f00;
+}
 
 .mocha .cornerSE {
   width: 20px;
   height: 20px;
-  background: var(--mocha-button); }
+  background: var(--mocha-button);
+}
 
 .mochaCanvasHeader {
   position: absolute;
@@ -132,7 +175,8 @@ div.mochaToolbarWrapper.bottom {
   background: transparent;
   z-index: -1;
   visibility: hidden;
-  overflow: hidden; }
+  overflow: hidden;
+}
 
 .mochaControls {
   position: absolute;
@@ -141,20 +185,23 @@ div.mochaToolbarWrapper.bottom {
   right: 8px;
   height: 14px;
   z-index: 4;
-  background: transparent; }
+  background: transparent;
+}
 
 .mochaCanvasControls {
   position: absolute;
   top: 8px;
   right: 8px;
   z-index: 3;
-  background: transparent; }
+  background: transparent;
+}
 
-/* To use images for these buttons:
- * 1. Set the useCanvasControls window option to false.
- * 2. If you use a different button size you may need to reposition the controls.
- *    Modify the controlsOffset window option.
- * 2. Replcac the background-color with a background-image for each button. */
+/*
+	To use images for these buttons:
+	1. Set the useCanvasControls window option to false.
+	2. If you use a different button size you may need to reposition the controls.
+	   Modify the controlsOffset window option.
+	2. Replcac the background-color with a background-image for each button. */
 .mochaMinimizeButton, .mochaMaximizeButton, .mochaCloseButton {
   float: right;
   width: 14px;
@@ -164,16 +211,22 @@ div.mochaToolbarWrapper.bottom {
   z-index: 4;
   color: #666;
   background-color: var(--mocha-button);
-  margin-left: 5px; }
+  margin-left: 5px;
+}
 
 .mochaMinimizeButton {
-  margin-left: 0; }
+  margin-left: 0;
+}
 
 .mochaMaximizeButton {
-  z-index: 100; }
+  z-index: 100;
+  /* SASS Doesn't like blanks* / */
+}
 
 .mochaCloseButton {
-  z-index: 100; }
+  z-index: 100;
+  /*SASS Doesn't like blanks */
+}
 
 .mochaSpinner {
   display: none;
@@ -182,10 +235,12 @@ div.mochaToolbarWrapper.bottom {
   left: 6px;
   width: 16px;
   height: 16px;
-  background: url(../images/spinner.gif) no-repeat; }
+  background: url(../images/spinner.gif) no-repeat;
+}
 
 .mochaIframe {
-  width: 100%; }
+  width: 100%;
+}
 
 /* Fix for IE6 select z-index issue */
 .zIndexFix {
@@ -194,10 +249,12 @@ div.mochaToolbarWrapper.bottom {
   top: 0;
   left: 0;
   z-index: -1;
-  filter: mask();
+  -webkit-filter: mask();
+          filter: mask();
   width: 100px;
   height: 100px;
-  border: 1px solid transparent; }
+  border: 1px solid transparent;
+}
 
 /* Viewport overlays---------------------------------------------------------------- */
 #modalOverlay {
@@ -211,7 +268,8 @@ div.mochaToolbarWrapper.bottom {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
   opacity: 0;
   -moz-opacity: 0;
-  z-index: 10000; }
+  z-index: 10000;
+}
 
 /* Fix for IE6 select z-index issue */
 #modalFix {
@@ -224,7 +282,8 @@ div.mochaToolbarWrapper.bottom {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
   opacity: 0;
   -moz-opacity: 0;
-  z-index: 9999; }
+  z-index: 9999;
+}
 
 /* Underlay */
 #windowUnderlay {
@@ -232,15 +291,19 @@ div.mochaToolbarWrapper.bottom {
   top: 0;
   left: 0;
   width: 100%;
-  background: #fff; }
+  background: #fff;
+}
 
 * html #windowUnderlay {
-  position: absolute; }
+  position: absolute;
+}
 
 /* The replaced class is used internally when converting CSS values to Canvas. These classes should not be removed. */
-.mocha.replaced, .mochaTitlebar.replaced, .mochaMinimizeButton.replaced,
+/* .mochaTitlebar.replaced, */
+.mocha.replaced, .mochaMinimizeButton.replaced,
 .mochaMaximizeButton.replaced, .mochaCloseButton.replaced {
-  background-color: transparent !important; }
+  background-color: transparent !important;
+}
 
 .windowClosed {
   visibility: hidden;
@@ -249,7 +312,8 @@ div.mochaToolbarWrapper.bottom {
   top: -20000px;
   left: -20000px;
   z-index: -1;
-  overflow: hidden; }
+  overflow: hidden;
+}
 
 .windowClosed .mochaContentBorder, .windowClosed .mochaToolbarWrapper,
 .windowClosed .mochaTitlebar, .windowClosed .mochaControls,
@@ -259,92 +323,116 @@ div.mochaToolbarWrapper.bottom {
   left: 0;
   visibility: hidden;
   display: none;
-  z-index: -1; }
+  z-index: -1;
+}
 
 /* Modals */
 .modal2 {
-  border: 8px solid #fff; }
+  border: 8px solid #fff;
+}
 
 .modal2 .mochaContentBorder {
-  border-width: 0px; }
+  border-width: 0px;
+}
 
 /* Window Themes */
 .mocha.no-canvas {
   background: var(--bg-color-tint);
-  border: 1px solid #555; }
+  border: 1px solid #555;
+}
 
 .mocha.no-canvas .mochaTitlebar {
-  background: var(--bg-color-tint); }
+  background: var(--bg-color-tint);
+}
 
 .mocha.transparent .mochaTitlebar h3 {
   color: #fff;
-  display: none; }
+  display: none;
+}
 
 .mocha.transparent .mochaContentWrapper {
-  background: transparent; }
+  background: transparent;
+}
 
 .mocha.notification {
-  background: #cedff2; }
+  background: #cedff2;
+}
 
 .mocha.notification .mochaTitlebar {
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
-  opacity: 0;
-  -moz-opacity: 0; }
+  opacity: .0;
+  -moz-opacity: 0;
+}
 
 .mocha.notification .mochaContentBorder {
-  border-width: 0px; }
+  border-width: 0px;
+}
 
 .mocha.notification .mochaContentWrapper {
   text-align: center;
   font-size: 12px;
   font-weight: bold;
-  background: transparent; }
+  background: transparent;
+}
 
 /* Example Window Themes */
 #about_contentWrapper {
-  background: #e5e5e5 url(../images/logo2.gif) 3px 3px no-repeat; }
+  background: #e5e5e5 url(../images/logo2.gif) 3px 3px no-repeat;
+}
 
 #builder_contentWrapper {
-  background: #f5f5f7; }
+  background: #f5f5f7;
+}
 
 #json01 .mochaTitlebar {
-  background: #6dd2db; }
+  background: #6dd2db;
+}
 
 #json02 .mochaTitlebar {
-  background: #6db6db; }
+  background: #6db6db;
+}
 
 #json03 .mochaTitlebar {
-  background: #6d92db; }
+  background: #6d92db;
+}
 
 .jsonExample .mochaTitlebar h3 {
-  color: #ddd; }
+  color: #ddd;
+}
 
 /* This does not work in IE6. */
 .isFocused.jsonExample .mochaTitlebar h3 {
-  color: #fff; }
+  color: #fff;
+}
 
 #fxmorpherExample .mochaContentWrapper {
-  background: #577a9e; }
+  background: #577a9e;
+}
 
 #clock {
-  background: #fff; }
+  background: #fff;
+}
 
 /* Workaround to make invisible buttons clickable */
 .mochaMinimizeButton.replaced,
 .mochaMaximizeButton.replaced,
 .mochaCloseButton.replaced {
-  background-image: url(data:image/gifbase64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7) !important; }
+  background-image: url(data:image/gifbase64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7) !important;
+}
 
 /* iOS iframe scrolling */
 .windowFrame .mochaContentWrapper {
   /* scroll the Window content. !important required. */
   overflow: auto !important;
-  -webkit-overflow-scrolling: touch; }
+  -webkit-overflow-scrolling: touch;
+}
 
 .windowFrame .mochaContent {
-  height: 100%; }
+  height: 100%;
+}
 
 .windowFrame iframe {
   /* fix double scroll bar by reducing frame height. !important required. */
-  height: calc(100% - 5px) !important; }
+  height: calc(100% - 5px) !important;
+}

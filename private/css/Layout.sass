@@ -26,7 +26,7 @@
 	---------------------------------------------------------------- */
 @import mixins
 
-$layoutTheme: (bg-color #fff #121212, bg-color-tint #f2f2f2 #202020, bg-color-opp #222 #eee, bg-menu #eee #444, font-color #000 #fff, font-tint #555 #ddd, font-dtint #555 #bbb, selected-text #fff #000, row-alt #eee #2a2a2a, row-select #354158 #94BBD8, row-hover #ee6600 #d1c52a, divder-border #ebebeb #363636, border-col #909090 #6f6f6f, navbar-bg 'url(../images/bg-dropdown.gif)' 'url(../images/bg-dropdown_dark.gif)')
+$layoutTheme: (bg-color #fff #121212, bg-color-tint #f2f2f2 #202020, bg-color-opp #222 #eee, bg-menu #eee #444, font-color #000 #fff, font-tint #555 #ddd, font-dtint #555 #bbb, selected-text #fff #000, row-alt #eee #2a2a2a, row-select #354158 #94BBD8, row-hover #ee6600 #d1c52a, divder-border #ebebeb #363636, border-col #909090 #6f6f6f)
 
 +themeGenerate($layoutTheme, "--")
 
@@ -50,11 +50,12 @@ body
 #desktopHeader
 	background: var(--bg-color-tint)
 
-#desktopTitlebarWrapper
-	position: relative
-	height: 45px
-	overflow: hidden
-	background: #718BA6 url(../images/bg-header.gif) repeat-x
+/*
+	#desktopTitlebarWrapper
+		position: relative
+		height: 45px
+		overflow: hidden
+		background: #718BA6 url(../images/bg-header.gif) repeat-x
 
 #desktopTitlebar 
 	padding: 7px 8px 6px 8px
@@ -100,11 +101,7 @@ body
 
 #desktopNavbar
 	background: var(--bg-color)
-	/*height: 30px*/
-	margin: 0 0px
-	overflow: hidden  /* Remove this line if you want the menu to be backward compatible with Firefox 2 */
-	/* Fixes by Chris */
-	/*background-color: #ccc*/
+	margin: 0
 	height: 20px
 	border-bottom: 1px solid #3f3f3f
 	ul
@@ -116,33 +113,30 @@ body
 		float: left
 	a
 		display: block
-	img
-		/*filter: brightness(2)*/
 
 #desktopNavbar ul li a
 	/*padding: 6px 10px 6px 10px*/
 	color: var(--font-color)
 	font-weight: normal
-	/* Fix by Chris */
-	padding: 2px 10px 6px 10px
+	padding: 2px 10px 0px 10px
 	&:hover
 		color: var(--font-color-tint)
-		/* Fix By Chris */
 		background-color: var(--bg-color-tint)
-
-#desktopNavbar ul li a.arrow-right, #desktopNavbar ul li a:hover.arrow-right
-	background-image: url(../images/arrow-right.gif)
-	background-repeat: no-repeat
-	background-position: right 7px
 
 #desktopNavbar li ul
 	border: 1px solid #3f3f3f
-	background: var(--bg-color-tint) var(--navbar-bg) repeat-y
+	background: var(--bg-color-tint)
 	position: absolute
 	left: -999em
 	z-index: 8000
-	/* Fix by Chris */
-	margin-top: -6px
+	&::before
+		content: ''
+		background-color: var(--mocha-border-lte)
+		opacity: 0.8
+		width: 20px
+		height: 100%
+		position: absolute
+		left: 0px
 
 #desktopNavbar li:hover,#desktopNavbar li.ieHover
 	ul ul, ul ul ul
@@ -235,6 +229,7 @@ li.divider
 	position: relative
 	overflow: auto
 	background: var(--bg-color)
+	/*border-bottom: 1px solid var(--border-col)
 	border-bottom: 1px solid var(--style-border-lte)
 
 .panelWrapper.collapsed .panel-header
@@ -254,7 +249,8 @@ li.divider
 
 .panel-header
 	position: relative
-	background: #f1f1f1 url(../images/bg-panel-header.gif) repeat-x
+	background: var(--bg-color-tint)
+	/*background: #f1f1f1 url(../images/bg-panel-header.gif) repeat-x
 	height: 30px
 	overflow: hidden
 	border-bottom: 1px solid var(--style-border-lte)
@@ -271,11 +267,12 @@ li.divider
 	padding-top: 2px
 
 .panel-headerContent.tabs
-	background: var(--tab-image) repeat-x
+	/*background: var(--tab-image) repeat-x
 	background-position: left -68px
 
 .panel-collapse
 	background: var(--collapseIcon) left top no-repeat
+	margin-top: 1px !important
 
 .panel-expand
 	background: var(--collapseIcon) left top no-repeat

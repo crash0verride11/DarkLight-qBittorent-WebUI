@@ -94,7 +94,6 @@ body.dark-theme, body.dark-theme > *, body.dark-theme + * {
   --row-hover: #ee6600;
   --divder-border: #ebebeb;
   --border-col: #909090;
-  --navbar-bg: url(../images/bg-dropdown.gif);
 }
 
 body.light-theme, body.light-theme > *, body.light-theme + * {
@@ -111,7 +110,6 @@ body.light-theme, body.light-theme > *, body.light-theme + * {
   --row-hover: #ee6600;
   --divder-border: #ebebeb;
   --border-col: #909090;
-  --navbar-bg: url(../images/bg-dropdown.gif);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -129,7 +127,6 @@ body.light-theme, body.light-theme > *, body.light-theme + * {
     --row-hover: #d1c52a;
     --divder-border: #363636;
     --border-col: #6f6f6f;
-    --navbar-bg: url(../images/bg-dropdown_dark.gif);
   }
 }
 
@@ -147,13 +144,12 @@ body.dark-theme, body.dark-theme > *, body.dark-theme + * {
   --row-hover: #d1c52a;
   --divder-border: #363636;
   --border-col: #6f6f6f;
-  --navbar-bg: url(../images/bg-dropdown_dark.gif);
 }
 
 /* Sass Document */
 /* The icons were swapped in batched so there are three lists are necessary to accomodate inconsistent icon property and class naming.
 	Eventually I'll clean up. */
-div, img {
+input, button, img, .panel-collapse, .arrow-right {
   --goDownIcon: url(../icons/go-down.svg);
   --downButtonIcon: url(../icons/insert-link.svg);
   --uploadButtonIcon: url(../icons/list-add.svg);
@@ -200,7 +196,7 @@ div, img {
   --checkedIcon: url(../icons/completed.svg);
 }
 
-.light-theme div, .light-theme img {
+.light-theme input, .light-theme button, .light-theme img, .light-theme .panel-collapse, .light-theme .arrow-right {
   --goDownIcon: url(../icons/go-down.svg) !important;
   --downButtonIcon: url(../icons/insert-link.svg) !important;
   --uploadButtonIcon: url(../icons/list-add.svg) !important;
@@ -248,7 +244,7 @@ div, img {
 }
 
 @media (prefers-color-scheme: dark) {
-  div, img {
+  input, button, img, .panel-collapse, .arrow-right {
     --goDownIcon: url(../icons/dark/go-down.svg);
     --downButtonIcon: url(../icons/dark/insert-link.svg);
     --uploadButtonIcon: url(../icons/dark/list-add.svg);
@@ -296,7 +292,7 @@ div, img {
   }
 }
 
-.dark-theme div, .dark-theme img {
+.dark-theme input, .dark-theme button, .dark-theme img, .dark-theme .panel-collapse, .dark-theme .arrow-right {
   --goDownIcon: url(../icons/dark/go-down.svg);
   --downButtonIcon: url(../icons/dark/insert-link.svg);
   --uploadButtonIcon: url(../icons/dark/list-add.svg);
@@ -519,7 +515,7 @@ div, img {
   content: var(--checkedIcon);
 }
 
-div, img {
+input, button, img, .panel-collapse, .arrow-right {
   --downButton: url(../icons/insert-link.svg);
   --uploadButton: url(../icons/list-add.svg);
   --resumeButton: url(../icons/media-playback-start.svg);
@@ -527,7 +523,7 @@ div, img {
   --prefButton: url(../icons/configure.svg);
 }
 
-.light-theme div, .light-theme img {
+.light-theme input, .light-theme button, .light-theme img, .light-theme .panel-collapse, .light-theme .arrow-right {
   --downButton: url(../icons/insert-link.svg) !important;
   --uploadButton: url(../icons/list-add.svg) !important;
   --resumeButton: url(../icons/media-playback-start.svg) !important;
@@ -536,7 +532,7 @@ div, img {
 }
 
 @media (prefers-color-scheme: dark) {
-  div, img {
+  input, button, img, .panel-collapse, .arrow-right {
     --downButton: url(../icons/dark/insert-link.svg);
     --uploadButton: url(../icons/dark/list-add.svg);
     --resumeButton: url(../icons/dark/media-playback-start.svg);
@@ -545,7 +541,7 @@ div, img {
   }
 }
 
-.dark-theme div, .dark-theme img {
+.dark-theme input, .dark-theme button, .dark-theme img, .dark-theme .panel-collapse, .dark-theme .arrow-right {
   --downButton: url(../icons/dark/insert-link.svg);
   --uploadButton: url(../icons/dark/list-add.svg);
   --resumeButton: url(../icons/dark/media-playback-start.svg);
@@ -573,7 +569,7 @@ div, img {
   content: var(--prefButton);
 }
 
-div, img {
+input, button, img, .panel-collapse, .arrow-right {
   --downloading-icon: url(../icons/downloading.svg);
   --stalledDL-icon: url(../icons/stalledDL.svg);
   --stalledUP-icon: url(../icons/stalledUP.svg);
@@ -591,7 +587,7 @@ div, img {
   --folder-icon: url(../icons/inode-directory.svg);
 }
 
-.light-theme div, .light-theme img {
+.light-theme input, .light-theme button, .light-theme img, .light-theme .panel-collapse, .light-theme .arrow-right {
   --downloading-icon: url(../icons/downloading.svg) !important;
   --stalledDL-icon: url(../icons/stalledDL.svg) !important;
   --stalledUP-icon: url(../icons/stalledUP.svg) !important;
@@ -610,7 +606,7 @@ div, img {
 }
 
 @media (prefers-color-scheme: dark) {
-  div, img {
+  input, button, img, .panel-collapse, .arrow-right {
     --downloading-icon: url(../icons/dark/downloading.svg);
     --stalledDL-icon: url(../icons/dark/stalledDL.svg);
     --stalledUP-icon: url(../icons/dark/stalledUP.svg);
@@ -629,7 +625,7 @@ div, img {
   }
 }
 
-.dark-theme div, .dark-theme img {
+.dark-theme input, .dark-theme button, .dark-theme img, .dark-theme .panel-collapse, .dark-theme .arrow-right {
   --downloading-icon: url(../icons/dark/downloading.svg);
   --stalledDL-icon: url(../icons/dark/stalledDL.svg);
   --stalledUP-icon: url(../icons/dark/stalledUP.svg);
@@ -707,31 +703,7 @@ div, img {
   content: var(--folder-icon);
 }
 
-#downloadButton div, .insertLink {
-  content: var(--downButton);
-}
-
-#uploadButton div, .listAdd {
-  content: var(--uploadButton);
-}
-
-#deleteButton div, .deleteIcon, .listRemoveIcon {
-  content: var(--listRemoveIcon);
-}
-
-#resumeButton div, .mediaStart {
-  content: var(--resumeButton);
-}
-
-#pauseButton div, .mediaPause {
-  content: var(--pauseButton);
-}
-
-#preferencesButton div, .configureIcon {
-  content: var(--prefButton);
-}
-
-#downloadButton img {
+#downloadButton img, .insertLink {
   content: var(--downButton);
 }
 
@@ -753,10 +725,6 @@ div, img {
 
 #preferencesButton img, .configureIcon {
   content: var(--prefButton);
-}
-
-#mochaToolbar img {
-  max-width: 24px;
 }
 
 /* Structure */
@@ -1004,10 +972,17 @@ a.propButton img {
   top: 0px;
 }
 
-.contextMenu li a.arrow-right, .contextMenu li a:hover.arrow-right {
-  background-image: url("../images/arrow-right.gif");
-  background-position: right center;
-  background-repeat: no-repeat;
+.contextMenu li a.arrow-right::after, .contextMenu li a:hover.arrow-right::after {
+  display: inline-block;
+  content: '';
+  width: 0px;
+  height: 0px;
+  position: absolute;
+  margin-top: 3px;
+  right: 5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent transparent var(--font-color);
 }
 
 .contextMenu li:hover ul,
@@ -1204,6 +1179,18 @@ a.propButton img {
   content: var(--editRenameIcon);
 }
 
+#searchResultsTableMenu li:nth-of-type(1) a img {
+  content: var(--downloadIcon);
+}
+
+#searchResultsTableMenu li:nth-of-type(2) a img {
+  content: var(--worldIcon);
+}
+
+#searchResultsTableMenu li:nth-of-type(3) a img {
+  content: var(--editCopyIcon);
+}
+
 #rssFeedMenu li:nth-of-type(1) a img {
   content: var(--viewRefreshIcon);
 }
@@ -1265,10 +1252,17 @@ a.propButton img {
   content: var(--checkedIcon);
 }
 
-#torrentsTableDiv_headerMenu li a.arrow-right, #torrentsTableDiv_headerMenu li a:hover.arrow-right, #torrentTrackersTableDiv_headerMenu li a.arrow-right, #torrentTrackersTableDiv_headerMenu li a:hover.arrow-right, #torrentPeersTableDiv_headerMenu li a.arrow-right, #torrentPeersTableDiv_headerMenu li a:hover.arrow-right, #torrentsTableDiv_headerMenu li a.arrow-right, #torrentsTableDiv_headerMenu li a:hover.arrow-right, #torrentFilesTableDiv_headerMenu li a.arrow-right, #torrentFilesTableDiv_headerMenu li a:hover.arrow-right {
-  background-image: url(../images/arrow-right.gif);
-  background-repeat: no-repeat;
-  background-position: right center;
+#torrentsTableDiv_headerMenu li a.arrow-right::after, #torrentsTableDiv_headerMenu li a:hover.arrow-right::after, #torrentTrackersTableDiv_headerMenu li a.arrow-right::after, #torrentTrackersTableDiv_headerMenu li a:hover.arrow-right::after, #torrentPeersTableDiv_headerMenu li a.arrow-right::after, #torrentPeersTableDiv_headerMenu li a:hover.arrow-right::after, #torrentsTableDiv_headerMenu li a.arrow-right::after, #torrentsTableDiv_headerMenu li a:hover.arrow-right::after, #torrentFilesTableDiv_headerMenu li a.arrow-right::after, #torrentFilesTableDiv_headerMenu li a:hover.arrow-right::after {
+  display: inline-block;
+  content: '';
+  width: 0px;
+  height: 0px;
+  position: absolute;
+  margin-top: 3px;
+  right: 15px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent transparent var(--font-color);
 }
 
 #torrentsTableDiv_headerMenu li:hover ul, #torrentsTableDiv_headerMenu li.ieHover ul, #torrentsTableDiv_headerMenu li li:hover ul, #torrentsTableDiv_headerMenu li li.ieHover ul, #torrentsTableDiv_headerMenu li li li:hover ul, #torrentsTableDiv_headerMenu li li li.ieHover ul, #torrentTrackersTableDiv_headerMenu li:hover ul, #torrentTrackersTableDiv_headerMenu li.ieHover ul, #torrentTrackersTableDiv_headerMenu li li:hover ul, #torrentTrackersTableDiv_headerMenu li li.ieHover ul, #torrentTrackersTableDiv_headerMenu li li li:hover ul, #torrentTrackersTableDiv_headerMenu li li li.ieHover ul, #torrentPeersTableDiv_headerMenu li:hover ul, #torrentPeersTableDiv_headerMenu li.ieHover ul, #torrentPeersTableDiv_headerMenu li li:hover ul, #torrentPeersTableDiv_headerMenu li li.ieHover ul, #torrentPeersTableDiv_headerMenu li li li:hover ul, #torrentPeersTableDiv_headerMenu li li li.ieHover ul, #torrentsTableDiv_headerMenu li:hover ul, #torrentsTableDiv_headerMenu li.ieHover ul, #torrentsTableDiv_headerMenu li li:hover ul, #torrentsTableDiv_headerMenu li li.ieHover ul, #torrentsTableDiv_headerMenu li li li:hover ul, #torrentsTableDiv_headerMenu li li li.ieHover ul, #torrentFilesTableDiv_headerMenu li:hover ul, #torrentFilesTableDiv_headerMenu li.ieHover ul, #torrentFilesTableDiv_headerMenu li li:hover ul, #torrentFilesTableDiv_headerMenu li li.ieHover ul, #torrentFilesTableDiv_headerMenu li li li:hover ul, #torrentFilesTableDiv_headerMenu li li li.ieHover ul {
@@ -1338,10 +1332,11 @@ a.propButton img {
 
 /* Mocha Customization */
 #mochaToolbar {
-  /*margin-top: 5px oldvalues*/
-  margin-top: 4px;
+  -webkit-box-shadow: inset 0px -5px 5px -5px rgba(20, 20, 20, 0.5);
+          box-shadow: inset 0px -5px 5px -5px rgba(20, 20, 20, 0.5);
+  border-bottom: solid var(--tab-border) 3px;
+  padding-top: 3px;
   position: relative;
-  height: 30px;
   overflow-y: hidden;
 }
 
@@ -1361,10 +1356,6 @@ a.propButton img {
           filter: var(--invert-image);
 }
 
-/* border-left: 2.5px solid var(--style-border-lte)
-		height: 10px
-		padding-left: 14px
-		padding-top: 10px*/
 .MyMenuIcon {
   margin-left: -18px;
   margin-bottom: -3px;
@@ -1373,35 +1364,24 @@ a.propButton img {
 
 #mainWindowTabs {
   float: right;
-  margin: 4px 5px 0 0;
+  margin: 6px 5px 0 0;
+}
+
+/*Search Bars*/
+#torrentsFilterToolbar, #torrentFilesFilterToolbar {
+  float: right;
+  margin-right: 30px;
 }
 
 #torrentsFilterToolbar {
-  float: right;
-  margin-right: 30px;
+  margin-top: 3px;
 }
 
-#torrentsFilterInput {
+#torrentsFilterInput, #torrentFilesFilterInput {
   width: 160px;
   padding-left: 2em;
-  background-image: var(--searchIcon);
-  background-repeat: no-repeat;
+  background: var(--searchIcon) no-repeat left;
   background-size: 1.5em;
-  background-position: left;
-}
-
-#torrentFilesFilterToolbar {
-  float: right;
-  margin-right: 30px;
-}
-
-#torrentFilesFilterInput {
-  width: 160px;
-  padding-left: 2em;
-  background-image: var(--searchIcon);
-  background-repeat: no-repeat;
-  background-size: 1.5em;
-  background-position: left;
 }
 
 /* Tri-state checkbox */
@@ -1440,7 +1420,7 @@ fieldset.settings legend {
 
 fieldset.settings label {
   padding: 2px;
-  color: var(--font-color-tint);
+  color: var(--font-tint);
 }
 
 fieldset.settings + div.formRow {
@@ -1480,33 +1460,12 @@ div.formRow {
   top: 0px;
   left: 2px;
   display: inline-block;
+  cursor: pointer;
 }
 
 .filterTitle img.rotate {
   -webkit-transform: rotate(270deg);
           transform: rotate(270deg);
-}
-
-.filterTitle div {
-  width: 16px;
-  height: 16px;
-  padding: 0px 5px;
-  position: relative;
-  top: 0px;
-  left: 2px;
-  cursor: pointer;
-  margin-top: 0px;
-  background-image: var(--goDownIcon);
-  background-size: contain;
-  background-repeat: no-repeat;
-  display: inline-block;
-}
-
-.filterTitle div.rotate {
-  -webkit-transform: rotate(270deg);
-          transform: rotate(270deg);
-  top: -6px;
-  left: 0px;
 }
 
 /*statusFilterList */
@@ -1712,14 +1671,6 @@ td.generalLabel {
   content: var(--uploadButton);
 }
 
-#SpeedTab .settings:nth-of-type(1) table tbody tr td:nth-of-type(1) img {
-  content: var(--slowOffIcon);
-}
-
-#SpeedTab .settings:nth-of-type(2) table tbody tr td:nth-of-type(1) img {
-  content: var(--slowIcon);
-}
-
 #watched_folders_tab td, #watched_folders_tab th {
   padding: 2px 4px;
   border: 1px solid black;
@@ -1801,6 +1752,14 @@ td.statusBarSeparator {
   height: 100%;
 }
 
+#searchResults .dynamicTabTable {
+  width: 100%;
+}
+
+#searchResults .numSearchResults {
+  font-style: italic;
+}
+
 #searchResultsTableContainer {
   height: calc(100% - 140px);
   -moz-height: calc(100% - 140px);
@@ -1812,14 +1771,6 @@ td.statusBarSeparator {
   height: calc(100% - 26px) !important;
   -moz-height: calc(100% - 26px) !important;
   -webkit-height: calc(100% - 26px) !important;
-}
-
-#searchResults .dynamicTabTable {
-  width: 100%;
-}
-
-#searchResults .numSearchResults {
-  font-style: italic;
 }
 
 .red {
@@ -1938,18 +1889,6 @@ td.statusBarSeparator {
 
 #aboutLink img {
   content: var(--helpAboutIcon);
-}
-
-/*ToolBar Icons*/
-#mochaToolbar a > div {
-  width: 24px;
-  height: 24px;
-  margin-right: 10px;
-  position: relative;
-  background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat;
-  display: inline-block;
 }
 
 /*Filter List Icon Divs Sizing and Styles */
@@ -2140,17 +2079,18 @@ div .progressbar_wrapper {
   color: var(--font-color) !important;
 }
 
-/* Pref Pane Overrides */
-#speedTab > div {
-  margin-top: -2px;
-  top: 4px;
-  height: 12px;
-  width: 25px;
-  position: relative;
-  background-size: 14px;
-  background-position: center;
-  background-repeat: no-repeat;
-  display: inline-block;
+/* Pref Pane Overrides
+	#speedTab > div
+		margin-top: -2px
+		top: 4px
+		height: 12px
+		width: 25px */
+#SpeedTab .settings:nth-of-type(1) table tbody tr td:nth-of-type(1) img {
+  content: var(--slowOffIcon);
+}
+
+#SpeedTab .settings:nth-of-type(2) table tbody tr td:nth-of-type(1) img {
+  content: var(--slowIcon);
 }
 
 /* Dark Mode Toggle Button */
@@ -2173,18 +2113,16 @@ body.dark-theme, body.dark-theme > *, body.dark-theme + * {
 }
 
 .themeButton {
-  background-image: var(--themeButton);
-  position: relative;
-  background-size: 20px;
-  background-position: center;
-  background-repeat: no-repeat;
-  display: inline-block;
+  content: var(--themeButton);
+  width: 20px;
+  max-width: 20px;
+  margin-right: 8px;
+  top: -1px !important;
 }
 
 #btn-toggle {
   overflow: visible;
   outline: 0;
-  z-index: 2;
   position: relative;
   top: 0px;
   cursor: pointer;

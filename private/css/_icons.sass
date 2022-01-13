@@ -7,23 +7,22 @@ $icons: (goDown: "go-down.svg", downButton: "insert-link.svg", uploadButton: "li
 
 $buttons: (downButton: "insert-link.svg", uploadButton: "list-add.svg", resumeButton: "media-playback-start.svg", pauseButton: "media-playback-pause.svg", prefButton: "configure.svg")
 
-
 $dytable: (downloading: "downloading.svg", stalledDL: "stalledDL.svg", stalledUP: "stalledUP.svg", uploading: "uploading.svg", paused: "paused.svg", completed: "completed.svg", queued: "queued.svg", checking: "checking.svg", error: "error.svg", resumed: "resumed.svg", filterall: "filterall.svg", filteractive: "filteractive.svg", filterinactive: "filterinactive.svg", filterstalled: "filterstalled.svg", folder: "inode-directory.svg")
 
 =themeIconify($listname, $suffix)
-	div, img
+	input, button, img, .panel-collapse, .arrow-right
 		@each $icon, $link in $listname
 				--#{$icon}#{$suffix}: url(../icons/#{$link})
 	.light-theme
-		div, img
+		input, button, img, .panel-collapse, .arrow-right
 			@each $icon, $link in $listname
 				--#{$icon}#{$suffix}: url(../icons/#{$link}) !important
 	@media (prefers-color-scheme: dark)
-		div, img
+		input, button, img, .panel-collapse, .arrow-right
 			@each $icon, $link in $listname
 				--#{$icon}#{$suffix}: url(../icons/dark/#{$link})
 	.dark-theme
-		div, img
+		input, button, img, .panel-collapse, .arrow-right
 			@each $icon, $link in $listname
 				--#{$icon}#{$suffix}: url(../icons/dark/#{$link})
 	@each $icon, $link in $listname
@@ -33,21 +32,8 @@ $dytable: (downloading: "downloading.svg", stalledDL: "stalledDL.svg", stalledUP
 +themeIconify($icons, Icon)
 +themeIconify($buttons, "") 
 +themeIconify($dytable,-icon)
-	
-#downloadButton div, .insertLink
-	content: var(--downButton)
-#uploadButton div, .listAdd
-	content: var(--uploadButton)
-#deleteButton div, .deleteIcon, .listRemoveIcon
-	content: var(--listRemoveIcon)
-#resumeButton div, .mediaStart
-	content: var(--resumeButton)
-#pauseButton div, .mediaPause
-	content: var(--pauseButton)
-#preferencesButton div, .configureIcon
-	content: var(--prefButton)
 
-#downloadButton img
+#downloadButton img, .insertLink
 	content: var(--downButton) 
 #uploadButton img, .listAdd
 	content: var(--uploadButton)
@@ -60,5 +46,3 @@ $dytable: (downloading: "downloading.svg", stalledDL: "stalledDL.svg", stalledUP
 #preferencesButton img, .configureIcon
 	content: var(--prefButton)
 
-#mochaToolbar img
-	max-width: 24px
