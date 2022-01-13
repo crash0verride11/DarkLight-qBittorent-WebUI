@@ -1259,7 +1259,7 @@ a.propButton img {
   height: 0px;
   position: absolute;
   margin-top: 3px;
-  right: 15px;
+  right: 8px;
   border-width: 5px;
   border-style: solid;
   border-color: transparent transparent transparent var(--font-color);
@@ -1948,7 +1948,11 @@ td.statusBarSeparator {
   background-color: var(--row-alt) !important;
 }
 
-#rssDetailsView div, #rssDetailsView p, #rssDetailsView iframe {
+#rssDetailsView {
+  /* iframe */
+}
+
+#rssDetailsView div, #rssDetailsView p {
   padding-left: 4px !important;
 }
 
@@ -2065,6 +2069,7 @@ td.statusBarSeparator {
 /*Transfer Bar overrides*/
 div .progressbar_wrapper {
   border-color: var(--font-color) !important;
+  margin-left: -3px !important;
 }
 
 /* % of download completed*/
