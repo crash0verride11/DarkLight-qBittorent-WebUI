@@ -38,21 +38,8 @@ if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
 }
 
 
-window.onload = (event) => {
-    var eventKey;
-    document.addEventListener("keydown", function(event){ eventKey = event.key; });
-    document.addEventListener("keyup", function(event){ eventKey = ''; });
-    document.getElementById('btn-toggle').onclick = function() {
-        if (eventKey == 'Alt') {
-            bodyEle = document.body.classList
-            if (bodyEle.contains("dark-theme")) {bodyEle.remove("dark-theme");}
-            if (bodyEle.contains("light-theme")) {bodyEle.remove("light-theme");}
-            localStorage.setItem("theme", '');
-        } else {
-            themeSwap();
-        }
-    }
-    /*
+/* window.onload = (event) => {
+    
     document.getElementById('downloadButton').onclick = function() {
         setTimeout(function(){
         var bodies = document.getElementById('downloadPage')
@@ -64,5 +51,5 @@ window.onload = (event) => {
             if (document.body.classList.contains("light-theme")) {document.body.classList.toggle("light-theme");}
             document.body.classList.toggle("dark-theme");
         }}, 300);
-    }*/
-}
+    }
+}*/

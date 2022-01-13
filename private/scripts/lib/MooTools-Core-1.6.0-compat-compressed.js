@@ -4,36 +4,57 @@ Web Build: https://mootools.net/core/builder/d46055c910fae7895431e5908a0dcfa2
 */
 
 window.onload = (event) => {
-setTimeout(function(){
-	//console.log(navigator.saysWho);
-	compatFix(navigator.saysWho);
-},300);
-function delayFix() {setTimeout (function( ){compatFix(navigator.saysWho)}, 750);}
-document.getElementById('preferencesButton').onclick = function(){ delayFix() }
-// Select the theme preference from localStorage and time stored
-const currentTheme = localStorage.getItem("theme");
-const prevDate = new Date(localStorage.getItem("themeDate"));	
-let curDate = new Date();
-// If themeForget is true the theme value will be ignored after a set number of hours
-let themeForget = true;
-// How many hours before the theme value is ignored
-var themeClock = 3;
-// Difference between time of last set theme preference value and current time.
-var dateDif = parseInt((curDate-prevDate)/(3600*1000));
-// If the current theme in localStorage is "dark"...
-if ((dateDif <= themeClock) || themeForget == false){
-	if (currentTheme == "dark") {
-		// ...then use the .dark-theme class
-		if (window.matchMedia('(prefers-color-scheme: dark)').matches == false) {
-			document.body.classList.toggle("dark-theme");
+	//FireFox Fixes
+	function delayFix() {setTimeout (function( ){compatFix(navigator.saysWho)}, 750);}
+	setTimeout(function(){
+		//console.log(navigator.saysWho);
+		compatFix(navigator.saysWho);
+	},300);
+	var prefButton = document.getElementById('preferencesButton')
+	if(prefButton) {prefButton.onclick = function(){ delayFix() }}
+
+	// Select the theme preference from localStorage and time stored
+	const currentTheme = localStorage.getItem("theme");
+	const prevDate = new Date(localStorage.getItem("themeDate"));	
+	let curDate = new Date();
+	// If themeForget is true the theme value will be ignored after a set number of hours
+	let themeForget = true;
+	// How many hours before the theme value is ignored
+	var themeClock = 3;
+	// Difference between time of last set theme preference value and current time.
+	var dateDif = parseInt((curDate-prevDate)/(3600*1000));
+	// If the current theme in localStorage is "dark"...
+	if ((dateDif <= themeClock) || themeForget == false){
+		if (currentTheme == "dark") {
+			// ...then use the .dark-theme class
+			if (window.matchMedia('(prefers-color-scheme: dark)').matches == false) {
+				document.body.classList.toggle("dark-theme");
+			}
+		}
+		if (currentTheme == "light") {
+			// ...then use the .dark-theme class
+			if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+				document.body.classList.toggle("light-theme");}
+			}	
+	}
+	
+	// Toggle Button Click Function
+	var eventKey;
+	document.addEventListener("keydown", function(event){ eventKey = event.key; });
+	document.addEventListener("keyup", function(event){ eventKey = ''; });
+	let btnToggle = document.getElementById('btn-toggle')
+	if (btnToggle) {
+		document.getElementById('btn-toggle').onclick = function() { 
+			if (eventKey == 'Alt') { //Reset Theme Override on 'Alt + Click' Toggle Button
+				bodyEle = document.body.classList
+				if (bodyEle.contains("dark-theme")) {bodyEle.remove("dark-theme");}
+				if (bodyEle.contains("light-theme")) {bodyEle.remove("light-theme");}
+				localStorage.setItem("theme", '');
+			} else {
+				themeSwap();
+			}
 		}
 	}
-	if (currentTheme == "light") {
-		// ...then use the .dark-theme class
-		if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-			document.body.classList.toggle("light-theme");}
-		}	
-}
 }
 
 navigator.saysWho = (() => {//general browser model check
