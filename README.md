@@ -1,18 +1,20 @@
 # qBittorent-WebUI-DarkLight
-A version of Dark/Light mode for the standard WebUI using custom CSS Properties. This should support the same browsers as the standard WebUI, excluding IE, as long as the version is new enough to support vars and custom CSS properties (indicated in the table at the bottom). The theme respects OS default, but is also toggle-able. Preferences for the dark or light theme toggle are stored in local storage and remembered. The alternate webUI is set to ignore the toggled theme after three hours and use the OS preference instead. This can be disabled or the length of time extended by changing values in "/private/scripts/MooTools-Core-1.6.0-compat-compressed.js" (the only script file that was already linked in all the htmls) I'll add clearer instructions on changing this eventually.
+A version of Dark/Light mode for the standard WebUI using custom CSS Properties. This should support the same browsers as the standard WebUI, excluding IE, as long as the version is new enough to support vars and custom CSS properties (indicated in the table at the bottom). The theme respects OS default, but is also toggle-able. 
 
 Basically I wanted to refresh my CSS / SASS skills by creating a dark mode for qBittorrent. The only other version of the standard UI I've seen is not toggle-albe. I also primarily see versions that change colors but leave all the icons as is (not ideal for dark mode). I've managed to keep changes primarily to the CSS files, though minor changes have been made to a few of the JSs and the index. 
 
 # Notes
 **Updates Dec 2021 / Firefox Compatability** I've recently made a large update to the method for image replacement, that will have reduced compatibility for image toggling, but has greatly reduced the amount of code altered outside the CSS files. The plus side, the images will fall back to the normal icons. Modern browsers should support the image replacement (I've tested working correctly in safari, chrome, edge, and opera, issues in firefox), but no guarantees for older OSs / browsers. I previously replaced every single image tag to make image toggling work, now I replaced zero. Firefox prioritizes the static src image defined in the HTML over the dynamic image defined in CSS. I've attempted some fixes for firefox, but I haven't tested extensively and if you use a plugin the masks your browser type, the fixes will fail.
 
-**Older Versions of qBittorrent:** I am priritizing latest releases of qBittorent. With the recent rebuild of project, this may work with more older qbit versions in the future, but will definitely break with every mootools update. See the legacy branch for an older version of this project and maybe you'll get lucky. 
+**Theme Override** Clicking the theme toggle button will override the OS preference for the dark or light theme and this value is stored in local storage and remembered on page refresh. The alternate webUI will ignore the theme override after three hours and return to the OS preference. This can also now be reset to OS preference by opt/alt + clicking the theme toggle button.
+
+**Older Versions of qBittorrent:** I am prioritizing latest releases of qBittorent. With the recent rebuild of project, this may work with more older qbit versions in the future, but will definitely break with every mootools update. See the legacy branch for an older version of this project and maybe you'll get lucky. 
 
 **Search/RSS Tabs:** I don't use either of these tabs, but I did some testing for themeing. If you see something that clearly is not as it should be, let me know in the issues.
 
 **Icons:** I've compiled UI icons that I've re-colored for dark mode into an "_IC.ai" for quick recoloring to those who have a compatible editor.
 
-**Colors/Design:** I may branch this eventually with custom icons throughout and a redsigned style. Recently did another icon re-color, but will likely slowly iterate away from the origninal qBittorrent icons over time. I'll be leaving "Wide Compatibility (Div)" and "Legacy" branch icons as the closest version to the original UI.
+**Colors/Design:** I may branch this eventually with custom icons throughout and a redsigned style. Recently did another icon re-color, but will likely slowly iterate away from the original qBittorrent icons over time. I'll be leaving "Wide Compatibility (Div)" and "Legacy" branch icons as the closest version to the original UI.
 
 **Scrollbars:** Use CSS styling, which has only really been supported in the last few years. Compatibility may vary, but works in current versions of Safari, Chrome, and Firefox. I doubt I'll ever implement a javascript method.
 
@@ -25,7 +27,7 @@ Basically I wanted to refresh my CSS / SASS skills by creating a dark mode for q
 
 # Installation
 Instructions for using my Alternate WebUI:
-* Start with the instructions on alternate UI usage from the [qBittorent Master](https://github.com/qbittorrent/qBittorrent/wiki/Developing-alternate-WebUIs-(WIP)) (Download the files and place them in the inidcated locations)
+* Start with the instructions on alternate UI usage from the [qBittorent Master](https://github.com/qbittorrent/qBittorrent/wiki/Developing-alternate-WebUIs-(WIP)) (Download the files and place them in the indicated locations)
 	* You can ignore the qBittorent Master public folder
 * Download the DarkLight UI files
 	* **DarkLight Public folder:** The entire DarkLight public folder can replace the qBittorrent Master version.
