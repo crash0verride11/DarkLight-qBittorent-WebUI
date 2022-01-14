@@ -3,9 +3,9 @@
 /* The icons were swapped in batched so there are three lists are necessary to accomodate inconsistent icon property and class naming.
 	Eventually I'll clean up. */
 
-$icons: (goDown: "go-down.svg", downButton: "insert-link.svg", uploadButton: "list-add.svg", listRemove: "list-remove.svg", resumeButton: "media-playback-start.svg", pauseButton: "media-playback-pause.svg", prefButton: "configure.svg", editClear: "edit-clear.svg", docEdit: "document-edit-verify.svg", editRename: "edit-rename.svg", goBottom: "go-bottom.svg", goTop: "go-top.svg", goUp: "go-up.svg", magnet: "kt-magnet.svg", maxDown: "kt-set-max-download-speed.svg", maxUp: "kt-set-max-upload-speed.svg", forceStart: "media-seek-forward.svg", viewCat: "view-categories.svg", editCopy: "edit-copy.svg", editDelete: "edit-delete.svg", helpAbout: "help-about.svg", helpContent: "help-contents.svg", logOut: "system-log-out.svg", viewStats: "view-statistics.svg", wallet: "wallet-open.svg", search: "edit-find.svg", collapse: "collapse.svg", slowOff: "slow_off.svg", slow: "slow.svg", connected: "connected.svg", disconnected: "disconnected.svg", firewalled: "firewalled.svg", seeding: "seeding.svg", groupDelete: "user-group-delete.svg", netServer: "network-server.svg", world: "application-x-mswinurl.svg", warning: "dialog-warning.svg", unavailable: "unavailable.svg", inbox: "mail-folder-inbox.svg", folderNew: "folder-new.svg", mailRead: "mail-mark-read.svg", viewRefresh: "view-refresh.svg", download: "download.svg", checked: "completed.svg")
+$icons: (goDown: "go-down.svg", downButton: "insert-link.svg", uploadButton: "list-add.svg", listRemove: "list-remove.svg", resumeButton: "media-playback-start.svg", pauseButton: "media-playback-pause.svg", prefButton: "configure.svg", editClear: "edit-clear.svg", docEdit: "document-edit-verify.svg", editRename: "edit-rename.svg", goBottom: "go-bottom.svg", goTop: "go-top.svg", goUp: "go-up.svg", magnet: "kt-magnet.svg", maxDown: "kt-set-max-download-speed.svg", maxUp: "kt-set-max-upload-speed.svg", forceStart: "media-seek-forward.svg", viewCat: "view-categories.svg", editCopy: "edit-copy.svg", editDelete: "edit-delete.svg", helpAbout: "help-about.svg", helpContent: "help-contents.svg", logOut: "system-log-out.svg", viewStats: "view-statistics.svg", wallet: "wallet-open.svg", search: "edit-find.svg", collapse: "collapse.svg", slowOff: "slow_off.svg", slow: "slow.svg", connected: "connected.svg", disconnected: "disconnected.svg", firewalled: "firewalled.svg", seeding: "seeding.svg", groupDelete: "user-group-delete.svg", netServer: "network-server.svg", world: "application-x-mswinurl.svg", warning: "dialog-warning.svg", unavailable: "unavailable.svg", inbox: "mail-folder-inbox.svg", folderNew: "folder-new.svg", mailRead: "mail-mark-read.svg", viewRefresh: "view-refresh.svg", download: "download.svg", checked: "checked.svg")
 
-$buttons: (downButton: "insert-link.svg", uploadButton: "list-add.svg", resumeButton: "media-playback-start.svg", pauseButton: "media-playback-pause.svg", prefButton: "configure.svg")
+$buttons: (themeButton: "theme.svg", downButton: "insert-link.svg", uploadButton: "list-add.svg", resumeButton: "media-playback-start.svg", pauseButton: "media-playback-pause.svg", prefButton: "configure.svg")
 
 $dytable: (downloading: "downloading.svg", stalledDL: "stalledDL.svg", stalledUP: "stalledUP.svg", uploading: "uploading.svg", paused: "paused.svg", completed: "completed.svg", queued: "queued.svg", checking: "checking.svg", error: "error.svg", resumed: "resumed.svg", filterall: "filterall.svg", filteractive: "filteractive.svg", filterinactive: "filterinactive.svg", filterstalled: "filterstalled.svg", folder: "inode-directory.svg")
 
@@ -33,6 +33,7 @@ $dytable: (downloading: "downloading.svg", stalledDL: "stalledDL.svg", stalledUP
 +themeIconify($buttons, "") 
 +themeIconify($dytable,-icon)
 
+/* Mocha Toolbar - Main Toolbar */
 #downloadButton img, .insertLink
 	content: var(--downButton) 
 #uploadButton img, .listAdd
@@ -43,6 +44,315 @@ $dytable: (downloading: "downloading.svg", stalledDL: "stalledDL.svg", stalledUP
 	content: var(--resumeButton)
 #pauseButton img, .mediaPause
 	content: var(--pauseButton)
+#topPrioButton img
+	content: var(--goTopIcon)
+#increasePrioButton img
+	content: var(--goUpIcon)
+#decreasePrioButton img
+	content: var(--goDownIcon)
+#bottomPrioButton img
+	content: var(--goBottomIcon)
 #preferencesButton img, .configureIcon
 	content: var(--prefButton)
+#btn-toggle img
+	content: var(--themeButton)
 
+/*statusFilterList
+#all_filter a img
+	content: var(--filterall-icon)
+#downloading_filter a img
+	content: var(--downloading-icon)
+#seeding_filter a img
+	content: var(--uploading-icon)
+#completed_filter a img
+	content: var(--completed-icon)
+#resumed_filter a img
+	content: var(--resumed-icon)
+#paused_filter a img
+	content: var(--paused-icon)
+#active_filter a img
+	content: var(--filteractive-icon)
+#inactive_filter a img
+	content: var(--filterinactive-icon)
+#stalled_filter a img
+	content: var(--filterstalled-icon)
+#stalled_uploading_filter a img
+	content: var(--stalledUP-icon)
+#stalled_downloading_filter a img
+	content: var(--stalledDL-icon)
+#checking_filter a img
+	content: var(--checking-icon)
+#errored_filter a img
+	content: var(--error-icon)
+
+/* Footer Icons */
+#desktopFooter 
+	img
+		height: 16px
+		max-width: 16px
+	table tbody tr 
+		td:nth-of-type(5) img
+			content: var(--firewalledIcon)
+		td:nth-of-type(7) img
+			content: var(--slowOffIcon)
+			position: relative
+			top: 2px
+			max-width: 24px  !important
+		td:nth-of-type(9) img
+			content: var(--downloading-icon)
+		td:nth-of-type(11) img
+			content: var(--seedingIcon)
+.connectedIcon
+	content: var(--connectedIcon) !important
+.firewalledIcon
+	content: var(--firewalledIcon) !important
+.disconnectedIcon
+	content: var(--disconnectedIcon) !important
+.slowOffIcon
+	content: var(--slowOffIcon) !important
+.slowIcon
+	content: var(--slowIcon) !important
+
+/* Pref Pane Overrides */
+#SpeedTab .settings
+	&:nth-of-type(1) table tbody tr td
+		&:nth-of-type(1) img
+			content: var(--slowOffIcon)
+	&:nth-of-type(2) table tbody tr td
+		&:nth-of-type(1) img
+			content: var(--slowIcon)
+
+/* Search Tab Icons */
+#searchResultsGranularFiltersWarning
+	content: var(--warningIcon)
+
+/* RSS Downloader View
+.folder_icon
+	content: var(--folder-icon)
+#newRuleButton
+	background-image: var(--uploadButton) !important
+#deleteRuleButton
+	background-image: var(--listRemoveIcon) !important
+
+/*Main Menu Icons and Ovverides*/
+#uploadLink img 
+	content: var(--uploadButton)
+#downloadLink img
+	content: var(--downButton)
+#logoutLink img
+	content: var(--logOutIcon)
+#shutdownLink img
+	content: var(--editDeleteIcon)
+#resumeAllLink img, #resumeLink img
+	content: var(--resumeButton)
+#pauseAllLink img, #pauseLink img
+	content: var(--pauseButton)
+#deleteLink img
+	content: var(--editDeleteIcon)
+#topPrioLink img
+	content: var(--goTopIcon)
+#increasePrioLink img
+	content: var(--goUpIcon)
+#decreasePrioLink img
+	content: var(--goDownIcon)
+#bottomPrioLink img
+	content: var(--goBottomIcon)
+#recheckLink img
+	content: var(--docEditIcon)
+#showTopToolbarLink, #showStatusBarLink, #speedInBrowserTitleBarLink, #showSearchEngineLink, #showRssReaderLink
+	img
+		content: var(--checkedIcon)
+#StatisticsLink img
+	content: var(--viewStatsIcon)
+#preferencesLink img
+	content: var(--prefButton)
+#registerMagnetHandlerLink img
+	content: var(--magnetIcon)
+#docsLink img
+	content: var(--helpContentIcon)
+#bugLink img
+	content: var(--walletIcon)
+#aboutLink img
+	content: var(--helpAboutIcon)
+
+/* Header Menus */
+#torrentsTableDiv_headerMenu, #torrentTrackersTableDiv_headerMenu, #torrentPeersTableDiv_headerMenu, #torrentsTableDiv_headerMenu, #torrentFilesTableDiv_headerMenu
+	img
+		content: var(--checkedIcon)
+
+/* Misc Icons */
+#watched_folders_tab
+	tbody tr td
+		&:nth-of-type(2) img
+			content: var(--uploadButton)
+.filterTitle img
+	content: var(--goDownIcon)
+#categoryFilterList, #tagFilterList
+	li a
+		img
+			content: var(--folder-icon)
+#trackerFilterList
+	li a
+		img
+			content: var(--netServerIcon)
+
+/* Context menu Icons */
+#torrentsTableMenu > li
+	&:nth-of-type(1) a img
+		content: var(--resumeButton)
+	&:nth-of-type(2) a img
+		content: var(--pauseButton)
+	&:nth-of-type(3) a img
+		content: var(--forceStartIcon)
+	&:nth-of-type(4) a img
+		content: var(--listRemoveIcon)
+	&:nth-of-type(5) a
+		&:nth-of-type(1) img
+			content: var(--folder-icon)
+		&:nth-of-type(2) img
+			content: var(--editRenameIcon)
+	&:nth-of-type(6) > a, &:nth-of-type(7) > a
+		&:nth-of-type(1) img
+			content: var(--viewCatIcon)
+	&:nth-of-type(8) > a img
+		content: var(--checkedIcon)
+	&:nth-of-type(9) a img
+		content: var(--maxDownIcon)
+	&:nth-of-type(10), &:nth-of-type(11)
+		a img
+			content: var(--maxUpIcon)
+	&:nth-of-type(12), &:nth-of-type(13), &:nth-of-type(14) 
+		a img
+			content: var(--checkedIcon)
+	&:nth-of-type(15), &:nth-of-type(16) 
+		a img
+			content: var(--docEditIcon)
+	&:nth-of-type(17)
+		ul li
+			&:nth-of-type(1) a img
+				 content: var(--goTopIcon)
+			&:nth-of-type(2) a img
+				 content: var(--goUpIcon)
+			&:nth-of-type(3) a img
+				 content: var(--goDownIcon)
+			&:nth-of-type(4) a img
+				 content: var(--goBottomIcon)
+	&:nth-of-type(18)
+		a:nth-of-type(1) img
+			content: var(--editCopyIcon)
+		ul li
+			&:nth-of-type(1), &:nth-of-type(2), &:nth-of-type(3), &:nth-of-type(5) 
+				> a img
+					content: var(--editCopyIcon)
+			&:nth-of-type(4) a img
+				content: var(--magnetIcon)
+
+#contextCategoryList li
+	a img
+		content: var(--folder-icon)
+	&:nth-of-type(1) a img
+		content: var(--uploadButton)
+	&:nth-of-type(2) a img
+		content: var(--editDeleteIcon)
+
+#contextTagList li
+	&:nth-of-type(1) a img
+		content: var(--uploadButton)
+	&:nth-of-type(2) a img
+		content: var(--editDeleteIcon)
+
+#categoriesFilterMenu li
+	&:nth-of-type(1) a img
+		content: var(--uploadButton)
+	&:nth-of-type(2) a img
+		content: var(--editRenameIcon)
+	&:nth-of-type(3) a img, &:nth-of-type(4) a img
+		content: var(--editDeleteIcon)
+	&:nth-of-type(5) a img
+		content: var(--resumeButton)
+	&:nth-of-type(6) a img
+		content: var(--pauseButton)
+	&:nth-of-type(7) a img
+		content: var(--listRemoveIcon)
+#tagsFilterMenu li
+	&:nth-of-type(1) a img
+		content: var(--uploadButton)
+	&:nth-of-type(2) a img, &:nth-of-type(3) a img
+		content: var(--editDeleteIcon)
+	&:nth-of-type(4) a img
+		content: var(--resumeButton)
+	&:nth-of-type(5) a img
+		content: var(--pauseButton)
+	&:nth-of-type(6) a img
+		content: var(--listRemoveIcon)
+#trackersFilterMenu li
+	&:nth-of-type(1) a img
+		content: var(--resumeButton)
+	&:nth-of-type(2) a img
+		content: var(--pauseButton)
+	&:nth-of-type(3) a img
+		content: var(--listRemoveIcon)
+
+#torrentTrackersMenu li
+	&:nth-of-type(1) a img
+		content: var(--uploadButton)
+	&:nth-of-type(2) a img
+		content: var(--uploadButton)
+	&:nth-of-type(3) a img
+		content: var(--uploadButton)
+	&:nth-of-type(4) a img
+		content: var(--editCopyIcon)
+#torrentPeersMenu li
+	&:nth-of-type(1) a img
+		content: var(--uploadButton)
+	&:nth-of-type(2) a img
+		content: var(--editCopyIcon)
+	&:nth-of-type(3) a img
+		content: var(--groupDeleteIcon)
+#torrentFilesMenu li:nth-of-type(1) a img
+	content: var(--editRenameIcon)
+
+#searchResultsTableMenu li
+	&:nth-of-type(1) a img
+		content: var(--downloadIcon)
+	&:nth-of-type(2) a img
+		content: var(--worldIcon)
+	&:nth-of-type(3) a img
+		content: var(--editCopyIcon)
+#searchPluginsTableMenu li
+	&:nth-of-type(1) a img
+		content: var(--checkedIcon)
+	&:nth-of-type(2) a img
+		content: var(--listRemoveIcon)
+
+#rssFeedMenu li
+	&:nth-of-type(1) a img
+		content: var(--viewRefreshIcon)
+	&:nth-of-type(2) a img
+		content: var(--mailReadIcon)
+	&:nth-of-type(3) a img
+		content: var(--editRenameIcon)
+	&:nth-of-type(4) a img
+		content: var(--listRemoveIcon)
+	&:nth-of-type(5) a img
+		content: var(--uploadButton)
+	&:nth-of-type(6) a img
+		content: var(--folderNewIcon)
+	&:nth-of-type(7) a img
+		content: var(--viewRefreshIcon)
+	&:nth-of-type(8) a img
+		content: var(--editCopyIcon)
+#rssDownloaderRuleMenu li
+	&:nth-of-type(1) a img
+		content: var(--uploadButton)
+	&:nth-of-type(2) a img
+		content: var(--listRemoveIcon)
+	&:nth-of-type(3) a img
+		content: var(--editRenameIcon)
+	&:nth-of-type(4) a img
+		content: var(--editDeleteIcon)
+#rssArticleMenu li
+	&:nth-of-type(1) a img
+		content: var(--downloadIcon)
+	&:nth-of-type(2) a img
+		content: var(--worldIcon)

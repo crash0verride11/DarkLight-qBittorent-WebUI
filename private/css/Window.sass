@@ -23,8 +23,7 @@
 	---------------------------------------------------------------- */
 @import mixins
 
-$windowTheme: (title-gradient 'var(--bg-menu)' 'var(--bg-menu)', mocha-border-clr #d9d9d9 #333333, mocha-border-lte #dadada #3a3a3a, mocha-button #fefefe #ccc)
-
+@import variables
 +themeGenerate($windowTheme, "--")
 
 #preferencesPage_titleBar
@@ -56,19 +55,9 @@ $windowTheme: (title-gradient 'var(--bg-menu)' 'var(--bg-menu)', mocha-border-cl
 	top: 0
 	left: 0
 
-
-/*We get a little creative here in order to define a gradient in the CSS using a query
-	string appended to a background image.
-
-	"from" is the top color of the gradient. "to" is the bottom color of the gradient.
-
-	Both must be hex values without the leading # sign.*/
-
 .mochaTitlebar 
 	width: 100%
-	overflow: hidden
-	/* background: var(--title-gradient)
-	
+	overflow: hidden	
 	h3 
 		font-size: 12px
 		line-height: 15px
@@ -175,7 +164,7 @@ div.mochaToolbarWrapper.bottom
 	1. Set the useCanvasControls window option to false.
 	2. If you use a different button size you may need to reposition the controls.
 	   Modify the controlsOffset window option.
-	2. Replcac the background-color with a background-image for each button. */
+	2. Replace the background-color with a background-image for each button. */
 
 .mochaMinimizeButton, .mochaMaximizeButton, .mochaCloseButton 
 	float: right
@@ -195,11 +184,9 @@ div.mochaToolbarWrapper.bottom
 
 .mochaMaximizeButton 
 	z-index: 100 
-	/* SASS Doesn't like blanks* /
 	
 .mochaCloseButton 
 	z-index: 100 
-	/*SASS Doesn't like blanks */
 
 .mochaSpinner 
 	display: none

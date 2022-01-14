@@ -24,12 +24,8 @@ a img, :link img, :visited img
 
 @import mixins
 
-$styleTheme: (mocha-frame #000 #555, char-spacing 0em .01em, font-color #000 #fff, font-tint #555 #ddd, font-wgt 400 500, text-hover #ee6600 #d1c52a, style-border-lte #3a3a3a #888, icon-complete #675348 #675348, transfer-bar #050066 #94BBD8)
-
+@import variables
 +themeGenerate($styleTheme, "--")
-
-$layoutTheme: (bg-color #fff #121212, bg-color-tint #f2f2f2 #202020, bg-color-opp #222 #eee, bg-menu #eee #444, font-color #000 #fff, font-tint #555 #ddd, font-dtint #555 #bbb, selected-text #fff #000, row-alt #eee #2a2a2a, row-select #354158 #94BBD8, row-hover #ee6600 #d1c52a, divder-border #ebebeb #363636, border-col #909090 #6f6f6f)
-
 +themeGenerate($layoutTheme, "--")
 
 @import icons
@@ -61,64 +57,50 @@ body
 h2, h3, h4
 	margin: 0
 	padding: 0 0 5px 0
-	font-size: 12px
 	font-weight: bold
-	color: #333
-
+	color: var(--font-dtint)
 
 h2
 	font-size: 14px
-	color: var(--font-dtint)
-	font-weight: bold
-
+h3
+	font-size: 12px
+h4
+	font-size: 11px
 
 #mochaPage h3
 	display: block
-	font-size: 12px
 	padding: 6px 0 6px 0
 	margin: 0 0 8px 0
-	border-bottom: 1px solid #bbb
-
+	border-bottom: 1px solid var(--bg-checkmark)
 
 #error_div
 	color: #f00
 	font-weight: bold
 
-
-h4
-	font-size: 11px
-
-
 a
-	color: var(--text-hover)
+	color: var(--hover-color)
 	text-decoration: none
 	cursor: pointer
 	&:hover
 		text-decoration: none
-
-
 p
 	margin: 0
 	padding: 0 0 9px 0
 
 
 /* List Elements */
-
 ul
 	list-style: outside
 	margin: 0 0 9px 16px
 
-
 dt
 	font-weight: bold
-
 
 dd
 	padding: 0 0 9px 0
 
 
 /* Code */
-
 pre
 	background-color: var(--bg-color)
 	color: #006600
@@ -133,13 +115,11 @@ pre
 
 
 /* Dividers */
-
 hr
 	background-color: #ddd
 	color: #ccc
 	height: 1px
 	border: 0px
-
 
 .vcenter
 	vertical-align: middle
@@ -149,23 +129,14 @@ hr
 	width: 90%
 	height: 100%
 
-
 #trackersUrls
 	width: 90%
 	height: 100%
-
 
 #Filters ul
 	list-style-type: none
 	li
 		margin-left: -16px
-
-
-	img
-		padding: 2px 4px
-		vertical-align: middle
-		width: 16px
-		height: 16px
 
 
 .selectedFilter
@@ -174,10 +145,8 @@ hr
 	a
 		color: var(--selected-text)
 
-
 #properties
 	background-color: #e5e5e5
-
 
 a.propButton
 	border: 1px solid rgb(85, 81, 91)
@@ -188,25 +157,13 @@ a.propButton
 	img
 		margin-bottom: -4px
 
-
 .scrollableMenu
 	overflow-y: auto
 	overflow-x: hidden
 
-
-#topPrioButton img
-	content: var(--goTopIcon)
-#increasePrioButton img
-	content: var(--goUpIcon)
-#decreasePrioButton img
-	content: var(--goDownIcon)
-#bottomPrioButton img
-	content: var(--goBottomIcon)
-
 /* context menu specific */
-
 .contextMenu
-	border: 1px solid #999
+	border: 1px solid var(--border-col)
 	padding: 0
 	background: var(--row-alt)
 	list-style-type: none
@@ -231,7 +188,7 @@ a.propButton
 					background-color: #eee
 		ul
 			padding: 0
-			border: 1px solid #999
+			border: 1px solid var(--border-col)
 			padding: 0
 			background: var(--bg-color)
 			list-style-type: none
@@ -243,6 +200,8 @@ a.propButton
 
 			li a
 				position: relative
+				&:hover
+					background-color: var(--row-alt)
 		img
 			width: 16px
 			max-width: 16px
@@ -279,174 +238,9 @@ a.propButton
     /* lists nested under hovered list items */
     left: auto
 
-
-#torrentsTableMenu > li
-	&:nth-of-type(1) a img
-		content: var(--resumeButton)
-	&:nth-of-type(2) a img
-		content: var(--pauseButton)
-	&:nth-of-type(3) a img
-		content: var(--forceStartIcon)
-	&:nth-of-type(4) a img
-		content: var(--listRemoveIcon)
-	&:nth-of-type(5) a
-		&:nth-of-type(1) img
-			content: var(--folder-icon)
-		&:nth-of-type(2) img
-			content: var(--editRenameIcon)
-	&:nth-of-type(6) > a, &:nth-of-type(7) > a
-		&:nth-of-type(1) img
-			content: var(--viewCatIcon)
-	&:nth-of-type(8) > a img
-		content: var(--checkedIcon)
-	&:nth-of-type(9) a img
-		content: var(--maxDownIcon)
-	&:nth-of-type(10), &:nth-of-type(11)
-		a img
-			content: var(--maxUpIcon)
-	&:nth-of-type(12), &:nth-of-type(13), &:nth-of-type(14) 
-		a img
-			content: var(--checkedIcon)
-	&:nth-of-type(15), &:nth-of-type(16) 
-		a img
-			content: var(--docEditIcon)
-	&:nth-of-type(17)
-		ul li
-			&:nth-of-type(1) a img
-				 content: var(--goTopIcon)
-			&:nth-of-type(2) a img
-				 content: var(--goUpIcon)
-			&:nth-of-type(3) a img
-				 content: var(--goDownIcon)
-			&:nth-of-type(4) a img
-				 content: var(--goBottomIcon)
-	&:nth-of-type(18)
-		a:nth-of-type(1) img
-			content: var(--editCopyIcon)
-		ul li
-			&:nth-of-type(1), &:nth-of-type(2), &:nth-of-type(3), &:nth-of-type(5) 
-				> a img
-					content: var(--editCopyIcon)
-			&:nth-of-type(4) a img
-				content: var(--magnetIcon)
-
-#contextCategoryList li
-	a img
-		content: var(--folder-icon)
-	&:nth-of-type(1) a img
-		content: var(--uploadButton)
-	&:nth-of-type(2) a img
-		content: var(--editClearIcon)
-#contextTagList li
-	&:nth-of-type(1) a img
-		content: var(--uploadButton)
-	&:nth-of-type(2) a img
-		content: var(--editClearIcon)
-
-#categoriesFilterMenu li
-	&:nth-of-type(1) a img
-		content: var(--uploadButton)
-	&:nth-of-type(2) a img
-		content: var(--editRenameIcon)
-	&:nth-of-type(3) a img, &:nth-of-type(4) a img
-		content: var(--listRemoveIcon)
-	&:nth-of-type(5) a img
-		content: var(--resumeButton)
-	&:nth-of-type(6) a img
-		content: var(--pauseButton)
-	&:nth-of-type(7) a img
-		content: var(--listRemoveIcon)
-
-#tagsFilterMenu li
-	&:nth-of-type(1) a img
-		content: var(--uploadButton)
-	&:nth-of-type(2) a img, &:nth-of-type(3) a img
-		content: var(--listRemoveIcon)
-	&:nth-of-type(4) a img
-		content: var(--resumeButton)
-	&:nth-of-type(5) a img
-		content: var(--pauseButton)
-	&:nth-of-type(6) a img
-		content: var(--editDeleteIcon)
-
-#trackersFilterMenu li
-	&:nth-of-type(1) a img
-		content: var(--resumeButton)
-	&:nth-of-type(2) a img
-		content: var(--pauseButton)
-	&:nth-of-type(3) a img
-		content: var(--editDeleteIcon)
-
-#torrentTrackersMenu li
-	&:nth-of-type(1) a img
-		content: var(--uploadButton)
-	&:nth-of-type(2) a img
-		content: var(--uploadButton)
-	&:nth-of-type(3) a img
-		content: var(--uploadButton)
-	&:nth-of-type(4) a img
-		content: var(--editCopyIcon)
-
-#torrentPeersMenu li
-	&:nth-of-type(1) a img
-		content: var(--uploadButton)
-	&:nth-of-type(2) a img
-		content: var(--editCopyIcon)
-	&:nth-of-type(3) a img
-		content: var(--groupDeleteIcon)
-		
-#torrentFilesMenu li:nth-of-type(1) a img
-	content: var(--editRenameIcon)
-
-#searchResultsTableMenu li
-	&:nth-of-type(1) a img
-		content: var(--downloadIcon)
-	&:nth-of-type(2) a img
-		content: var(--worldIcon)
-	&:nth-of-type(3) a img
-		content: var(--editCopyIcon)
-
-#rssFeedMenu li
-	&:nth-of-type(1) a img
-		content: var(--viewRefreshIcon)
-	&:nth-of-type(2) a img
-		content: var(--mailReadIcon)
-	&:nth-of-type(3) a img
-		content: var(--editRenameIcon)
-	&:nth-of-type(4) a img
-		content: var(--editDeleteIcon)
-	&:nth-of-type(5) a img
-		content: var(--uploadButton)
-	&:nth-of-type(6) a img
-		content: var(--folderNewIcon)
-	&:nth-of-type(7) a img
-		content: var(--viewRefreshIcon)
-	&:nth-of-type(8) a img
-		content: var(--editCopyIcon)
-
-#rssDownloaderRuleMenu li
-	&:nth-of-type(1) a img
-		content: var(--uploadButton)
-	&:nth-of-type(2) a img
-		content: var(--listRemoveIcon)
-	&:nth-of-type(3) a img
-		content: var(--editRenameIcon)
-	&:nth-of-type(4) a img
-		content: var(--editDeleteIcon)
-
-#rssArticleMenu li
-	&:nth-of-type(1) a img
-		content: var(--downloadIcon)
-	&:nth-of-type(2) a img
-		content: var(--worldIcon)
-
 #torrentsTableDiv_headerMenu, #torrentTrackersTableDiv_headerMenu, #torrentPeersTableDiv_headerMenu, #torrentsTableDiv_headerMenu, #torrentFilesTableDiv_headerMenu
 	img
 		margin-right: 4px
-		content: var(--checkedIcon)
-
-	li ul
-
 	li a.arrow-right, li a:hover.arrow-right
 		&::after
 			display: inline-block
@@ -459,16 +253,14 @@ a.propButton
 			border-width: 5px
 			border-style: solid
 			border-color: transparent transparent transparent var(--font-color)
-
 	li, li li, li li li
 		&:hover ul, &.ieHover ul,
 			left: auto
 
 .contextMenu .separator
-	border-top: 1px solid #999
+	border-top: 1px solid var(--border-col)
 
 /* Sliders */
-
 .slider
 	clear: both
 	position: relative
@@ -477,14 +269,12 @@ a.propButton
 	width: 400px
 	margin-bottom: 15px
 
-
 .sliderWrapper
 	position: relative
 	font-size: 1px
 	line-height: 1px
 	height: 9px
 	width: 422px
-
 
 .sliderarea
 	position: absolute
@@ -494,14 +284,13 @@ a.propButton
 	width: 420px
 	font-size: 1px
 	line-height: 1px
-	background: #f2f2f2 url(../images/slider-area.gif) repeat-x
+	background: var(--bg-color-tint) url(../images/slider-area.gif) repeat-x
 	border: 1px solid #a3a3a3
 	border-bottom: 1px solid #ccc
 	border-left: 1px solid #ccc
 	margin: 0
 	padding: 0
 	overflow: hidden
-
 
 .sliderknob
 	position: absolute
@@ -528,8 +317,6 @@ a.propButton
 /* Mocha Customization */
 
 #mochaToolbar
-	box-shadow: inset 0px -5px 5px -5px rgba(20, 20, 20, 0.5)
-	border-bottom: solid var(--tab-border) 3px
 	padding-top: 3px 
 	position: relative
 	overflow-y: hidden
@@ -541,7 +328,7 @@ a.propButton
 		height: 10px
 		padding-left: 14px
 		padding-top: 14px
-		div, img
+		img
 			filter: var(--invert-image)
 
 .MyMenuIcon
@@ -623,7 +410,6 @@ div.formRow
 	&:nth-of-type(1)
 		padding-top: 5px
 	img
-		content: var(--goDownIcon)
 		max-width: 16px
 		margin-bottom: -4px
 		margin-right: 10px
@@ -635,88 +421,34 @@ div.formRow
 		&.rotate
 			transform: rotate(270deg)
 
-/*statusFilterList
-#all_filter a img
-	content: var(--filterall-icon)
-#downloading_filter a img
-	content: var(--downloading-icon)
-#seeding_filter a img
-	content: var(--uploading-icon)
-#completed_filter a img
-	content: var(--completed-icon)
-#resumed_filter a img
-	content: var(--resumed-icon)
-#paused_filter a img
-	content: var(--paused-icon)
-#active_filter a img
-	content: var(--filteractive-icon)
-#inactive_filter a img
-	content: var(--filterinactive-icon)
-#stalled_filter a img
-	content: var(--filterstalled-icon)
-#stalled_uploading_filter a img
-	content: var(--stalledUP-icon)
-#stalled_downloading_filter a img
-	content: var(--stalledDL-icon)
-#checking_filter a img
-	content: var(--checking-icon)
-#errored_filter a img
-	content: var(--error-icon)
-/* RSS Downloader View
-.imageButton
-	background-color: var(--bg-color-tint) !important
-	&:hover 
-        background-color: var(--bg-menu) !important
-	&:active 
-        background-color: var(--bg-menu) !important
-#newRuleButton
-	background-image: var(--uploadButton) !important
-#deleteRuleButton
-	background-image: var(--listRemoveIcon) !important
-
 /* Search View
 #searchPattern
 	background-image: var(--searchIcon) !important
 	background-position: 4px 4px !important
-#searchResultsGranularFiltersWarning
-	content: var(--warningIcon)
 
 ul.filterList
 	margin: 0 0 0 16px
 	padding-left: 0
 	a
-		height: 22px
+		height: 20px
 		display: block
 		overflow: hidden
 		white-space: nowrap
 		text-overflow: ellipsis
 		color: inherit
-		/* vertical-align: middle
+		line-height: 20px
+		vertical-align: middle
+	img
+		max-width: 16px
+		height: 16px
+		margin-top: -2px
+		padding: 0px 4px
+		vertical-align: middle
+		background-repeat: no-repeat
 	li:hover
-		background-color: var(--row-hover)
+		background-color: var(--hover-color)
 		a
 			color: var(--selected-text)
-
-#categoryFilterList, #tagFilterList
-	li a
-		img
-			height: 16px
-			width: 16px !important
-			content: var(--folder-icon)
-			background-repeat: no-repeat
-
-#trackerFilterList
-	li a
-		padding-top: 2px
-		height: 20px
-		img
-			height: 15px
-			width: 15px !important
-			margin-bottom: 0px
-			max-width: 15px
-			content: var(--netServerIcon)
-			background-repeat: no-repeat
-
 
 td.generalLabel
 	white-space: nowrap
@@ -724,10 +456,8 @@ td.generalLabel
 	width: 1px
 	vertical-align: top
 
-
 #torrentFilesTableDiv
 	line-height: 20px
-
 
 #torrentTrackersTableDiv,
 #webseedsTable
@@ -769,7 +499,7 @@ td.generalLabel
 
 
 #progress 
-    border: 1px solid #999
+    border: 1px solid var(--border-col)
     padding: 0
     position: relative
     width: 100%
@@ -787,9 +517,6 @@ td.generalLabel
 		&:nth-of-type(2) img
 			width: 18px !important
 			max-width: 18px 
-			content: var(--uploadButton)
-
-
 
 #watched_folders_tab td, #watched_folders_tab th
 	padding: 2px 4px
@@ -817,10 +544,6 @@ td.generalLabel
 		width: 140px
 		padding: 1px
 		border: none
-	.ctxt_icon
-		background-origin: content-box
-		padding-left: 170px
-		cursor:pointer
 	select:focus, .select-editable input:focus
 		outline: none
 
@@ -888,14 +611,13 @@ td.statusBarSeparator
 .searchPluginsTableRow
 	cursor: pointer
 
-
 #torrentFilesTableDiv .dynamicTable tr.nonAlt
 	background-color: var(--bg-color)
 	&.selected
 		background-color: var(--row-select)
 		color: var(--selected-text)
 	&:hover
-		background-color: var(--row-hover)
+		background-color: var(--hover-color)
 		color: var(--selected-text)
 
 
@@ -903,111 +625,30 @@ td.statusBarSeparator
 	Some changes have been made to the original CSS.
 	Mostly var replacements for hard values*/
 
-
-/*Main Menu Icons and Ovverides*/
-#desktopNavbar div
-	height: 16px
-	width: 16px
-	margin: 0px 5px -3px -18px
-	top: 1px
-	@include divIcon(contain)
-
-#uploadLink img 
-	content: var(--uploadButton)
-#downloadLink img
-	content: var(--downButton)
-#logoutLink img
-	content: var(--logOutIcon)
-#shutdownLink img
-	content: var(--editDeleteIcon)
-#resumeAllLink img, #resumeLink img
-	content: var(--resumeButton)
-#pauseAllLink img, #pauseLink img
-	content: var(--pauseButton)
-#deleteLink img
-	content: var(--editDeleteIcon)
-#topPrioLink img
-	content: var(--goTopIcon)
-#increasePrioLink img
-	content: var(--goUpIcon)
-#decreasePrioLink img
-	content: var(--goDownIcon)
-#bottomPrioLink img
-	content: var(--goBottomIcon)
-#recheckLink img
-	content: var(--docEditIcon)
-#showTopToolbarLink, #showStatusBarLink, #speedInBrowserTitleBarLink, #showSearchEngineLink, #showRssReaderLink
-	img
-		content: var(--checkedIcon)
-#StatisticsLink img
-	content: var(--viewStatsIcon)
-#preferencesLink img
-	content: var(--prefButton)
-#registerMagnetHandlerLink img
-	content: var(--magnetIcon)
-#docsLink img
-	content: var(--helpContentIcon)
-#bugLink img
-	content: var(--walletIcon)
-#aboutLink img
-	content: var(--helpAboutIcon)
-
-
-/*Filter List Icon Divs Sizing and Styles
-#statusFilterList
-	a > div
-		padding: 0px 4px
-		margin-bottom: -1px
-		top: 3px
-		width: 16px
-		height: 16px
-		@include divIcon(12px)
-
-/*Folder Icon Divs Sizing and Styles
-#tagFilterList, #categoryFilterList
-	div
-		padding: 0px 4px
-		top: 1px
-		margin: 2px 0px
-		width: 16px
-		height: 16px
-		@include divIcon(contain)
-
-#trackerFilterList
-	div
-		padding: 0px 4px
-		top: 4px
-		margin: 0px
-		width: 16px
-		height: 16px
-		@include divIcon(contain)
-
 /*RSS Feed Stuff*/
 .unreadArticle
-	color: var(--text-hover) !important
-
+	color: var(--hover-color) !important
+	&:hover
+		color: var(--selected-text) !important
 #rssTorrentDetailsName
 	color: var(--selected-text) !important
 	background-color: var(--row-select) !important
 	padding-left: 4px
-
 #rssTorrentDetailsDate
 	color: var(--font-color) !important
 	background-color: var(--row-alt) !important
-
 #rssDetailsView
 	div, p
 		padding-left: 4px !important
 	/* iframe
+.imageButton
+	background-color: var(--bg-color-tint) !important
+	&:hover 
+        background-color: var(--bg-menu) !important
+	&:active 
+        background-color: var(--bg-menu) !important
 
 /*Context Menu Icons*/
-.ctxt_icon
-	margin-top: -2px
-	top: 4px
-	height: 16px
-	width: 16px
-	@include divIcon(14px)
-
 #contextTagList
 	input[type=checkbox]
 		position: relative
@@ -1016,109 +657,33 @@ td.statusBarSeparator
 .spinnerIcon
 	background-image: url(images/spinner.gif)
 
-/*Footer */
+/* Footer */
 #desktopFooterWrapper table
-	margin-top: -4px
-
-#desktopFooter .ctxt_icon
-	top: 2px
-	background-size: contain
-
-#desktopFooter img
-	height: 16px
-	width: 16px
-	max-width: 16px
-/*
-#desktopFooter table tbody tr 
-	td:nth-of-type(5) img
-		content: var(--firewalledIcon)
-	td:nth-of-type(7) img
-		content: var(--slowOffIcon)
-		position: relative
-		top: 2px
-		width: 24px  !important
-		max-width: 24px  !important
-	td:nth-of-type(9) img
-		content: var(--downloading-icon)
-	td:nth-of-type(11) img
-		content: var(--seedingIcon)
-.connectedIcon
-	content: var(--connectedIcon) !important
-.firewalledIcon
-	content: var(--firewalledIcon) !important
-.disconnectedIcon
-	content: var(--disconnectedIcon) !important
-.slowOffIcon
-	content: var(--slowOffIcon) !important
-.slowIcon
-	content: var(--slowIcon) !important
-
-#alternativeSpeedLimits.ctxt_icon
-	width: 24px
-
-.speedLabel
-	div
-		top: 3px
-		margin-bottom: -2px
-		margin-right: 6px
-
-
-/* Icon sizing */
-
-.gen_icon, .gen_icon24
-	margin-top: -2px
-	top: 4px
-	@include divIcon(contain)
-
-.gen_icon
-	height: 16px
-	width: 16px
-.gen_icon24
-	height: 24px
-	width: 24px
+	margin-top: -3px
+#desktopFooter 
+	img
+		height: 16px
+		max-width: 16px
+	table tbody tr td
+		&:nth-of-type(7) img
+			margin-top: -2px
+			max-width: 24px  !important
 
 /*Transfer Bar overrides*/
 div
 	.progressbar_wrapper
 		border-color: var(--font-color) !important
 		margin-left: -3px !important
-
 /* % of download completed*/
 .progressbar_dark
 	background: var(--transfer-bar) !important
 	color: var(--selected-text) !important
-
 /* % of download uncompleted*/
 .progressbar_light
 	background: var(--bg-color) !important
 	color: var(--font-color) !important
 
-/* Pref Pane Overrides
-	#speedTab > div
-		margin-top: -2px
-		top: 4px
-		height: 12px
-		width: 25px
-
-#SpeedTab .settings
-	&:nth-of-type(1) table tbody tr td
-		&:nth-of-type(1) img
-			content: var(--slowOffIcon)
-	&:nth-of-type(2) table tbody tr td
-		&:nth-of-type(1) img
-			content: var(--slowIcon)
-
 /* Dark Mode Toggle Button */
-$themeIcon: (themeButton "url(../icons/dark/theme_dark.svg)" "url(../icons/dark/theme_light.svg)",)
-+themeGenerate($themeIcon, "--")
-
-.themeButton
-	content: var(--themeButton)
-	width: 20px
-	max-width: 20px
-	margin-right: 8px
-	top: -1px !important
-
 #btn-toggle
 	overflow: visible
 	outline: 0
@@ -1126,12 +691,13 @@ $themeIcon: (themeButton "url(../icons/dark/theme_dark.svg)" "url(../icons/dark/
 	top: 0px
 	cursor: pointer
 	display: inline-block
+	img
+		width: 20px
+		max-width: 20px
+		margin-right: 8px
+		top: -1px !important
 
-/* Input field and scrollbars */
-
-$fieldThemes: (button-bg #fff #555, brdr-top #B5B5B5 #3A3A3A, brdr-bottom #B5B5B5 #5A5A5A, select-arr "url(../icons/dark/arrow_light.svg)" "url(../icons/dark/arrow_dark.svg)")
-+themeGenerate($fieldThemes, "--")
-
+/* Input fields -- See Variables */
 select
 	color: var(--font-color)
 	border: 1px solid var(--border-col)
@@ -1142,29 +708,28 @@ select
 	box-sizing: border-box
 	padding: 3px 22px 3px 8px
 	vertical-align: middle
-	background: var(--bg-color-tint) var(--select-arr) right / auto 87.5%  no-repeat
+	background: var(--bg-color-tint) var(--select-arrow) right / auto 87.5%  no-repeat
 	&:hover
 		background-color: var(--bg-menu)
 
 textarea, input[type=text], #mail_password_text
 	background-color: var(--bg-color-tint)
-	border: 1px solid var(--brdr-top)
+	border: 1px solid var(--border-col)
 	color: var(--font-color)
-
 
 #torrentFilesFilterInput, #torrentsFilterInput
 	appearance: none
 	-webkit-appearance: none
 	-moz-appearance: none
 	background-color: var(--bg-color)
-	border-top-color: var(--brdr-top)
-	border-left-color: var(--brdr-top)
-	border-right-color: var(--brdr-bottom)
-	border-bottom-color: var(--brdr-bottom)
+	border-top-color: var(--border-col)
+	border-left-color: var(--border-col)
+	border-right-color: var(--border-col)
+	border-bottom-color: var(--border-col)
 	border-image: none 100% 1 0 stretch
 
 button
-	background-color: var(--button-bg)
+	background-color: var(--bg-button)
 	border: 1px solid var(--border-col)
 	color: var(--font-color)
 	border-radius: 4px
@@ -1173,39 +738,30 @@ button
 
 
 /* Scrollbars */
-
-$scrollTheme: (thumbBG #999 #666666, scrollbarBG #F5F5F5 #222222)
-+themeGenerate($scrollTheme, "--")
-
 body
 	scrollbar-width: 15px
-	scrollbar-color: var(--thumbBG) var(--scrollbarBG)
+	scrollbar-color: var(--bg-scrollThumb) var(--bg-scrollbar)
 
 ::-webkit-scrollbar-track, ::-webkit-scrollbar-corner
 	border-radius: 0px
 	padding: 8px
-	background-color: var(--scrollbarBG)
+	background-color: var(--bg-scrollbar)
 
 ::-webkit-scrollbar
-	background-color: var(--scrollbarBG)
+	background-color: var(--bg-scrollbar)
 	width: 15px
 	&:horizontal
 		height: 14px
 
 ::-webkit-scrollbar-thumb
 	border-radius: 10px
-	border: 3.5px solid var(--scrollbarBG)
-	/*
-		-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3)
-	background-color: var(--thumbBG)
+	border: 3.5px solid var(--bg-scrollbar)
+	background-color: var(--bg-scrollThumb)
 	opacity: 1
 	&:window-inactive
 		opacity: .6
 
-/* Checkboxes */
-$checkTheme: (checkBg #BBB #555, checkBgActive #375273 #2485CE, check-arr "url(../icons/dark/checkbox.svg)" "url(../icons/dark/checkbox.svg)")
-+themeGenerate($checkTheme, "--")
-
+/* Checkboxes -- See Variables */
 input[type=checkbox]
 	border-radius: 3px
 	-webkit-appearance: none
@@ -1214,10 +770,10 @@ input[type=checkbox]
 	top: 2px
 	width: 12px
 	height: 12px
-	background-color: var(--checkBg)
+	background-color: var(--bg-checkmark)
 	@at-root #preferencesPage &
 		top: 4px
 	&:before, &:checked:before
 
 input[type=checkbox]:checked
-	background: var(--checkBgActive) var(--check-arr) 52% center / 66.6% no-repeat
+	background: var(--bg-checkmarkActive) var(--check-arrow) 52% center / 66.6% no-repeat

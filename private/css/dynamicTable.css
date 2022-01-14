@@ -17,7 +17,6 @@
   height: 1.3em;
   max-width: 16px;
   vertical-align: middle;
-  margin-bottom: -1px;
   margin-top: -2px;
 }
 
@@ -50,7 +49,7 @@ tr.dynamicTableHeader {
   background-color: var(--bg-color-tint);
   padding: 4px 4px 4px 8px;
   white-space: nowrap;
-  border-right-color: var(--style-border-lte);
+  border-right-color: var(--border-lte);
   border-right-style: solid;
   border-right-width: 1px;
   box-sizing: border-box;
@@ -69,7 +68,7 @@ tr.dynamicTableHeader {
   height: 0px;
   position: relative;
   top: 3px;
-  left: 10px;
+  left: 5px;
   border-width: 5px;
   border-style: solid;
   border-color: transparent transparent transparent var(--font-tint);
@@ -110,18 +109,26 @@ tr.dynamicTableHeader {
   color: var(--selected-text);
 }
 
+.dynamicTable tbody tr.selected td {
+  color: var(--selected-text) !important;
+}
+
 .dynamicTable tbody tr:hover {
-  background-color: var(--row-hover);
+  background-color: var(--hover-color);
   color: var(--selected-text);
 }
 
-.dynamicTable tbody tr td:nth-of-type(2) div {
-  padding: 2px 6px;
-  width: auto;
-  height: 16px;
-  background-size: 14px;
-  background-position: center;
-  background-repeat: no-repeat;
+.dynamicTable tbody tr:hover td {
+  color: var(--selected-text) !important;
+}
+
+#searchPluginsTableDiv tbody tr td {
+  color: var(--font-color);
+}
+
+#rssFeedTableDiv .stateIcon {
+  margin-bottom: -2px;
+  margin-top: 2px;
 }
 
 /*Dynamic Table Icons */
@@ -149,18 +156,6 @@ tr.dynamicTableHeader {
 }
 
 /* */
-.folder_icon {
-  height: 16px;
-  width: 16px !important;
-  background-image: var(--folder-icon);
-  content: var(--folder-icon);
-  background-repeat: no-repeat;
-  /*
-		position: relative
-		top: 2px
-		display: inline-block */
-}
-
 .dynamicTableFixedHeaderDiv {
   overflow: hidden;
 }
@@ -174,8 +169,4 @@ tr.dynamicTableHeader {
   height: 0px !important;
   padding-top: 0px !important;
   padding-bottom: 0px !important;
-}
-
-#searchPluginsTableDiv tbody tr td {
-  color: var(--font-color);
 }

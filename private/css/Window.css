@@ -22,17 +22,46 @@
 /* Sass Document */
 /* Main mixin for generating theme variables from lists */
 /* Four @each statements, instead of one earlier in the nesting creeates a more succinct final css. */
+:root {
+  --row-select: #415a8d;
+  --hover-color: #ee6600;
+  --border-col: #909090;
+}
+
+body.light-theme, body.light-theme > *, body.light-theme + * {
+  --row-select: #415a8d;
+  --hover-color: #ee6600;
+  --border-col: #909090;
+}
+
+@media (prefers-color-scheme: dark) {
+  body, body > *, body + * {
+    --row-select: #94BBD8;
+    --hover-color: #d1c52a;
+    --border-col: #6f6f6f;
+  }
+}
+
+body.dark-theme, body.dark-theme > *, body.dark-theme + * {
+  --row-select: #94BBD8;
+  --hover-color: #d1c52a;
+  --border-col: #6f6f6f;
+}
+
 /* Early version of the mixin for seperate dark and light lists. May still prove useful. */
 /* Div Background Properties Mixin */
+/* Scss Document */
+/*Layout Sass Theme Variables */
+/*Tab Sass Theme Variables */
+/*Window Sass Theme Variables */
+/* Style Sass Theme Variables*/
 :root {
-  --title-gradient: var(--bg-menu);
   --mocha-border-clr: #d9d9d9;
   --mocha-border-lte: #dadada;
   --mocha-button: #fefefe;
 }
 
 body.light-theme, body.light-theme > *, body.light-theme + * {
-  --title-gradient: var(--bg-menu);
   --mocha-border-clr: #d9d9d9;
   --mocha-border-lte: #dadada;
   --mocha-button: #fefefe;
@@ -40,7 +69,6 @@ body.light-theme, body.light-theme > *, body.light-theme + * {
 
 @media (prefers-color-scheme: dark) {
   body, body > *, body + * {
-    --title-gradient: var(--bg-menu);
     --mocha-border-clr: #333333;
     --mocha-border-lte: #3a3a3a;
     --mocha-button: #ccc;
@@ -48,7 +76,6 @@ body.light-theme, body.light-theme > *, body.light-theme + * {
 }
 
 body.dark-theme, body.dark-theme > *, body.dark-theme + * {
-  --title-gradient: var(--bg-menu);
   --mocha-border-clr: #333333;
   --mocha-border-lte: #3a3a3a;
   --mocha-button: #ccc;
@@ -83,16 +110,9 @@ body.dark-theme, body.dark-theme > *, body.dark-theme + * {
   left: 0;
 }
 
-/*We get a little creative here in order to define a gradient in the CSS using a query
-	string appended to a background image.
-
-	"from" is the top color of the gradient. "to" is the bottom color of the gradient.
-
-	Both must be hex values without the leading # sign.*/
 .mochaTitlebar {
   width: 100%;
   overflow: hidden;
-  /* background: var(--title-gradient) */
 }
 
 .mochaTitlebar h3 {
@@ -201,7 +221,7 @@ div.mochaToolbarWrapper.bottom {
 	1. Set the useCanvasControls window option to false.
 	2. If you use a different button size you may need to reposition the controls.
 	   Modify the controlsOffset window option.
-	2. Replcac the background-color with a background-image for each button. */
+	2. Replace the background-color with a background-image for each button. */
 .mochaMinimizeButton, .mochaMaximizeButton, .mochaCloseButton {
   float: right;
   width: 14px;
@@ -220,12 +240,10 @@ div.mochaToolbarWrapper.bottom {
 
 .mochaMaximizeButton {
   z-index: 100;
-  /* SASS Doesn't like blanks* / */
 }
 
 .mochaCloseButton {
   z-index: 100;
-  /*SASS Doesn't like blanks */
 }
 
 .mochaSpinner {

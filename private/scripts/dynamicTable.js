@@ -934,35 +934,65 @@ window.qBittorrent.DynamicTable = (function() {
             this.columns['state_icon'].updateTd = function(td, row) {
                 let state = this.getRowValue(row);
                 // normalize states
+                let status;
                 switch (state) {
                     case "forcedDL":
+                        state = "downloading";
+                        status = "QBT_TR([F] Downloading)QBT_TR[CONTEXT=TransferListDelegate]";
+                        break;
                     case "metaDL":
+                        state = "downloading";
+                        status = "QBT_TR(Downloading metadata)QBT_TR[CONTEXT=TransferListDelegate]";
+                        break;
                     case "forcedMetaDL":
                         state = "downloading";
+                        status = "QBT_TR([F] Downloading metadata)QBT_TR[CONTEXT=TransferListDelegate]";
+                        break;
+                    case "uploading":
+                    case "stalledUP":
+                        status = "QBT_TR(Seeding)QBT_TR[CONTEXT=TransferListDelegate]";
                         break;
                     case "forcedUP":
                         state = "uploading";
+                        status = "QBT_TR([F] Seeding)QBT_TR[CONTEXT=TransferListDelegate]";
                         break;
                     case "pausedDL":
                         state = "paused";
+                        status = "QBT_TR(Paused)QBT_TR[CONTEXT=TransferListDelegate]";
                         break;
                     case "pausedUP":
                         state = "completed";
+                        status = "QBT_TR(Completed)QBT_TR[CONTEXT=TransferListDelegate]";
                         break;
                     case "queuedDL":
                     case "queuedUP":
                         state = "queued";
+                        status = "QBT_TR(Queued)QBT_TR[CONTEXT=TransferListDelegate]";
                         break;
                     case "checkingDL":
                     case "checkingUP":
+                        state = "checking";
+                        status = "QBT_TR(Checking)QBT_TR[CONTEXT=TransferListDelegate]";
+                        break;
                     case "queuedForChecking":
+                        state = "checking";
+                        status = "QBT_TR(Queued for checking)QBT_TR[CONTEXT=TransferListDelegate]";
+                        break;
                     case "checkingResumeData":
+                        state = "checking";
+                        status = "QBT_TR(Checking resume data)QBT_TR[CONTEXT=TransferListDelegate]";
+                        break;
                     case "moving":
                         state = "checking";
+                        status = "QBT_TR(Moving)QBT_TR[CONTEXT=TransferListDelegate]";
                         break;
                     case "unknown":
+                        state = "error";
+                        status = "QBT_TR(Unknown)QBT_TR[CONTEXT=HttpServer]";
+                        break;
                     case "missingFiles":
                         state = "error";
+                        status = "QBT_TR(Missing Files)QBT_TR[CONTEXT=TransferListDelegate]";
                         break;
                     default:
                         break; // do nothing
@@ -975,8 +1005,9 @@ window.qBittorrent.DynamicTable = (function() {
                     const img = td.getChildren('img')[0]; 
                     if (img.src.indexOf(img_path) < 0) {
                         if(navigator.saysWho  != 'Firefox' || checkFirefox() != true) {img.set('src', img_path);}
-                        img.set('title', state);
 					    img.set('class', img_class);
+                        img.set('title', state);
+                        img.set('alt', status);
                     }
                 }
                 else {
@@ -984,14 +1015,14 @@ window.qBittorrent.DynamicTable = (function() {
                         td.adopt(new Element('img', {
                             'src': img_path,
                             'class': img_class,
-                            'title': state,
-                            'alt': 'status: ' + state
+                            'title': status,
+                            'alt': status
                         }));
                     } else {
                         td.adopt(new Element('img', {
                             'class': img_class,
-                            'title': state,
-                            'alt': 'status: ' + state 
+                            'title': status,
+                            'alt': status + ' icon'
                         }));
                     }
                 } 
@@ -2177,23 +2208,23 @@ window.qBittorrent.DynamicTable = (function() {
                 switch (row.full_data.status) {  
                     case 'default':
                         img_path = 'icons/application-rss+xml.svg';
-                        img_class = 'gen_icon24 worldIcon stateIcon'; 
+                        img_class = 'worldIcon stateIcon'; 
                         break;
                     case 'hasError':
                         img_path = 'icons/unavailable.svg';
-                        img_class = 'gen_icon24 unavailableIcon stateIcon';
+                        img_class = 'unavailableIcon stateIcon';
                         break;
                     case 'isLoading':
                         img_path = 'images/spinner.gif';
-                        img_class = 'gen_icon24 spinnerIcon stateIcon';
+                        img_class = 'spinnerIcon stateIcon';
                         break;
                     case 'unread':
                         img_path = 'icons/mail-folder-inbox.svg';
-                        img_class = 'gen_icon24 inboxIcon stateIcon';
+                        img_class = 'inboxIcon stateIcon';
                         break;
                     case 'isFolder':
                         img_path = 'icons/folder-documents.svg';
-                        img_class = 'gen_icon24 folder_icon stateIcon';
+                        img_class = 'folder_icon stateIcon';
                         break;
                 }
                 let td;

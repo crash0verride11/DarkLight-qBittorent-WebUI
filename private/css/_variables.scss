@@ -1,0 +1,53 @@
+/* Scss Document */ 
+
+/*Layout Sass Theme Variables */
+$layoutTheme: (
+    bg-color #fff #121212, 
+    bg-color-tint #f2f2f2 #202020, 
+    bg-color-opp #222 #eee, 
+    bg-menu #eee #444, 
+    font-color #000 #fff, 
+    font-tint #555 #ddd, 
+    font-dtint #555 #bbb, 
+    invert-image 'invert(0%)' 'invert(100%)', 
+    row-alt #eee #2a2a2a, 
+    selected-text #fff #000, 
+    divider-border #ebebeb #363636,
+    );
+
+/*Tab Sass Theme Variables */
+$tabsTheme: (
+    tab-border 'solid #e5e5e5 4px' 'solid rgba(80,80,80,1) 4px', 
+    tab-selected 'linear-gradient(0deg, rgba(229,229,229,1) 0%, rgba(250,250,250,1) 100%)' 'linear-gradient(0deg, rgba(80,80,80,1) 0%, rgba(112,112,112,1) 100%)', 
+    tab-gradient 'linear-gradient(0deg, rgba(187,187,187,1) 0%, rgba(229,229,229,1) 25%, rgba(240,240,240,1) 100%)' 'linear-gradient(0deg, rgba(50,50,50,1) 0%, rgba(60,60,60,1) 25%, rgba(90,90,90,1) 100%)'
+    );
+
+/*Window Sass Theme Variables */
+$windowTheme: (
+    mocha-border-clr #d9d9d9 #333333, 
+    mocha-border-lte #dadada #3a3a3a, 
+    mocha-button #fefefe #ccc,
+    );
+
+/* Style Sass Theme Variables*/
+$styleTheme: (
+    char-spacing 0em .01em, 
+    border-lte #3a3a3a #888, 
+    font-color #000 #fff, 
+    font-tint #555 #ddd, 
+    font-wgt 400 500, 
+    mocha-frame #000 #555, 
+    transfer-bar #050066 #94BBD8,
+    /* Scroll Elements */
+    bg-scrollbar #F5F5F5 #222222,
+    bg-scrollThumb #999 #666666, 
+    /*Field Elements */
+    bg-button #fff #555, 
+    select-arrow "url(../icons/select-arrow.svg)" "url(../icons/dark/select-arrow.svg)",
+    /* Checkmark Elements */
+    bg-checkmark #BBB #555, 
+    bg-checkmarkActive #375273 #2485CE, 
+    check-arrow "url(../icons/dark/checkbox.svg)" "url(../icons/dark/checkbox.svg)",
+    );
+
+

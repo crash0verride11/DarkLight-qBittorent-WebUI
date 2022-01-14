@@ -20,6 +20,9 @@
 			@each $property, $valueL, $valueD in $listname
 				#{$prefix}#{$property}: #{$valueD}
 
+$globalTheme: (row-select#415a8d #94BBD8, hover-color #ee6600 #d1c52a, border-col #909090 #6f6f6f)
++themeGenerate($globalTheme, "--")
+
 /* Early version of the mixin for seperate dark and light lists. May still prove useful. */
 =themeLight($listname, $prefix)
 	\:root

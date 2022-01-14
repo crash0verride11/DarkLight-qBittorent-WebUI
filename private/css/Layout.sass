@@ -19,14 +19,10 @@
 
 	*/
 
-
-
-
 /* Layout 
 	---------------------------------------------------------------- */
 @import mixins
-
-$layoutTheme: (bg-color #fff #121212, bg-color-tint #f2f2f2 #202020, bg-color-opp #222 #eee, bg-menu #eee #444, font-color #000 #fff, font-tint #555 #ddd, font-dtint #555 #bbb, selected-text #fff #000, row-alt #eee #2a2a2a, row-select #354158 #94BBD8, row-hover #ee6600 #d1c52a, divder-border #ebebeb #363636, border-col #909090 #6f6f6f)
+@import variables
 
 +themeGenerate($layoutTheme, "--")
 
@@ -69,7 +65,7 @@ body
 		font-size: 20px
 		line-height: 25px
 		font-weight: bold
-		color: #fff
+		color: var(--selected-text)
 	h2.tagline
 		padding: 7px 0 0 0
 		font-family: Verdana, Arial, Helvetica, sans-serif
@@ -79,7 +75,7 @@ body
 		text-align: center
 		text-transform: uppercase
 		.taglineEm 
-			color: #fff
+			color: var(--selected-text)
 			font-weight: bold
 
 #topNav
@@ -92,7 +88,7 @@ body
 	text-align: right
 	padding: 13px 10px 0 0
 	a
-		color: #fff
+		color: var(--selected-text)
 		font-weight: normal
 		&:hover
 			text-decoration: none
@@ -166,7 +162,7 @@ body
 		padding: 1px 10px 1px 20px
 		/* Reduce left padding */
 		&:hover
-			background: #6C98D9
+			background: var(--row-select)
 			color: #fff
 			-moz-border-radius: 2px
 			.check
@@ -186,7 +182,7 @@ body
 li.divider
 	margin-top: 2px
 	padding-top: 3px
-	border-top: 1px solid var(--divder-border)
+	border-top: 1px solid var(--divider-border)
 
 #pageWrapper
 	position: relative
@@ -230,7 +226,7 @@ li.divider
 	overflow: auto
 	background: var(--bg-color)
 	/*border-bottom: 1px solid var(--border-col)
-	border-bottom: 1px solid var(--style-border-lte)
+	border-bottom: 1px solid var(--border-lte)
 
 .panelWrapper.collapsed .panel-header
 	border-bottom: 0
@@ -253,7 +249,7 @@ li.divider
 	/*background: #f1f1f1 url(../images/bg-panel-header.gif) repeat-x
 	height: 30px
 	overflow: hidden
-	border-bottom: 1px solid var(--style-border-lte)
+	border-bottom: 1px solid var(--border-lte)
 	h2
 		display: inline-block
 		font-size: 12px
@@ -267,7 +263,6 @@ li.divider
 	padding-top: 2px
 
 .panel-headerContent.tabs
-	/*background: var(--tab-image) repeat-x
 	background-position: left -68px
 
 .panel-collapse

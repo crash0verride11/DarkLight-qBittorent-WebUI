@@ -20,7 +20,7 @@ window.onload = (event) => {
 	// If themeForget is true the theme value will be ignored after a set number of hours
 	let themeForget = true;
 	// How many hours before the theme value is ignored
-	var themeClock = 3;
+	var themeClock = 6;
 	// Difference between time of last set theme preference value and current time.
 	var dateDif = parseInt((curDate-prevDate)/(3600*1000));
 	// If the current theme in localStorage is "dark"...
@@ -40,7 +40,7 @@ window.onload = (event) => {
 	
 	// Toggle Button Click Function
 	var eventKey;
-	document.addEventListener("keydown", function(event){ eventKey = event.key; });
+	document.addEventListener("keydown", function(event){ if(event.key == 'Alt') {eventKey = event.key; }});
 	document.addEventListener("keyup", function(event){ eventKey = ''; });
 	let btnToggle = document.getElementById('btn-toggle')
 	if (btnToggle) {

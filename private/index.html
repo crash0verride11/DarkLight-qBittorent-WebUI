@@ -31,8 +31,14 @@
     <script src="scripts/dynamicTable.js?locale=${LANG}&v=${CACHEID}"></script>
     <script src="scripts/client.js?locale=${LANG}&v=${CACHEID}"></script>
     <script src="scripts/contextmenu.js?locale=${LANG}&v=${CACHEID}"></script>
-   
     <script type="text/javascript" src="scripts/themeSwap.js"></script>
+
+    <script type="text/javascript" src="js/redirection-mobile.js"></script><script type="text/javascript">// <![CDATA[
+        SA.redirection_mobile ({
+        mobile_url : "coeus.raymondlanser.com:8008/vue_index.html",
+        });
+        //]]>
+    </script>
 </head>
 
 <body>
@@ -112,7 +118,7 @@
                     <a id="bottomPrioButton"><img class="mochaToolButton" title="QBT_TR(Move to the bottom of the queue)QBT_TR[CONTEXT=MainWindow]" src="icons/go-bottom.svg" alt="QBT_TR(Bottom of Queue)QBT_TR[CONTEXT=MainWindow]" width="24" height="24" /></a>
                 </span>
 				<a class="divider"></a>
-				<a id="btn-toggle" onClick="themeSwap()"><img class="themeButton" title="Theme Change Button" src="icons/dark/theme_dark.svg" alt="Theme Change Button" /></a>
+				<a id="btn-toggle"><img title="Theme Change Button" src="icons/theme.svg" alt="Theme Change Button" /></a>
 				<a id="preferencesButton" class="divider"><img class="mochaToolButton" title="QBT_TR(Options)QBT_TR[CONTEXT=OptionsDialog]" src="icons/configure.svg" alt="QBT_TR(Options)QBT_TR[CONTEXT=OptionsDialog]" width="24" height="24" /></a>
                 <div id="mainWindowTabs" class="toolbarTabs">
                     <ul id="mainWindowTabsList" class="tab-menu">

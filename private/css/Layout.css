@@ -22,8 +22,39 @@
 /* Sass Document */
 /* Main mixin for generating theme variables from lists */
 /* Four @each statements, instead of one earlier in the nesting creeates a more succinct final css. */
+:root {
+  --row-select: #415a8d;
+  --hover-color: #ee6600;
+  --border-col: #909090;
+}
+
+body.light-theme, body.light-theme > *, body.light-theme + * {
+  --row-select: #415a8d;
+  --hover-color: #ee6600;
+  --border-col: #909090;
+}
+
+@media (prefers-color-scheme: dark) {
+  body, body > *, body + * {
+    --row-select: #94BBD8;
+    --hover-color: #d1c52a;
+    --border-col: #6f6f6f;
+  }
+}
+
+body.dark-theme, body.dark-theme > *, body.dark-theme + * {
+  --row-select: #94BBD8;
+  --hover-color: #d1c52a;
+  --border-col: #6f6f6f;
+}
+
 /* Early version of the mixin for seperate dark and light lists. May still prove useful. */
 /* Div Background Properties Mixin */
+/* Scss Document */
+/*Layout Sass Theme Variables */
+/*Tab Sass Theme Variables */
+/*Window Sass Theme Variables */
+/* Style Sass Theme Variables*/
 :root {
   --bg-color: #fff;
   --bg-color-tint: #f2f2f2;
@@ -32,12 +63,10 @@
   --font-color: #000;
   --font-tint: #555;
   --font-dtint: #555;
-  --selected-text: #fff;
+  --invert-image: invert(0%);
   --row-alt: #eee;
-  --row-select: #354158;
-  --row-hover: #ee6600;
-  --divder-border: #ebebeb;
-  --border-col: #909090;
+  --selected-text: #fff;
+  --divider-border: #ebebeb;
 }
 
 body.light-theme, body.light-theme > *, body.light-theme + * {
@@ -48,12 +77,10 @@ body.light-theme, body.light-theme > *, body.light-theme + * {
   --font-color: #000;
   --font-tint: #555;
   --font-dtint: #555;
-  --selected-text: #fff;
+  --invert-image: invert(0%);
   --row-alt: #eee;
-  --row-select: #354158;
-  --row-hover: #ee6600;
-  --divder-border: #ebebeb;
-  --border-col: #909090;
+  --selected-text: #fff;
+  --divider-border: #ebebeb;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -65,12 +92,10 @@ body.light-theme, body.light-theme > *, body.light-theme + * {
     --font-color: #fff;
     --font-tint: #ddd;
     --font-dtint: #bbb;
-    --selected-text: #000;
+    --invert-image: invert(100%);
     --row-alt: #2a2a2a;
-    --row-select: #94BBD8;
-    --row-hover: #d1c52a;
-    --divder-border: #363636;
-    --border-col: #6f6f6f;
+    --selected-text: #000;
+    --divider-border: #363636;
   }
 }
 
@@ -82,12 +107,10 @@ body.dark-theme, body.dark-theme > *, body.dark-theme + * {
   --font-color: #fff;
   --font-tint: #ddd;
   --font-dtint: #bbb;
-  --selected-text: #000;
+  --invert-image: invert(100%);
   --row-alt: #2a2a2a;
-  --row-select: #94BBD8;
-  --row-hover: #d1c52a;
-  --divder-border: #363636;
-  --border-col: #6f6f6f;
+  --selected-text: #000;
+  --divider-border: #363636;
 }
 
 html, body {
@@ -132,7 +155,7 @@ body {
   font-size: 20px;
   line-height: 25px;
   font-weight: bold;
-  color: #fff;
+  color: var(--selected-text);
 }
 
 #desktopTitlebar h2.tagline {
@@ -146,7 +169,7 @@ body {
 }
 
 #desktopTitlebar h2.tagline .taglineEm {
-  color: #fff;
+  color: var(--selected-text);
   font-weight: bold;
 }
 
@@ -162,7 +185,7 @@ body {
 }
 
 #topNav a {
-  color: #fff;
+  color: var(--selected-text);
   font-weight: normal;
 }
 
@@ -255,7 +278,7 @@ body {
 }
 
 #desktopNavbar li ul li a:hover {
-  background: #6C98D9;
+  background: var(--row-select);
   color: #fff;
   -moz-border-radius: 2px;
 }
@@ -275,7 +298,7 @@ body {
 li.divider {
   margin-top: 2px;
   padding-top: 3px;
-  border-top: 1px solid var(--divder-border);
+  border-top: 1px solid var(--divider-border);
 }
 
 #pageWrapper {
@@ -318,7 +341,7 @@ li.divider {
   overflow: auto;
   background: var(--bg-color);
   /*border-bottom: 1px solid var(--border-col) */
-  border-bottom: 1px solid var(--style-border-lte);
+  border-bottom: 1px solid var(--border-lte);
 }
 
 .panelWrapper.collapsed .panel-header {
@@ -347,7 +370,7 @@ li.divider {
   /*background: #f1f1f1 url(../images/bg-panel-header.gif) repeat-x */
   height: 30px;
   overflow: hidden;
-  border-bottom: 1px solid var(--style-border-lte);
+  border-bottom: 1px solid var(--border-lte);
 }
 
 .panel-header h2 {
@@ -365,7 +388,6 @@ li.divider {
 }
 
 .panel-headerContent.tabs {
-  /*background: var(--tab-image) repeat-x */
   background-position: left -68px;
 }
 
