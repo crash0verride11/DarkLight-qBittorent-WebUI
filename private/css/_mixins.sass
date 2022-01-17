@@ -1,5 +1,5 @@
 /* Sass Document */ 
-
+@import variables
 /* Main mixin for generating theme variables from lists */
 /* Four @each statements, instead of one earlier in the nesting creeates a more succinct final css. */
 =themeGenerate($listname, $prefix)
@@ -20,7 +20,7 @@
 			@each $property, $valueL, $valueD in $listname
 				#{$prefix}#{$property}: #{$valueD}
 
-$globalTheme: (row-select#415a8d #94BBD8, hover-color #ee6600 #d1c52a, border-col #909090 #6f6f6f)
+
 +themeGenerate($globalTheme, "--")
 
 /* Early version of the mixin for seperate dark and light lists. May still prove useful. */
