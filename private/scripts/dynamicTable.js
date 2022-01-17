@@ -948,10 +948,6 @@ window.qBittorrent.DynamicTable = (function() {
                         state = "downloading";
                         status = "QBT_TR([F] Downloading metadata)QBT_TR[CONTEXT=TransferListDelegate]";
                         break;
-                    case "uploading":
-                    case "stalledUP":
-                        status = "QBT_TR(Seeding)QBT_TR[CONTEXT=TransferListDelegate]";
-                        break;
                     case "forcedUP":
                         state = "uploading";
                         status = "QBT_TR([F] Seeding)QBT_TR[CONTEXT=TransferListDelegate]";
@@ -995,23 +991,23 @@ window.qBittorrent.DynamicTable = (function() {
                         status = "QBT_TR(Missing Files)QBT_TR[CONTEXT=TransferListDelegate]";
                         break;
                     default:
+                        status = "QBT_TR(Unknown)QBT_TR[CONTEXT=HttpServer]"
                         break; // do nothing
                 }
 
                 const img_path = 'icons/' + state + '.svg';
-				const img_class = state + '-icon stateIcon'; /*CHANGE AREA*/
+				const img_class = state + 'Icon stateIcon'; /*CHANGE AREA*/
 
                 if (td.getChildren('img').length > 0) {
                     const img = td.getChildren('img')[0]; 
                     if (img.src.indexOf(img_path) < 0) {
-                        if(navigator.saysWho  != 'Firefox' || checkFirefox() != true) {img.set('src', img_path);}
+                        if(window.compatCheck == true) {img.set('src', img_path);}
 					    img.set('class', img_class);
                         img.set('title', state);
-                        img.set('alt', status);
-                    }
+                        img.set('alt', status);                    }
                 }
                 else {
-                    if (navigator.saysWho  != 'Firefox' || checkFirefox() != true) {
+                    if (window.compatCheck == true) {
                         td.adopt(new Element('img', {
                             'src': img_path,
                             'class': img_class,
@@ -2224,7 +2220,7 @@ window.qBittorrent.DynamicTable = (function() {
                         break;
                     case 'isFolder':
                         img_path = 'icons/folder-documents.svg';
-                        img_class = 'folder_icon stateIcon';
+                        img_class = 'folderIcon stateIcon';
                         break;
                 }
                 let td;
@@ -2237,26 +2233,27 @@ window.qBittorrent.DynamicTable = (function() {
                 if (td.getChildren('img').length > 0) {
                     const img = td.getChildren('img')[0];
                     if (img.src.indexOf(img_path) < 0) {
-                        if (navigator.saysWho  != 'Firefox' || checkFirefox() != true) {img.set('src', img_path);};
+                        if (window.compatCheck == true) {img.set('src', img_path);};
                         img.set('class', img_class); /*Change Area*/
-                        img.set('title', status);
+                        img.set('title', row.full_data.status);
+                        img.set('alt', row.full_data.status);
                     }
                 } 
                 else {
-                    if (navigator.saysWho  != 'Firefox' || checkFirefox() != true) {
+                    if (window.compatCheck == true) {
                     td.adopt(new Element('img', { 
                         'src': img_path,
                         'class': img_class, /*Change Area*/
                         'height': '22px',
                         'width': '22px',
-                        'alt': 'status: ' + status
+                        'alt': 'status: ' + row.full_data.status
                     }));
                     } else {
                         td.adopt(new Element('img', { 
                             'class': img_class, 
                             'height': '22px',
                             'width': '22px',
-                            'alt': 'status: ' + status
+                            'alt': 'status: ' + row.full_data.status
                         }));
                     }
                 }

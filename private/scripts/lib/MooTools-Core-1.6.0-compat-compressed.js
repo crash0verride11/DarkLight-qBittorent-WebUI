@@ -5,13 +5,27 @@ Web Build: https://mootools.net/core/builder/d46055c910fae7895431e5908a0dcfa2
 
 window.onload = (event) => {
 	//FireFox Fixes
-	function delayFix() {setTimeout (function( ){compatFix(navigator.saysWho)}, 750);}
+	window.compatCheck = false;
+	window.webBrowser = navigator.saysWho;
+	if(window.webBrowser != 'Firefox' || checkFirefox() != true) { window.compatCheck = true; }
+	function delayFix() {setTimeout (function( ){compatFix(navigator.saysWho)}, 500);}
 	setTimeout(function(){
-		//console.log(navigator.saysWho);
-		compatFix(navigator.saysWho);
+	if (window.compatCheck == false) {
+		compatFix(window.webBrowser);
+		if(document.getElementById('preferencesButton')) {document.getElementById('preferencesButton').onclick = function(){ delayFix() }}
+		if(document.getElementById('manageSearchPlugins')) { 
+			document.getElementById('manageSearchPlugins').onclick = function(){ 
+				qBittorrent.Search.manageSearchPlugins();
+				delayFix();
+		}}
+		if(document.getElementById('rssDownloaderButton')) { 
+			document.getElementById('rssDownloaderButton').onclick = function(){ 
+				qBittorrent.Rss.openRssDownloader();
+				delayFix();
+		}}
+	}
 	},300);
-	var prefButton = document.getElementById('preferencesButton')
-	if(prefButton) {prefButton.onclick = function(){ delayFix() }}
+	
 
 	// Select the theme preference from localStorage and time stored
 	const currentTheme = localStorage.getItem("theme");

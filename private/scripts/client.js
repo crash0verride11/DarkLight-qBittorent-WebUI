@@ -394,11 +394,17 @@ window.addEvent('load', function() {
         if (!categoryList)
             return;
         categoryList.empty();
-
+        
         const create_link = function(hash, text, count) {
-            const html = '<a href="#" onclick="setCategoryFilter(' + hash + ');return false;">'
+            if (window.compatCheck == true) { /* Change Area */
+            var html = '<a href="#" onclick="setCategoryFilter(' + hash + ');return false;">'
                 + '<img src="icons/inode-directory.svg"/>'
                 + window.qBittorrent.Misc.escapeHtml(text) + ' (' + count + ')' + '</a>';
+            } else {
+            var html = '<a href="#" onclick="setCategoryFilter(' + hash + ');return false;">'
+                + '<img alt="Folder Icon"/>'
+                + window.qBittorrent.Misc.escapeHtml(text) + ' (' + count + ')' + '</a>';
+            }
             const el = new Element('li', {
                 id: hash,
                 html: html
@@ -453,9 +459,15 @@ window.addEvent('load', function() {
             tagFilterList.removeChild(tagFilterList.firstChild);
 
         const createLink = function(hash, text, count) {
-            const html = '<a href="#" onclick="setTagFilter(' + hash + ');return false;">'
+            if (window.compatCheck == true) {
+            var html = '<a href="#" onclick="setTagFilter(' + hash + ');return false;">'
                 + '<img src="icons/inode-directory.svg"/>'
                 + window.qBittorrent.Misc.escapeHtml(text) + ' (' + count + ')' + '</a>';
+            } else {
+            var html = '<a href="#" onclick="setTagFilter(' + hash + ');return false;">'
+                + '<img alt="Tag Folder Icon"/>'
+                + window.qBittorrent.Misc.escapeHtml(text) + ' (' + count + ')' + '</a>';
+            }
             const el = new Element('li', {
                 id: hash,
                 html: html
@@ -507,9 +519,15 @@ window.addEvent('load', function() {
             trackerFilterList.removeChild(trackerFilterList.firstChild);
 
         const createLink = function(hash, text, count) {
-            const html = '<a href="#" onclick="setTrackerFilter(' + hash + ');return false;">'
+            if (window.compatCheck == true) { /* Change Area */
+            var html = '<a href="#" onclick="setTrackerFilter(' + hash + ');return false;">'
                 + '<img src="icons/network-server.svg"/>'
                 + window.qBittorrent.Misc.escapeHtml(text.replace("%1", count)) + '</a>';
+            } else {
+            var html = '<a href="#" onclick="setTrackerFilter(' + hash + ');return false;">'
+                + '<img alt="Tracker Icon"/>'
+                + window.qBittorrent.Misc.escapeHtml(text.replace("%1", count)) + '</a>';
+            }
             const el = new Element('li', {
                 id: hash,
                 html: html
@@ -749,17 +767,17 @@ window.addEvent('load', function() {
         switch (serverState.connection_status) { 
         case 'connected':
             $('connectionStatus').set('class', 'connectedIcon');/*Change Area*/
-            if (navigator.saysWho  != 'Firefox' || checkFirefox() != true) {$('connectionStatus').src = 'icons/connected.svg';}
+            if (window.compatCheck == true) {$('connectionStatus').src = 'icons/connected.svg';}
             $('connectionStatus').alt = 'QBT_TR(Connection status: Connected)QBT_TR[CONTEXT=MainWindow]';
             break;
         case 'firewalled':
             $('connectionStatus').set('class', 'firewalledIcon');
-            if (navigator.saysWho  != 'Firefox' || checkFirefox() != true) {$('connectionStatus').src = 'icons/firewalled.svg';}
+            if (window.compatCheck == true) {$('connectionStatus').src = 'icons/firewalled.svg';}
             $('connectionStatus').alt = 'QBT_TR(Connection status: Firewalled)QBT_TR[CONTEXT=MainWindow]';
             break;
         default:
             $('connectionStatus').set('class', 'disconnectedIcon');
-            if (navigator.saysWho  != 'Firefox' || checkFirefox() != true) {$('connectionStatus').src = 'icons/disconnected.svg';}
+            if (window.compatCheck == true) {$('connectionStatus').src = 'icons/disconnected.svg';}
             $('connectionStatus').alt = 'QBT_TR(Connection status: Disconnected)QBT_TR[CONTEXT=MainWindow]';
             break;
         }
@@ -797,12 +815,12 @@ window.addEvent('load', function() {
     const updateAltSpeedIcon = function(enabled) { 
         if (enabled) {
 			$('alternativeSpeedLimits').addClass('slowIcon') /*Change Area*/
-            if (navigator.saysWho  != 'Firefox' || checkFirefox() != true) {$('alternativeSpeedLimits').src = 'icons/slow.svg';}
+            if (window.compatCheck == true) {$('alternativeSpeedLimits').src = 'icons/slow.svg';}
             $('alternativeSpeedLimits').alt = 'QBT_TR(Alternative speed limits: On)QBT_TR[CONTEXT=MainWindow]';
         }
         else {
 			$('alternativeSpeedLimits').removeClass('slowIcon')
-            if (navigator.saysWho  != 'Firefox' || checkFirefox() != true) {$('alternativeSpeedLimits').src = 'icons/slow_off.svg';}
+            if (window.compatCheck == true) {$('alternativeSpeedLimits').src = 'icons/slow_off.svg';}
             $('alternativeSpeedLimits').alt = 'QBT_TR(Alternative speed limits: Off)QBT_TR[CONTEXT=MainWindow]';
         }
     };
