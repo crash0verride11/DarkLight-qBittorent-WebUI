@@ -20,6 +20,12 @@
 /* Windows
 	---------------------------------------------------------------- */
 /* Sass Document */
+/* Scss Document */
+/*Layout Sass Theme Variables */
+/*Tab Sass Theme Variables */
+/*Window Sass Theme Variables */
+/* Style Sass Theme Variables*/
+/* Icon Variables */
 /* Main mixin for generating theme variables from lists */
 /* Four @each statements, instead of one earlier in the nesting creeates a more succinct final css. */
 :root {
@@ -55,6 +61,7 @@ body.dark-theme, body.dark-theme > *, body.dark-theme + * {
 /*Tab Sass Theme Variables */
 /*Window Sass Theme Variables */
 /* Style Sass Theme Variables*/
+/* Icon Variables */
 :root {
   --mocha-border-clr: #d9d9d9;
   --mocha-border-lte: #dadada;
@@ -106,6 +113,7 @@ body.dark-theme, body.dark-theme > *, body.dark-theme + * {
 
 .mochaOverlay {
   position: absolute;
+  /* This is also set in theme.js in order to make theme transitions smoother */
   top: 0;
   left: 0;
 }
@@ -130,6 +138,7 @@ body.dark-theme, body.dark-theme > *, body.dark-theme + * {
 
 .mochaToolbarWrapper {
   width: 100%;
+  /* For IE */
   position: relative;
   height: 29px;
   background: var(--bg-color);
@@ -169,11 +178,15 @@ div.mochaToolbarWrapper.bottom {
   height: 3px;
   z-index: 2;
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  /* IE8 */
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+  /* IE6 and 7*/
   opacity: .0;
   -moz-opacity: .0;
   overflow: hidden;
   font-size: 1px;
+  /* For IE6 */
+  /* Corner resize handles */
 }
 
 .mocha .corner {
@@ -182,9 +195,11 @@ div.mochaToolbarWrapper.bottom {
   background: #f00;
 }
 
+/* Bottom right resize handle */
 .mocha .cornerSE {
   width: 20px;
   height: 20px;
+  /* This is the color of the visible resize handle */
   background: var(--mocha-button);
 }
 

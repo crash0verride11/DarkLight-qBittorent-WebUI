@@ -17,7 +17,9 @@ a img, :link img, :visited img {
 }
 
 @media (prefers-color-scheme: dark) {
-  color-scheme: dark;
+  :root {
+    color-scheme: dark;
+  }
 }
 
 .dark-theme {
@@ -26,6 +28,12 @@ a img, :link img, :visited img {
 
 /*Quickly Generate Different theme icons paths and Classes with SASS*/
 /* Sass Document */
+/* Scss Document */
+/*Layout Sass Theme Variables */
+/*Tab Sass Theme Variables */
+/*Window Sass Theme Variables */
+/* Style Sass Theme Variables*/
+/* Icon Variables */
 /* Main mixin for generating theme variables from lists */
 /* Four @each statements, instead of one earlier in the nesting creeates a more succinct final css. */
 :root {
@@ -61,6 +69,7 @@ body.dark-theme, body.dark-theme > *, body.dark-theme + * {
 /*Tab Sass Theme Variables */
 /*Window Sass Theme Variables */
 /* Style Sass Theme Variables*/
+/* Icon Variables */
 :root {
   --char-spacing: 0em;
   --border-lte: #3a3a3a;
@@ -190,312 +199,286 @@ body.dark-theme, body.dark-theme > *, body.dark-theme + * {
 }
 
 /* Sass Document */
-/* The icons were swapped in batched so there are three lists are necessary to accomodate inconsistent icon property and class naming.
-	Eventually I'll clean up. */
+/* Scss Document */
+/*Layout Sass Theme Variables */
+/*Tab Sass Theme Variables */
+/*Window Sass Theme Variables */
+/* Style Sass Theme Variables*/
+/* Icon Variables */
 input, button, img, .panel-collapse, .arrow-right {
-  --goDownIcon: url(../icons/go-down.svg);
-  --downButtonIcon: url(../icons/insert-link.svg);
-  --uploadButtonIcon: url(../icons/list-add.svg);
-  --listRemoveIcon: url(../icons/list-remove.svg);
-  --resumeButtonIcon: url(../icons/media-playback-start.svg);
-  --pauseButtonIcon: url(../icons/media-playback-pause.svg);
-  --prefButtonIcon: url(../icons/configure.svg);
-  --editClearIcon: url(../icons/edit-clear.svg);
+  --checkedIcon: url(../icons/checked.svg);
+  --collapseIcon: url(../icons/collapse.svg);
   --docEditIcon: url(../icons/document-edit-verify.svg);
-  --editRenameIcon: url(../icons/edit-rename.svg);
-  --goBottomIcon: url(../icons/go-bottom.svg);
-  --goTopIcon: url(../icons/go-top.svg);
-  --goUpIcon: url(../icons/go-up.svg);
-  --magnetIcon: url(../icons/kt-magnet.svg);
-  --maxDownIcon: url(../icons/kt-set-max-download-speed.svg);
-  --maxUpIcon: url(../icons/kt-set-max-upload-speed.svg);
-  --forceStartIcon: url(../icons/media-seek-forward.svg);
-  --viewCatIcon: url(../icons/view-categories.svg);
+  --downloadIcon: url(../icons/download.svg);
+  --insertLinkIcon: url(../icons/insert-link.svg);
+  --editClearIcon: url(../icons/edit-clear.svg);
   --editCopyIcon: url(../icons/edit-copy.svg);
   --editDeleteIcon: url(../icons/edit-delete.svg);
+  --editRenameIcon: url(../icons/edit-rename.svg);
+  --folderNewIcon: url(../icons/folder-new.svg);
+  --forceStartIcon: url(../icons/media-seek-forward.svg);
+  --goBottomIcon: url(../icons/go-bottom.svg);
+  --goDownIcon: url(../icons/go-down.svg);
+  --goTopIcon: url(../icons/go-top.svg);
+  --goUpIcon: url(../icons/go-up.svg);
+  --groupDeleteIcon: url(../icons/user-group-delete.svg);
   --helpAboutIcon: url(../icons/help-about.svg);
   --helpContentIcon: url(../icons/help-contents.svg);
+  --listAddIcon: url(../icons/list-add.svg);
+  --listRemoveIcon: url(../icons/list-remove.svg);
   --logOutIcon: url(../icons/system-log-out.svg);
+  --magnetIcon: url(../icons/kt-magnet.svg);
+  --mailReadIcon: url(../icons/mail-mark-read.svg);
+  --maxDownIcon: url(../icons/kt-set-max-download-speed.svg);
+  --maxUpIcon: url(../icons/kt-set-max-upload-speed.svg);
+  --netServerIcon: url(../icons/network-server.svg);
+  --pauseIcon: url(../icons/media-playback-pause.svg);
+  --preferencesIcon: url(../icons/configure.svg);
+  --searchIcon: url(../icons/edit-find.svg);
+  --seedingIcon: url(../icons/seeding.svg);
+  --startIcon: url(../icons/media-playback-start.svg);
+  --themeIcon: url(../icons/theme.svg);
+  --viewCatIcon: url(../icons/view-categories.svg);
+  --viewRefreshIcon: url(../icons/view-refresh.svg);
   --viewStatsIcon: url(../icons/view-statistics.svg);
   --walletIcon: url(../icons/wallet-open.svg);
-  --searchIcon: url(../icons/edit-find.svg);
-  --collapseIcon: url(../icons/collapse.svg);
-  --slowOffIcon: url(../icons/slow_off.svg);
-  --slowIcon: url(../icons/slow.svg);
-  --connectedIcon: url(../icons/connected.svg);
-  --disconnectedIcon: url(../icons/disconnected.svg);
-  --firewalledIcon: url(../icons/firewalled.svg);
-  --seedingIcon: url(../icons/seeding.svg);
-  --groupDeleteIcon: url(../icons/user-group-delete.svg);
-  --netServerIcon: url(../icons/network-server.svg);
-  --worldIcon: url(../icons/application-x-mswinurl.svg);
   --warningIcon: url(../icons/dialog-warning.svg);
-  --unavailableIcon: url(../icons/unavailable.svg);
-  --inboxIcon: url(../icons/mail-folder-inbox.svg);
-  --folderNewIcon: url(../icons/folder-new.svg);
-  --mailReadIcon: url(../icons/mail-mark-read.svg);
-  --viewRefreshIcon: url(../icons/view-refresh.svg);
-  --downloadIcon: url(../icons/download.svg);
-  --checkedIcon: url(../icons/checked.svg);
 }
 
 .light-theme input, .light-theme button, .light-theme img, .light-theme .panel-collapse, .light-theme .arrow-right {
-  --goDownIcon: url(../icons/go-down.svg) !important;
-  --downButtonIcon: url(../icons/insert-link.svg) !important;
-  --uploadButtonIcon: url(../icons/list-add.svg) !important;
-  --listRemoveIcon: url(../icons/list-remove.svg) !important;
-  --resumeButtonIcon: url(../icons/media-playback-start.svg) !important;
-  --pauseButtonIcon: url(../icons/media-playback-pause.svg) !important;
-  --prefButtonIcon: url(../icons/configure.svg) !important;
-  --editClearIcon: url(../icons/edit-clear.svg) !important;
+  --checkedIcon: url(../icons/checked.svg) !important;
+  --collapseIcon: url(../icons/collapse.svg) !important;
   --docEditIcon: url(../icons/document-edit-verify.svg) !important;
-  --editRenameIcon: url(../icons/edit-rename.svg) !important;
-  --goBottomIcon: url(../icons/go-bottom.svg) !important;
-  --goTopIcon: url(../icons/go-top.svg) !important;
-  --goUpIcon: url(../icons/go-up.svg) !important;
-  --magnetIcon: url(../icons/kt-magnet.svg) !important;
-  --maxDownIcon: url(../icons/kt-set-max-download-speed.svg) !important;
-  --maxUpIcon: url(../icons/kt-set-max-upload-speed.svg) !important;
-  --forceStartIcon: url(../icons/media-seek-forward.svg) !important;
-  --viewCatIcon: url(../icons/view-categories.svg) !important;
+  --downloadIcon: url(../icons/download.svg) !important;
+  --insertLinkIcon: url(../icons/insert-link.svg) !important;
+  --editClearIcon: url(../icons/edit-clear.svg) !important;
   --editCopyIcon: url(../icons/edit-copy.svg) !important;
   --editDeleteIcon: url(../icons/edit-delete.svg) !important;
+  --editRenameIcon: url(../icons/edit-rename.svg) !important;
+  --folderNewIcon: url(../icons/folder-new.svg) !important;
+  --forceStartIcon: url(../icons/media-seek-forward.svg) !important;
+  --goBottomIcon: url(../icons/go-bottom.svg) !important;
+  --goDownIcon: url(../icons/go-down.svg) !important;
+  --goTopIcon: url(../icons/go-top.svg) !important;
+  --goUpIcon: url(../icons/go-up.svg) !important;
+  --groupDeleteIcon: url(../icons/user-group-delete.svg) !important;
   --helpAboutIcon: url(../icons/help-about.svg) !important;
   --helpContentIcon: url(../icons/help-contents.svg) !important;
+  --listAddIcon: url(../icons/list-add.svg) !important;
+  --listRemoveIcon: url(../icons/list-remove.svg) !important;
   --logOutIcon: url(../icons/system-log-out.svg) !important;
+  --magnetIcon: url(../icons/kt-magnet.svg) !important;
+  --mailReadIcon: url(../icons/mail-mark-read.svg) !important;
+  --maxDownIcon: url(../icons/kt-set-max-download-speed.svg) !important;
+  --maxUpIcon: url(../icons/kt-set-max-upload-speed.svg) !important;
+  --netServerIcon: url(../icons/network-server.svg) !important;
+  --pauseIcon: url(../icons/media-playback-pause.svg) !important;
+  --preferencesIcon: url(../icons/configure.svg) !important;
+  --searchIcon: url(../icons/edit-find.svg) !important;
+  --seedingIcon: url(../icons/seeding.svg) !important;
+  --startIcon: url(../icons/media-playback-start.svg) !important;
+  --themeIcon: url(../icons/theme.svg) !important;
+  --viewCatIcon: url(../icons/view-categories.svg) !important;
+  --viewRefreshIcon: url(../icons/view-refresh.svg) !important;
   --viewStatsIcon: url(../icons/view-statistics.svg) !important;
   --walletIcon: url(../icons/wallet-open.svg) !important;
-  --searchIcon: url(../icons/edit-find.svg) !important;
-  --collapseIcon: url(../icons/collapse.svg) !important;
-  --slowOffIcon: url(../icons/slow_off.svg) !important;
-  --slowIcon: url(../icons/slow.svg) !important;
-  --connectedIcon: url(../icons/connected.svg) !important;
-  --disconnectedIcon: url(../icons/disconnected.svg) !important;
-  --firewalledIcon: url(../icons/firewalled.svg) !important;
-  --seedingIcon: url(../icons/seeding.svg) !important;
-  --groupDeleteIcon: url(../icons/user-group-delete.svg) !important;
-  --netServerIcon: url(../icons/network-server.svg) !important;
-  --worldIcon: url(../icons/application-x-mswinurl.svg) !important;
   --warningIcon: url(../icons/dialog-warning.svg) !important;
-  --unavailableIcon: url(../icons/unavailable.svg) !important;
-  --inboxIcon: url(../icons/mail-folder-inbox.svg) !important;
-  --folderNewIcon: url(../icons/folder-new.svg) !important;
-  --mailReadIcon: url(../icons/mail-mark-read.svg) !important;
-  --viewRefreshIcon: url(../icons/view-refresh.svg) !important;
-  --downloadIcon: url(../icons/download.svg) !important;
-  --checkedIcon: url(../icons/checked.svg) !important;
 }
 
 @media (prefers-color-scheme: dark) {
   input, button, img, .panel-collapse, .arrow-right {
-    --goDownIcon: url(../icons/dark/go-down.svg);
-    --downButtonIcon: url(../icons/dark/insert-link.svg);
-    --uploadButtonIcon: url(../icons/dark/list-add.svg);
-    --listRemoveIcon: url(../icons/dark/list-remove.svg);
-    --resumeButtonIcon: url(../icons/dark/media-playback-start.svg);
-    --pauseButtonIcon: url(../icons/dark/media-playback-pause.svg);
-    --prefButtonIcon: url(../icons/dark/configure.svg);
-    --editClearIcon: url(../icons/dark/edit-clear.svg);
+    --checkedIcon: url(../icons/dark/checked.svg);
+    --collapseIcon: url(../icons/dark/collapse.svg);
     --docEditIcon: url(../icons/dark/document-edit-verify.svg);
-    --editRenameIcon: url(../icons/dark/edit-rename.svg);
-    --goBottomIcon: url(../icons/dark/go-bottom.svg);
-    --goTopIcon: url(../icons/dark/go-top.svg);
-    --goUpIcon: url(../icons/dark/go-up.svg);
-    --magnetIcon: url(../icons/dark/kt-magnet.svg);
-    --maxDownIcon: url(../icons/dark/kt-set-max-download-speed.svg);
-    --maxUpIcon: url(../icons/dark/kt-set-max-upload-speed.svg);
-    --forceStartIcon: url(../icons/dark/media-seek-forward.svg);
-    --viewCatIcon: url(../icons/dark/view-categories.svg);
+    --downloadIcon: url(../icons/dark/download.svg);
+    --insertLinkIcon: url(../icons/dark/insert-link.svg);
+    --editClearIcon: url(../icons/dark/edit-clear.svg);
     --editCopyIcon: url(../icons/dark/edit-copy.svg);
     --editDeleteIcon: url(../icons/dark/edit-delete.svg);
+    --editRenameIcon: url(../icons/dark/edit-rename.svg);
+    --folderNewIcon: url(../icons/dark/folder-new.svg);
+    --forceStartIcon: url(../icons/dark/media-seek-forward.svg);
+    --goBottomIcon: url(../icons/dark/go-bottom.svg);
+    --goDownIcon: url(../icons/dark/go-down.svg);
+    --goTopIcon: url(../icons/dark/go-top.svg);
+    --goUpIcon: url(../icons/dark/go-up.svg);
+    --groupDeleteIcon: url(../icons/dark/user-group-delete.svg);
     --helpAboutIcon: url(../icons/dark/help-about.svg);
     --helpContentIcon: url(../icons/dark/help-contents.svg);
+    --listAddIcon: url(../icons/dark/list-add.svg);
+    --listRemoveIcon: url(../icons/dark/list-remove.svg);
     --logOutIcon: url(../icons/dark/system-log-out.svg);
+    --magnetIcon: url(../icons/dark/kt-magnet.svg);
+    --mailReadIcon: url(../icons/dark/mail-mark-read.svg);
+    --maxDownIcon: url(../icons/dark/kt-set-max-download-speed.svg);
+    --maxUpIcon: url(../icons/dark/kt-set-max-upload-speed.svg);
+    --netServerIcon: url(../icons/dark/network-server.svg);
+    --pauseIcon: url(../icons/dark/media-playback-pause.svg);
+    --preferencesIcon: url(../icons/dark/configure.svg);
+    --searchIcon: url(../icons/dark/edit-find.svg);
+    --seedingIcon: url(../icons/dark/seeding.svg);
+    --startIcon: url(../icons/dark/media-playback-start.svg);
+    --themeIcon: url(../icons/dark/theme.svg);
+    --viewCatIcon: url(../icons/dark/view-categories.svg);
+    --viewRefreshIcon: url(../icons/dark/view-refresh.svg);
     --viewStatsIcon: url(../icons/dark/view-statistics.svg);
     --walletIcon: url(../icons/dark/wallet-open.svg);
-    --searchIcon: url(../icons/dark/edit-find.svg);
-    --collapseIcon: url(../icons/dark/collapse.svg);
-    --slowOffIcon: url(../icons/dark/slow_off.svg);
-    --slowIcon: url(../icons/dark/slow.svg);
-    --connectedIcon: url(../icons/dark/connected.svg);
-    --disconnectedIcon: url(../icons/dark/disconnected.svg);
-    --firewalledIcon: url(../icons/dark/firewalled.svg);
-    --seedingIcon: url(../icons/dark/seeding.svg);
-    --groupDeleteIcon: url(../icons/dark/user-group-delete.svg);
-    --netServerIcon: url(../icons/dark/network-server.svg);
-    --worldIcon: url(../icons/dark/application-x-mswinurl.svg);
     --warningIcon: url(../icons/dark/dialog-warning.svg);
-    --unavailableIcon: url(../icons/dark/unavailable.svg);
-    --inboxIcon: url(../icons/dark/mail-folder-inbox.svg);
-    --folderNewIcon: url(../icons/dark/folder-new.svg);
-    --mailReadIcon: url(../icons/dark/mail-mark-read.svg);
-    --viewRefreshIcon: url(../icons/dark/view-refresh.svg);
-    --downloadIcon: url(../icons/dark/download.svg);
-    --checkedIcon: url(../icons/dark/checked.svg);
   }
 }
 
 .dark-theme input, .dark-theme button, .dark-theme img, .dark-theme .panel-collapse, .dark-theme .arrow-right {
-  --goDownIcon: url(../icons/dark/go-down.svg);
-  --downButtonIcon: url(../icons/dark/insert-link.svg);
-  --uploadButtonIcon: url(../icons/dark/list-add.svg);
-  --listRemoveIcon: url(../icons/dark/list-remove.svg);
-  --resumeButtonIcon: url(../icons/dark/media-playback-start.svg);
-  --pauseButtonIcon: url(../icons/dark/media-playback-pause.svg);
-  --prefButtonIcon: url(../icons/dark/configure.svg);
-  --editClearIcon: url(../icons/dark/edit-clear.svg);
+  --checkedIcon: url(../icons/dark/checked.svg);
+  --collapseIcon: url(../icons/dark/collapse.svg);
   --docEditIcon: url(../icons/dark/document-edit-verify.svg);
-  --editRenameIcon: url(../icons/dark/edit-rename.svg);
-  --goBottomIcon: url(../icons/dark/go-bottom.svg);
-  --goTopIcon: url(../icons/dark/go-top.svg);
-  --goUpIcon: url(../icons/dark/go-up.svg);
-  --magnetIcon: url(../icons/dark/kt-magnet.svg);
-  --maxDownIcon: url(../icons/dark/kt-set-max-download-speed.svg);
-  --maxUpIcon: url(../icons/dark/kt-set-max-upload-speed.svg);
-  --forceStartIcon: url(../icons/dark/media-seek-forward.svg);
-  --viewCatIcon: url(../icons/dark/view-categories.svg);
+  --downloadIcon: url(../icons/dark/download.svg);
+  --insertLinkIcon: url(../icons/dark/insert-link.svg);
+  --editClearIcon: url(../icons/dark/edit-clear.svg);
   --editCopyIcon: url(../icons/dark/edit-copy.svg);
   --editDeleteIcon: url(../icons/dark/edit-delete.svg);
+  --editRenameIcon: url(../icons/dark/edit-rename.svg);
+  --folderNewIcon: url(../icons/dark/folder-new.svg);
+  --forceStartIcon: url(../icons/dark/media-seek-forward.svg);
+  --goBottomIcon: url(../icons/dark/go-bottom.svg);
+  --goDownIcon: url(../icons/dark/go-down.svg);
+  --goTopIcon: url(../icons/dark/go-top.svg);
+  --goUpIcon: url(../icons/dark/go-up.svg);
+  --groupDeleteIcon: url(../icons/dark/user-group-delete.svg);
   --helpAboutIcon: url(../icons/dark/help-about.svg);
   --helpContentIcon: url(../icons/dark/help-contents.svg);
+  --listAddIcon: url(../icons/dark/list-add.svg);
+  --listRemoveIcon: url(../icons/dark/list-remove.svg);
   --logOutIcon: url(../icons/dark/system-log-out.svg);
+  --magnetIcon: url(../icons/dark/kt-magnet.svg);
+  --mailReadIcon: url(../icons/dark/mail-mark-read.svg);
+  --maxDownIcon: url(../icons/dark/kt-set-max-download-speed.svg);
+  --maxUpIcon: url(../icons/dark/kt-set-max-upload-speed.svg);
+  --netServerIcon: url(../icons/dark/network-server.svg);
+  --pauseIcon: url(../icons/dark/media-playback-pause.svg);
+  --preferencesIcon: url(../icons/dark/configure.svg);
+  --searchIcon: url(../icons/dark/edit-find.svg);
+  --seedingIcon: url(../icons/dark/seeding.svg);
+  --startIcon: url(../icons/dark/media-playback-start.svg);
+  --themeIcon: url(../icons/dark/theme.svg);
+  --viewCatIcon: url(../icons/dark/view-categories.svg);
+  --viewRefreshIcon: url(../icons/dark/view-refresh.svg);
   --viewStatsIcon: url(../icons/dark/view-statistics.svg);
   --walletIcon: url(../icons/dark/wallet-open.svg);
-  --searchIcon: url(../icons/dark/edit-find.svg);
-  --collapseIcon: url(../icons/dark/collapse.svg);
-  --slowOffIcon: url(../icons/dark/slow_off.svg);
-  --slowIcon: url(../icons/dark/slow.svg);
+  --warningIcon: url(../icons/dark/dialog-warning.svg);
+}
+
+input, button, img, .panel-collapse, .arrow-right {
+  --completedIcon: url(../icons/completed.svg);
+  --checkingIcon: url(../icons/checking.svg);
+  --connectedIcon: url(../icons/connected.svg);
+  --disconnectedIcon: url(../icons/disconnected.svg);
+  --downloadingIcon: url(../icons/downloading.svg);
+  --errorIcon: url(../icons/error.svg);
+  --folderIcon: url(../icons/inode-directory.svg);
+  --filterAllIcon: url(../icons/filterall.svg);
+  --filterActiveIcon: url(../icons/filteractive.svg);
+  --filterInactiveIcon: url(../icons/filterinactive.svg);
+  --filterStalledIcon: url(../icons/filterstalled.svg);
+  --firewalledIcon: url(../icons/firewalled.svg);
+  --inboxIcon: url(../icons/mail-folder-inbox.svg);
+  --pausedIcon: url(../icons/paused.svg);
+  --queuedIcon: url(../icons/queued.svg);
+  --resumedIcon: url(../icons/resumed.svg);
+  --slowIcon: url(../icons/slow.svg);
+  --slowOffIcon: url(../icons/slow_off.svg);
+  --stalledDLIcon: url(../icons/stalledDL.svg);
+  --stalledUPIcon: url(../icons/stalledUP.svg);
+  --unavailableIcon: url(../icons/unavailable.svg);
+  --uploadingIcon: url(../icons/uploading.svg);
+  --worldIcon: url(../icons/application-x-mswinurl.svg);
+}
+
+.light-theme input, .light-theme button, .light-theme img, .light-theme .panel-collapse, .light-theme .arrow-right {
+  --completedIcon: url(../icons/completed.svg) !important;
+  --checkingIcon: url(../icons/checking.svg) !important;
+  --connectedIcon: url(../icons/connected.svg) !important;
+  --disconnectedIcon: url(../icons/disconnected.svg) !important;
+  --downloadingIcon: url(../icons/downloading.svg) !important;
+  --errorIcon: url(../icons/error.svg) !important;
+  --folderIcon: url(../icons/inode-directory.svg) !important;
+  --filterAllIcon: url(../icons/filterall.svg) !important;
+  --filterActiveIcon: url(../icons/filteractive.svg) !important;
+  --filterInactiveIcon: url(../icons/filterinactive.svg) !important;
+  --filterStalledIcon: url(../icons/filterstalled.svg) !important;
+  --firewalledIcon: url(../icons/firewalled.svg) !important;
+  --inboxIcon: url(../icons/mail-folder-inbox.svg) !important;
+  --pausedIcon: url(../icons/paused.svg) !important;
+  --queuedIcon: url(../icons/queued.svg) !important;
+  --resumedIcon: url(../icons/resumed.svg) !important;
+  --slowIcon: url(../icons/slow.svg) !important;
+  --slowOffIcon: url(../icons/slow_off.svg) !important;
+  --stalledDLIcon: url(../icons/stalledDL.svg) !important;
+  --stalledUPIcon: url(../icons/stalledUP.svg) !important;
+  --unavailableIcon: url(../icons/unavailable.svg) !important;
+  --uploadingIcon: url(../icons/uploading.svg) !important;
+  --worldIcon: url(../icons/application-x-mswinurl.svg) !important;
+}
+
+@media (prefers-color-scheme: dark) {
+  input, button, img, .panel-collapse, .arrow-right {
+    --completedIcon: url(../icons/dark/completed.svg);
+    --checkingIcon: url(../icons/dark/checking.svg);
+    --connectedIcon: url(../icons/dark/connected.svg);
+    --disconnectedIcon: url(../icons/dark/disconnected.svg);
+    --downloadingIcon: url(../icons/dark/downloading.svg);
+    --errorIcon: url(../icons/dark/error.svg);
+    --folderIcon: url(../icons/dark/inode-directory.svg);
+    --filterAllIcon: url(../icons/dark/filterall.svg);
+    --filterActiveIcon: url(../icons/dark/filteractive.svg);
+    --filterInactiveIcon: url(../icons/dark/filterinactive.svg);
+    --filterStalledIcon: url(../icons/dark/filterstalled.svg);
+    --firewalledIcon: url(../icons/dark/firewalled.svg);
+    --inboxIcon: url(../icons/dark/mail-folder-inbox.svg);
+    --pausedIcon: url(../icons/dark/paused.svg);
+    --queuedIcon: url(../icons/dark/queued.svg);
+    --resumedIcon: url(../icons/dark/resumed.svg);
+    --slowIcon: url(../icons/dark/slow.svg);
+    --slowOffIcon: url(../icons/dark/slow_off.svg);
+    --stalledDLIcon: url(../icons/dark/stalledDL.svg);
+    --stalledUPIcon: url(../icons/dark/stalledUP.svg);
+    --unavailableIcon: url(../icons/dark/unavailable.svg);
+    --uploadingIcon: url(../icons/dark/uploading.svg);
+    --worldIcon: url(../icons/dark/application-x-mswinurl.svg);
+  }
+}
+
+.dark-theme input, .dark-theme button, .dark-theme img, .dark-theme .panel-collapse, .dark-theme .arrow-right {
+  --completedIcon: url(../icons/dark/completed.svg);
+  --checkingIcon: url(../icons/dark/checking.svg);
   --connectedIcon: url(../icons/dark/connected.svg);
   --disconnectedIcon: url(../icons/dark/disconnected.svg);
+  --downloadingIcon: url(../icons/dark/downloading.svg);
+  --errorIcon: url(../icons/dark/error.svg);
+  --folderIcon: url(../icons/dark/inode-directory.svg);
+  --filterAllIcon: url(../icons/dark/filterall.svg);
+  --filterActiveIcon: url(../icons/dark/filteractive.svg);
+  --filterInactiveIcon: url(../icons/dark/filterinactive.svg);
+  --filterStalledIcon: url(../icons/dark/filterstalled.svg);
   --firewalledIcon: url(../icons/dark/firewalled.svg);
-  --seedingIcon: url(../icons/dark/seeding.svg);
-  --groupDeleteIcon: url(../icons/dark/user-group-delete.svg);
-  --netServerIcon: url(../icons/dark/network-server.svg);
-  --worldIcon: url(../icons/dark/application-x-mswinurl.svg);
-  --warningIcon: url(../icons/dark/dialog-warning.svg);
-  --unavailableIcon: url(../icons/dark/unavailable.svg);
   --inboxIcon: url(../icons/dark/mail-folder-inbox.svg);
-  --folderNewIcon: url(../icons/dark/folder-new.svg);
-  --mailReadIcon: url(../icons/dark/mail-mark-read.svg);
-  --viewRefreshIcon: url(../icons/dark/view-refresh.svg);
-  --downloadIcon: url(../icons/dark/download.svg);
-  --checkedIcon: url(../icons/dark/checked.svg);
+  --pausedIcon: url(../icons/dark/paused.svg);
+  --queuedIcon: url(../icons/dark/queued.svg);
+  --resumedIcon: url(../icons/dark/resumed.svg);
+  --slowIcon: url(../icons/dark/slow.svg);
+  --slowOffIcon: url(../icons/dark/slow_off.svg);
+  --stalledDLIcon: url(../icons/dark/stalledDL.svg);
+  --stalledUPIcon: url(../icons/dark/stalledUP.svg);
+  --unavailableIcon: url(../icons/dark/unavailable.svg);
+  --uploadingIcon: url(../icons/dark/uploading.svg);
+  --worldIcon: url(../icons/dark/application-x-mswinurl.svg);
 }
 
-.goDownIcon {
-  content: var(--goDownIcon);
+.completedIcon {
+  content: var(--completedIcon);
 }
 
-.downButtonIcon {
-  content: var(--downButtonIcon);
-}
-
-.uploadButtonIcon {
-  content: var(--uploadButtonIcon);
-}
-
-.listRemoveIcon {
-  content: var(--listRemoveIcon);
-}
-
-.resumeButtonIcon {
-  content: var(--resumeButtonIcon);
-}
-
-.pauseButtonIcon {
-  content: var(--pauseButtonIcon);
-}
-
-.prefButtonIcon {
-  content: var(--prefButtonIcon);
-}
-
-.editClearIcon {
-  content: var(--editClearIcon);
-}
-
-.docEditIcon {
-  content: var(--docEditIcon);
-}
-
-.editRenameIcon {
-  content: var(--editRenameIcon);
-}
-
-.goBottomIcon {
-  content: var(--goBottomIcon);
-}
-
-.goTopIcon {
-  content: var(--goTopIcon);
-}
-
-.goUpIcon {
-  content: var(--goUpIcon);
-}
-
-.magnetIcon {
-  content: var(--magnetIcon);
-}
-
-.maxDownIcon {
-  content: var(--maxDownIcon);
-}
-
-.maxUpIcon {
-  content: var(--maxUpIcon);
-}
-
-.forceStartIcon {
-  content: var(--forceStartIcon);
-}
-
-.viewCatIcon {
-  content: var(--viewCatIcon);
-}
-
-.editCopyIcon {
-  content: var(--editCopyIcon);
-}
-
-.editDeleteIcon {
-  content: var(--editDeleteIcon);
-}
-
-.helpAboutIcon {
-  content: var(--helpAboutIcon);
-}
-
-.helpContentIcon {
-  content: var(--helpContentIcon);
-}
-
-.logOutIcon {
-  content: var(--logOutIcon);
-}
-
-.viewStatsIcon {
-  content: var(--viewStatsIcon);
-}
-
-.walletIcon {
-  content: var(--walletIcon);
-}
-
-.searchIcon {
-  content: var(--searchIcon);
-}
-
-.collapseIcon {
-  content: var(--collapseIcon);
-}
-
-.slowOffIcon {
-  content: var(--slowOffIcon);
-}
-
-.slowIcon {
-  content: var(--slowIcon);
+.checkingIcon {
+  content: var(--checkingIcon);
 }
 
 .connectedIcon {
@@ -506,261 +489,89 @@ input, button, img, .panel-collapse, .arrow-right {
   content: var(--disconnectedIcon);
 }
 
+.downloadingIcon {
+  content: var(--downloadingIcon);
+}
+
+.errorIcon {
+  content: var(--errorIcon);
+}
+
+.folderIcon {
+  content: var(--folderIcon);
+}
+
+.filterAllIcon {
+  content: var(--filterAllIcon);
+}
+
+.filterActiveIcon {
+  content: var(--filterActiveIcon);
+}
+
+.filterInactiveIcon {
+  content: var(--filterInactiveIcon);
+}
+
+.filterStalledIcon {
+  content: var(--filterStalledIcon);
+}
+
 .firewalledIcon {
   content: var(--firewalledIcon);
-}
-
-.seedingIcon {
-  content: var(--seedingIcon);
-}
-
-.groupDeleteIcon {
-  content: var(--groupDeleteIcon);
-}
-
-.netServerIcon {
-  content: var(--netServerIcon);
-}
-
-.worldIcon {
-  content: var(--worldIcon);
-}
-
-.warningIcon {
-  content: var(--warningIcon);
-}
-
-.unavailableIcon {
-  content: var(--unavailableIcon);
 }
 
 .inboxIcon {
   content: var(--inboxIcon);
 }
 
-.folderNewIcon {
-  content: var(--folderNewIcon);
+.pausedIcon {
+  content: var(--pausedIcon);
 }
 
-.mailReadIcon {
-  content: var(--mailReadIcon);
+.queuedIcon {
+  content: var(--queuedIcon);
 }
 
-.viewRefreshIcon {
-  content: var(--viewRefreshIcon);
+.resumedIcon {
+  content: var(--resumedIcon);
 }
 
-.downloadIcon {
-  content: var(--downloadIcon);
+.slowIcon {
+  content: var(--slowIcon);
 }
 
-.checkedIcon {
-  content: var(--checkedIcon);
+.slowOffIcon {
+  content: var(--slowOffIcon);
 }
 
-input, button, img, .panel-collapse, .arrow-right {
-  --themeButton: url(../icons/theme.svg);
-  --downButton: url(../icons/insert-link.svg);
-  --uploadButton: url(../icons/list-add.svg);
-  --resumeButton: url(../icons/media-playback-start.svg);
-  --pauseButton: url(../icons/media-playback-pause.svg);
-  --prefButton: url(../icons/configure.svg);
+.stalledDLIcon {
+  content: var(--stalledDLIcon);
 }
 
-.light-theme input, .light-theme button, .light-theme img, .light-theme .panel-collapse, .light-theme .arrow-right {
-  --themeButton: url(../icons/theme.svg) !important;
-  --downButton: url(../icons/insert-link.svg) !important;
-  --uploadButton: url(../icons/list-add.svg) !important;
-  --resumeButton: url(../icons/media-playback-start.svg) !important;
-  --pauseButton: url(../icons/media-playback-pause.svg) !important;
-  --prefButton: url(../icons/configure.svg) !important;
+.stalledUPIcon {
+  content: var(--stalledUPIcon);
 }
 
-@media (prefers-color-scheme: dark) {
-  input, button, img, .panel-collapse, .arrow-right {
-    --themeButton: url(../icons/dark/theme.svg);
-    --downButton: url(../icons/dark/insert-link.svg);
-    --uploadButton: url(../icons/dark/list-add.svg);
-    --resumeButton: url(../icons/dark/media-playback-start.svg);
-    --pauseButton: url(../icons/dark/media-playback-pause.svg);
-    --prefButton: url(../icons/dark/configure.svg);
-  }
+.unavailableIcon {
+  content: var(--unavailableIcon);
 }
 
-.dark-theme input, .dark-theme button, .dark-theme img, .dark-theme .panel-collapse, .dark-theme .arrow-right {
-  --themeButton: url(../icons/dark/theme.svg);
-  --downButton: url(../icons/dark/insert-link.svg);
-  --uploadButton: url(../icons/dark/list-add.svg);
-  --resumeButton: url(../icons/dark/media-playback-start.svg);
-  --pauseButton: url(../icons/dark/media-playback-pause.svg);
-  --prefButton: url(../icons/dark/configure.svg);
+.uploadingIcon {
+  content: var(--uploadingIcon);
 }
 
-.themeButton {
-  content: var(--themeButton);
-}
-
-.downButton {
-  content: var(--downButton);
-}
-
-.uploadButton {
-  content: var(--uploadButton);
-}
-
-.resumeButton {
-  content: var(--resumeButton);
-}
-
-.pauseButton {
-  content: var(--pauseButton);
-}
-
-.prefButton {
-  content: var(--prefButton);
-}
-
-input, button, img, .panel-collapse, .arrow-right {
-  --downloading-icon: url(../icons/downloading.svg);
-  --stalledDL-icon: url(../icons/stalledDL.svg);
-  --stalledUP-icon: url(../icons/stalledUP.svg);
-  --uploading-icon: url(../icons/uploading.svg);
-  --paused-icon: url(../icons/paused.svg);
-  --completed-icon: url(../icons/completed.svg);
-  --queued-icon: url(../icons/queued.svg);
-  --checking-icon: url(../icons/checking.svg);
-  --error-icon: url(../icons/error.svg);
-  --resumed-icon: url(../icons/resumed.svg);
-  --filterall-icon: url(../icons/filterall.svg);
-  --filteractive-icon: url(../icons/filteractive.svg);
-  --filterinactive-icon: url(../icons/filterinactive.svg);
-  --filterstalled-icon: url(../icons/filterstalled.svg);
-  --folder-icon: url(../icons/inode-directory.svg);
-}
-
-.light-theme input, .light-theme button, .light-theme img, .light-theme .panel-collapse, .light-theme .arrow-right {
-  --downloading-icon: url(../icons/downloading.svg) !important;
-  --stalledDL-icon: url(../icons/stalledDL.svg) !important;
-  --stalledUP-icon: url(../icons/stalledUP.svg) !important;
-  --uploading-icon: url(../icons/uploading.svg) !important;
-  --paused-icon: url(../icons/paused.svg) !important;
-  --completed-icon: url(../icons/completed.svg) !important;
-  --queued-icon: url(../icons/queued.svg) !important;
-  --checking-icon: url(../icons/checking.svg) !important;
-  --error-icon: url(../icons/error.svg) !important;
-  --resumed-icon: url(../icons/resumed.svg) !important;
-  --filterall-icon: url(../icons/filterall.svg) !important;
-  --filteractive-icon: url(../icons/filteractive.svg) !important;
-  --filterinactive-icon: url(../icons/filterinactive.svg) !important;
-  --filterstalled-icon: url(../icons/filterstalled.svg) !important;
-  --folder-icon: url(../icons/inode-directory.svg) !important;
-}
-
-@media (prefers-color-scheme: dark) {
-  input, button, img, .panel-collapse, .arrow-right {
-    --downloading-icon: url(../icons/dark/downloading.svg);
-    --stalledDL-icon: url(../icons/dark/stalledDL.svg);
-    --stalledUP-icon: url(../icons/dark/stalledUP.svg);
-    --uploading-icon: url(../icons/dark/uploading.svg);
-    --paused-icon: url(../icons/dark/paused.svg);
-    --completed-icon: url(../icons/dark/completed.svg);
-    --queued-icon: url(../icons/dark/queued.svg);
-    --checking-icon: url(../icons/dark/checking.svg);
-    --error-icon: url(../icons/dark/error.svg);
-    --resumed-icon: url(../icons/dark/resumed.svg);
-    --filterall-icon: url(../icons/dark/filterall.svg);
-    --filteractive-icon: url(../icons/dark/filteractive.svg);
-    --filterinactive-icon: url(../icons/dark/filterinactive.svg);
-    --filterstalled-icon: url(../icons/dark/filterstalled.svg);
-    --folder-icon: url(../icons/dark/inode-directory.svg);
-  }
-}
-
-.dark-theme input, .dark-theme button, .dark-theme img, .dark-theme .panel-collapse, .dark-theme .arrow-right {
-  --downloading-icon: url(../icons/dark/downloading.svg);
-  --stalledDL-icon: url(../icons/dark/stalledDL.svg);
-  --stalledUP-icon: url(../icons/dark/stalledUP.svg);
-  --uploading-icon: url(../icons/dark/uploading.svg);
-  --paused-icon: url(../icons/dark/paused.svg);
-  --completed-icon: url(../icons/dark/completed.svg);
-  --queued-icon: url(../icons/dark/queued.svg);
-  --checking-icon: url(../icons/dark/checking.svg);
-  --error-icon: url(../icons/dark/error.svg);
-  --resumed-icon: url(../icons/dark/resumed.svg);
-  --filterall-icon: url(../icons/dark/filterall.svg);
-  --filteractive-icon: url(../icons/dark/filteractive.svg);
-  --filterinactive-icon: url(../icons/dark/filterinactive.svg);
-  --filterstalled-icon: url(../icons/dark/filterstalled.svg);
-  --folder-icon: url(../icons/dark/inode-directory.svg);
-}
-
-.downloading-icon {
-  content: var(--downloading-icon);
-}
-
-.stalledDL-icon {
-  content: var(--stalledDL-icon);
-}
-
-.stalledUP-icon {
-  content: var(--stalledUP-icon);
-}
-
-.uploading-icon {
-  content: var(--uploading-icon);
-}
-
-.paused-icon {
-  content: var(--paused-icon);
-}
-
-.completed-icon {
-  content: var(--completed-icon);
-}
-
-.queued-icon {
-  content: var(--queued-icon);
-}
-
-.checking-icon {
-  content: var(--checking-icon);
-}
-
-.error-icon {
-  content: var(--error-icon);
-}
-
-.resumed-icon {
-  content: var(--resumed-icon);
-}
-
-.filterall-icon {
-  content: var(--filterall-icon);
-}
-
-.filteractive-icon {
-  content: var(--filteractive-icon);
-}
-
-.filterinactive-icon {
-  content: var(--filterinactive-icon);
-}
-
-.filterstalled-icon {
-  content: var(--filterstalled-icon);
-}
-
-.folder-icon {
-  content: var(--folder-icon);
+.worldIcon {
+  content: var(--worldIcon);
 }
 
 /* Mocha Toolbar - Main Toolbar */
 #downloadButton img, .insertLink {
-  content: var(--downButton);
+  content: var(--insertLinkIcon);
 }
 
 #uploadButton img, .listAdd {
-  content: var(--uploadButton);
+  content: var(--listAddIcon);
 }
 
 #deleteButton img, .deleteIcon, .listRemoveIcon {
@@ -768,11 +579,11 @@ input, button, img, .panel-collapse, .arrow-right {
 }
 
 #resumeButton img, .mediaStart {
-  content: var(--resumeButton);
+  content: var(--startIcon);
 }
 
 #pauseButton img, .mediaPause {
-  content: var(--pauseButton);
+  content: var(--pauseIcon);
 }
 
 #topPrioButton img {
@@ -792,64 +603,64 @@ input, button, img, .panel-collapse, .arrow-right {
 }
 
 #preferencesButton img, .configureIcon {
-  content: var(--prefButton);
+  content: var(--preferencesIcon);
 }
 
 #btn-toggle img {
-  content: var(--themeButton);
+  content: var(--themeIcon);
 }
 
 /*statusFilterList */
 #all_filter a img {
-  content: var(--filterall-icon);
+  content: var(--filterAllIcon);
 }
 
 #downloading_filter a img {
-  content: var(--downloading-icon);
+  content: var(--downloadingIcon);
 }
 
 #seeding_filter a img {
-  content: var(--uploading-icon);
+  content: var(--uploadingIcon);
 }
 
 #completed_filter a img {
-  content: var(--completed-icon);
+  content: var(--completedIcon);
 }
 
 #resumed_filter a img {
-  content: var(--resumed-icon);
+  content: var(--resumedIcon);
 }
 
 #paused_filter a img {
-  content: var(--paused-icon);
+  content: var(--pausedIcon);
 }
 
 #active_filter a img {
-  content: var(--filteractive-icon);
+  content: var(--filterActiveIcon);
 }
 
 #inactive_filter a img {
-  content: var(--filterinactive-icon);
+  content: var(--filterInactiveIcon);
 }
 
 #stalled_filter a img {
-  content: var(--filterstalled-icon);
+  content: var(--filterStalledIcon);
 }
 
 #stalled_uploading_filter a img {
-  content: var(--stalledUP-icon);
+  content: var(--stalledUPIcon);
 }
 
 #stalled_downloading_filter a img {
-  content: var(--stalledDL-icon);
+  content: var(--stalledDLIcon);
 }
 
 #checking_filter a img {
-  content: var(--checking-icon);
+  content: var(--checkingIcon);
 }
 
 #errored_filter a img {
-  content: var(--error-icon);
+  content: var(--errorIcon);
 }
 
 /* Footer Icons */
@@ -870,7 +681,7 @@ input, button, img, .panel-collapse, .arrow-right {
 }
 
 #desktopFooter table tbody tr td:nth-of-type(9) img {
-  content: var(--downloading-icon);
+  content: var(--downloadingIcon);
 }
 
 #desktopFooter table tbody tr td:nth-of-type(11) img {
@@ -912,12 +723,8 @@ input, button, img, .panel-collapse, .arrow-right {
 }
 
 /* RSS Downloader View */
-.folder_icon {
-  content: var(--folder-icon);
-}
-
 #newRuleButton {
-  background-image: var(--uploadButton) !important;
+  background-image: var(--listAddIcon) !important;
 }
 
 #deleteRuleButton {
@@ -926,11 +733,11 @@ input, button, img, .panel-collapse, .arrow-right {
 
 /*Main Menu Icons and Ovverides*/
 #uploadLink img {
-  content: var(--uploadButton);
+  content: var(--listAddIcon);
 }
 
 #downloadLink img {
-  content: var(--downButton);
+  content: var(--insertLinkIcon);
 }
 
 #logoutLink img {
@@ -942,11 +749,11 @@ input, button, img, .panel-collapse, .arrow-right {
 }
 
 #resumeAllLink img, #resumeLink img {
-  content: var(--resumeButton);
+  content: var(--startIcon);
 }
 
 #pauseAllLink img, #pauseLink img {
-  content: var(--pauseButton);
+  content: var(--pauseIcon);
 }
 
 #deleteLink img {
@@ -982,7 +789,7 @@ input, button, img, .panel-collapse, .arrow-right {
 }
 
 #preferencesLink img {
-  content: var(--prefButton);
+  content: var(--preferencesIcon);
 }
 
 #registerMagnetHandlerLink img {
@@ -1008,7 +815,7 @@ input, button, img, .panel-collapse, .arrow-right {
 
 /* Misc Icons */
 #watched_folders_tab tbody tr td:nth-of-type(2) img {
-  content: var(--uploadButton);
+  content: var(--listAddIcon);
 }
 
 .filterTitle img {
@@ -1016,7 +823,7 @@ input, button, img, .panel-collapse, .arrow-right {
 }
 
 #categoryFilterList li a img, #tagFilterList li a img {
-  content: var(--folder-icon);
+  content: var(--folderIcon);
 }
 
 #trackerFilterList li a img {
@@ -1025,11 +832,11 @@ input, button, img, .panel-collapse, .arrow-right {
 
 /* Context menu Icons */
 #torrentsTableMenu > li:nth-of-type(1) a img {
-  content: var(--resumeButton);
+  content: var(--startIcon);
 }
 
 #torrentsTableMenu > li:nth-of-type(2) a img {
-  content: var(--pauseButton);
+  content: var(--pauseIcon);
 }
 
 #torrentsTableMenu > li:nth-of-type(3) a img {
@@ -1041,7 +848,7 @@ input, button, img, .panel-collapse, .arrow-right {
 }
 
 #torrentsTableMenu > li:nth-of-type(5) a:nth-of-type(1) img {
-  content: var(--folder-icon);
+  content: var(--folderIcon);
 }
 
 #torrentsTableMenu > li:nth-of-type(5) a:nth-of-type(2) img {
@@ -1101,11 +908,11 @@ input, button, img, .panel-collapse, .arrow-right {
 }
 
 #contextCategoryList li a img {
-  content: var(--folder-icon);
+  content: var(--folderIcon);
 }
 
 #contextCategoryList li:nth-of-type(1) a img {
-  content: var(--uploadButton);
+  content: var(--listAddIcon);
 }
 
 #contextCategoryList li:nth-of-type(2) a img {
@@ -1113,7 +920,7 @@ input, button, img, .panel-collapse, .arrow-right {
 }
 
 #contextTagList li:nth-of-type(1) a img {
-  content: var(--uploadButton);
+  content: var(--listAddIcon);
 }
 
 #contextTagList li:nth-of-type(2) a img {
@@ -1121,7 +928,7 @@ input, button, img, .panel-collapse, .arrow-right {
 }
 
 #categoriesFilterMenu li:nth-of-type(1) a img {
-  content: var(--uploadButton);
+  content: var(--listAddIcon);
 }
 
 #categoriesFilterMenu li:nth-of-type(2) a img {
@@ -1133,11 +940,11 @@ input, button, img, .panel-collapse, .arrow-right {
 }
 
 #categoriesFilterMenu li:nth-of-type(5) a img {
-  content: var(--resumeButton);
+  content: var(--startIcon);
 }
 
 #categoriesFilterMenu li:nth-of-type(6) a img {
-  content: var(--pauseButton);
+  content: var(--pauseIcon);
 }
 
 #categoriesFilterMenu li:nth-of-type(7) a img {
@@ -1145,7 +952,7 @@ input, button, img, .panel-collapse, .arrow-right {
 }
 
 #tagsFilterMenu li:nth-of-type(1) a img {
-  content: var(--uploadButton);
+  content: var(--listAddIcon);
 }
 
 #tagsFilterMenu li:nth-of-type(2) a img, #tagsFilterMenu li:nth-of-type(3) a img {
@@ -1153,11 +960,11 @@ input, button, img, .panel-collapse, .arrow-right {
 }
 
 #tagsFilterMenu li:nth-of-type(4) a img {
-  content: var(--resumeButton);
+  content: var(--startIcon);
 }
 
 #tagsFilterMenu li:nth-of-type(5) a img {
-  content: var(--pauseButton);
+  content: var(--pauseIcon);
 }
 
 #tagsFilterMenu li:nth-of-type(6) a img {
@@ -1165,11 +972,11 @@ input, button, img, .panel-collapse, .arrow-right {
 }
 
 #trackersFilterMenu li:nth-of-type(1) a img {
-  content: var(--resumeButton);
+  content: var(--startIcon);
 }
 
 #trackersFilterMenu li:nth-of-type(2) a img {
-  content: var(--pauseButton);
+  content: var(--pauseIcon);
 }
 
 #trackersFilterMenu li:nth-of-type(3) a img {
@@ -1177,15 +984,15 @@ input, button, img, .panel-collapse, .arrow-right {
 }
 
 #torrentTrackersMenu li:nth-of-type(1) a img {
-  content: var(--uploadButton);
+  content: var(--listAddIcon);
 }
 
 #torrentTrackersMenu li:nth-of-type(2) a img {
-  content: var(--uploadButton);
+  content: var(--listAddIcon);
 }
 
 #torrentTrackersMenu li:nth-of-type(3) a img {
-  content: var(--uploadButton);
+  content: var(--listAddIcon);
 }
 
 #torrentTrackersMenu li:nth-of-type(4) a img {
@@ -1193,7 +1000,7 @@ input, button, img, .panel-collapse, .arrow-right {
 }
 
 #torrentPeersMenu li:nth-of-type(1) a img {
-  content: var(--uploadButton);
+  content: var(--listAddIcon);
 }
 
 #torrentPeersMenu li:nth-of-type(2) a img {
@@ -1245,7 +1052,7 @@ input, button, img, .panel-collapse, .arrow-right {
 }
 
 #rssFeedMenu li:nth-of-type(5) a img {
-  content: var(--uploadButton);
+  content: var(--listAddIcon);
 }
 
 #rssFeedMenu li:nth-of-type(6) a img {
@@ -1261,7 +1068,7 @@ input, button, img, .panel-collapse, .arrow-right {
 }
 
 #rssDownloaderRuleMenu li:nth-of-type(1) a img {
-  content: var(--uploadButton);
+  content: var(--listAddIcon);
 }
 
 #rssDownloaderRuleMenu li:nth-of-type(2) a img {
@@ -1454,11 +1261,14 @@ a.propButton img {
 }
 
 .contextMenu li a {
-  display: block;
-  padding: 5px 20px 5px 5px;
+  display: list-item;
+  height: 26px;
+  padding: 0px 20px 0px 5px;
   font-size: 12px;
   text-decoration: none;
   font-family: tahoma, arial, sans-serif;
+  line-height: 26px;
+  vertical-align: middle;
   color: var(--font-color);
   white-space: nowrap;
 }
@@ -1489,10 +1299,6 @@ a.propButton img {
   width: 164px;
 }
 
-.contextMenu li ul li a {
-  position: relative;
-}
-
 .contextMenu li ul li a:hover {
   background-color: var(--row-alt);
 }
@@ -1501,7 +1307,8 @@ a.propButton img {
   width: 16px;
   max-width: 16px;
   height: 16px;
-  margin-bottom: -4px;
+  padding: 0px 2px;
+  margin-bottom: -3px;
   -ms-interpolation-mode: bicubic;
 }
 
@@ -1516,7 +1323,7 @@ a.propButton img {
   width: 0px;
   height: 0px;
   position: absolute;
-  margin-top: 3px;
+  margin-top: 8px;
   right: 5px;
   border-width: 5px;
   border-style: solid;
@@ -1762,7 +1569,7 @@ ul.filterList {
 
 ul.filterList a {
   height: 20px;
-  display: block;
+  display: list-item;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
@@ -1772,10 +1579,10 @@ ul.filterList a {
 }
 
 ul.filterList img {
+  width: 16px;
   max-width: 16px;
   height: 16px;
-  margin-top: -2px;
-  padding: 0px 4px;
+  padding: 2px 4px;
   vertical-align: middle;
   background-repeat: no-repeat;
 }
@@ -2008,12 +1815,9 @@ td.statusBarSeparator {
   background-color: var(--row-alt) !important;
 }
 
-#rssDetailsView {
-  /* iframe */
-}
-
 #rssDetailsView div, #rssDetailsView p {
   padding-left: 4px !important;
+  /* iframe */
 }
 
 .imageButton {

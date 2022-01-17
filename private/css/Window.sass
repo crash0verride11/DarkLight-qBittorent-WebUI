@@ -51,7 +51,8 @@
 .mocha.isFocused 
 
 .mochaOverlay 
-	position: absolute  /* This is also set in theme.js in order to make theme transitions smoother */
+	position: absolute  
+	/* This is also set in theme.js in order to make theme transitions smoother */
 	top: 0
 	left: 0
 
@@ -72,7 +73,8 @@
 
 
 .mochaToolbarWrapper 
-	width: 100%  /* For IE */
+	width: 100%  
+	/* For IE */
 	position: relative
 	height: 29px
 	background: var(--bg-color)
@@ -111,24 +113,28 @@ div.mochaToolbarWrapper.bottom
 	width: 3px
 	height: 3px
 	z-index: 2
-	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)"  /* IE8 */
-	filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0)  /* IE6 and 7*/
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)"  
+	/* IE8 */
+	filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0)  
+	/* IE6 and 7*/
 	opacity: .0
 	-moz-opacity: .0
 	overflow: hidden
-	font-size: 1px  /* For IE6 */
+	font-size: 1px  
+	/* For IE6 */
 
-
-.mocha .corner   /* Corner resize handles */
+ /* Corner resize handles */
+.mocha .corner  
 	width: 10px
 	height: 10px
 	background: #f00
 
-
-.mocha .cornerSE   /* Bottom right resize handle */
+/* Bottom right resize handle */
+.mocha .cornerSE   
 	width: 20px
 	height: 20px
-	background: var(--mocha-button)  /* This is the color of the visible resize handle */
+	/* This is the color of the visible resize handle */
+	background: var(--mocha-button)  
 
 
 .mochaCanvasHeader 

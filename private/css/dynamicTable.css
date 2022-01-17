@@ -15,6 +15,7 @@
 
 #transferList img.stateIcon {
   height: 1.3em;
+  width: 16px;
   max-width: 16px;
   vertical-align: middle;
   margin-top: -2px;
@@ -152,7 +153,7 @@ tr.dynamicTableHeader {
   padding-right: 0px !important;
   margin-left: 2px;
   margin-right: 5px;
-  content: var(--folder-icon);
+  content: var(--folderIcon);
 }
 
 /* */

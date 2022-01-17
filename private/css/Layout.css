@@ -20,6 +20,12 @@
 /* Layout
 	---------------------------------------------------------------- */
 /* Sass Document */
+/* Scss Document */
+/*Layout Sass Theme Variables */
+/*Tab Sass Theme Variables */
+/*Window Sass Theme Variables */
+/* Style Sass Theme Variables*/
+/* Icon Variables */
 /* Main mixin for generating theme variables from lists */
 /* Four @each statements, instead of one earlier in the nesting creeates a more succinct final css. */
 :root {
@@ -55,6 +61,7 @@ body.dark-theme, body.dark-theme > *, body.dark-theme + * {
 /*Tab Sass Theme Variables */
 /*Window Sass Theme Variables */
 /* Style Sass Theme Variables*/
+/* Icon Variables */
 :root {
   --bg-color: #fff;
   --bg-color-tint: #f2f2f2;
@@ -135,12 +142,14 @@ body {
   background: var(--bg-color-tint);
 }
 
-/*
-	#desktopTitlebarWrapper
-		position: relative
-		height: 45px
-		overflow: hidden
-		background: #718BA6 url(../images/bg-header.gif) repeat-x */
+/* Hidden Index Title Element, Wrapper does not exist */
+#desktopTitlebarWrapper {
+  position: relative;
+  height: 45px;
+  overflow: hidden;
+  background: #718BA6 url(../images/bg-header.gif) repeat-x;
+}
+
 #desktopTitlebar {
   padding: 7px 8px 6px 8px;
   height: 32px;

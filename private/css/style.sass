@@ -15,7 +15,8 @@ a img, :link img, :visited img
 	color-scheme: light
 
 @media (prefers-color-scheme: dark)
-	color-scheme: dark
+	\:root
+		color-scheme: dark
 
 .dark-theme
 	color-scheme: dark
@@ -172,11 +173,14 @@ a.propButton
 		margin: 0
 		padding: 0
 		a
-			display: block
-			padding: 5px 20px 5px 5px
+			display: list-item
+			height: 26px
+			padding: 0px 20px 0px 5px
 			font-size: 12px
 			text-decoration: none
 			font-family: tahoma, arial, sans-serif
+			line-height: 26px
+			vertical-align: middle
 			color: var(--font-color)
 			white-space: nowrap
 			&:hover
@@ -197,16 +201,15 @@ a.propButton
 			z-index: 8000
 			margin: -29px 0 0 100%
 			width: 164px
-
 			li a
-				position: relative
 				&:hover
 					background-color: var(--row-alt)
 		img
 			width: 16px
 			max-width: 16px
 			height: 16px
-			margin-bottom: -4px
+			padding: 0px 2px
+			margin-bottom: -3px
 			-ms-interpolation-mode: bicubic
 
 		input[type=checkbox]
@@ -220,7 +223,7 @@ a.propButton
 		width: 0px
 		height: 0px
 		position: absolute
-		margin-top: 3px
+		margin-top: 8px
 		right: 5px
 		border-width: 5px
 		border-style: solid
@@ -431,7 +434,7 @@ ul.filterList
 	padding-left: 0
 	a
 		height: 20px
-		display: block
+		display: list-item
 		overflow: hidden
 		white-space: nowrap
 		text-overflow: ellipsis
@@ -439,10 +442,10 @@ ul.filterList
 		line-height: 20px
 		vertical-align: middle
 	img
+		width: 16px
 		max-width: 16px
 		height: 16px
-		margin-top: -2px
-		padding: 0px 4px
+		padding: 2px 4px
 		vertical-align: middle
 		background-repeat: no-repeat
 	li:hover
@@ -639,8 +642,9 @@ td.statusBarSeparator
 	background-color: var(--row-alt) !important
 #rssDetailsView
 	div, p
-		padding-left: 4px !important
-	/* iframe
+		padding-left: 4px !important 
+		/* iframe
+	
 .imageButton
 	background-color: var(--bg-color-tint) !important
 	&:hover 
