@@ -997,7 +997,8 @@ window.qBittorrent.DynamicTable = (function() {
 
                 const img_path = 'icons/' + state + '.svg';
 				const img_class = state + 'Icon stateIcon'; /*CHANGE AREA*/
-
+                
+                
                 if (td.getChildren('img').length > 0) {
                     const img = td.getChildren('img')[0]; 
                     if (img.src.indexOf(img_path) < 0) {
@@ -1007,20 +1008,12 @@ window.qBittorrent.DynamicTable = (function() {
                         img.set('alt', status);                    }
                 }
                 else {
-                    if (window.compatCheck == true) {
-                        td.adopt(new Element('img', {
-                            'src': img_path,
-                            'class': img_class,
-                            'title': status,
-                            'alt': status
-                        }));
-                    } else {
-                        td.adopt(new Element('img', {
-                            'class': img_class,
-                            'title': status,
-                            'alt': status + ' icon'
-                        }));
-                    }
+                    td.adopt(new Element('img', {
+                        'src': `${window.compatCheck ? img_path : ''}`, //Change Area
+                        'class': img_class,
+                        'title': status,
+                        'alt': status
+                    }));
                 } 
             };
 
@@ -2240,22 +2233,13 @@ window.qBittorrent.DynamicTable = (function() {
                     }
                 } 
                 else {
-                    if (window.compatCheck == true) {
                     td.adopt(new Element('img', { 
-                        'src': img_path,
+                        'src': `${window.compatCheck ? img_path : ''}`,
                         'class': img_class, /*Change Area*/
                         'height': '22px',
                         'width': '22px',
                         'alt': 'status: ' + row.full_data.status
                     }));
-                    } else {
-                        td.adopt(new Element('img', { 
-                            'class': img_class, 
-                            'height': '22px',
-                            'width': '22px',
-                            'alt': 'status: ' + row.full_data.status
-                        }));
-                    }
                 }
             });
         },

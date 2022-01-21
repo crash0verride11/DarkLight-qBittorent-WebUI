@@ -394,17 +394,12 @@ window.addEvent('load', function() {
         if (!categoryList)
             return;
         categoryList.empty();
-        
         const create_link = function(hash, text, count) {
-            if (window.compatCheck == true) { /* Change Area */
+             /* Change Area */
             var html = '<a href="#" onclick="setCategoryFilter(' + hash + ');return false;">'
-                + '<img src="icons/inode-directory.svg"/>'
+                + '<img ' + `${sourceCheck('icons/inode-directory', 'Folder Icon')}` + '/>'
                 + window.qBittorrent.Misc.escapeHtml(text) + ' (' + count + ')' + '</a>';
-            } else {
-            var html = '<a href="#" onclick="setCategoryFilter(' + hash + ');return false;">'
-                + '<img alt="Folder Icon"/>'
-                + window.qBittorrent.Misc.escapeHtml(text) + ' (' + count + ')' + '</a>';
-            }
+            
             const el = new Element('li', {
                 id: hash,
                 html: html
@@ -459,15 +454,10 @@ window.addEvent('load', function() {
             tagFilterList.removeChild(tagFilterList.firstChild);
 
         const createLink = function(hash, text, count) {
-            if (window.compatCheck == true) {
+            //Change Area
             var html = '<a href="#" onclick="setTagFilter(' + hash + ');return false;">'
-                + '<img src="icons/inode-directory.svg"/>'
+                + '<img ' + `${sourceCheck('icons/inode-directory', 'Folder Icon')}` + '/>'
                 + window.qBittorrent.Misc.escapeHtml(text) + ' (' + count + ')' + '</a>';
-            } else {
-            var html = '<a href="#" onclick="setTagFilter(' + hash + ');return false;">'
-                + '<img alt="Tag Folder Icon"/>'
-                + window.qBittorrent.Misc.escapeHtml(text) + ' (' + count + ')' + '</a>';
-            }
             const el = new Element('li', {
                 id: hash,
                 html: html
@@ -519,15 +509,10 @@ window.addEvent('load', function() {
             trackerFilterList.removeChild(trackerFilterList.firstChild);
 
         const createLink = function(hash, text, count) {
-            if (window.compatCheck == true) { /* Change Area */
+            /* Change Area */
             var html = '<a href="#" onclick="setTrackerFilter(' + hash + ');return false;">'
-                + '<img src="icons/network-server.svg"/>'
+                + '<img ' + `${sourceCheck('icons/network-server', 'Tracker Icon')}` + '/>'
                 + window.qBittorrent.Misc.escapeHtml(text.replace("%1", count)) + '</a>';
-            } else {
-            var html = '<a href="#" onclick="setTrackerFilter(' + hash + ');return false;">'
-                + '<img alt="Tracker Icon"/>'
-                + window.qBittorrent.Misc.escapeHtml(text.replace("%1", count)) + '</a>';
-            }
             const el = new Element('li', {
                 id: hash,
                 html: html

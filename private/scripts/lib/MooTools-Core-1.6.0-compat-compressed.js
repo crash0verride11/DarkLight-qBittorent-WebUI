@@ -6,25 +6,16 @@ Web Build: https://mootools.net/core/builder/d46055c910fae7895431e5908a0dcfa2
 window.onload = (event) => {
 	//FireFox Fixes
 	window.compatCheck = false;
-	window.webBrowser = navigator.saysWho;
+	window.webBrowser = navigator.saysWho[0];
 	if(window.webBrowser != 'Firefox' || checkFirefox() != true) { window.compatCheck = true; }
-	function delayFix() {setTimeout (function( ){compatFix(navigator.saysWho)}, 500);}
+	function delayFix() {setTimeout (function( ){compatFix(window.webBrowser)}, 400);}
 	setTimeout(function(){
 	if (window.compatCheck == false) {
 		compatFix(window.webBrowser);
 		if(document.getElementById('preferencesButton')) {document.getElementById('preferencesButton').onclick = function(){ delayFix() }}
-		if(document.getElementById('manageSearchPlugins')) { 
-			document.getElementById('manageSearchPlugins').onclick = function(){ 
-				qBittorrent.Search.manageSearchPlugins();
-				delayFix();
-		}}
-		if(document.getElementById('rssDownloaderButton')) { 
-			document.getElementById('rssDownloaderButton').onclick = function(){ 
-				qBittorrent.Rss.openRssDownloader();
-				delayFix();
-		}}
-	}
-	},300);
+		if(document.getElementById('manageSearchPlugins')) { document.getElementById('manageSearchPlugins').onclick = function(){ qBittorrent.Search.manageSearchPlugins(); delayFix(); }}
+		if(document.getElementById('rssDownloaderButton')) { document.getElementById('rssDownloaderButton').onclick = function(){ qBittorrent.Rss.openRssDownloader(); delayFix(); }}
+	}},300);
 	
 
 	// Select the theme preference from localStorage and time stored
@@ -39,14 +30,12 @@ window.onload = (event) => {
 	var dateDif = parseInt((curDate-prevDate)/(3600*1000));
 	// If the current theme in localStorage is "dark"...
 	if ((dateDif <= themeClock) || themeForget == false){
-		if (currentTheme == "dark") {
-			// ...then use the .dark-theme class
+		if (currentTheme == "dark") { // ...then use the .dark-theme class
 			if (window.matchMedia('(prefers-color-scheme: dark)').matches == false) {
 				document.body.classList.toggle("dark-theme");
 			}
 		}
-		if (currentTheme == "light") {
-			// ...then use the .dark-theme class
+		if (currentTheme == "light") { // ...then use the .dark-theme class
 			if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
 				document.body.classList.toggle("light-theme");}
 			}	
@@ -71,16 +60,18 @@ window.onload = (event) => {
 	}
 }
 
+function sourceCheck(text, alt) { //Change Area
+    return window.compatCheck ? 'src="' + text + '.svg" ' : 'alt="' + alt + '" '
+}
+
 navigator.saysWho = (() => {//general browser model check
 	const { userAgent } = navigator
 	let match = userAgent.match(/(opera|chrome|safari|firefox|msie|trident(?=\/))\/?\s*(\d+)/i) || []
 	let temp
-	
 	if (/trident/i.test(match[1])) {
 		temp = /\brv[ :]+(\d+)/g.exec(userAgent) || []
 		return `IE ${temp[1] || ''}`
 	}
-	
 	if (match[1] === 'Chrome') {
 		temp = userAgent.match(/\b(OPR|Edge)\/(\d+)/)
 		if (temp !== null) {
@@ -92,18 +83,11 @@ navigator.saysWho = (() => {//general browser model check
 		return temp.slice(1).join(' ').replace('Edg', 'Edge (Chromium)')
 		}
 	}
-	
 	match = match[2] ? [ match[1], match[2] ] : [ navigator.appName, navigator.appVersion, '-?' ]
 	temp = userAgent.match(/version\/(\d+)/i)
-	
-	if (temp !== null) {
-		match.splice(1, 1, temp[1])
-	}
-	
+	if (temp !== null) { match.splice(1, 1, temp[1]) }
 	//return match.join(' ') //Save for later
-	var temp2 = match.join(' ') //Satisfy function I don't understand
-	match = temp2.split(' ') // Truncate to  browser model only
-	return match[0]
+	return match
 })()
 
 function checkFirefox() { //check at least FF version 65
@@ -122,18 +106,16 @@ function compatFix(browserModel){
 	if (browserModel == 'Firefox') {
 		var img = document.getElementsByTagName('img');
 		for (i = 0; i < img.length; i++) {
-			var img_cur = img[i]
 			if(checkFirefox() == true) {
-				if (img_cur.hasAttribute('alt') == false || img_cur.getAttribute('alt') == 'null') {
-					img_cur.set('alt', 'dynamic image');
+				if (img[i].hasAttribute('alt') == false || img[i].getAttribute('alt') == 'null') {
+					img[i].set('alt', 'dynamic image');
 				}
-				img_cur.removeAttribute("src");
+				img[i].removeAttribute("src");
 			} else {
-				var cssObj = window.getComputedStyle(img_cur, null);
+				var cssObj = window.getComputedStyle(img[i], null);
 				var content = cssObj.getPropertyValue("content");
 				var contentURL = content.split('"');
-				//alert(contentURL[1])
-				img_cur.set('src', contentURL[1]);
+				img[i].set('src', contentURL[1]);
 			}
 		}
 	}
