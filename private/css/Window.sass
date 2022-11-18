@@ -26,13 +26,12 @@
 @import variables
 +themeGenerate($windowTheme, "--")
 
-#preferencesPage_titleBar
-	background-color: var(--bg-menu)
-	border-radius: 6px 6px 0px 0px !important
+.mochaCanvas
+	display: none
 
 .mochaOverlay
 	border-radius: 6px
-	height: calc(100% - 10px) !important
+	box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.6) 
 	background-color: var(--bg-menu)
 
 #mochaToolbar img
@@ -40,16 +39,12 @@
 	max-width: 24px
 	top: 1px
 
-
 .mocha 
 	display: none
-	overflow: hidden
+	padding-bottom: 10px
+	/* overflow: hidden */
 	background-color: var(--bg-color-tint)
 	
-
-
-.mocha.isFocused 
-
 .mochaOverlay 
 	position: absolute  
 	/* This is also set in theme.js in order to make theme transitions smoother */
@@ -67,10 +62,8 @@
 		padding: 5px 10px 4px 12px
 		color: var(--font-color)
 
-
 .mocha.isFocused .mochaTitlebar h3 
 	color: var(--font-color)
-
 
 .mochaToolbarWrapper 
 	width: 100%  
@@ -81,31 +74,25 @@
 	overflow: hidden
 	border-top: 1px solid var(--mocha-border-clr)
 
-
 div.mochaToolbarWrapper.bottom 
 	border: 0
 	border-bottom: 1px solid var(--mocha-border-clr)
-
 
 .mochaToolbar 
 	width: 100%  /* For IE */
 	border-top: 1px solid var(--mocha-border-clr)
 
-
 .mochaContentBorder 
 	border-top: 1px solid var(--mocha-border-lte)
 	border-bottom: 1px solid var(--mocha-border-lte)
-
 
 .mochaContentWrapper 
 	font-size: 12px
 	overflow: auto
 	background: var(--bg-color)
 
-
 .mochaContent 
 	padding: 10px 12px
-
 
 .mocha .handle 
 	position: absolute
@@ -113,12 +100,7 @@ div.mochaToolbarWrapper.bottom
 	width: 3px
 	height: 3px
 	z-index: 2
-	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)"  
-	/* IE8 */
-	filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0)  
-	/* IE6 and 7*/
-	opacity: .0
-	-moz-opacity: .0
+	opacity: 0
 	overflow: hidden
 	font-size: 1px  
 	/* For IE6 */
@@ -136,7 +118,6 @@ div.mochaToolbarWrapper.bottom
 	/* This is the color of the visible resize handle */
 	background: var(--mocha-button)  
 
-
 .mochaCanvasHeader 
 	position: absolute
 	top: 0
@@ -146,7 +127,6 @@ div.mochaToolbarWrapper.bottom
 	visibility: hidden
 	overflow: hidden
 
-
 .mochaControls 
 	position: absolute
 	width: 52px
@@ -155,7 +135,6 @@ div.mochaToolbarWrapper.bottom
 	height: 14px
 	z-index: 4
 	background: transparent
-
 
 .mochaCanvasControls 
 	position: absolute
@@ -183,10 +162,8 @@ div.mochaToolbarWrapper.bottom
 	background-color: var(--mocha-button)
 	margin-left: 5px
 
-
 .mochaMinimizeButton 
 	margin-left: 0
-
 
 .mochaMaximizeButton 
 	z-index: 100 
@@ -201,8 +178,7 @@ div.mochaToolbarWrapper.bottom
 	left: 6px
 	width: 16px
 	height: 16px
-	background: url(../images/spinner.gif) no-repeat
-
+	background: url("../images/spinner.gif") no-repeat
 
 .mochaIframe 
 	width: 100%
@@ -215,14 +191,12 @@ div.mochaToolbarWrapper.bottom
 	top: 0
 	left: 0
 	z-index: -1
-	filter: mask()
 	width: 100px
 	height: 100px
 	border: 1px solid transparent
 
 
 /* Viewport overlays---------------------------------------------------------------- */
-
 #modalOverlay 
 	display: none
 	position: fixed
@@ -230,10 +204,7 @@ div.mochaToolbarWrapper.bottom
 	left: 0
 	width: 100%
 	background: #000
-	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)"  /* IE8 */
-	filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0)  /* IE6 and 7*/
 	opacity: 0
-	-moz-opacity: 0
 	z-index: 10000
 
 
@@ -244,15 +215,11 @@ div.mochaToolbarWrapper.bottom
 	top: 0
 	left: 0
 	width: 100%
-	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)"  /* IE8 */
-	filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0)  /* IE6 and 7*/
 	opacity: 0
-	-moz-opacity: 0
 	z-index: 9999
 
 
 /* Underlay */
-
 #windowUnderlay 
 	position: fixed
 	top: 0
@@ -260,18 +227,15 @@ div.mochaToolbarWrapper.bottom
 	width: 100%
 	background: #fff
 
-
 * html #windowUnderlay 
 	position: absolute
 
 
 /* The replaced class is used internally when converting CSS values to Canvas. These classes should not be removed. */
 /* .mochaTitlebar.replaced,
-
 .mocha.replaced,  .mochaMinimizeButton.replaced,
 .mochaMaximizeButton.replaced, .mochaCloseButton.replaced 
 	background-color: transparent !important
-
 
 .windowClosed 
 	visibility: hidden
@@ -281,7 +245,6 @@ div.mochaToolbarWrapper.bottom
 	left: -20000px
 	z-index: -1
 	overflow: hidden
-
 
 .windowClosed .mochaContentBorder, .windowClosed .mochaToolbarWrapper,
 .windowClosed .mochaTitlebar, .windowClosed .mochaControls,
@@ -295,49 +258,36 @@ div.mochaToolbarWrapper.bottom
 
 
 /* Modals */
-
 .modal2 
 	border: 8px solid #fff
-
 
 .modal2 .mochaContentBorder 
 	border-width: 0px
 
 
 /* Window Themes */
-
 .mocha.no-canvas 
 	background: var(--bg-color-tint)
 	border: 1px solid #555
 
-
 .mocha.no-canvas .mochaTitlebar 
 	background: var(--bg-color-tint)
-
 
 .mocha.transparent .mochaTitlebar h3 
 	color: #fff
 	display: none
 
-
 .mocha.transparent .mochaContentWrapper 
 	background: transparent
-
 
 .mocha.notification 
 	background: #cedff2
 
-
 .mocha.notification .mochaTitlebar 
-	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)"  /* IE8 */
-	filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0)  /* IE6 and 7*/
-	opacity: .0
-	-moz-opacity: 0
-
+	opacity: 0
 
 .mocha.notification .mochaContentBorder 
 	border-width: 0px
-
 
 .mocha.notification .mochaContentWrapper 
 	text-align: center
@@ -347,26 +297,20 @@ div.mochaToolbarWrapper.bottom
 
 
 /* Example Window Themes */
-
 #about_contentWrapper 
-	background: #e5e5e5 url(../images/logo2.gif) 3px 3px no-repeat
-
+	background: #e5e5e5 url("../images/logo2.gif") 3px 3px no-repeat
 
 #builder_contentWrapper 
 	background: #f5f5f7
 
-
 #json01 .mochaTitlebar 
 	background: #6dd2db
-
 
 #json02 .mochaTitlebar 
 	background: #6db6db
 
-
 #json03 .mochaTitlebar 
 	background: #6d92db
-
 
 .jsonExample .mochaTitlebar h3 
 	color: #ddd
@@ -376,22 +320,18 @@ div.mochaToolbarWrapper.bottom
 .isFocused.jsonExample .mochaTitlebar h3 
 	color: #fff
 
-
 #fxmorpherExample .mochaContentWrapper 
 	background: #577a9e
-
 
 #clock 
 	background: #fff
 
 
 /* Workaround to make invisible buttons clickable */
-
 .mochaMinimizeButton.replaced,
 .mochaMaximizeButton.replaced,
 .mochaCloseButton.replaced 
-	background-image: url(data:image/gifbase64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7) !important
-
+	background-image: url("data:image/gifbase64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7") !important
 
 /* iOS iframe scrolling */
 .windowFrame .mochaContentWrapper 
@@ -399,10 +339,8 @@ div.mochaToolbarWrapper.bottom
 	overflow: auto !important
 	-webkit-overflow-scrolling: touch
 
-
 .windowFrame .mochaContent 
 	height: 100%
-
 
 .windowFrame iframe 
 	/* fix double scroll bar by reducing frame height. !important required. */

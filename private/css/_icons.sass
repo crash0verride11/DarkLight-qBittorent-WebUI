@@ -4,19 +4,19 @@
 =themeIconify($listname, $suffix)
 	input, button, img, .panel-collapse, .arrow-right
 		@each $icon, $link in $listname
-				--#{$icon}#{$suffix}: url(../icons/#{$link})
+				--#{$icon}#{$suffix}: url(../images/#{$link})
 	.light-theme
 		input, button, img, .panel-collapse, .arrow-right
 			@each $icon, $link in $listname
-				--#{$icon}#{$suffix}: url(../icons/#{$link}) !important
+				--#{$icon}#{$suffix}: url(../images/#{$link}) !important
 	@media (prefers-color-scheme: dark)
 		input, button, img, .panel-collapse, .arrow-right
 			@each $icon, $link in $listname
-				--#{$icon}#{$suffix}: url(../icons/dark/#{$link})
+				--#{$icon}#{$suffix}: url(../images/dark/#{$link})
 	.dark-theme
 		input, button, img, .panel-collapse, .arrow-right
 			@each $icon, $link in $listname
-				--#{$icon}#{$suffix}: url(../icons/dark/#{$link})
+				--#{$icon}#{$suffix}: url(../images/dark/#{$link})
 	
 =themeClassify($listname, $suffix)
 	@each $icon, $link in $listname
@@ -75,7 +75,7 @@
 #stalled_downloading_filter a img
 	content: var(--stalledDLIcon)
 #checking_filter a img
-	content: var(--checkingIcon)
+	content: var(--forceCheckIcon)
 #errored_filter a img
 	content: var(--errorIcon)
 
@@ -91,11 +91,12 @@
 			content: var(--slowOffIcon)
 			position: relative
 			top: 2px
-			max-width: 24px  !important
+			width: 24px
+			max-width: 24px  /* !important */
 		td:nth-of-type(9) img
 			content: var(--downloadingIcon)
 		td:nth-of-type(11) img
-			content: var(--seedingIcon)
+			content: var(--uploadingIcon)
 .connectedIcon
 	content: var(--connectedIcon) !important
 .firewalledIcon
@@ -134,13 +135,13 @@
 #logoutLink img
 	content: var(--logOutIcon)
 #shutdownLink img
-	content: var(--editDeleteIcon)
+	content: var(--applicationExitIcon)
 #resumeAllLink img, #resumeLink img
 	content: var(--startIcon)
 #pauseAllLink img, #pauseLink img
 	content: var(--pauseIcon)
 #deleteLink img
-	content: var(--editDeleteIcon)
+	content: var(--listRemoveIcon)
 #topPrioLink img
 	content: var(--goTopIcon)
 #increasePrioLink img
@@ -149,9 +150,7 @@
 	content: var(--goDownIcon)
 #bottomPrioLink img
 	content: var(--goBottomIcon)
-#recheckLink img
-	content: var(--docEditIcon)
-#showTopToolbarLink, #showStatusBarLink, #speedInBrowserTitleBarLink, #showSearchEngineLink, #showRssReaderLink
+#showTopToolbarLink, #showStatusBarLink, #speedInBrowserTitleBarLink, #showSearchEngineLink, #showRssReaderLink, #showFiltersSidebarLink
 	img
 		content: var(--checkedIcon)
 #StatisticsLink img
@@ -186,7 +185,7 @@
 #trackerFilterList
 	li a
 		img
-			content: var(--netServerIcon)
+			content: var(--trackersIcon)
 
 /* Context menu Icons */
 #torrentsTableMenu > li
@@ -200,7 +199,7 @@
 		content: var(--listRemoveIcon)
 	&:nth-of-type(5) a
 		&:nth-of-type(1) img
-			content: var(--folderIcon)
+			content: var(--setLocationIcon)
 		&:nth-of-type(2) img
 			content: var(--editRenameIcon)
 	&:nth-of-type(6) > a, &:nth-of-type(7) > a
@@ -209,16 +208,18 @@
 	&:nth-of-type(8) > a img
 		content: var(--checkedIcon)
 	&:nth-of-type(9) a img
-		content: var(--maxDownIcon)
-	&:nth-of-type(10), &:nth-of-type(11)
-		a img
-			content: var(--maxUpIcon)
+		content: var(--downloadingIcon)
+	&:nth-of-type(10)a img
+			content: var(--uploadingIcon)
+	&:nth-of-type(11) a img
+			content: var(--ratioIcon)
 	&:nth-of-type(12), &:nth-of-type(13), &:nth-of-type(14) 
 		a img
 			content: var(--checkedIcon)
-	&:nth-of-type(15), &:nth-of-type(16) 
-		a img
-			content: var(--docEditIcon)
+	&:nth-of-type(15) a img
+		content: var(--forceCheckIcon)
+	&:nth-of-type(16) a img
+		content: var(--reannounceIcon)
 	&:nth-of-type(17)
 		ul li
 			&:nth-of-type(1) a img
@@ -233,11 +234,18 @@
 		a:nth-of-type(1) img
 			content: var(--editCopyIcon)
 		ul li
-			&:nth-of-type(1), &:nth-of-type(2), &:nth-of-type(3), &:nth-of-type(5) 
+			&:nth-of-type(1) a img
+				content: var(--nameIcon)
+			&:nth-of-type(2), &:nth-of-type(3) 
 				> a img
-					content: var(--editCopyIcon)
+					content: var(--hashIcon)
 			&:nth-of-type(4) a img
 				content: var(--magnetIcon)
+			&:nth-of-type(5) a img
+				content: var(--helpAboutIcon)
+	&:nth-of-type(19)
+		a:nth-of-type(1) img
+			content: var(--editCopyIcon)
 
 #contextCategoryList li
 	a img
@@ -245,13 +253,13 @@
 	&:nth-of-type(1) a img
 		content: var(--listAddIcon)
 	&:nth-of-type(2) a img
-		content: var(--editDeleteIcon)
+		content: var(--editClearIcon)
 
 #contextTagList li
 	&:nth-of-type(1) a img
 		content: var(--listAddIcon)
 	&:nth-of-type(2) a img
-		content: var(--editDeleteIcon)
+		content: var(--editClearIcon)
 
 #categoriesFilterMenu li
 	&:nth-of-type(1) a img
@@ -259,7 +267,7 @@
 	&:nth-of-type(2) a img
 		content: var(--editRenameIcon)
 	&:nth-of-type(3) a img, &:nth-of-type(4) a img
-		content: var(--editDeleteIcon)
+		content: var(--listRemoveIcon)
 	&:nth-of-type(5) a img
 		content: var(--startIcon)
 	&:nth-of-type(6) a img
@@ -270,7 +278,7 @@
 	&:nth-of-type(1) a img
 		content: var(--listAddIcon)
 	&:nth-of-type(2) a img, &:nth-of-type(3) a img
-		content: var(--editDeleteIcon)
+		content: var(--listRemoveIcon)
 	&:nth-of-type(4) a img
 		content: var(--startIcon)
 	&:nth-of-type(5) a img
@@ -289,18 +297,18 @@
 	&:nth-of-type(1) a img
 		content: var(--listAddIcon)
 	&:nth-of-type(2) a img
-		content: var(--listAddIcon)
+		content: var(--editRenameIcon)
 	&:nth-of-type(3) a img
-		content: var(--listAddIcon)
+		content: var(--listRemoveIcon)
 	&:nth-of-type(4) a img
 		content: var(--editCopyIcon)
 #torrentPeersMenu li
 	&:nth-of-type(1) a img
-		content: var(--listAddIcon)
+		content: var(--peersAddIcon)
 	&:nth-of-type(2) a img
 		content: var(--editCopyIcon)
 	&:nth-of-type(3) a img
-		content: var(--groupDeleteIcon)
+		content: var(--peersRemoveIcon)
 #torrentFilesMenu li:nth-of-type(1) a img
 	content: var(--editRenameIcon)
 
@@ -321,7 +329,7 @@
 	&:nth-of-type(1) a img
 		content: var(--viewRefreshIcon)
 	&:nth-of-type(2) a img
-		content: var(--mailReadIcon)
+		content: var(--taskCompleteIcon)
 	&:nth-of-type(3) a img
 		content: var(--editRenameIcon)
 	&:nth-of-type(4) a img
@@ -342,7 +350,7 @@
 	&:nth-of-type(3) a img
 		content: var(--editRenameIcon)
 	&:nth-of-type(4) a img
-		content: var(--editDeleteIcon)
+		content: var(--editClearIcon)
 #rssArticleMenu li
 	&:nth-of-type(1) a img
 		content: var(--downloadIcon)

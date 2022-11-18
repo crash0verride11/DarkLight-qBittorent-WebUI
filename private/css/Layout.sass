@@ -51,23 +51,23 @@ body
 	position: relative
 	height: 45px
 	overflow: hidden
-	background: #718BA6 url(../images/bg-header.gif) repeat-x
+	background: #718BA6 url("../images/bg-header.gif") repeat-x
 
 #desktopTitlebar 
-	padding: 7px 8px 6px 8px
+	padding: 7px 8px 6px
 	height: 32px
-	background: url(../images/logo.gif) no-repeat
+	background: url("../images/logo.gif") no-repeat
 	background-position: left 0
 	h1.applicationTitle
 		display: none
 		margin: 0
-		padding: 0 5px 0 0
+		padding: 0px 5px 0px 0px
 		font-size: 20px
 		line-height: 25px
 		font-weight: bold
 		color: var(--selected-text)
 	h2.tagline
-		padding: 7px 0 0 0
+		padding: 7px 0px 0px
 		font-family: Verdana, Arial, Helvetica, sans-serif
 		font-size: 10px
 		color: #d4dce4
@@ -111,10 +111,10 @@ body
 		display: block
 
 #desktopNavbar ul li a
-	/*padding: 6px 10px 6px 10px*/
+	/*padding: 6px 10px 6px*/
 	color: var(--font-color)
 	font-weight: normal
-	padding: 2px 10px 0px 10px
+	padding: 2px 10px 0px
 	&:hover
 		color: var(--font-color-tint)
 		background-color: var(--bg-color-tint)
@@ -164,7 +164,6 @@ body
 		&:hover
 			background: var(--row-select)
 			color: #fff
-			-moz-border-radius: 2px
 			.check
 				background: var(--bg-color-tint)
 	
@@ -205,7 +204,7 @@ li.divider
 	font-family: Verdana, Arial, Helvetica, sans-serif
 	font-size: 11px
 	height: 24px
-	padding: 6px 8px 0 8px
+	padding: 6px 8px 0
 	background: var(--bg-color-tint)
 
 
@@ -246,7 +245,7 @@ li.divider
 .panel-header
 	position: relative
 	background: var(--bg-color-tint)
-	/*background: #f1f1f1 url(../images/bg-panel-header.gif) repeat-x
+	/*background: #f1f1f1 url("../images/bg-panel-header.gif") repeat-x
 	height: 30px
 	overflow: hidden
 	border-bottom: 1px solid var(--border-lte)
@@ -254,7 +253,7 @@ li.divider
 		display: inline-block
 		font-size: 12px
 		margin: 0
-		padding: 3px 8px 0 8px
+		padding: 3px 8px 0px
 		height: 22px
 		overflow: hidden
 		color: #333
@@ -266,11 +265,11 @@ li.divider
 	background-position: left -68px
 
 .panel-collapse
-	background: var(--collapseIcon) left top no-repeat
-	margin-top: 1px !important
+	background: var(--collapseIcon) center/16px no-repeat
+	margin-top: 2px !important
 
 .panel-expand
-	background: var(--collapseIcon) left top no-repeat
+	background: var(--collapseIcon) center/16px no-repeat
 	transform: rotate(180deg)
 
 .icon16
@@ -285,7 +284,7 @@ li.divider
 	line-height: 1px
 	font-size: 1px
 	overflow: hidden
-	background: #eee url(../images/bg-handle-horizontal.gif) repeat-x
+	background: #eee url("../images/bg-handle-horizontal.gif") repeat-x
 
 .horizontalHandle.detached .handleIcon
 	background: transparent
@@ -296,7 +295,7 @@ li.divider
 	line-height: 1px
 	font-size: 1px
 	overflow: hidden
-	background: url(../images/handle-icon-horizontal.gif) center center no-repeat
+	background: url("../images/handle-icon-horizontal.gif") center center no-repeat
 
 .columnHandle
 	filter: var(--invert-image)
@@ -304,7 +303,7 @@ li.divider
 	float: left
 	width: 4px
 	overflow: hidden
-	background: #c3c3c3 url(../images/handle-icon.gif) center center no-repeat
+	background: #c3c3c3 url("../images/handle-icon.gif") center center no-repeat
 	border: 1px solid var(--border-col)
 	border-top: 0
 	border-bottom: 0
@@ -323,7 +322,7 @@ li.divider
 
 div.toolbox.divider  
 	/* Have to specify div here for IE6's sake */
-	background: url(../images/toolbox-divider.gif) repeat-y
+	background: url("../images/toolbox-divider.gif") repeat-y
 	padding-left: 8px
 
 .toolbox img.disabled
@@ -346,17 +345,16 @@ div.toolbox.divider
 		padding: 3px
 	&:hover
 		border: 1px solid #a0a0a0
-		-moz-border-radius: 3px
 
 #spinnerWrapper
 	width: 16px
 	height: 16px
-	background: url(../images/spinner-placeholder.gif) no-repeat
-	margin: 4px 5px 0 5px
+	background: url("../images/spinner-placeholder.gif") no-repeat
+	margin: 4px 5px 0px
 
 #spinner
 	display: none
-	background: url(../images/spinner.gif) no-repeat
+	background: url("../images/spinner.gif") no-repeat
 	width: 16px
 	height: 16px
 	

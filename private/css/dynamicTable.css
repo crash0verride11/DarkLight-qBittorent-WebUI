@@ -49,12 +49,9 @@ tr.dynamicTableHeader {
   background-color: var(--bg-color-tint);
   padding: 4px 4px 4px 8px;
   white-space: nowrap;
-  border-right-color: var(--border-lte);
-  border-right-style: solid;
-  border-right-width: 1px;
-  box-sizing: border-box;
-  -moz-box-sizing: border-box;
+  border-right: 1px solid var(--border-lte);
   -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 .dynamicTable tr th.sorted {

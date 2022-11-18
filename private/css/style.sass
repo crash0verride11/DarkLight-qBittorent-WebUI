@@ -57,7 +57,7 @@ body
 
 h2, h3, h4
 	margin: 0
-	padding: 0 0 5px 0
+	padding: 0 0 5px
 	font-weight: bold
 	color: var(--font-dtint)
 
@@ -70,7 +70,7 @@ h4
 
 #mochaPage h3
 	display: block
-	padding: 6px 0 6px 0
+	padding: 6px 0
 	margin: 0 0 8px 0
 	border-bottom: 1px solid var(--bg-checkmark)
 
@@ -86,7 +86,7 @@ a
 		text-decoration: none
 p
 	margin: 0
-	padding: 0 0 9px 0
+	padding: 0 0 9px
 
 
 /* List Elements */
@@ -98,7 +98,7 @@ dt
 	font-weight: bold
 
 dd
-	padding: 0 0 9px 0
+	padding: 0 0 9px
 
 
 /* Code */
@@ -210,7 +210,6 @@ a.propButton
 			height: 16px
 			padding: 0px 2px
 			margin-bottom: -3px
-			-ms-interpolation-mode: bicubic
 
 		input[type=checkbox]
 			position: relative
@@ -287,7 +286,7 @@ a.propButton
 	width: 420px
 	font-size: 1px
 	line-height: 1px
-	background: var(--bg-color-tint) url(../images/slider-area.gif) repeat-x
+	background: var(--bg-color-tint) url("../images/slider-area.gif") repeat-x
 	border: 1px solid #a3a3a3
 	border-bottom: 1px solid #ccc
 	border-left: 1px solid #ccc
@@ -303,7 +302,7 @@ a.propButton
 	width: 19px
 	font-size: 1px
 	line-height: 1px
-	background: url(../images/knob.gif) no-repeat
+	background: url("../images/knob.gif") no-repeat
 	cursor: pointer
 	overflow: hidden
 	z-index: 2
@@ -324,21 +323,33 @@ a.propButton
 	position: relative
 	overflow-y: hidden
 	.divider
-		filter: var(--invert-image)
-		background-image: url(../images/toolbox-divider.gif)
+		background-image: var(--bg-divider)
 		background-repeat: no-repeat
 		background-position: left center
 		height: 10px
 		padding-left: 14px
 		padding-top: 14px
-		img
-			filter: var(--invert-image)
-
+		/*
+			&:before
+				position: relative
+				padding: 3px 0px
+				top: -8px
+				left: -14px
+				content: ""
+				width: 0px
+				margin-top: -5px
+				background-color: red
+				border-left: 1.5px solid var(--border-col)
+			height: 10px
+			padding-left: 14px
+			padding-top: 14px
+			border: 0px 1px solid white
+		
 .MyMenuIcon
 	margin-left: -18px
 	margin-bottom: -3px
 	padding-right: 5px
-
+	max-width: 16px
 
 #mainWindowTabs
 	float: right
@@ -362,7 +373,7 @@ a.propButton
 
 label
 	&.tristate
-		background: url(../images/3-state-checkbox.gif) 0 0 no-repeat
+		background: url("../images/3-state-checkbox.gif") 0 0 no-repeat
 		display: block
 		float: left
 		height: 13px
@@ -380,8 +391,6 @@ fieldset
 	&.settings
 		border: solid 1px var(--mocha-frame)
 		border-radius: 8px
-		-webkit-border-radius: 8px
-		-moz-border-radius: 8px
 		padding: 4px 4px 4px 10px
 		legend
 			margin-left: 8px
@@ -490,10 +499,6 @@ td.generalLabel
 
 .unselectable
 	-webkit-touch-callout: none
-	-webkit-user-select: none
-	-khtml-user-select: none
-	-moz-user-select: none
-	-ms-user-select: none
 	user-select: none
 
 
@@ -501,17 +506,28 @@ td.generalLabel
 	padding: 2px
 
 
-#progress 
-    border: 1px solid var(--border-col)
-    padding: 0
+/*
+	#progress 
+		border: 1px solid var(--border-col)
+		padding: 0
+		position: relative
+		width: 100%
+	#progress canvas 
+		height: 100%
+		left: 0
+		position: absolute
+		top: 0
+		width: 100%
+
+/*image-rendering: pixelated*/
+.piecesbarWrapper
     position: relative
     width: 100%
 
-#progress canvas 
+.piecesbarCanvas 
     height: 100%
-    left: 0
+    inset: 0
     position: absolute
-    top: 0
     width: 100%
 
 #watched_folders_tab
@@ -570,7 +586,7 @@ td.generalLabel
 
 td.statusBarSeparator
 	width: 22px
-	background-image: url('../images/toolbox-divider.gif')
+	background-image: url("../images/toolbox-divider.gif")
 	background-repeat: no-repeat
 	background-position: center 1px
 	background-size: 2px 18px
@@ -596,14 +612,10 @@ td.statusBarSeparator
 
 #searchResultsTableContainer
 	height: calc(100% - 140px)
-	-moz-height: calc(100% - 140px)
-	-webkit-height: calc(100% - 140px)
 	overflow: auto
 
 #searchResultsTableDiv
 	height: calc(100% - 26px) !important
-	-moz-height: calc(100% - 26px) !important
-	-webkit-height: calc(100% - 26px) !important
 	
 .red
 	color: red
@@ -659,7 +671,7 @@ td.statusBarSeparator
 		top: 4px
 
 .spinnerIcon
-	background-image: url(images/spinner.gif)
+	background-image: url("images/spinner.gif")
 
 /* Footer */
 #desktopFooterWrapper table
@@ -667,6 +679,7 @@ td.statusBarSeparator
 #desktopFooter 
 	img
 		height: 16px
+		width: 16px
 		max-width: 16px
 	table tbody tr td
 		&:nth-of-type(7) img
@@ -706,8 +719,6 @@ select
 	color: var(--font-color)
 	border: 1px solid var(--border-col)
 	border-radius: 4px
-	-webkit-appearance: none
-	-moz-appearance: none
 	appearance: none
 	box-sizing: border-box
 	padding: 3px 22px 3px 8px
@@ -723,8 +734,6 @@ textarea, input[type=text], #mail_password_text
 
 #torrentFilesFilterInput, #torrentsFilterInput
 	appearance: none
-	-webkit-appearance: none
-	-moz-appearance: none
 	background-color: var(--bg-color)
 	border-top-color: var(--border-col)
 	border-left-color: var(--border-col)
@@ -768,8 +777,7 @@ body
 /* Checkboxes -- See Variables */
 input[type=checkbox]
 	border-radius: 3px
-	-webkit-appearance: none
-	-moz-appearance: none
+	appearance: none
 	position: relative
 	top: 2px
 	width: 12px
