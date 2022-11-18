@@ -4,7 +4,7 @@ A version of Dark/Light mode for the standard WebUI using custom CSS Properties.
 I wanted to refresh my CSS / SASS skills by creating a dark mode for qBittorrent. The only other version of the standard UI I've seen is not toggle-albe. I also primarily see versions that change colors but leave all the icons as is (not ideal for dark mode). I've managed to keep changes primarily to the CSS files, though minor changes have been made to a few of the JSs and the index. 
 
 # Notes
-**Updates Nov 2022** qBittorent appears to in the process of swapping out all their icons, and may soon be implementing it's own dark mode based on comments in code commits, rendering this project mostly useless (let's hope), except as a base for easy custom theming. This was a relatively big update, with new icons, and some file path changes. The new icons are what's in the current qBittorent master and beta release. Some of these are awful in my opinion, but I've tried to remain faithful to the master for now. Hopefully they tweak them further.
+**Updates Nov 2022** qBittorent appears in the process of swapping out all their icons, and may soon be implementing it's own dark mode based on comments in code commits, rendering this project mostly useless (let's hope), except as a base for easy custom theming. This was a relatively big update, with new icons, and some file path changes. The new icons are what's in the current qBittorent master and beta release. Some of these are awful in my opinion, but I've tried to remain faithful to the master for now. Hopefully they tweak them further.
 
 **Updates Dec 2021** I've recently made a large update to the method for image replacement, that will have reduced compatibility for image toggling, but has greatly reduced the amount of code altered outside the CSS files. The plus side, the images will fall back to the normal icons. Modern browsers should support the image replacement, but with issues in Firefox (I've tested working correctly in safari, chrome, edge, and opera). No guarantees for older OSs / browsers. I previously replaced every single image tag with a div tag in the html files to make image toggling work, now I've reduced that to zero. 
 
@@ -33,8 +33,8 @@ I wanted to refresh my CSS / SASS skills by creating a dark mode for qBittorrent
 **Releases are Available:** The most straightforward install is downloading a release. The combining of my files with the qBitorrent master version files, is a admittedly not straightforward, but the easiest way to maintain. The releases, however, will not necessarily have the latest qBittorent webUI features and fixes. Please try a release before opening an issue.
 
 Instructions for using my Alternate WebUI:
-* The instructions on alternate UI usage from the [qBittorent Master](https://github.com/qbittorrent/qBittorrent/wiki/Developing-alternate-WebUIs-(WIP)) are currently out-dated with recent changes. D
-	* Downloading the "/www/" files are necessary now.
+* The instructions on alternate UI usage from the [qBittorent Master](https://github.com/qbittorrent/qBittorrent/wiki/Developing-alternate-WebUIs-(WIP)) are currently out-dated with recent changes.
+	* Only downloading the "/www/" files are necessary now.
 * Download the DarkLight UI files
 	* **DarkLight Public folder:** The entire modified DarkLight public folder can replace the qBittorrent Master version.
 	* **DarkLight Private folder:** In the modified DarkLight private folder I've only included the files I've changed. Move, and overwrite as necessary, the new DarkLight files to their matching [qBittorent Master](https://github.com/qbittorrent/qBittorrent/wiki/Developing-alternate-WebUIs-(WIP)) file locations.
