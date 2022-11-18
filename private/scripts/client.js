@@ -87,6 +87,12 @@ const loadSelectedTracker = function() {
 };
 loadSelectedTracker();
 
+const getShowFiltersSidebar = function() {
+    // Show Filters Sidebar is enabled by default
+    const show = LocalPreferences.get('show_filters_sidebar');
+    return (show === null) || (show === 'true');
+};
+
 function genHash(string) {
     // origins:
     // https://stackoverflow.com/a/8831937
@@ -106,7 +112,8 @@ const fetchQbtVersion = function() {
         url: 'api/v2/app/version',
         method: 'get',
         onSuccess: function(info) {
-            if (!info) return;
+            if (!info)
+                return;
             sessionStorage.setItem('qbtVersion', info);
         }
     }).send();
@@ -239,7 +246,7 @@ window.addEvent('load', function() {
     toggleFilterDisplay = function(filter) {
         const element = filter + "FilterList";
         LocalPreferences.set('filter_' + filter + "_collapsed", !$(element).hasClass("invisible"));
-        $(element).toggleClass("invisible")
+        $(element).toggleClass("invisible");
         const parent = $(element).getParent(".filterWrapper");
         const toggleIcon = $(parent).getChildren(".filterTitle img");
         if (toggleIcon)
@@ -284,6 +291,13 @@ window.addEvent('load', function() {
         $('desktopFooterWrapper').addClass('invisible');
     }
 
+    const showFiltersSidebar = getShowFiltersSidebar();
+    if (!showFiltersSidebar) {
+        $('showFiltersSidebarLink').firstChild.style.opacity = '0';
+        $('filtersColumn').addClass('invisible');
+        $('filtersColumn_handle').addClass('invisible');
+    }
+
     let speedInTitle = LocalPreferences.get('speed_in_browser_title_bar') == "true";
     if (!speedInTitle)
         $('speedInBrowserTitleBarLink').firstChild.style.opacity = '0';
@@ -320,7 +334,7 @@ window.addEvent('load', function() {
             return true;
         }
         const categoryHash = genHash(category);
-        if (category_list[categoryHash] === null) // This should not happen
+        if (!category_list[categoryHash]) // This should not happen
             category_list[categoryHash] = {
                 name: category,
                 torrents: []
@@ -361,6 +375,12 @@ window.addEvent('load', function() {
         let added = false;
         for (let i = 0; i < tags.length; ++i) {
             const tagHash = genHash(tags[i].trim());
+            if (!tagList[tagHash]) { // This should not happen
+                tagList[tagHash] = {
+                    name: tags,
+                    torrents: []
+                };
+            }
             if (!Object.contains(tagList[tagHash].torrents, torrent['hash'])) {
                 added = true;
                 tagList[tagHash].torrents.push(torrent['hash']);
@@ -394,12 +414,12 @@ window.addEvent('load', function() {
         if (!categoryList)
             return;
         categoryList.empty();
+
         const create_link = function(hash, text, count) {
              /* Change Area */
             var html = '<a href="#" onclick="setCategoryFilter(' + hash + ');return false;">'
-                + '<img ' + `${sourceCheck('icons/inode-directory', 'Folder Icon')}` + '/>'
+                + '<img ' + `${sourceCheck('images/view-categories', 'Folder Icon')}` + '/>'
                 + window.qBittorrent.Misc.escapeHtml(text) + ' (' + count + ')' + '</a>';
-            
             const el = new Element('li', {
                 id: hash,
                 html: html
@@ -456,7 +476,7 @@ window.addEvent('load', function() {
         const createLink = function(hash, text, count) {
             //Change Area
             var html = '<a href="#" onclick="setTagFilter(' + hash + ');return false;">'
-                + '<img ' + `${sourceCheck('icons/inode-directory', 'Folder Icon')}` + '/>'
+                + '<img ' + `${sourceCheck('images/directory', 'Folder Icon')}` + '/>'
                 + window.qBittorrent.Misc.escapeHtml(text) + ' (' + count + ')' + '</a>';
             const el = new Element('li', {
                 id: hash,
@@ -511,7 +531,7 @@ window.addEvent('load', function() {
         const createLink = function(hash, text, count) {
             /* Change Area */
             var html = '<a href="#" onclick="setTrackerFilter(' + hash + ');return false;">'
-                + '<img ' + `${sourceCheck('icons/network-server', 'Tracker Icon')}` + '/>'
+                + '<img ' + `${sourceCheck('images/trackers', 'Tracker Icon')}` + '/>'
                 + window.qBittorrent.Misc.escapeHtml(text.replace("%1", count)) + '</a>';
             const el = new Element('li', {
                 id: hash,
@@ -752,17 +772,17 @@ window.addEvent('load', function() {
         switch (serverState.connection_status) { 
         case 'connected':
             $('connectionStatus').set('class', 'connectedIcon');/*Change Area*/
-            if (window.compatCheck == true) {$('connectionStatus').src = 'icons/connected.svg';}
+            if (window.compatCheck == true) {$('connectionStatus').src = 'images/connected.svg';}
             $('connectionStatus').alt = 'QBT_TR(Connection status: Connected)QBT_TR[CONTEXT=MainWindow]';
             break;
         case 'firewalled':
             $('connectionStatus').set('class', 'firewalledIcon');
-            if (window.compatCheck == true) {$('connectionStatus').src = 'icons/firewalled.svg';}
+            if (window.compatCheck == true) {$('connectionStatus').src = 'images/firewalled.svg';}
             $('connectionStatus').alt = 'QBT_TR(Connection status: Firewalled)QBT_TR[CONTEXT=MainWindow]';
             break;
         default:
             $('connectionStatus').set('class', 'disconnectedIcon');
-            if (window.compatCheck == true) {$('connectionStatus').src = 'icons/disconnected.svg';}
+            if (window.compatCheck == true) {$('connectionStatus').src = 'images/disconnected.svg';}
             $('connectionStatus').alt = 'QBT_TR(Connection status: Disconnected)QBT_TR[CONTEXT=MainWindow]';
             break;
         }
@@ -800,12 +820,12 @@ window.addEvent('load', function() {
     const updateAltSpeedIcon = function(enabled) { 
         if (enabled) {
 			$('alternativeSpeedLimits').addClass('slowIcon') /*Change Area*/
-            if (window.compatCheck == true) {$('alternativeSpeedLimits').src = 'icons/slow.svg';}
+            if (window.compatCheck == true) {$('alternativeSpeedLimits').src = 'images/slow.svg';}
             $('alternativeSpeedLimits').alt = 'QBT_TR(Alternative speed limits: On)QBT_TR[CONTEXT=MainWindow]';
         }
         else {
 			$('alternativeSpeedLimits').removeClass('slowIcon')
-            if (window.compatCheck == true) {$('alternativeSpeedLimits').src = 'icons/slow_off.svg';}
+            if (window.compatCheck == true) {$('alternativeSpeedLimits').src = 'images/slow_off.svg';}
             $('alternativeSpeedLimits').alt = 'QBT_TR(Alternative speed limits: Off)QBT_TR[CONTEXT=MainWindow]';
         }
     };
@@ -861,6 +881,22 @@ window.addEvent('load', function() {
 
     $('registerMagnetHandlerLink').addEvent('click', function(e) {
         registerMagnetHandler();
+    });
+
+    $('showFiltersSidebarLink').addEvent('click', function(e) {
+        const showFiltersSidebar = !getShowFiltersSidebar();
+        LocalPreferences.set('show_filters_sidebar', showFiltersSidebar.toString());
+        if (showFiltersSidebar) {
+            $('showFiltersSidebarLink').firstChild.style.opacity = '1';
+            $('filtersColumn').removeClass('invisible');
+            $('filtersColumn_handle').removeClass('invisible');
+        }
+        else {
+            $('showFiltersSidebarLink').firstChild.style.opacity = '0';
+            $('filtersColumn').addClass('invisible');
+            $('filtersColumn_handle').addClass('invisible');
+        }
+        MochaUI.Desktop.setDesktopSize();
     });
 
     $('speedInBrowserTitleBarLink').addEvent('click', function(e) {
