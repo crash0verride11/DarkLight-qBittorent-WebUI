@@ -33,8 +33,7 @@ I wanted to refresh my CSS / SASS skills by creating a dark mode for qBittorrent
 **Releases are Available:** The most straightforward install is downloading a release. The combining of my files with the qBitorrent master version files, is a admittedly not straightforward, but the easiest way to maintain. The releases, however, will not necessarily have the latest qBittorent webUI features and fixes. Please try a release before opening an issue.
 
 Instructions for using my Alternate WebUI:
-* The instructions on alternate UI usage from the [qBittorent Master](https://github.com/qbittorrent/qBittorrent/wiki/Developing-alternate-WebUIs-(WIP)) are currently out-dated with recent changes.
-	* Only downloading the "/www/" files are necessary now.
+* The instructions on alternate UI usage from the [qBittorent Master](https://github.com/qbittorrent/qBittorrent/wiki/Developing-alternate-WebUIs-(WIP)) are currently out-dated with recent changes, but start here. Only downloading the "/www/" files are necessary now.
 * Download the DarkLight UI files
 	* **DarkLight Public folder:** The entire modified DarkLight public folder can replace the qBittorrent Master version.
 	* **DarkLight Private folder:** In the modified DarkLight private folder I've only included the files I've changed. Move, and overwrite as necessary, the new DarkLight files to their matching [qBittorent Master](https://github.com/qbittorrent/qBittorrent/wiki/Developing-alternate-WebUIs-(WIP)) file locations.
