@@ -1,0 +1,64 @@
+
+DarkLight-qBittorent-WebUI Author
+* crash0verride11 
+license: GPLv3+
+
+* folder: /private/images/dark
+All images modified from noted contributors below and fall under the purview of their original license.
+
+
+QBITTORRENT AUTHORS
+
+qbittorrent Master Current maintainer:
+* Sledgehammer999 <sledgehammer999@qbittorrent.org>
+
+qbittorrent Master Original author:
+* Christophe Dumez <chris@qbittorrent.org>
+
+qbittorrent Master Contributors:
+* Vladimir Golovnev <glassez@yandex.ru>
+* Stefanos Antaris <santaris@csd.auth.gr>
+* Mohammad Dib <mdib@qbittorrent.org>
+* Mirco Chinelli <infinity89@fastwebmail.it>
+* Ishan Arora <ishan@qbittorrent.org>
+* Arnaud Demaizière <arnaud@qbittorrent.org>
+* Grigis Gaëtan <cipher16@gmail.com>
+* Christian Kandeler <zambesi@users.sourceforge.net>
+* Silvan Scherrer <silvan.scherrer@aroa.ch>
+* Nick Tiskov <daymansmail@gmail.com>
+
+
+Image File Original Authors:
+* folder: /private/images/
+  files: application-rss+xml.svg, application-x-mswinurl.svg, connected.svg, disconnected.svg, checked-completed.svg, configure.svg,
+         edit-copy.svg, edit-rename.svg, folder-documents.svg, folder-new.svg, folder-remote.svg, go-bottom.svg, go-down.svg, go-top.svg,
+         go-up.svg, hash.svg, inode-directory.svg, insert-link.svg, kt-magnet.svg, media-playback-pause.svg, media-playback-start.svg,
+         media-seek-forward.svg, network-connect.svg, object-locked.svg, queued.svg, ratio.svg, reannounce.svg, slow_off.svg, slow.svg,
+         speedometer.svg, system-log-out.svg, tags.svg, task-complete.svg, task-reject.svg, tracker-error.svg, tracker-warning.svg,
+         trackerless.svg, trackers.svg, view-categories.svg
+  copyright: Nowshed H. Imran <nowshed.imran@gmail.com> (@now-im) modified from La-Capitaine icon theme (https://github.com/keeferrourke/la-capitaine-icon-theme)
+  license: GPLv3+
+
+* folder: /private/images/
+  files: application-exit.svg, collapse.svg, dialog-warning.svg, edit-find-user.svg, edit-find.svg, filter-all.svg, firewalled.svg,
+         help-about.svg, help-contents.svg, ip-blocked.svg, list-remove.svg, loading.svg, mail-folder-inbox.svg, name.svg, network-server.svg,
+         office-chart-line.svg, plugins.svg, preferences-desktop.svg, preferences-other.svg, preferences-system-network.svg, security-high.svg,
+         security-low.svg, set-location.svg, torrent-creator.svg, user-group-delete.svg, user-group-new.svg, view-preview.svg, view-refresh.svg,
+         view-statistics.svg, wallet-open.svg, webuiapplication-exit.svg, collapse.svg, dialog-warning.svg, edit-find-user.svg, edit-find.svg,
+         filter-all.svg, firewalled.svg, help-about.svg, help-contents.svg, ip-blocked.svg, list-remove.svg, loading.svg, mail-folder-inbox.svg,
+         name.svg, network-server.svg, office-chart-line.svg, plugins.svg, preferences-desktop.svg, preferences-other.svg,
+         preferences-system-network.svg, security-high.svg, security-low.svg, set-location.svg, torrent-creator.svg, user-group-delete.svg,
+         user-group-new.svg, view-preview.svg, view-refresh.svg, view-statistics.svg, wallet-open.svg, webui.svg
+  copyright: Nowshed H. Imran <nowshed.imran@gmail.com> (@now-im) modified from Ionicons icon theme (https://github.com/ionic-team/ionicons)
+  license: MIT
+
+* folder: /private/images/
+  files: force-recheck.svg
+  copyright: Nowshed H. Imran <nowshed.imran@gmail.com> (@now-im) modified from Font-Awesome icon theme (https://github.com/FortAwesome/Font-Awesome)
+  license: CC BY 4.0 License
+
+* folder: /private/images/
+  files: downloading.svg, edit-clear.svg, error.svg, filter-active.svg, filter-inactive.svg, filter-stalled.svg, kt-set-max-download-speed.svg,
+         kt-set-max-upload-speed.svg, list-add.svg, preferences-web-browser-cookies.svg, stalledDL.svg, stalledUP.svg
+  copyright: Nowshed H. Imran <nowshed.imran@gmail.com> (@now-im)
+  license: BSD 2-Clause License
