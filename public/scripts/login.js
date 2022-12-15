@@ -48,13 +48,13 @@ function submitLoginForm() {
             if ((xhr.status === 200) && (xhr.responseText === "Ok."))
                 location.reload(true);
             else
-                errorMsgElement.innerHTML = 'QBT_TR(Invalid Username or Password.)QBT_TR[CONTEXT=HttpServer]';
+                errorMsgElement.innerHTML = 'Invalid Username or Password.';
         }
     });
     xhr.addEventListener('error', function() {
         errorMsgElement.innerHTML = (xhr.responseText !== "")
             ? xhr.responseText
-            : 'QBT_TR(Unable to log in, qBittorrent is probably unreachable.)QBT_TR[CONTEXT=HttpServer]';
+            : 'Unable to log in, qBittorrent is probably unreachable.';
     });
 
     const usernameElement = document.getElementById('username');
