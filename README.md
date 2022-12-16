@@ -34,6 +34,7 @@ qBittorrent has removed built-in support for third-party webUI translation.
 
 # Installation
 **Releases are Available:** Using a release is highlight recommend. With the removal of translation support, regex must be used to modify the qBittorent master files, and combining my files with the qBitorrent master version files, is not very straightforward, but the easiest way to maintain. 
+* For releases, just download the release www.zip, extract the folder, and follow the [Instructions](https://github.com/qbittorrent/qBittorrent/wiki/Alternate-WebUI-usage) in the qBittorrent master for activating the new webUI.
 
 **Instructions for using my Alternate WebUI:**
 * The instructions on alternate UI usage from the [qBittorent Master](https://github.com/qbittorrent/qBittorrent/wiki/Developing-alternate-WebUIs-(WIP)) are currently out-dated with recent changes, but start here. Only downloading the "/www/" files are necessary now.
