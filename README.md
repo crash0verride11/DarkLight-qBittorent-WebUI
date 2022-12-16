@@ -30,7 +30,7 @@ qBittorrent has removed built-in support for third-party webUI translation.
 **Long term:** I may attempt mobile layouts, but those could never make it here. For the short term I've made the login page more mobile device friendly (not tiny). 
 
 # Preview
-![Preview Image](https://github.com/raylanser/DarkLight-qBittorent-WebUI/blob/master/preview.png)
+![Preview Image](https://github.com/raylanser/DarkLight-qBittorent-WebUI/blob/default/preview.png)
 
 # Installation
 **Releases are Available:** Using a release is highlight recommend. With the removal of translation support, regex must be used to modify the qBittorent master files, and combining my files with the qBitorrent master version files, is not very straightforward, but the easiest way to maintain. 
@@ -55,6 +55,6 @@ Please **try a release before opening an issue**, especially if you were confuse
 
 # Compatibility
 This should be the primary indicator of general compatibility (aside from image files).
-![Preview image](https://github.com/crash0verride11/DarkLight-qBittorent-WebUI/blob/master/compatibility.png)
+![Preview image](https://github.com/crash0verride11/DarkLight-qBittorent-WebUI/blob/default/compatibility.png)
 This should be the primary indicator of image toggle compatibility (excluding firefox, which technically works, but not the same way as other browsers)
-![Preview image](https://github.com/crash0verride11/DarkLight-qBittorent-WebUI/blob/master/compatability2.png)
+![Preview image](https://github.com/crash0verride11/DarkLight-qBittorent-WebUI/blob/default/compatability2.png)
