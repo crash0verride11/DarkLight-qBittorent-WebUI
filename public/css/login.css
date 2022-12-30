@@ -2,7 +2,8 @@
 :root {
   --bg-color: #fff;
   --text-color: #000;
-  --themeButton: url(../icons/theme_dark.svg); }
+  --themeButton: url(../images/theme_dark.svg);
+}
 
 /* switch to dark mode color */
 @media (prefers-color-scheme: dark) {
@@ -10,18 +11,22 @@
     color-scheme: dark;
     --bg-color: #121212;
     --text-color: #fff;
-    --themeButton: url(../icons/theme_light.svg); } }
+    --themeButton: url(../images/theme_light.svg);
+  }
+}
 body.dark-theme, body.dark-theme > *, body.dark-theme + * {
   color-scheme: dark;
   --bg-color: #121212;
   --text-color: #fff;
-  --themeButton: url(../icons/theme_light.svg); }
+  --themeButton: url(../images/theme_light.svg);
+}
 
 body.light-theme, body.light-theme > *, body.light-theme + * {
   color-scheme: light;
-  --bg-color: #fff !important;
-  --text-color: #000 !important;
-  --themeButton: url(../icons/theme_dark.svg); }
+  --bg-color: #fff;
+  --text-color: #000;
+  --themeButton: url(../images/theme_dark.svg);
+}
 
 #btn-toggle {
   outline: 0;
@@ -36,42 +41,56 @@ body.light-theme, body.light-theme > *, body.light-theme + * {
   background-size: contain;
   background-repeat: no-repeat;
   border-radius: 50%;
-  cursor: pointer; }
+  cursor: pointer;
+}
 
 body {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 12px;
   line-height: 18px;
   margin: 0px;
-  text-align: left; }
+  text-align: left;
+}
 
 body > * {
   color: var(--text-color);
-  background: var(--bg-color); }
+  background: var(--bg-color);
+}
 
 .col {
   display: inline-block;
-  vertical-align: middle; }
+  vertical-align: middle;
+}
 
 .row {
-  margin-bottom: 5px; }
+  margin-bottom: 5px;
+}
 
 #main {
   height: calc(100vh - 60px);
   margin-left: auto;
   margin-right: auto;
   padding-top: 5em;
-  text-align: center; }
+  text-align: center;
+}
 
 #formplace {
   padding: 10px;
-  text-align: left; }
+  text-align: left;
+}
 
 #error_msg {
-  color: #f00; }
+  color: #f00;
+}
 
 #login {
-  float: right; }
+  float: right;
+}
 
 #logo img {
-  height: 11em; }
+  height: 11em;
+}
+
+#password, #username {
+  background: var(--bg-color);
+}

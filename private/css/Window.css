@@ -1,26 +1,22 @@
-/*
-
-	Window.css for Mocha UI
-
-	Theme: Default
-
-	Copyright:
-		Copyright (c) 2007-2009 Greg Houston, <http://greghoustondesign.com/>.
-
-	License:
-		MIT-style license.
-
-	Required by:
-		Window.js and Modal.css
-
-	Modified for Dark Mode by:
-	Raymond Lanser
-
-	*/
+/* Window.css for Mocha UI
+ *
+ * Theme: Default
+ *
+ * Copyright:
+ * Copyright (c) 2007-2009 Greg Houston, <http://greghoustondesign.com/>.
+ *
+ * License:
+ * MIT-style license.
+ *
+ * Required by:
+ * Window.js and Modal.css
+ * Modified for Dark Mode by:
+ * Raymond Lanser
+ *
+ * */
 /* Windows
-	---------------------------------------------------------------- */
-/* Sass Document */
-/* Scss Document */
+ * ---------------------------------------------------------------- */
+/* Sass Document */  /* Scss Document */
 /*Layout Sass Theme Variables */
 /*Tab Sass Theme Variables */
 /*Window Sass Theme Variables */
@@ -47,7 +43,6 @@ body.light-theme, body.light-theme > *, body.light-theme + * {
     --border-col: #6f6f6f;
   }
 }
-
 body.dark-theme, body.dark-theme > *, body.dark-theme + * {
   --row-select: #94BBD8;
   --hover-color: #d1c52a;
@@ -81,11 +76,14 @@ body.light-theme, body.light-theme > *, body.light-theme + * {
     --mocha-button: #ccc;
   }
 }
-
 body.dark-theme, body.dark-theme > *, body.dark-theme + * {
   --mocha-border-clr: #333333;
   --mocha-border-lte: #3a3a3a;
   --mocha-button: #ccc;
+}
+
+body {
+  background: var(--bg-color);
 }
 
 .mochaCanvas {
@@ -94,8 +92,7 @@ body.dark-theme, body.dark-theme > *, body.dark-theme + * {
 
 .mochaOverlay {
   border-radius: 6px;
-  -webkit-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.6);
-          box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.6);
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.6);
   background-color: var(--bg-menu);
 }
 
@@ -123,7 +120,6 @@ body.dark-theme, body.dark-theme > *, body.dark-theme + * {
   width: 100%;
   overflow: hidden;
 }
-
 .mochaTitlebar h3 {
   font-size: 12px;
   line-height: 15px;
@@ -182,9 +178,9 @@ div.mochaToolbarWrapper.bottom {
   overflow: hidden;
   font-size: 1px;
   /* For IE6 */
-  /* Corner resize handles */
 }
 
+/* Corner resize handles */
 .mocha .corner {
   width: 10px;
   height: 10px;
@@ -227,12 +223,11 @@ div.mochaToolbarWrapper.bottom {
   background: transparent;
 }
 
-/*
-	To use images for these buttons:
-	1. Set the useCanvasControls window option to false.
-	2. If you use a different button size you may need to reposition the controls.
-	   Modify the controlsOffset window option.
-	2. Replace the background-color with a background-image for each button. */
+/* To use images for these buttons:
+ * 1. Set the useCanvasControls window option to false.
+ * 2. If you use a different button size you may need to reposition the controls.
+ * Modify the controlsOffset window option.
+ * 2. Replace the background-color with a background-image for each button. */
 .mochaMinimizeButton, .mochaMaximizeButton, .mochaCloseButton {
   float: right;
   width: 14px;

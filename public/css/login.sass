@@ -3,30 +3,30 @@
 \:root
 	--bg-color: #fff
 	--text-color: #000
-	--themeButton: url(../icons/theme_dark.svg)
+	--themeButton: url(../images/theme_dark.svg)
 
 /* switch to dark mode color */
-
+ 
 @media (prefers-color-scheme: dark)
 	body, body > *, body + *
 		color-scheme: dark
 		--bg-color: #121212
 		--text-color: #fff
-		--themeButton: url(../icons/theme_light.svg)
+		--themeButton: url(../images/theme_light.svg)
 
-body.dark-theme
+body.dark-theme 
 	&, & > *, & + *
 		color-scheme: dark
 		--bg-color: #121212
 		--text-color: #fff
-		--themeButton: url(../icons/theme_light.svg)
+		--themeButton: url(../images/theme_light.svg)
 
-body.light-theme
+body.light-theme 
 	&, & > *, & + *
-		color-scheme: light
-		--bg-color: #fff !important
-		--text-color: #000 !important
-		--themeButton: url(../icons/theme_dark.svg)
+		color-scheme: light 
+		--bg-color: #fff 
+		--text-color: #000 
+		--themeButton: url(../images/theme_dark.svg)
 
 #btn-toggle
 	outline: 0
@@ -54,11 +54,11 @@ body > *
 	color: var(--text-color)
 	background: var(--bg-color)
 
-.col
+.col 
 	display: inline-block
 	vertical-align: middle
 
-.row
+.row 
 	margin-bottom: 5px
 
 
@@ -73,12 +73,15 @@ body > *
 	padding: 10px
 	text-align: left
 
-#error_msg
+#error_msg 
 	color: #f00
 
 
-#login
+#login 
 	float: right
 
 #logo img
 	height: 11em
+
+#password, #username
+	background: var(--bg-color)
