@@ -74,7 +74,8 @@ h4
 	margin: 0 0 8px 0
 	border-bottom: 1px solid var(--bg-checkmark)
 
-#error_div
+#error_div,
+#rename_error 
 	color: #f00
 	font-weight: bold
 
@@ -237,8 +238,8 @@ a.propButton
 .contextMenu li li li.ieHover ul,
 .contextMenu li li:hover ul,
 .contextMenu li li li:hover ul 
-    /* lists nested under hovered list items */
-    left: auto
+	/* lists nested under hovered list items */
+	left: auto
 
 #torrentsTableDiv_headerMenu, #torrentTrackersTableDiv_headerMenu, #torrentPeersTableDiv_headerMenu, #torrentsTableDiv_headerMenu, #torrentFilesTableDiv_headerMenu
 	img
@@ -257,7 +258,7 @@ a.propButton
 			border-color: transparent transparent transparent var(--font-color)
 	li, li li, li li li
 		&:hover ul, &.ieHover ul,
-			left: auto
+			/*left: auto ERROR*/
 
 .contextMenu .separator
 	border-top: 1px solid var(--border-col)
@@ -521,14 +522,14 @@ td.generalLabel
 
 /*image-rendering: pixelated*/
 .piecesbarWrapper
-    position: relative
-    width: 100%
+	position: relative
+	width: 100%
 
 .piecesbarCanvas 
-    height: 100%
-    inset: 0
-    position: absolute
-    width: 100%
+	height: 100%
+	inset: 0
+	position: absolute
+	width: 100%
 
 #watched_folders_tab
 	border-collapse: collapse
@@ -568,9 +569,9 @@ td.generalLabel
 
 
 /*
- * Workaround to prevent the transfer list from
- * disappearing when zooming in the browser.
- */
+	* Workaround to prevent the transfer list from
+	* disappearing when zooming in the browser.
+	*/
 #filtersColumn_handle
 	margin-left: -1px
 
@@ -660,9 +661,9 @@ td.statusBarSeparator
 .imageButton
 	background-color: var(--bg-color-tint) !important
 	&:hover 
-        background-color: var(--bg-menu) !important
+		background-color: var(--bg-menu) !important
 	&:active 
-        background-color: var(--bg-menu) !important
+		background-color: var(--bg-menu) !important
 
 /*Context Menu Icons*/
 #contextTagList

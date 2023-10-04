@@ -21,13 +21,12 @@ a img, :link img, :visited img {
     color-scheme: dark;
   }
 }
-
 .dark-theme {
   color-scheme: dark;
 }
 
 /*Quickly Generate Different theme icons paths and Classes with SASS*/
-/* Sass Document */
+/* Sass Document */ 
 /* Scss Document */
 /*Layout Sass Theme Variables */
 /*Tab Sass Theme Variables */
@@ -55,7 +54,6 @@ body.light-theme, body.light-theme > *, body.light-theme + * {
     --border-col: #6f6f6f;
   }
 }
-
 body.dark-theme, body.dark-theme > *, body.dark-theme + * {
   --row-select: #94BBD8;
   --hover-color: #d1c52a;
@@ -125,7 +123,6 @@ body.light-theme, body.light-theme > *, body.light-theme + * {
     --check-arrow: url(../images/dark/checkbox.svg);
   }
 }
-
 body.dark-theme, body.dark-theme > *, body.dark-theme + * {
   --char-spacing: 0.01em;
   --border-lte: #888;
@@ -187,7 +184,6 @@ body.light-theme, body.light-theme > *, body.light-theme + * {
     --divider-border: #363636;
   }
 }
-
 body.dark-theme, body.dark-theme > *, body.dark-theme + * {
   --bg-color: #121212;
   --bg-color-tint: #202020;
@@ -202,7 +198,7 @@ body.dark-theme, body.dark-theme > *, body.dark-theme + * {
   --divider-border: #363636;
 }
 
-/* Sass Document */
+/* Sass Document */ 
 /* Scss Document */
 /*Layout Sass Theme Variables */
 /*Tab Sass Theme Variables */
@@ -345,7 +341,6 @@ input, button, img, .panel-collapse, .arrow-right {
     --warningIcon: url(../images/dark/dialog-warning.svg);
   }
 }
-
 .dark-theme input, .dark-theme button, .dark-theme img, .dark-theme .panel-collapse, .dark-theme .arrow-right {
   --applicationExitIcon: url(../images/dark/application-exit.svg);
   --checkedIcon: url(../images/dark/checked-completed.svg);
@@ -473,7 +468,6 @@ input, button, img, .panel-collapse, .arrow-right {
     --worldIcon: url(../images/dark/application-url.svg);
   }
 }
-
 .dark-theme input, .dark-theme button, .dark-theme img, .dark-theme .panel-collapse, .dark-theme .arrow-right {
   --force-recheckIcon: url(../images/dark/force-recheck.svg);
   --checked-completedIcon: url(../images/dark/checked-completed.svg);
@@ -700,11 +694,9 @@ input, button, img, .panel-collapse, .arrow-right {
   height: 16px;
   max-width: 16px;
 }
-
 #desktopFooter table tbody tr td:nth-of-type(5) img {
   content: var(--firewalledIcon);
 }
-
 #desktopFooter table tbody tr td:nth-of-type(7) img {
   content: var(--slowOffIcon);
   position: relative;
@@ -712,11 +704,9 @@ input, button, img, .panel-collapse, .arrow-right {
   width: 24px;
   max-width: 24px;
 }
-
 #desktopFooter table tbody tr td:nth-of-type(9) img {
   content: var(--downloadingIcon);
 }
-
 #desktopFooter table tbody tr td:nth-of-type(11) img {
   content: var(--uploadingIcon);
 }
@@ -745,7 +735,6 @@ input, button, img, .panel-collapse, .arrow-right {
 #SpeedTab .settings:nth-of-type(1) table tbody tr td:nth-of-type(1) img {
   content: var(--slowOffIcon);
 }
-
 #SpeedTab .settings:nth-of-type(2) table tbody tr td:nth-of-type(1) img {
   content: var(--slowIcon);
 }
@@ -809,7 +798,7 @@ input, button, img, .panel-collapse, .arrow-right {
   content: var(--goBottomIcon);
 }
 
-#showTopToolbarLink img, #showStatusBarLink img, #speedInBrowserTitleBarLink img, #showSearchEngineLink img, #showRssReaderLink img, #showFiltersSidebarLink img {
+#showTopToolbarLink img, #showStatusBarLink img, #speedInBrowserTitleBarLink img, #showSearchEngineLink img, #showRssReaderLink img, #showFiltersSidebarLink img, #showLogViewerLink img {
   content: var(--checkedIcon);
 }
 
@@ -863,107 +852,82 @@ input, button, img, .panel-collapse, .arrow-right {
 #torrentsTableMenu > li:nth-of-type(1) a img {
   content: var(--startIcon);
 }
-
 #torrentsTableMenu > li:nth-of-type(2) a img {
   content: var(--pauseIcon);
 }
-
 #torrentsTableMenu > li:nth-of-type(3) a img {
   content: var(--forceStartIcon);
 }
-
 #torrentsTableMenu > li:nth-of-type(4) a img {
   content: var(--listRemoveIcon);
 }
-
 #torrentsTableMenu > li:nth-of-type(5) a:nth-of-type(1) img {
   content: var(--setLocationIcon);
 }
-
-#torrentsTableMenu > li:nth-of-type(5) a:nth-of-type(2) img {
+#torrentsTableMenu > li:nth-of-type(6) > a:nth-of-type(1) img, #torrentsTableMenu > li:nth-of-type(7) > a:nth-of-type(1) img {
   content: var(--editRenameIcon);
 }
-
-#torrentsTableMenu > li:nth-of-type(6) > a:nth-of-type(1) img, #torrentsTableMenu > li:nth-of-type(7) > a:nth-of-type(1) img {
+#torrentsTableMenu > li:nth-of-type(8) > a img {
   content: var(--viewCatIcon);
 }
-
-#torrentsTableMenu > li:nth-of-type(8) > a img {
+#torrentsTableMenu > li:nth-of-type(9) > a img {
   content: var(--checkedIcon);
 }
-
-#torrentsTableMenu > li:nth-of-type(9) a img {
+#torrentsTableMenu > li:nth-of-type(10) a img {
   content: var(--downloadingIcon);
 }
-
-#torrentsTableMenu > li:nth-of-type(10)a img {
+#torrentsTableMenu > li:nth-of-type(12) a img {
   content: var(--uploadingIcon);
 }
-
-#torrentsTableMenu > li:nth-of-type(11) a img {
+#torrentsTableMenu > li:nth-of-type(13) a img {
   content: var(--ratioIcon);
 }
-
-#torrentsTableMenu > li:nth-of-type(12) a img, #torrentsTableMenu > li:nth-of-type(13) a img, #torrentsTableMenu > li:nth-of-type(14) a img {
+#torrentsTableMenu > li:nth-of-type(16) a img, #torrentsTableMenu > li:nth-of-type(14) a img, #torrentsTableMenu > li:nth-of-type(15) a img {
   content: var(--checkedIcon);
 }
-
-#torrentsTableMenu > li:nth-of-type(15) a img {
+#torrentsTableMenu > li:nth-of-type(17) a img {
   content: var(--forceCheckIcon);
 }
-
-#torrentsTableMenu > li:nth-of-type(16) a img {
+#torrentsTableMenu > li:nth-of-type(18) a img {
   content: var(--reannounceIcon);
 }
-
-#torrentsTableMenu > li:nth-of-type(17) ul li:nth-of-type(1) a img {
+#torrentsTableMenu > li:nth-of-type(19) ul li:nth-of-type(1) a img {
   content: var(--goTopIcon);
 }
-
-#torrentsTableMenu > li:nth-of-type(17) ul li:nth-of-type(2) a img {
+#torrentsTableMenu > li:nth-of-type(19) ul li:nth-of-type(2) a img {
   content: var(--goUpIcon);
 }
-
-#torrentsTableMenu > li:nth-of-type(17) ul li:nth-of-type(3) a img {
+#torrentsTableMenu > li:nth-of-type(19) ul li:nth-of-type(3) a img {
   content: var(--goDownIcon);
 }
-
-#torrentsTableMenu > li:nth-of-type(17) ul li:nth-of-type(4) a img {
+#torrentsTableMenu > li:nth-of-type(19) ul li:nth-of-type(4) a img {
   content: var(--goBottomIcon);
 }
-
-#torrentsTableMenu > li:nth-of-type(18) a:nth-of-type(1) img {
+#torrentsTableMenu > li:nth-of-type(20) a:nth-of-type(1) img {
   content: var(--editCopyIcon);
 }
-
-#torrentsTableMenu > li:nth-of-type(18) ul li:nth-of-type(1) a img {
+#torrentsTableMenu > li:nth-of-type(20) ul li:nth-of-type(1) a img {
   content: var(--nameIcon);
 }
-
-#torrentsTableMenu > li:nth-of-type(18) ul li:nth-of-type(2) > a img, #torrentsTableMenu > li:nth-of-type(18) ul li:nth-of-type(3) > a img {
+#torrentsTableMenu > li:nth-of-type(20) ul li:nth-of-type(2) > a img, #torrentsTableMenu > li:nth-of-type(20) ul li:nth-of-type(3) > a img {
   content: var(--hashIcon);
 }
-
-#torrentsTableMenu > li:nth-of-type(18) ul li:nth-of-type(4) a img {
+#torrentsTableMenu > li:nth-of-type(20) ul li:nth-of-type(4) a img {
   content: var(--magnetIcon);
 }
-
-#torrentsTableMenu > li:nth-of-type(18) ul li:nth-of-type(5) a img {
+#torrentsTableMenu > li:nth-of-type(20) ul li:nth-of-type(5) a img {
   content: var(--helpAboutIcon);
 }
-
-#torrentsTableMenu > li:nth-of-type(19) a:nth-of-type(1) img {
+#torrentsTableMenu > li:nth-of-type(21) a:nth-of-type(1) img {
   content: var(--editCopyIcon);
 }
 
 #contextCategoryList li a img {
   content: var(--folderIcon);
 }
-
 #contextCategoryList li:nth-of-type(1) a img {
   content: var(--listAddIcon);
 }
-
 #contextCategoryList li:nth-of-type(2) a img {
   content: var(--editClearIcon);
 }
@@ -971,7 +935,6 @@ input, button, img, .panel-collapse, .arrow-right {
 #contextTagList li:nth-of-type(1) a img {
   content: var(--listAddIcon);
 }
-
 #contextTagList li:nth-of-type(2) a img {
   content: var(--editClearIcon);
 }
@@ -979,43 +942,37 @@ input, button, img, .panel-collapse, .arrow-right {
 #categoriesFilterMenu li:nth-of-type(1) a img {
   content: var(--listAddIcon);
 }
-
 #categoriesFilterMenu li:nth-of-type(2) a img {
+  content: var(--listAddIcon);
+}
+#categoriesFilterMenu li:nth-of-type(3) a img {
   content: var(--editRenameIcon);
 }
-
-#categoriesFilterMenu li:nth-of-type(3) a img, #categoriesFilterMenu li:nth-of-type(4) a img {
+#categoriesFilterMenu li:nth-of-type(4) a img, #categoriesFilterMenu li:nth-of-type(5) a img {
   content: var(--listRemoveIcon);
 }
-
-#categoriesFilterMenu li:nth-of-type(5) a img {
+#categoriesFilterMenu li:nth-of-type(6) a img {
   content: var(--startIcon);
 }
-
-#categoriesFilterMenu li:nth-of-type(6) a img {
+#categoriesFilterMenu li:nth-of-type(7) a img {
   content: var(--pauseIcon);
 }
-
-#categoriesFilterMenu li:nth-of-type(7) a img {
+#categoriesFilterMenu li:nth-of-type(8) a img {
   content: var(--listRemoveIcon);
 }
 
 #tagsFilterMenu li:nth-of-type(1) a img {
   content: var(--listAddIcon);
 }
-
 #tagsFilterMenu li:nth-of-type(2) a img, #tagsFilterMenu li:nth-of-type(3) a img {
   content: var(--listRemoveIcon);
 }
-
 #tagsFilterMenu li:nth-of-type(4) a img {
   content: var(--startIcon);
 }
-
 #tagsFilterMenu li:nth-of-type(5) a img {
   content: var(--pauseIcon);
 }
-
 #tagsFilterMenu li:nth-of-type(6) a img {
   content: var(--listRemoveIcon);
 }
@@ -1023,11 +980,9 @@ input, button, img, .panel-collapse, .arrow-right {
 #trackersFilterMenu li:nth-of-type(1) a img {
   content: var(--startIcon);
 }
-
 #trackersFilterMenu li:nth-of-type(2) a img {
   content: var(--pauseIcon);
 }
-
 #trackersFilterMenu li:nth-of-type(3) a img {
   content: var(--listRemoveIcon);
 }
@@ -1035,15 +990,12 @@ input, button, img, .panel-collapse, .arrow-right {
 #torrentTrackersMenu li:nth-of-type(1) a img {
   content: var(--listAddIcon);
 }
-
 #torrentTrackersMenu li:nth-of-type(2) a img {
   content: var(--editRenameIcon);
 }
-
 #torrentTrackersMenu li:nth-of-type(3) a img {
   content: var(--listRemoveIcon);
 }
-
 #torrentTrackersMenu li:nth-of-type(4) a img {
   content: var(--editCopyIcon);
 }
@@ -1051,11 +1003,9 @@ input, button, img, .panel-collapse, .arrow-right {
 #torrentPeersMenu li:nth-of-type(1) a img {
   content: var(--peersAddIcon);
 }
-
 #torrentPeersMenu li:nth-of-type(2) a img {
   content: var(--editCopyIcon);
 }
-
 #torrentPeersMenu li:nth-of-type(3) a img {
   content: var(--peersRemoveIcon);
 }
@@ -1067,11 +1017,9 @@ input, button, img, .panel-collapse, .arrow-right {
 #searchResultsTableMenu li:nth-of-type(1) a img {
   content: var(--downloadIcon);
 }
-
 #searchResultsTableMenu li:nth-of-type(2) a img {
   content: var(--worldIcon);
 }
-
 #searchResultsTableMenu li:nth-of-type(3) a img {
   content: var(--editCopyIcon);
 }
@@ -1079,7 +1027,6 @@ input, button, img, .panel-collapse, .arrow-right {
 #searchPluginsTableMenu li:nth-of-type(1) a img {
   content: var(--checkedIcon);
 }
-
 #searchPluginsTableMenu li:nth-of-type(2) a img {
   content: var(--listRemoveIcon);
 }
@@ -1087,31 +1034,24 @@ input, button, img, .panel-collapse, .arrow-right {
 #rssFeedMenu li:nth-of-type(1) a img {
   content: var(--viewRefreshIcon);
 }
-
 #rssFeedMenu li:nth-of-type(2) a img {
   content: var(--taskCompleteIcon);
 }
-
 #rssFeedMenu li:nth-of-type(3) a img {
   content: var(--editRenameIcon);
 }
-
 #rssFeedMenu li:nth-of-type(4) a img {
   content: var(--listRemoveIcon);
 }
-
 #rssFeedMenu li:nth-of-type(5) a img {
   content: var(--listAddIcon);
 }
-
 #rssFeedMenu li:nth-of-type(6) a img {
   content: var(--folderNewIcon);
 }
-
 #rssFeedMenu li:nth-of-type(7) a img {
   content: var(--viewRefreshIcon);
 }
-
 #rssFeedMenu li:nth-of-type(8) a img {
   content: var(--editCopyIcon);
 }
@@ -1119,15 +1059,12 @@ input, button, img, .panel-collapse, .arrow-right {
 #rssDownloaderRuleMenu li:nth-of-type(1) a img {
   content: var(--listAddIcon);
 }
-
 #rssDownloaderRuleMenu li:nth-of-type(2) a img {
   content: var(--listRemoveIcon);
 }
-
 #rssDownloaderRuleMenu li:nth-of-type(3) a img {
   content: var(--editRenameIcon);
 }
-
 #rssDownloaderRuleMenu li:nth-of-type(4) a img {
   content: var(--editClearIcon);
 }
@@ -1135,7 +1072,6 @@ input, button, img, .panel-collapse, .arrow-right {
 #rssArticleMenu li:nth-of-type(1) a img {
   content: var(--downloadIcon);
 }
-
 #rssArticleMenu li:nth-of-type(2) a img {
   content: var(--worldIcon);
 }
@@ -1187,7 +1123,8 @@ h4 {
   border-bottom: 1px solid var(--bg-checkmark);
 }
 
-#error_div {
+#error_div,
+#rename_error {
   color: #f00;
   font-weight: bold;
 }
@@ -1197,7 +1134,6 @@ a {
   text-decoration: none;
   cursor: pointer;
 }
-
 a:hover {
   text-decoration: none;
 }
@@ -1226,7 +1162,7 @@ pre {
   background-color: var(--bg-color);
   color: #006600;
   display: block;
-  font-family: 'Courier New', Courier, monospace;
+  font-family: "Courier New", Courier, monospace;
   font-size: 11px;
   max-height: 250px;
   overflow: auto;
@@ -1260,7 +1196,6 @@ hr {
 #Filters ul {
   list-style-type: none;
 }
-
 #Filters ul li {
   margin-left: -16px;
 }
@@ -1269,7 +1204,6 @@ hr {
   background-color: var(--row-select);
   color: var(--selected-text);
 }
-
 .selectedFilter a {
   color: var(--selected-text);
 }
@@ -1279,13 +1213,12 @@ hr {
 }
 
 a.propButton {
-  border: 1px solid #55515b;
+  border: 1px solid rgb(85, 81, 91);
   /*border-radius: 3px*/
   padding: 2px;
   margin-left: 3px;
   margin-right: 3px;
 }
-
 a.propButton img {
   margin-bottom: -4px;
 }
@@ -1303,12 +1236,10 @@ a.propButton img {
   list-style-type: none;
   display: none;
 }
-
 .contextMenu li {
   margin: 0;
   padding: 0;
 }
-
 .contextMenu li a {
   display: list-item;
   height: 26px;
@@ -1321,20 +1252,16 @@ a.propButton img {
   color: var(--font-color);
   white-space: nowrap;
 }
-
 .contextMenu li a:hover {
   background-color: var(--bg-color);
 }
-
 .contextMenu li a.disabled {
   color: #ccc;
   font-style: italic;
 }
-
 .contextMenu li a.disabled:hover {
   background-color: #eee;
 }
-
 .contextMenu li ul {
   padding: 0;
   border: 1px solid var(--border-col);
@@ -1347,11 +1274,9 @@ a.propButton img {
   margin: -29px 0 0 100%;
   width: 164px;
 }
-
 .contextMenu li ul li a:hover {
   background-color: var(--row-alt);
 }
-
 .contextMenu li img {
   width: 16px;
   max-width: 16px;
@@ -1359,7 +1284,6 @@ a.propButton img {
   padding: 0px 2px;
   margin-bottom: -3px;
 }
-
 .contextMenu li input[type=checkbox] {
   position: relative;
   top: 0px;
@@ -1367,7 +1291,7 @@ a.propButton img {
 
 .contextMenu li a.arrow-right::after, .contextMenu li a:hover.arrow-right::after {
   display: inline-block;
-  content: '';
+  content: "";
   width: 0px;
   height: 0px;
   position: absolute;
@@ -1388,13 +1312,15 @@ a.propButton img {
   left: auto;
 }
 
+#torrentsTableDiv_headerMenu, #torrentTrackersTableDiv_headerMenu, #torrentPeersTableDiv_headerMenu, #torrentsTableDiv_headerMenu, #torrentFilesTableDiv_headerMenu {
+  border-top: 1px solid var(--border-col);
+}
 #torrentsTableDiv_headerMenu img, #torrentTrackersTableDiv_headerMenu img, #torrentPeersTableDiv_headerMenu img, #torrentsTableDiv_headerMenu img, #torrentFilesTableDiv_headerMenu img {
   margin-right: 4px;
 }
-
 #torrentsTableDiv_headerMenu li a.arrow-right::after, #torrentsTableDiv_headerMenu li a:hover.arrow-right::after, #torrentTrackersTableDiv_headerMenu li a.arrow-right::after, #torrentTrackersTableDiv_headerMenu li a:hover.arrow-right::after, #torrentPeersTableDiv_headerMenu li a.arrow-right::after, #torrentPeersTableDiv_headerMenu li a:hover.arrow-right::after, #torrentsTableDiv_headerMenu li a.arrow-right::after, #torrentsTableDiv_headerMenu li a:hover.arrow-right::after, #torrentFilesTableDiv_headerMenu li a.arrow-right::after, #torrentFilesTableDiv_headerMenu li a:hover.arrow-right::after {
   display: inline-block;
-  content: '';
+  content: "";
   width: 0px;
   height: 0px;
   position: absolute;
@@ -1404,15 +1330,6 @@ a.propButton img {
   border-style: solid;
   border-color: transparent transparent transparent var(--font-color);
 }
-
-#torrentsTableDiv_headerMenu li:hover ul, #torrentsTableDiv_headerMenu li.ieHover ul, #torrentsTableDiv_headerMenu li li:hover ul, #torrentsTableDiv_headerMenu li li.ieHover ul, #torrentsTableDiv_headerMenu li li li:hover ul, #torrentsTableDiv_headerMenu li li li.ieHover ul, #torrentTrackersTableDiv_headerMenu li:hover ul, #torrentTrackersTableDiv_headerMenu li.ieHover ul, #torrentTrackersTableDiv_headerMenu li li:hover ul, #torrentTrackersTableDiv_headerMenu li li.ieHover ul, #torrentTrackersTableDiv_headerMenu li li li:hover ul, #torrentTrackersTableDiv_headerMenu li li li.ieHover ul, #torrentPeersTableDiv_headerMenu li:hover ul, #torrentPeersTableDiv_headerMenu li.ieHover ul, #torrentPeersTableDiv_headerMenu li li:hover ul, #torrentPeersTableDiv_headerMenu li li.ieHover ul, #torrentPeersTableDiv_headerMenu li li li:hover ul, #torrentPeersTableDiv_headerMenu li li li.ieHover ul, #torrentsTableDiv_headerMenu li:hover ul, #torrentsTableDiv_headerMenu li.ieHover ul, #torrentsTableDiv_headerMenu li li:hover ul, #torrentsTableDiv_headerMenu li li.ieHover ul, #torrentsTableDiv_headerMenu li li li:hover ul, #torrentsTableDiv_headerMenu li li li.ieHover ul, #torrentFilesTableDiv_headerMenu li:hover ul, #torrentFilesTableDiv_headerMenu li.ieHover ul, #torrentFilesTableDiv_headerMenu li li:hover ul, #torrentFilesTableDiv_headerMenu li li.ieHover ul, #torrentFilesTableDiv_headerMenu li li li:hover ul, #torrentFilesTableDiv_headerMenu li li li.ieHover ul {
-  left: auto;
-}
-
-.contextMenu .separator {
-  border-top: 1px solid var(--border-col);
-}
-
 /* Sliders */
 .slider {
   clear: both;
@@ -1476,7 +1393,6 @@ a.propButton img {
   position: relative;
   overflow-y: hidden;
 }
-
 #mochaToolbar .divider {
   background-image: var(--bg-divider);
   background-repeat: no-repeat;
@@ -1484,21 +1400,20 @@ a.propButton img {
   height: 10px;
   padding-left: 14px;
   padding-top: 14px;
-  /*
-			&:before
-				position: relative
-				padding: 3px 0px
-				top: -8px
-				left: -14px
-				content: ""
-				width: 0px
-				margin-top: -5px
-				background-color: red
-				border-left: 1.5px solid var(--border-col)
-			height: 10px
-			padding-left: 14px
-			padding-top: 14px
-			border: 0px 1px solid white */
+  /* &:before
+  * position: relative
+  * padding: 3px 0px
+  * top: -8px
+  * left: -14px
+  * content: ""
+  * width: 0px
+  * margin-top: -5px
+  * background-color: red
+  * border-left: 1.5px solid var(--border-col)
+  * height: 10px
+  * padding-left: 14px
+  * padding-top: 14px
+  * border: 0px 1px solid white */
 }
 
 .MyMenuIcon {
@@ -1536,16 +1451,14 @@ label.tristate {
   display: block;
   float: left;
   height: 13px;
-  margin: .15em 8px 5px 0px;
+  margin: 0.15em 8px 5px 0px;
   overflow: hidden;
   text-indent: -999em;
   width: 13px;
 }
-
 label.checked {
   background-position: 0 -13px;
 }
-
 label.partial {
   background-position: 0 -26px;
 }
@@ -1555,18 +1468,15 @@ fieldset.settings {
   border-radius: 8px;
   padding: 4px 4px 4px 10px;
 }
-
 fieldset.settings legend {
   margin-left: 8px;
   padding: 4px;
   font-weight: bold;
 }
-
 fieldset.settings label {
   padding: 2px;
   color: var(--font-tint);
 }
-
 fieldset.settings + div.formRow {
   margin-top: 10px;
 }
@@ -1590,11 +1500,9 @@ div.formRow {
   white-space: nowrap;
   text-overflow: ellipsis;
 }
-
 .filterTitle:nth-of-type(1) {
   padding-top: 5px;
 }
-
 .filterTitle img {
   max-width: 16px;
   margin-bottom: -4px;
@@ -1605,10 +1513,8 @@ div.formRow {
   display: inline-block;
   cursor: pointer;
 }
-
 .filterTitle img.rotate {
-  -webkit-transform: rotate(270deg);
-          transform: rotate(270deg);
+  transform: rotate(270deg);
 }
 
 /* Search View */
@@ -1621,7 +1527,6 @@ ul.filterList {
   margin: 0 0 0 16px;
   padding-left: 0;
 }
-
 ul.filterList a {
   height: 20px;
   display: list-item;
@@ -1632,7 +1537,6 @@ ul.filterList a {
   line-height: 20px;
   vertical-align: middle;
 }
-
 ul.filterList img {
   width: 16px;
   max-width: 16px;
@@ -1641,11 +1545,9 @@ ul.filterList img {
   vertical-align: middle;
   background-repeat: no-repeat;
 }
-
 ul.filterList li:hover {
   background-color: var(--hover-color);
 }
-
 ul.filterList li:hover a {
   color: var(--selected-text);
 }
@@ -1681,8 +1583,7 @@ td.generalLabel {
 }
 
 .filesTableCollapseIcon.rotate {
-  -webkit-transform: rotate(270deg);
-          transform: rotate(270deg);
+  transform: rotate(270deg);
   margin-bottom: -1px;
   margin-top: -2px;
   top: 4px;
@@ -1692,7 +1593,6 @@ td.generalLabel {
   -webkit-touch-callout: none;
   -webkit-user-select: none;
      -moz-user-select: none;
-      -ms-user-select: none;
           user-select: none;
 }
 
@@ -1700,18 +1600,17 @@ td.generalLabel {
   padding: 2px;
 }
 
-/*
-	#progress
-		border: 1px solid var(--border-col)
-		padding: 0
-		position: relative
-		width: 100%
-	#progress canvas
-		height: 100%
-		left: 0
-		position: absolute
-		top: 0
-		width: 100% */
+/* #progress 
+ * border: 1px solid var(--border-col)
+ * padding: 0
+ * position: relative
+ * width: 100%
+ * #progress canvas 
+ * height: 100%
+ * left: 0
+ * position: absolute
+ * top: 0
+ * width: 100% */
 /*image-rendering: pixelated*/
 .piecesbarWrapper {
   position: relative;
@@ -1728,7 +1627,6 @@ td.generalLabel {
 #watched_folders_tab {
   border-collapse: collapse;
 }
-
 #watched_folders_tab tbody tr td:nth-of-type(2) img {
   width: 18px !important;
   max-width: 18px;
@@ -1746,7 +1644,6 @@ td.generalLabel {
   width: 160px;
   height: 20px;
 }
-
 .select-watched-folder-editable select {
   position: absolute;
   top: 0px;
@@ -1756,7 +1653,6 @@ td.generalLabel {
   width: 160px;
   margin: 0;
 }
-
 .select-watched-folder-editable input {
   position: absolute;
   top: 0px;
@@ -1765,15 +1661,13 @@ td.generalLabel {
   padding: 1px;
   border: none;
 }
-
 .select-watched-folder-editable select:focus, .select-watched-folder-editable .select-editable input:focus {
   outline: none;
 }
 
-/*
- * Workaround to prevent the transfer list from
- * disappearing when zooming in the browser.
- */
+/* * Workaround to prevent the transfer list from
+ * * disappearing when zooming in the browser.
+ * */
 #filtersColumn_handle {
   margin-left: -1px;
 }
@@ -1809,11 +1703,9 @@ td.statusBarSeparator {
   padding: 0 20px;
   height: 100%;
 }
-
 #searchResults .dynamicTabTable {
   width: 100%;
 }
-
 #searchResults .numSearchResults {
   font-style: italic;
 }
@@ -1842,25 +1734,22 @@ td.statusBarSeparator {
 #torrentFilesTableDiv .dynamicTable tr.nonAlt {
   background-color: var(--bg-color);
 }
-
 #torrentFilesTableDiv .dynamicTable tr.nonAlt.selected {
   background-color: var(--row-select);
   color: var(--selected-text);
 }
-
 #torrentFilesTableDiv .dynamicTable tr.nonAlt:hover {
   background-color: var(--hover-color);
   color: var(--selected-text);
 }
 
 /* Beginning of Majority of Overrides and New CSS
-	Some changes have been made to the original CSS.
-	Mostly var replacements for hard values*/
+ * Some changes have been made to the original CSS.
+ * Mostly var replacements for hard values*/
 /*RSS Feed Stuff*/
 .unreadArticle {
   color: var(--hover-color) !important;
 }
-
 .unreadArticle:hover {
   color: var(--selected-text) !important;
 }
@@ -1884,11 +1773,9 @@ td.statusBarSeparator {
 .imageButton {
   background-color: var(--bg-color-tint) !important;
 }
-
 .imageButton:hover {
   background-color: var(--bg-menu) !important;
 }
-
 .imageButton:active {
   background-color: var(--bg-menu) !important;
 }
@@ -1913,10 +1800,9 @@ td.statusBarSeparator {
   width: 16px;
   max-width: 16px;
 }
-
 #desktopFooter table tbody tr td:nth-of-type(7) img {
   margin-top: -2px;
-  max-width: 24px  !important;
+  max-width: 24px !important;
 }
 
 /*Transfer Bar overrides*/
@@ -1946,7 +1832,6 @@ div .progressbar_wrapper {
   cursor: pointer;
   display: inline-block;
 }
-
 #btn-toggle img {
   width: 20px;
   max-width: 20px;
@@ -1962,13 +1847,11 @@ select {
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   padding: 3px 22px 3px 8px;
   vertical-align: middle;
   background: var(--bg-color-tint) var(--select-arrow) right/auto 87.5% no-repeat;
 }
-
 select:hover {
   background-color: var(--bg-menu);
 }
@@ -1998,7 +1881,6 @@ button {
   color: var(--font-color);
   border-radius: 4px;
 }
-
 button:hover {
   background-color: var(--bg-color-tint);
 }
@@ -2019,7 +1901,6 @@ body {
   background-color: var(--bg-scrollbar);
   width: 15px;
 }
-
 ::-webkit-scrollbar:horizontal {
   height: 14px;
 }
@@ -2030,9 +1911,8 @@ body {
   background-color: var(--bg-scrollThumb);
   opacity: 1;
 }
-
 ::-webkit-scrollbar-thumb:window-inactive {
-  opacity: .6;
+  opacity: 0.6;
 }
 
 /* Checkboxes -- See Variables */
@@ -2047,7 +1927,6 @@ input[type=checkbox] {
   height: 12px;
   background-color: var(--bg-checkmark);
 }
-
 #preferencesPage input[type=checkbox] {
   top: 4px;
 }

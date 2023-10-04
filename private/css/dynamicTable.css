@@ -1,17 +1,14 @@
 /**************************************************************
-
-	Dynamic Table
-	v 0.4
-
-	**************************************************************/
+ * Dynamic Table
+ * v 0.4
+ *
+ * **************************************************************/
 #transferList {
   padding-left: 2px;
 }
-
 #transferList tr:hover {
   cursor: pointer;
 }
-
 #transferList img.stateIcon {
   height: 1.3em;
   width: 16px;
@@ -19,15 +16,12 @@
   vertical-align: middle;
   margin-top: -2px;
 }
-
 #transferList .dynamicTable td {
   padding: 0px 4px;
 }
-
 #transferList .dynamicTable td:nth-of-type(1) {
   text-align: center;
 }
-
 tr.dynamicTableHeader {
   cursor: pointer;
 }
@@ -38,29 +32,24 @@ tr.dynamicTableHeader {
   padding: 0;
   border-spacing: 0;
 }
-
 .dynamicTable th, .dynamicTable td {
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
 }
-
 .dynamicTable tr th {
   background-color: var(--bg-color-tint);
   padding: 4px 4px 4px 8px;
   white-space: nowrap;
   border-right: 1px solid var(--border-lte);
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
-
 .dynamicTable tr th.sorted {
   padding-right: 5px;
 }
-
 .dynamicTable tr th.sorted::after {
   display: inline-block;
-  content: '';
+  content: "";
   width: 0px;
   height: 0px;
   position: relative;
@@ -69,52 +58,40 @@ tr.dynamicTableHeader {
   border-width: 5px;
   border-style: solid;
   border-color: transparent transparent transparent var(--font-tint);
-  -webkit-transform: rotate(90deg);
-          transform: rotate(90deg);
+  transform: rotate(90deg);
 }
-
 .dynamicTable tr th.sorted.reverse::after {
-  -webkit-transform: rotate(270deg);
-          transform: rotate(270deg);
+  transform: rotate(270deg);
   top: -2px;
 }
-
 .dynamicTable td {
   padding: 0px 6px;
   white-space: nowrap;
 }
-
 .dynamicTable td img.flags {
   height: 1.25em;
   vertical-align: middle;
 }
-
 .dynamicTable thead tr {
   background-color: var(--row-alt);
 }
-
 .dynamicTable tbody tr {
   background-color: var(--bg-color);
 }
-
 .dynamicTable tbody tr:nth-child(even), .dynamicTable tbody tr.alt {
   background-color: var(--row-alt);
 }
-
 .dynamicTable tbody tr.selected {
   background-color: var(--row-select);
   color: var(--selected-text);
 }
-
 .dynamicTable tbody tr.selected td {
   color: var(--selected-text) !important;
 }
-
 .dynamicTable tbody tr:hover {
   background-color: var(--hover-color);
   color: var(--selected-text);
 }
-
 .dynamicTable tbody tr:hover td {
   color: var(--selected-text) !important;
 }
@@ -128,7 +105,7 @@ tr.dynamicTableHeader {
   margin-top: 2px;
 }
 
-/*Dynamic Table Icons */
+/*Dynamic Table Icons */	
 #torrentFilesTableDiv table tbody tr td:nth-of-type(2) img:nth-of-type(1) {
   height: 16px;
   width: 16px;
@@ -138,11 +115,9 @@ tr.dynamicTableHeader {
   margin-right: 0px;
   content: var(--goDownIcon);
 }
-
 #torrentFilesTableDiv table tbody tr td:nth-of-type(2) img:nth-of-type(1).rotate {
   top: 2px;
 }
-
 #torrentFilesTableDiv table tbody tr td:nth-of-type(2) img:nth-of-type(2) {
   height: 16px;
   width: 16px;
@@ -152,15 +127,11 @@ tr.dynamicTableHeader {
   content: var(--folderIcon);
 }
 
-/* */
-.dynamicTableFixedHeaderDiv {
-  overflow: hidden;
-}
-
+/* .dynamicTableFixedHeaderDiv
+ * overflow: hidden */
 .dynamicTableDiv {
   overflow: auto;
 }
-
 .dynamicTableDiv thead th {
   line-height: 0px;
   height: 0px;

@@ -33,8 +33,10 @@ let alternativeSpeedLimits = false;
 let queueing_enabled = true;
 let serverSyncMainDataInterval = 1500;
 let customSyncMainDataInterval = null;
+let useSubcategories = true;
 let searchTabInitialized = false;
 let rssTabInitialized = false;
+let logTabInitialized = false;
 
 let syncRequestInProgress = false;
 
@@ -92,6 +94,32 @@ const getShowFiltersSidebar = function() {
     const show = LocalPreferences.get('show_filters_sidebar');
     return (show === null) || (show === 'true');
 };
+
+// getHost emulate the GUI version `QString getHost(const QString &url)`
+function getHost(url) {
+    // We want the hostname.
+    // If failed to parse the domain, original input should be returned
+
+    if (!/^(?:https?|udp):/i.test(url)) {
+        return url;
+    }
+
+    try {
+        // hack: URL can not get hostname from udp protocol
+        const parsedUrl = new URL(url.replace(/^udp:/i, 'https:'));
+        // host: "example.com:8443"
+        // hostname: "example.com"
+        const host = parsedUrl.hostname;
+        if (!host) {
+            return url;
+        }
+
+        return host;
+    }
+    catch (error) {
+        return url;
+    }
+}
 
 function genHash(string) {
     // origins:
@@ -190,9 +218,21 @@ window.addEvent('load', function() {
         $("rssTabColumn").addClass("invisible");
     };
 
+    const buildLogTab = function() {
+        new MochaUI.Column({
+            id: 'logTabColumn',
+            placement: 'main',
+            width: null
+        });
+
+        // start off hidden
+        $('logTabColumn').addClass('invisible');
+    };
+
     buildTransfersTab();
     buildSearchTab();
     buildRssTab();
+        buildLogTab();
     MochaUI.initializeTabs('mainWindowTabsList');
 
     setCategoryFilter = function(hash) {
@@ -304,6 +344,7 @@ window.addEvent('load', function() {
     // After showing/hiding the toolbar + status bar
     let showSearchEngine = LocalPreferences.get('show_search_engine') !== "false";
     let showRssReader = LocalPreferences.get('show_rss_reader') !== "false";
+    let showLogViewer = LocalPreferences.get('show_log_viewer') === 'true';
 
     // After Show Top Toolbar
     MochaUI.Desktop.setDesktopSize();
@@ -415,6 +456,13 @@ window.addEvent('load', function() {
         categoryList.empty();
 
         const create_link = function(hash, text, count) {
+            let display_name = text;
+            let margin_left = 0;
+            if (useSubcategories) {
+                const category_path = text.split("/");
+                display_name = category_path[category_path.length - 1];
+                margin_left = (category_path.length - 1) * 20;
+            }
              /* Change Area */
             var html = '<a href="#" onclick="setCategoryFilter(' + hash + ');return false;">'
                 + '<img ' + `${sourceCheck('images/view-categories', 'Folder Icon')}` + '/>'
@@ -442,11 +490,20 @@ window.addEvent('load', function() {
         });
         sortedCategories.sort();
 
-        Object.each(sortedCategories, function(categoryName) {
+        for (let i = 0; i < sortedCategories.length; ++i) {
+            const categoryName = sortedCategories[i];
             const categoryHash = genHash(categoryName);
-            const categoryCount = category_list[categoryHash].torrents.length;
+            let categoryCount = category_list[categoryHash].torrents.length;
+
+            if (useSubcategories) {
+                for (let j = i + 1; j < sortedCategories.length && sortedCategories[j].startsWith(categoryName + "/"); ++j) {
+                    const hash = genHash(sortedCategories[j]);
+                    categoryCount += category_list[hash].torrents.length;
+                }
+            }
+
             categoryList.appendChild(create_link(categoryHash, categoryName, categoryCount));
-        });
+        }
 
         highlightSelectedCategory();
     };
@@ -549,8 +606,15 @@ window.addEvent('load', function() {
         }
         trackerFilterList.appendChild(createLink(TRACKERS_TRACKERLESS, 'Trackerless (%1)', trackerlessTorrentsCount));
 
-        for (const [hash, tracker] of trackerList)
-            trackerFilterList.appendChild(createLink(hash, tracker.url + ' (%1)', tracker.torrents.length));
+        // Sort trackers by hostname
+        const sortedList = [...trackerList.entries()].sort((left, right) => {
+            const leftHost = getHost(left[1].url);
+            const rightHost = getHost(right[1].url);
+            return window.qBittorrent.Misc.naturalSortCollator.compare(leftHost, rightHost);
+        });
+        for (const [hash, tracker] of sortedList) {
+            trackerFilterList.appendChild(createLink(hash, (getHost(tracker.url) + ' (%1)'), tracker.torrents.length));
+}
 
         highlightSelectedTracker();
     };
@@ -645,10 +709,29 @@ window.addEvent('load', function() {
                     if (response['trackers']) {
                         for (const tracker in response['trackers']) {
                             const torrents = response['trackers'][tracker];
-                            const hash = genHash(tracker);
+                            const hash = genHash(getHost(tracker));
+
+                            // the reason why we need the merge here is because the web ui api returned trackers may have different url for the same tracker host.
+                            // for example, some private trackers use diff urls for each torrent from the same tracker host.
+                            // then we got the response of `trackers` from qBittorrent api will like:
+                            // {
+                            //     "trackers": {
+                            //         "https://example.com/announce?passkey=identify_info1": ["hash1"],
+                            //         "https://example.com/announce?passkey=identify_info2": ["hash2"],
+                            //         "https://example.com/announce?passkey=identify_info3": ["hash3"]
+                            //     }
+                            // }
+                            // after getHost(), those torrents all belongs to `example.com`
+                            let merged_torrents = torrents;
+                            if (trackerList.has(hash)) {
+                                merged_torrents = trackerList.get(hash).torrents.concat(torrents);
+                                // deduplicate is needed when the webui opens in multi tabs
+                                merged_torrents = merged_torrents.filter((item, pos) => merged_torrents.indexOf(item) === pos);
+                            }
+
                             trackerList.set(hash, {
                                 url: tracker,
-                                torrents: torrents
+                                torrents: merged_torrents
                             });
                         }
                         updateTrackers = true;
@@ -656,7 +739,7 @@ window.addEvent('load', function() {
                     if (response['trackers_removed']) {
                         for (let i = 0; i < response['trackers_removed'].length; ++i) {
                             const tracker = response['trackers_removed'][i];
-                            const hash = genHash(tracker);
+                            const hash = genHash(getHost(tracker));
                             trackerList.delete(hash);
                         }
                         updateTrackers = true;
@@ -813,6 +896,11 @@ window.addEvent('load', function() {
             updateAltSpeedIcon(alternativeSpeedLimits);
         }
 
+        if (useSubcategories != serverState.use_subcategories) {
+            useSubcategories = serverState.use_subcategories;
+            updateCategoryList();
+        }
+
         serverSyncMainDataInterval = Math.max(serverState.refresh_interval, 500);
     };
 
@@ -920,6 +1008,12 @@ window.addEvent('load', function() {
         updateTabDisplay();
     });
 
+    $('showLogViewerLink').addEvent('click', function(e) {
+        showLogViewer = !showLogViewer;
+        LocalPreferences.set('show_log_viewer', showLogViewer.toString());
+        updateTabDisplay();
+    });
+
     const updateTabDisplay = function() {
         if (showRssReader) {
             $('showRssReaderLink').firstChild.style.opacity = '1';
@@ -949,8 +1043,22 @@ window.addEvent('load', function() {
                 $("transfersTabLink").click();
         }
 
+        if (showLogViewer) {
+            $('showLogViewerLink').firstChild.style.opacity = '1';
+            $('mainWindowTabs').removeClass('invisible');
+            $('logTabLink').removeClass('invisible');
+            if (!MochaUI.Panels.instances.LogPanel)
+                addLogPanel();
+        }
+        else {
+            $('showLogViewerLink').firstChild.style.opacity = '0';
+            $('logTabLink').addClass('invisible');
+            if ($('logTabLink').hasClass('selected'))
+                $("transfersTabLink").click();
+        }
+
         // display no tabs
-        if (!showRssReader && !showSearchEngine)
+        if (!showRssReader && !showSearchEngine && !showLogViewer)
             $('mainWindowTabs').addClass('invisible');
     };
 
@@ -962,18 +1070,21 @@ window.addEvent('load', function() {
         $("filtersColumn").removeClass("invisible");
         $("filtersColumn_handle").removeClass("invisible");
         $("mainColumn").removeClass("invisible");
+        $('torrentsFilterToolbar').removeClass("invisible");
 
         customSyncMainDataInterval = null;
         syncData(100);
 
         hideSearchTab();
         hideRssTab();
+        hideLogTab();
     };
 
     const hideTransfersTab = function() {
         $("filtersColumn").addClass("invisible");
         $("filtersColumn_handle").addClass("invisible");
         $("mainColumn").addClass("invisible");
+        $('torrentsFilterToolbar').addClass("invisible");
         MochaUI.Desktop.resizePanels();
     };
 
@@ -987,6 +1098,7 @@ window.addEvent('load', function() {
         customSyncMainDataInterval = 30000;
         hideTransfersTab();
         hideRssTab();
+        hideLogTab();
     };
 
     const hideSearchTab = function() {
@@ -1007,12 +1119,35 @@ window.addEvent('load', function() {
         customSyncMainDataInterval = 30000;
         hideTransfersTab();
         hideSearchTab();
+        hideLogTab();
     };
 
     const hideRssTab = function() {
         $("rssTabColumn").addClass("invisible");
-        window.qBittorrent.Rss.unload();
+        window.qBittorrent.Rss && window.qBittorrent.Rss.unload();
         MochaUI.Desktop.resizePanels();
+    };
+
+    const showLogTab = function() {
+        if (!logTabInitialized) {
+            window.qBittorrent.Log.init();
+            logTabInitialized = true;
+        }
+        else {
+            window.qBittorrent.Log.load();
+        }
+
+        $('logTabColumn').removeClass('invisible');
+        customSyncMainDataInterval = 30000;
+        hideTransfersTab();
+        hideSearchTab();
+        hideRssTab();
+    };
+
+    const hideLogTab = function() {
+        $('logTabColumn').addClass('invisible');
+        MochaUI.Desktop.resizePanels();
+        window.qBittorrent.Log && window.qBittorrent.Log.unload();
     };
 
     const addSearchPanel = function() {
@@ -1049,6 +1184,42 @@ window.addEvent('load', function() {
             contentURL: 'views/rss.html',
             content: '',
             column: 'rssTabColumn',
+            height: null
+        });
+    };
+
+    var addLogPanel = function() {
+        new MochaUI.Panel({
+            id: 'LogPanel',
+            title: 'Log',
+            header: true,
+            padding: {
+                top: 0,
+                right: 0,
+                bottom: 0,
+                left: 0
+            },
+            loadMethod: 'xhr',
+            contentURL: 'views/log.html',
+            require: {
+                css: ['css/lib/vanillaSelectBox.css'],
+                js: ['scripts/lib/vanillaSelectBox.js'],
+            },
+            tabsURL: 'views/logTabs.html',
+            tabsOnload: function() {
+                MochaUI.initializeTabs('panelTabs');
+
+                $('logMessageLink').addEvent('click', function(e) {
+                    window.qBittorrent.Log.setCurrentTab('main');
+                });
+
+                $('logPeerLink').addEvent('click', function(e) {
+                    window.qBittorrent.Log.setCurrentTab('peer');
+                });
+            },
+            collapsible: false,
+            content: '',
+            column: 'logTabColumn',
             height: null
         });
     };
@@ -1193,6 +1364,7 @@ window.addEvent('load', function() {
     $('transfersTabLink').addEvent('click', showTransfersTab);
     $('searchTabLink').addEvent('click', showSearchTab);
     $('rssTabLink').addEvent('click', showRssTab);
+$('logTabLink').addEvent('click', showLogTab);
     updateTabDisplay();
 
     const registerDragAndDrop = () => {
@@ -1297,11 +1469,11 @@ function registerMagnetHandler() {
         return;
     }
 
-    const hashParams = getHashParamsFromUrl();
-    hashParams.download = '';
+    const hashString = location.hash ? location.hash.replace(/^#/, '') : '';
+    const hashParams = new URLSearchParams(hashString);
+    hashParams.set('download', '');
 
-    const templateHashString = Object.toQueryString(hashParams).replace('download=', 'download=%s');
-
+    const templateHashString = hashParams.toString().replace('download=', 'download=%s');
     const templateUrl = location.origin + location.pathname
         + location.search + '#' + templateHashString;
 
@@ -1319,11 +1491,6 @@ function handleDownloadParam() {
     // Remove the processed hash from the URL
     history.replaceState('', document.title, (location.pathname + location.search));
     showDownloadPage([url]);
-}
-
-function getHashParamsFromUrl() {
-    const hashString = location.hash ? location.hash.replace(/^#/, '') : '';
-    return (hashString.length > 0) ? String.parseQueryString(hashString) : {};
 }
 
 function closeWindows() {
@@ -1358,14 +1525,26 @@ new Keyboard({
     defaultEventType: 'keydown',
     events: {
         'ctrl+a': function(event) {
+if (event.target.nodeName == "INPUT" || event.target.nodeName == "TEXTAREA")
+                return;
+            if (event.target.isContentEditable)
+                return;
             torrentsTable.selectAll();
             event.preventDefault();
         },
         'delete': function(event) {
+if (event.target.nodeName == "INPUT" || event.target.nodeName == "TEXTAREA")
+                return;
+            if (event.target.isContentEditable)
+                return;
             deleteFN();
             event.preventDefault();
         },
         'shift+delete': (event) => {
+if (event.target.nodeName == "INPUT" || event.target.nodeName == "TEXTAREA")
+                return;
+            if (event.target.isContentEditable)
+                return;
             deleteFN(true);
             event.preventDefault();
         }

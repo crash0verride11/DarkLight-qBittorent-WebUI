@@ -30,6 +30,7 @@
     <script src="scripts/piecesbar.js?v=${CACHEID}"></script>
     <script src="scripts/file-tree.js?v=${CACHEID}"></script>
     <script src="scripts/dynamicTable.js?locale=${LANG}&v=${CACHEID}"></script>
+    <script src="scripts/rename-files.js?v=${CACHEID}"></script>
     <script src="scripts/client.js?locale=${LANG}&v=${CACHEID}"></script>
     <script src="scripts/contextmenu.js?locale=${LANG}&v=${CACHEID}"></script>
     <script type="text/javascript" src="scripts/themeSwap.js"></script>
@@ -78,6 +79,7 @@
                             <li><a id="speedInBrowserTitleBarLink"><img class="MyMenuIcon" src="images/checked-completed.svg" alt="Speed in Title Bar" width="16" height="16" />Speed in Title Bar</a></li>
                             <li class="divider"><a id="showSearchEngineLink"><img class="MyMenuIcon" src="images/checked-completed.svg" alt="Search Engine" width="16" height="16" />Search Engine</a></li>
                             <li><a id="showRssReaderLink"><img class="MyMenuIcon" src="images/checked-completed.svg" alt="RSS" width="16" height="16" />RSS Reader</a></li>
+                            <li><a id="showLogViewerLink"><img class="MyMenuIcon" src="images/checked-completed.svg" alt="Log" width="16" height="16" />Log</a></li>
                             <li class="divider"><a id="StatisticsLink"><img class="MyMenuIcon" src="images/view-statistics.svg" alt="Statistics" width="16" height="16" />Statistics</a></li>
                         </ul>
                     </li>
@@ -91,7 +93,7 @@
                     <li>
                         <a class="returnFalse">Help</a>
                         <ul>
-                            <li><a id="docsLink" target="_blank" href="http://wiki.qbittorrent.org/"><img class="MyMenuIcon" src="images/help-contents.svg" alt="Documentation" width="16" height="16" />Documentation</a></li>
+                            <li><a id="docsLink" target="_blank" href="https://wiki.qbittorrent.org/"><img class="MyMenuIcon" src="images/help-contents.svg" alt="Documentation" width="16" height="16" />Documentation</a></li>
                             <li class="divider"><a id="bugLink" target="_blank" href="https://www.qbittorrent.org/donate"><img class="MyMenuIcon" src="images/wallet-open.svg" alt="Donate!" width="16" height="16" />Donate!</a></li>
                             <li><a id="aboutLink"><img class="MyMenuIcon" src="images/help-about.svg" alt="About" width="16" height="16" />About</a></li>
                         </ul>
@@ -119,6 +121,7 @@
                         <li id="transfersTabLink" class="selected"><a class="tab">Transfers</a></li>
                         <li id="searchTabLink"><a class="tab">Search</a></li>
                         <li id="rssTabLink"><a class="tab">RSS</a></li>
+                        <li id="logTabLink"><a class="tab">Execution Log</a></li>
                     </ul>
                     <div class="clear"></div>
                 </div>
@@ -137,14 +140,19 @@
         <li class="separator"><a href="#delete"><img src="images/list-remove.svg" alt="Remove" /> Remove</a></li>
         <li class="separator">
             <a href="#setLocation"><img src="images/set-location.svg" alt="Set location..." /> Set location...</a>
+</li>
+        <li>
             <a href="#rename"><img src="images/edit-rename.svg" alt="Rename..." /> Rename...</a>
+        </li>
+<li>
+            <a href="#renameFiles"><img src="images/edit-rename.svg" alt="Rename Files..." /> Rename Files...</a>
         </li>
         <li>
             <a href="#Category" class="arrow-right"><img src="images/view-categories.svg" alt="Category" /> Category</a>
             <ul id="contextCategoryList" class="scrollableMenu"></ul>
         </li>
         <li>
-            <a href="#Tags" class="arrow-right"><img src="images/view-categories.svg" alt="Tags" /> Tags</a>
+            <a href="#Tags" class="arrow-right"><img src="images/tags.svg" alt="Tags" /> Tags</a>
             <ul id="contextTagList" class="scrollableMenu"></ul>
         </li>
         <li>
@@ -183,6 +191,7 @@
     </ul>
     <ul id="categoriesFilterMenu" class="contextMenu">
         <li><a href="#createCategory"><img src="images/list-add.svg" alt="Add category..." /> Add category...</a></li>
+<li><a href="#createSubcategory"><img src="images/list-add.svg" alt="Add subcategory..." /> Add subcategory...</a></li>
         <li><a href="#editCategory"><img src="images/edit-rename.svg" alt="Edit category..." /> Edit category...</a></li>
         <li><a href="#deleteCategory"><img src="images/list-remove.svg" alt="Remove category" /> Remove category</a></li>
         <li><a href="#deleteUnusedCategories"><img src="images/list-remove.svg" alt="Remove unused categories" /> Remove unused categories</a></li>
@@ -226,6 +235,9 @@
             </ul>
         </li>
     </ul>
+<ul id="multiRenameFilesMenu" class="contextMenu">
+        <li><a href="#ToggleSelection"><img src="images/edit-rename.svg" alt="Toggle Selection" /> Toggle Selection</a></li>
+    </ul>
     <div id="desktopFooterWrapper">
         <div id="desktopFooter">
             <span id="error_div"></span>
@@ -235,9 +247,9 @@
                     <td class="statusBarSeparator"></td>
                     <td id="DHTNodes"></td>
                     <td class="statusBarSeparator"></td>
-                    <td><img id="connectionStatus" alt="Connection status" title="Connection status" src="images/firewalled.svg" style="height: 1.5em;" /></td>
+                    <td><img id="connectionStatus" alt="Connection status: Firewalled" title="Connection status: Firewalled" src="images/firewalled.svg" style="height: 1.5em;" /></td>
                     <td class="statusBarSeparator"></td>
-                    <td style="cursor:pointer;"><img id="alternativeSpeedLimits" alt="Alternative speed limits" title="Alternative speed limits" src="images/slow_off.svg" style="height: 1.5em;" /></td>
+                    <td style="cursor:pointer;"><img id="alternativeSpeedLimits" alt="Alternative speed limits: Off" title="Alternative speed limits: Off" src="images/slow_off.svg" style="height: 1.5em;" /></td>
                     <td class="statusBarSeparator"></td>
                     <td class="speedLabel"><img src="images/downloading.svg" alt="Download speed icon" style="height: 1.5em; padding-right: 5px; margin-bottom: -4px;"><span id="DlInfos"></span></td>
                     <td class="statusBarSeparator"></td>

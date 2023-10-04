@@ -1,25 +1,23 @@
-/*
-
-	Layout.css for Mocha UI
-
-	Theme: Default
-
-	Copyright:
-		Copyright (c) 2007-2009 Greg Houston, <http://greghoustondesign.com/>.
-
-	License:
-		MIT-style license.
-
-	Required by:
-		Layout.js
-
-	Modified for Dark Mode by:
-	Raymond Lanser
-
-	*/
-/* Layout
-	---------------------------------------------------------------- */
-/* Sass Document */
+/* Layout.css for Mocha UI
+ *
+ * Theme: Default
+ *
+ * Copyright:
+ * Copyright (c) 2007-2009 Greg Houston, <http://greghoustondesign.com/>.
+ *
+ * License:
+ * MIT-style license.
+ *
+ * Required by:
+ * Layout.js
+ *
+ * Modified for Dark Mode by:
+ * Raymond Lanser
+ *
+ * */
+/* Layout 
+ * ---------------------------------------------------------------- */
+/* Sass Document */ 
 /* Scss Document */
 /*Layout Sass Theme Variables */
 /*Tab Sass Theme Variables */
@@ -47,7 +45,6 @@ body.light-theme, body.light-theme > *, body.light-theme + * {
     --border-col: #6f6f6f;
   }
 }
-
 body.dark-theme, body.dark-theme > *, body.dark-theme + * {
   --row-select: #94BBD8;
   --hover-color: #d1c52a;
@@ -105,7 +102,6 @@ body.light-theme, body.light-theme > *, body.light-theme + * {
     --divider-border: #363636;
   }
 }
-
 body.dark-theme, body.dark-theme > *, body.dark-theme + * {
   --bg-color: #121212;
   --bg-color-tint: #202020;
@@ -156,7 +152,6 @@ body {
   background: url("../images/logo.gif") no-repeat;
   background-position: left 0;
 }
-
 #desktopTitlebar h1.applicationTitle {
   display: none;
   margin: 0;
@@ -166,7 +161,6 @@ body {
   font-weight: bold;
   color: var(--selected-text);
 }
-
 #desktopTitlebar h2.tagline {
   padding: 7px 0px 0px;
   font-family: Verdana, Arial, Helvetica, sans-serif;
@@ -176,7 +170,6 @@ body {
   text-align: center;
   text-transform: uppercase;
 }
-
 #desktopTitlebar h2.tagline .taglineEm {
   color: var(--selected-text);
   font-weight: bold;
@@ -192,12 +185,10 @@ body {
   text-align: right;
   padding: 13px 10px 0 0;
 }
-
 #topNav a {
   color: var(--selected-text);
   font-weight: normal;
 }
-
 #topNav a:hover {
   text-decoration: none;
 }
@@ -209,18 +200,15 @@ body {
   height: 20px;
   border-bottom: 1px solid #3f3f3f;
 }
-
 #desktopNavbar ul {
   padding: 0;
   margin: 0;
   list-style: none;
   font-size: 12px;
 }
-
 #desktopNavbar > ul > li {
   float: left;
 }
-
 #desktopNavbar a {
   display: block;
 }
@@ -231,7 +219,6 @@ body {
   font-weight: normal;
   padding: 2px 10px 0px;
 }
-
 #desktopNavbar ul li a:hover {
   color: var(--font-color-tint);
   background-color: var(--bg-color-tint);
@@ -244,9 +231,8 @@ body {
   left: -999em;
   z-index: 8000;
 }
-
 #desktopNavbar li ul::before {
-  content: '';
+  content: "";
   background-color: var(--mocha-border-lte);
   opacity: 0.8;
   width: 20px;
@@ -274,7 +260,6 @@ body {
   line-height: 1px;
   font-size: 1px;
 }
-
 #desktopNavbar li ul li a {
   position: relative;
   /*padding: 1px 9px 1px 25px*/
@@ -285,12 +270,10 @@ body {
   padding: 1px 10px 1px 20px;
   /* Reduce left padding */
 }
-
 #desktopNavbar li ul li a:hover {
   background: var(--row-select);
   color: #fff;
 }
-
 #desktopNavbar li ul li a:hover .check {
   background: var(--bg-color-tint);
 }
@@ -380,7 +363,6 @@ li.divider {
   overflow: hidden;
   border-bottom: 1px solid var(--border-lte);
 }
-
 .panel-header h2 {
   display: inline-block;
   font-size: 12px;
@@ -406,8 +388,7 @@ li.divider {
 
 .panel-expand {
   background: var(--collapseIcon) center/16px no-repeat;
-  -webkit-transform: rotate(180deg);
-          transform: rotate(180deg);
+  transform: rotate(180deg);
 }
 
 .icon16 {
@@ -417,8 +398,7 @@ li.divider {
 
 /* Column and Panel Handles */
 .horizontalHandle {
-  -webkit-filter: var(--invert-image);
-          filter: var(--invert-image);
+  filter: var(--invert-image);
   height: 4px;
   line-height: 1px;
   font-size: 1px;
@@ -440,8 +420,7 @@ li.divider {
 }
 
 .columnHandle {
-  -webkit-filter: var(--invert-image);
-          filter: var(--invert-image);
+  filter: var(--invert-image);
   min-height: 10px;
   float: left;
   width: 4px;
@@ -484,13 +463,11 @@ div.toolbox.divider {
   overflow: hidden;
   border: 1px solid transparent;
 }
-
 .iconWrapper img {
   cursor: pointer;
   margin: 0;
   padding: 3px;
 }
-
 .iconWrapper:hover {
   border: 1px solid #a0a0a0;
 }
