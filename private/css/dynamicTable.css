@@ -5,6 +5,7 @@
  * **************************************************************/
 #transferList {
   padding-left: 2px;
+  overflow: hidden !important;
 }
 #transferList tr:hover {
   cursor: pointer;
