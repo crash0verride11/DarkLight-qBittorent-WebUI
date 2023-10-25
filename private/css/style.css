@@ -215,6 +215,7 @@ input, button, img, .panel-collapse, .arrow-right {
   --editCopyIcon: url(../images/edit-copy.svg);
   --editRenameIcon: url(../images/edit-rename.svg);
   --folderNewIcon: url(../images/folder-new.svg);
+  --folderDocumentsIcon: url(../images/folder-documents.svg);
   --forceCheckIcon: url(../images/force-recheck.svg);
   --forceStartIcon: url(../images/torrent-start-forced.svg);
   --goBottomIcon: url(../images/go-bottom.svg);
@@ -242,6 +243,7 @@ input, button, img, .panel-collapse, .arrow-right {
   --setLocationIcon: url(../images/set-location.svg);
   --startIcon: url(../images/torrent-start.svg);
   --taskCompleteIcon: url(../images/task-complete.svg);
+  --taskRejectIcon: url(../images/task-reject.svg);
   --themeIcon: url(../images/theme.svg);
   --viewCatIcon: url(../images/view-categories.svg);
   --viewRefreshIcon: url(../images/view-refresh.svg);
@@ -260,6 +262,7 @@ input, button, img, .panel-collapse, .arrow-right {
   --editCopyIcon: url(../images/edit-copy.svg) !important;
   --editRenameIcon: url(../images/edit-rename.svg) !important;
   --folderNewIcon: url(../images/folder-new.svg) !important;
+  --folderDocumentsIcon: url(../images/folder-documents.svg) !important;
   --forceCheckIcon: url(../images/force-recheck.svg) !important;
   --forceStartIcon: url(../images/torrent-start-forced.svg) !important;
   --goBottomIcon: url(../images/go-bottom.svg) !important;
@@ -287,6 +290,7 @@ input, button, img, .panel-collapse, .arrow-right {
   --setLocationIcon: url(../images/set-location.svg) !important;
   --startIcon: url(../images/torrent-start.svg) !important;
   --taskCompleteIcon: url(../images/task-complete.svg) !important;
+  --taskRejectIcon: url(../images/task-reject.svg) !important;
   --themeIcon: url(../images/theme.svg) !important;
   --viewCatIcon: url(../images/view-categories.svg) !important;
   --viewRefreshIcon: url(../images/view-refresh.svg) !important;
@@ -306,6 +310,7 @@ input, button, img, .panel-collapse, .arrow-right {
     --editCopyIcon: url(../images/dark/edit-copy.svg);
     --editRenameIcon: url(../images/dark/edit-rename.svg);
     --folderNewIcon: url(../images/dark/folder-new.svg);
+    --folderDocumentsIcon: url(../images/dark/folder-documents.svg);
     --forceCheckIcon: url(../images/dark/force-recheck.svg);
     --forceStartIcon: url(../images/dark/torrent-start-forced.svg);
     --goBottomIcon: url(../images/dark/go-bottom.svg);
@@ -333,6 +338,7 @@ input, button, img, .panel-collapse, .arrow-right {
     --setLocationIcon: url(../images/dark/set-location.svg);
     --startIcon: url(../images/dark/torrent-start.svg);
     --taskCompleteIcon: url(../images/dark/task-complete.svg);
+    --taskRejectIcon: url(../images/dark/task-reject.svg);
     --themeIcon: url(../images/dark/theme.svg);
     --viewCatIcon: url(../images/dark/view-categories.svg);
     --viewRefreshIcon: url(../images/dark/view-refresh.svg);
@@ -351,6 +357,7 @@ input, button, img, .panel-collapse, .arrow-right {
   --editCopyIcon: url(../images/dark/edit-copy.svg);
   --editRenameIcon: url(../images/dark/edit-rename.svg);
   --folderNewIcon: url(../images/dark/folder-new.svg);
+  --folderDocumentsIcon: url(../images/dark/folder-documents.svg);
   --forceCheckIcon: url(../images/dark/force-recheck.svg);
   --forceStartIcon: url(../images/dark/torrent-start-forced.svg);
   --goBottomIcon: url(../images/dark/go-bottom.svg);
@@ -378,6 +385,7 @@ input, button, img, .panel-collapse, .arrow-right {
   --setLocationIcon: url(../images/dark/set-location.svg);
   --startIcon: url(../images/dark/torrent-start.svg);
   --taskCompleteIcon: url(../images/dark/task-complete.svg);
+  --taskRejectIcon: url(../images/dark/task-reject.svg);
   --themeIcon: url(../images/dark/theme.svg);
   --viewCatIcon: url(../images/dark/view-categories.svg);
   --viewRefreshIcon: url(../images/dark/view-refresh.svg);
@@ -1041,7 +1049,7 @@ input, button, img, .panel-collapse, .arrow-right {
   content: var(--editRenameIcon);
 }
 #rssFeedMenu li:nth-of-type(4) a img {
-  content: var(--listRemoveIcon);
+  content: var(--editClearIcon);
 }
 #rssFeedMenu li:nth-of-type(5) a img {
   content: var(--listAddIcon);
