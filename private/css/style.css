@@ -761,6 +761,14 @@ input, button, img, .panel-collapse, .arrow-right {
   background-image: var(--listRemoveIcon) !important;
 }
 
+/* Log View */
+#logTableMenu .copyLogDataToClipboard img {
+  content: var(--editCopyIcon);
+}
+#logTableMenu li:nth-of-type(2) a img {
+  content: var(--listRemoveIcon);
+}
+
 /*Main Menu Icons and Ovverides*/
 #uploadLink img {
   content: var(--listAddIcon);
@@ -1452,6 +1460,10 @@ a.propButton img {
   background-size: 1.5em;
 }
 
+#filterTextInput {
+  background: var(--searchIcon) no-repeat left !important;
+}
+
 /* Tri-state checkbox */
 label.tristate {
   background: url("../images/3-state-checkbox.gif") 0 0 no-repeat;
@@ -1775,6 +1787,21 @@ td.statusBarSeparator {
 #rssDetailsView div, #rssDetailsView p {
   padding-left: 4px !important;
   /* iframe */
+}
+
+/* Log Tab */
+.logNormal {
+  color: var(--font-tint) !important;
+}
+
+#LogPanel_header {
+  height: 38px;
+}
+
+#LogPanel_headerContent {
+  border-bottom: var(--tab-border);
+  padding-top: 10px;
+  padding-bottom: 5px;
 }
 
 .imageButton {
