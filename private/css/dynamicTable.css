@@ -54,16 +54,16 @@ tr.dynamicTableHeader {
   width: 0px;
   height: 0px;
   position: relative;
-  top: 3px;
   left: 5px;
   border-width: 5px;
   border-style: solid;
   border-color: transparent transparent transparent var(--font-tint);
-  transform: rotate(90deg);
-}
-.dynamicTable tr th.sorted.reverse::after {
   transform: rotate(270deg);
   top: -2px;
+}
+.dynamicTable tr th.sorted.reverse::after {
+  transform: rotate(90deg);
+  top: 3px;
 }
 .dynamicTable td {
   padding: 0px 6px;
