@@ -868,6 +868,7 @@ window.addEvent('load', function() {
             $('connectionStatus').alt = 'Connection status: Disconnected';
             break;
         }
+	$('connectionStatus').title = $('connectionStatus').alt;
 
         if (queueing_enabled != serverState.queueing) {
             queueing_enabled = serverState.queueing;
