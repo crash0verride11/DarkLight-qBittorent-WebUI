@@ -488,7 +488,19 @@ window.addEvent('load', function() {
         Object.each(category_list, function(category) {
             sortedCategories.push(category.name);
         });
-        sortedCategories.sort();
+        sortedCategories.sort((leftCategory, rightCategory) => {
+            const leftSegments = leftCategory.split('/');
+            const rightSegments = rightCategory.split('/');
+
+            for (let i = 0, iMax = Math.min(leftSegments.length, rightSegments.length); i < iMax; ++i) {
+                const compareResult = window.qBittorrent.Misc.naturalSortCollator.compare(
+                    leftSegments[i], rightSegments[i]);
+                if (compareResult !== 0)
+                    return compareResult;
+            }
+
+            return leftSegments.length - rightSegments.length;
+        });
 
         for (let i = 0; i < sortedCategories.length; ++i) {
             const categoryName = sortedCategories[i];
