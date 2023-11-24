@@ -453,7 +453,7 @@ window.addEvent('load', function() {
         const categoryList = $('categoryFilterList');
         if (!categoryList)
             return;
-        categoryList.empty();
+        categoryList.getChildren().each(c => c.destroy());
 
         const create_link = function(hash, text, count) {
             let display_name = text;
@@ -526,8 +526,7 @@ window.addEvent('load', function() {
         if (tagFilterList === null)
             return;
 
-        while (tagFilterList.firstChild !== null)
-            tagFilterList.removeChild(tagFilterList.firstChild);
+        tagFilterList.getChildren().each(c => c.destroy());
 
         const createLink = function(hash, text, count) {
             //Change Area
@@ -581,8 +580,7 @@ window.addEvent('load', function() {
         if (trackerFilterList === null)
             return;
 
-        while (trackerFilterList.firstChild !== null)
-            trackerFilterList.removeChild(trackerFilterList.firstChild);
+        trackerFilterList.getChildren().each(c => c.destroy());
 
         const createLink = function(hash, text, count) {
             /* Change Area */
