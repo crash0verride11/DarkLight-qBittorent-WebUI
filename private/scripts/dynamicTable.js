@@ -1024,7 +1024,7 @@ LogMessageTable: LogMessageTable,
                         status = "Checking resume data";
                         break;
                     case "moving":
-                        state = "force-recheck";
+                        state = "set-location";
                         status = "Moving";
                         break;
                     case "error":
